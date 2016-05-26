@@ -55,10 +55,12 @@
       "$order": 3,
       "type": "bool",
       "as_plugin": "active",
+      //Erste Zustandsermittlung nach 30 Sekunden
+      "as_startup_delay" : 10,
       "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.lock | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren",
       "as_repeat_actions": "false",
-      "as_laststate_item_id": "~~.state_id",
-      "as_laststate_item_name": "~~.state_name",
+      "as_laststate_item_id": "..state_id",
+      "as_laststate_item_name": "..state_name",
       
       "Lock": {
         "$order": 1,
