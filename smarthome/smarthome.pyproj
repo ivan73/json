@@ -74,6 +74,7 @@
     <Content Include="templates\clickcontrol.json" />
     <Content Include="templates\einzelraumregelung.json" />
     <Content Include="templates\jalousie.json" />
+    <Content Include="templates\praesenz.json" />
   </ItemGroup>
   <Import Condition="Exists($(PtvsTargetsFile))" Project="$(PtvsTargetsFile)" />
   <Import Condition="!Exists($(PtvsTargetsFile))" Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />

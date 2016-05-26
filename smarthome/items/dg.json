@@ -20,7 +20,7 @@
               "as_plugin": "active",
               "name": "Dg Eltern",
               "Beschatten": {
-                "as_use":"Jalousie_default.Beschatten_Ost"
+                "as_use": "Jalousie_default.Beschatten_Ost"
               },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
@@ -28,7 +28,10 @@
               },
               "Morgendaemmerung": {
                 "as_set_Position": "100",
-                "as_set_Lamellenposition": "50"
+                "as_set_Lamellenposition": "50",
+                  "enter": {
+                  "as_min_time": "07:30"
+                }
               },
               "Nacht": {
                 "as_set_Position": "100",
@@ -36,7 +39,10 @@
               },
               "Tag": {
                 "as_set_Position": "30",
-                "as_set_Lamellenposition": "0"
+                "as_set_Lamellenposition": "0",
+                "enter": {
+                  "as_min_time": "08:00"
+                }
               }
             }
           }
@@ -50,9 +56,10 @@
         }
       },
       "Praesenz": {
-        "type": "bool",
-        "value": "False"
-        
+        "$template": {
+          "source": "praesenz",
+          "knx": "2/2/10"
+        }
       }
     },
     "Gaeste": {
@@ -95,13 +102,10 @@
         }
       },
       "Praesenz": {
-        "type": "bool",
-        "value": "False",
-        "visu_acl": "rw",
-        "cache": true,
-        "sqlite": "yes",
-        "knx_dpt": "1",
-        "knx_listen": "2/2/10"
+         "$template": {
+          "source": "praesenz",
+          "knx": "2/2/20"
+        }
       }
     },
     "Flur": {
@@ -158,9 +162,10 @@
         }
       },
       "Praesenz": {
-        "type": "bool",
-        "value": "False"
-        
+         "$template": {
+          "source": "praesenz",
+          "knx": "2/2/0"
+        }
       }
     },
     "Carla": {
@@ -176,7 +181,7 @@
               "as_plugin": "active",
               "name": "Dg Carla Zimmer",
               "Beschatten": {
-                "as_use":"Jalousie_default.Beschatten_West"
+                "as_use": "Jalousie_default.Beschatten_West"
               },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
@@ -205,9 +210,10 @@
         }
       },
       "Praesenz": {
-        "type": "bool",
-        "value": "False"
-        
+         "$template": {
+          "source": "praesenz",
+          "knx": "2/2/30"
+        }
       }
     },
     "Mattia": {
@@ -223,7 +229,7 @@
               "as_plugin": "active",
               "name": "Dg Mattia Zimmer",
               "Beschatten": {
-                "as_use":"Jalousie_default.Beschatten_West"
+                "as_use": "Jalousie_default.Beschatten_West"
               },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
@@ -253,9 +259,10 @@
         }
       },
       "Praesenz": {
-        "type": "bool",
-        "value": "False"
-        
+         "$template": {
+          "source": "praesenz",
+          "knx": "2/2/40"
+        }
       }
     },
     "Wohnzimmer": {
@@ -342,9 +349,10 @@
         }
       },
       "Praesenz": {
-        "type": "bool",
-        "value": "False"
-        
+         "$template": {
+          "source": "praesenz",
+          "knx": "2/2/60"
+        }
       }
     },
     "Kueche": {
@@ -373,7 +381,7 @@
               "as_plugin": "active",
               "name": "Dg Fenster Kochinsel",
               "Beschatten": {
-                "as_use":"Jalousie_default.Beschatten_Sued"
+                "as_use": "Jalousie_default.Beschatten_Sued"
               },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
@@ -406,7 +414,7 @@
               "as_plugin": "active",
               "name": "Dg Fenster Arbeitsflaeche",
               "Beschatten": {
-                "as_use":"Jalousie_default.Beschatten_West"
+                "as_use": "Jalousie_default.Beschatten_West"
               },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
@@ -475,15 +483,15 @@
         },
         "Leds": {
           "$templated": true,
-            "Led2Prio": {
-                "eval": "True if (~~~.State.Zaehler_jalousie()==3)  else False",
-                "eval_trigger": "~~~.State.Zaehler_jalousie"
-            },
-            "Led3Prio": {
-                "eval": "True if (~~~.State.Zaehler_jalousie()==2 or ~~~.State.Zaehler_jalousie()==4)  else False",
-                "eval_trigger": "~~~.State.Zaehler_jalousie"
-            },
-            "Led4Prio": {
+          "Led2Prio": {
+            "eval": "True if (~~~.State.Zaehler_jalousie()==3)  else False",
+            "eval_trigger": "~~~.State.Zaehler_jalousie"
+          },
+          "Led3Prio": {
+            "eval": "True if (~~~.State.Zaehler_jalousie()==2 or ~~~.State.Zaehler_jalousie()==4)  else False",
+            "eval_trigger": "~~~.State.Zaehler_jalousie"
+          },
+          "Led4Prio": {
             "eval": "True if (~~~.State.Zaehler_jalousie()==1 or ~~~.State.Zaehler_jalousie()==4)  else False",
             "eval_trigger": "~~~.State.Zaehler_jalousie"
           }
@@ -491,9 +499,10 @@
         }
       },
       "Praesenz": {
-        "type": "bool",
-        "value": "False"
-        
+         "$template": {
+          "source": "praesenz",
+          "knx": "2/2/80"
+        }
       }
     },
     "Essen": {
@@ -555,7 +564,7 @@
               "as_plugin": "active",
               "name": "Dg Essen Terasse Schiebetuer",
               "Beschatten": {
-                "as_use":"Jalousie_default.Beschatten_Ost"
+                "as_use": "Jalousie_default.Beschatten_Ost"
               },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
@@ -588,7 +597,7 @@
               "as_plugin": "active",
               "name": "Dg Esstisch",
               "Beschatten": {
-                "as_use":"Jalousie_default.Beschatten_Sued"
+                "as_use": "Jalousie_default.Beschatten_Sued"
               },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
@@ -626,9 +635,10 @@
         }
       },
       "Praesenz": {
-        "type": "bool",
-        "value": "False"
-        
+         "$template": {
+          "source": "praesenz",
+          "knx": "2/2/70"
+        }
       }
     },
     "Bad": {
@@ -644,7 +654,7 @@
               "as_plugin": "active",
               "name": "Dg Bad Fenster klein",
               "Beschatten": {
-                "as_use":"Jalousie_default.Beschatten_West"
+                "as_use": "Jalousie_default.Beschatten_West"
               },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
@@ -677,7 +687,7 @@
               "as_plugin": "active",
               "name": "Dg Bad Fenster groß",
               "Beschatten": {
-                "as_use":"Jalousie_default.Beschatten_West"
+                "as_use": "Jalousie_default.Beschatten_West"
               },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
@@ -707,9 +717,10 @@
         }
       },
       "Praesenz": {
-        "type": "bool",
-        "value": "False"
-        
+         "$template": {
+          "source": "praesenz",
+          "knx": "2/2/90"
+        }
       }
     },
     "TagesWC": {
@@ -720,9 +731,10 @@
         }
       },
       "Praesenz": {
-        "type": "bool",
-        "value": "False"
-        
+         "$template": {
+          "source": "praesenz",
+          "knx": "2/2/130"
+        }
       }
     },
     "Kriechboden": {

@@ -1,449 +1,463 @@
 {
-    "$schema": "../schema/ItemSchema.json",
-    "Og": {
-      "Trigger": {
-        "$order": 1,
-        "type": "bool",
-        "enforce_updates": true,
-        "cycle": "300 = 1"
+  "$schema": "../schema/ItemSchema.json",
+  "Og": {
+    "Trigger": {
+      "$order": 1,
+      "type": "bool",
+      "enforce_updates": true,
+      "cycle": "300 = 1"
+    },
+    "Ist_temperatur": {
+      "type": "num",
+      "value": 22
+    },
+    "Praesenz": {
+      "type": "bool",
+      "value": false
+    },
+    "Bad": {
+      "Jalousie": {
+        "Fenster": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/1/11"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Eg Raff. Bad",
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "100"
+              },
+              "Tag": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        }
       },
-      "Ist_temperatur": {
-        "type": "num",
-        "value": 22
+      "Einzelraumregelung": {
+        "Ist_temperatur": {
+          "type": "num",
+          "value": 22
+        }
       },
       "Praesenz": {
         "type": "bool",
-        "value": false
-      },
-        "Bad": {
-          "Jalousie": {
-            "Fenster": {
-              "$template": {
-                "source": "jalousie",
-                "knx": "0/1/11"
+        "value": false,
+        "visu_acl": "rw",
+        "cache": true,
+        "sqlite": "yes"
+      }
+    },
+    "Balkonwiesen": {
+      "Jalousie": {
+        "Sylvia": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/1/21"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Og Raff. Balkonwiesen Sylvia",
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
               },
-              "autoBlind": {
-                "Rules": {
-                  "$templated": true,
-                  "as_plugin": "active",
-                  "name": "Eg Raff. Bad",
-                  "Abenddaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "50"
-                  },
-                  "Nacht": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "100"
-                  },
-                  "Tag": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "0"
-                  }
-                }
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "20",
+                "as_set_Lamellenposition": "0"
               }
             }
-          },
-          "Einzelraumregelung": {
-            "Ist_temperatur": {
-              "type": "num",
-              "value": 22
-            }
-          },
-          "Praesenz": {
-            "type": "bool",
-            "value": false,
-            "visu_acl": "rw",
-            "cache": true,
-            "sqlite": "yes"
           }
         },
-        "Balkonwiesen": {
-          "Jalousie": {
-            "Sylvia": {
-              "$template": {
-                "source": "jalousie",
-                "knx": "0/1/21"
+        "Ivan_rechts": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/1/31"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Og Raff. Balkonwiesen Ivan_rechts",
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
               },
-              "autoBlind": {
-                "Rules": {
-                  "$templated": true,
-                  "as_plugin": "active",
-                  "name": "Og Raff. Balkonwiesen Sylvia",
-                  "Abenddaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "0"
-                  },
-                  "Morgendaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "50"
-                  },
-                  "Nacht": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "70"
-                  },
-
-                  "Tag": {
-                    "as_set_Position": "20",
-                    "as_set_Lamellenposition": "0"
-                  }
-                }
-              }
-            },
-            "Ivan_rechts": {
-              "$template": {
-                "source": "jalousie",
-                "knx": "0/1/31"
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
               },
-              "autoBlind": {
-                "Rules": {
-                  "$templated": true,
-                  "as_plugin": "active",
-                  "name": "Og Raff. Balkonwiesen Ivan_rechts",
-                  "Abenddaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "0"
-                  },
-                  "Morgendaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "50"
-                  },
-                  "Nacht": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "70"
-                  },
-
-                  "Tag": {
-                    "as_set_Position": "20",
-                    "as_set_Lamellenposition": "0"
-                  }
-                }
-              }
-            },
-            "Ivan_links": {
-              "$template": {
-                "source": "jalousie",
-                "knx": "0/1/34"
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
               },
-              "autoBlind": {
-                "Rules": {
-                  "$templated": true,
-                  "as_plugin": "active",
-                  "name": "Og Raff. Balkonwiesen Ivan_links",
-                  "Abenddaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "0"
-                  },
-                  "Morgendaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "50"
-                  },
-                  "Nacht": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "70"
-                  },
 
-                  "Tag": {
-                    "as_set_Position": "20",
-                    "as_set_Lamellenposition": "0"
-                  }
-                }
-              }
-            },
-            "Wohnzimmer": {
-              "$template": {
-                "source": "jalousie",
-                "knx": "0/1/41"
-              },
-              "autoBlind": {
-                "Rules": {
-                  "$templated": true,
-                  "as_plugin": "active",
-                  "name": "Og Raff. Balkonwiesen Wohnzimmer",
-                  "Abenddaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "0"
-                  },
-                  "Morgendaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "50"
-                  },
-                  "Nacht": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "70"
-                  },
-
-                  "Tag": {
-                    "as_set_Position": "20",
-                    "as_set_Lamellenposition": "0"
-                  }
-                }
+              "Tag": {
+                "as_set_Position": "20",
+                "as_set_Lamellenposition": "0"
               }
             }
+          }
+        },
+        "Ivan_links": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/1/34"
           },
-          "Einzelraumregelung": {
-            "Ist_temperatur": {
-              "type": "num",
-              "value": 22
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Og Raff. Balkonwiesen Ivan_links",
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "20",
+                "as_set_Lamellenposition": "0"
+              }
             }
-          },
-          "Praesenz": {
-            "type": "bool",
-            "value": false,
-            "visu_acl": "rw",
-            "cache": true,
-            "sqlite": "yes"
           }
         },
         "Wohnzimmer": {
-            "Jalousie": {
-                "Wiesen": {
-                    "$template": {
-                        "source": "jalousie",
-                        "knx": "0/1/44"
-                    },
-                    "autoBlind": {
-                        "Rules": {
-                            "$templated": true,
-                            "as_plugin": "active",
-                            "name": "Og Raff. Wohnzimmer Wiesen",
-                            "Abenddaemmerung": {
-                                "as_set_Position": "100",
-                                "as_set_Lamellenposition": "50"
-                            },
-                            "Morgendaemmerung": {
-                                "as_set_Position": "100",
-                                "as_set_Lamellenposition": "50"
-                            },
-                            "Nacht": {
-                                "as_set_Position": "100",
-                                "as_set_Lamellenposition": "70"
-                            },
-
-                            "Tag": {
-                                "as_set_Position": "20",
-                                "as_set_Lamellenposition": "0"
-                            }
-                        }
-                    }
-                },
-                "Carabinieri": {
-                    "$template": {
-                        "source": "jalousie",
-                        "knx": "0/1/47"
-                    },
-                    "autoBlind": {
-                        "Rules": {
-                            "$templated": true,
-                            "as_plugin": "active",
-                            "name": "Og Raff. Wohnzimmer Carabinieri",
-                            "Abenddaemmerung": {
-                                "as_set_Position": "100",
-                                "as_set_Lamellenposition": "50"
-                            },
-                            "Morgendaemmerung": {
-                                "as_set_Position": "100",
-                                "as_set_Lamellenposition": "50"
-                            },
-                            "Nacht": {
-                                "as_set_Position": "100",
-                                "as_set_Lamellenposition": "70"
-                            },
-
-                            "Tag": {
-                                "as_set_Position": "20",
-                                "as_set_Lamellenposition": "0"
-                            }
-                        }
-                    }
-                }
-            },"Einzelraumregelung": {
-            "Ist_temperatur": {
-              "type": "num",
-              "value": 22
-            }
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/1/41"
           },
-          "Praesenz": {
-            "type": "bool",
-            "value": false,
-            "visu_acl": "rw",
-            "cache": true,
-            "sqlite": "yes"
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Og Raff. Balkonwiesen Wohnzimmer",
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "20",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        }
+      },
+      "Einzelraumregelung": {
+        "Ist_temperatur": {
+          "type": "num",
+          "value": 22
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": false,
+        "visu_acl": "rw",
+        "cache": true,
+        "sqlite": "yes"
+      }
+    },
+    "Wohnzimmer": {
+      "Jalousie": {
+        "Wiesen": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/1/44"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Og Raff. Wohnzimmer Wiesen",
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "20",
+                "as_set_Lamellenposition": "0"
+              }
+            }
           }
         },
-        "Kueche": {
-          "Jalousie": {
-            "Fenster": {
-              "$template": {
-                "source": "jalousie",
-                "knx": "0/1/51"
+        "Carabinieri": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/1/47"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Og Raff. Wohnzimmer Carabinieri",
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
               },
-              "autoBlind": {
-                "Rules": {
-                  "$templated": true,
-                  "as_plugin": "active",
-                  "name": "Og Raff. Küche Fenster",
-                  "Abenddaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "50"
-                  },
-                  "Morgendaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "50"
-                  },
-                  "Nacht": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "70"
-                  },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
 
-                  "Tag": {
-                    "as_set_Position": "20",
-                    "as_set_Lamellenposition": "0"
-                  }
-                }
+              "Tag": {
+                "as_set_Position": "20",
+                "as_set_Lamellenposition": "0"
               }
             }
-          },
-          "Einzelraumregelung": {
-            "Ist_temperatur": {
-              "type": "num",
-              "value": 22
-            }
-          },
-          "Praesenz": {
-            "type": "bool",
-            "value": false,
-            "visu_acl": "rw",
-            "cache": true,
-            "sqlite": "yes"
           }
-        },
-        "Balkonstrasse": {
-          "Jalousie": {
-            "Treppenhaus": {
-              "$template": {
-                "source": "jalousie",
-                "knx": "0/1/61"
+        }
+      },
+      "Einzelraumregelung": {
+        "Ist_temperatur": {
+          "type": "num",
+          "value": 22
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": false,
+        "visu_acl": "rw",
+        "cache": true,
+        "sqlite": "yes"
+      }
+    },
+    "Kueche": {
+      "Jalousie": {
+        "Fenster": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/1/51"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Og Raff. Küche Fenster",
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
               },
-              "autoBlind": {
-                "Rules": {
-                  "$templated": true,
-                  "as_plugin": "active",
-                  "name": "Og Raff. Balkonstrasse Treppenhaus",
-                  "Abenddaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "0"
-                  },
-                  "Morgendaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "50"
-                  },
-                  "Nacht": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "70"
-                  },
-
-                  "Tag": {
-                    "as_set_Position": "20",
-                    "as_set_Lamellenposition": "0"
-                  }
-                }
-              }
-            },
-            "Schlafzimmer": {
-              "$template": {
-                "source": "jalousie",
-                "knx": "0/1/64"
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
               },
-              "autoBlind": {
-                "Rules": {
-                  "$templated": true,
-                  "as_plugin": "active",
-                  "name": "Og Raff. Balkonstrasse Schlafzimmer",
-                  "Abenddaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "0"
-                  },
-                  "Morgendaemmerung": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "50"
-                  },
-                  "Nacht": {
-                    "as_set_Position": "100",
-                    "as_set_Lamellenposition": "70"
-                  },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
 
-                  "Tag": {
-                    "as_set_Position": "20",
-                    "as_set_Lamellenposition": "0"
-                  }
-                }
+              "Tag": {
+                "as_set_Position": "20",
+                "as_set_Lamellenposition": "0"
               }
             }
+          }
+        }
+      },
+      "Einzelraumregelung": {
+        "Ist_temperatur": {
+          "type": "num",
+          "value": 22
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": false,
+        "visu_acl": "rw",
+        "cache": true,
+        "sqlite": "yes"
+      }
+    },
+    "Balkonstrasse": {
+      "Jalousie": {
+        "Treppenhaus": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/1/61"
           },
-          "Einzelraumregelung": {
-            "Ist_temperatur": {
-              "type": "num",
-              "value": 22
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Og Raff. Balkonstrasse Treppenhaus",
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "20",
+                "as_set_Lamellenposition": "0"
+              }
             }
-          },
-          "Praesenz": {
-            "type": "bool",
-            "value": false,
-            "visu_acl": "rw",
-            "cache": true,
-            "sqlite": "yes"
           }
         },
         "Schlafzimmer": {
-            "Jalousie": {
-                "Fenster": {
-                    "$template": {
-                        "source": "jalousie",
-                        "knx": "0/1/71"
-                    },
-                    "autoBlind": {
-                        "Rules": {
-                            "$templated": true,
-                            "as_plugin": "active",
-                            "name": "Og Raff. Schlafzimmer Fenster",
-                            "Referenzfahrt": {
-                                "enter_auto": {
-                                     "as_min_Daemmerung": "30"
-                                }
-                            },
-                            "Abenddaemmerung": {
-                                "as_set_Position": "100",
-                                "as_set_Lamellenposition": "0"
-                            },
-                            "Morgendaemmerung": {
-                                "as_set_Position": "100",
-                                "as_set_Lamellenposition": "50"
-                            },
-                            "Nacht": {
-                                "as_set_Position": "100",
-                                "as_set_Lamellenposition": "70"
-                            },
-
-                            "Tag": {
-                                "as_set_Position": "30",
-                                "as_set_Lamellenposition": "0"
-                            }
-                        }
-                    }
-                }
-            },"Einzelraumregelung": {
-            "Ist_temperatur": {
-              "type": "num",
-              "value": 22
-            }
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/1/64"
           },
-          "Praesenz": {
-            "type": "bool",
-            "value": false,
-            "visu_acl": "rw",
-            "cache": true,
-            "sqlite": "yes"
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Og Raff. Balkonstrasse Schlafzimmer",
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50",
+                "enter": {
+                  "as_min_time": "07:30"
+                }
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "20",
+                "as_set_Lamellenposition": "0",
+                "enter": {
+                  "as_min_time": "08:00"
+                }
+              }
+            }
           }
         }
+      },
+      "Einzelraumregelung": {
+        "Ist_temperatur": {
+          "type": "num",
+          "value": 22
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": false,
+        "visu_acl": "rw",
+        "cache": true,
+        "sqlite": "yes"
+      }
+    },
+    "Schlafzimmer": {
+      "Jalousie": {
+        "Fenster": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/1/71"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Og Raff. Schlafzimmer Fenster",
+              "Referenzfahrt": {
+                "enter_auto": {
+                  "as_min_Daemmerung": "30"
+                }
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "80",
+                "enter": {
+                  "as_min_time": "07:30"
+                }
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0",
+                "enter": {
+                  "as_min_time": "08:30"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Einzelraumregelung": {
+        "Ist_temperatur": {
+          "type": "num",
+          "value": 22
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": false,
+        "visu_acl": "rw",
+        "cache": true,
+        "sqlite": "yes"
+      }
     }
+  }
 }

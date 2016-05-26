@@ -122,6 +122,7 @@ AutoBlind reference not found: as_item_Position, referenced in File: items\eg.js
 AutoBlind reference not found: as_item_Position, referenced in File: items\eg.json, Path: Eg.Bad.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Position
 AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\eg.json, Path: Eg.Bad.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Lamellenposition
 AutoBlind reference not found: as_item_Daemmerung, referenced in File: items\eg.json, Path: Eg.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Referenzfahrt.enter_auto.as_min_Daemmerung
+AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\eg.json, Path: Eg.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
 AutoBlind reference not found: as_item_Position, referenced in File: items\eg.json, Path: Eg.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Position
 AutoBlind reference not found: as_item_Position, referenced in File: items\eg.json, Path: Eg.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Position
 AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\eg.json, Path: Eg.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Lamellenposition
@@ -255,7 +256,7 @@ AutoBlind reference not found: as_item_Position, referenced in File: items\og.js
 AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Lamellenposition
 AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Position
 AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Lamellenposition
-Item not found: , referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_lock
+Item not found: , referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_automatik
 Item not found: , referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_suspend
 Item not found: , referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_manuell
 Item not found: , referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_manuell_positionen
@@ -269,6 +270,7 @@ Item not found: .....Einzelraumregelung.Ist_temperatur, referenced in File: item
 Item not found: .....Praesenz, referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_praesenz
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Referenzfahrt.enter_stay.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Suspend.enter_stay.as_value_laststate
+Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Suspend.enter_stay_tag.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Ost.enter_hysterese.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Ost.enter_delay.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Ost.enter_praesenz_hysterese.as_value_laststate

@@ -12,7 +12,7 @@
       "visu_acl": "ro",
       "cache": true
     },
-    "lock": {
+    "automatik": {
       "description": "Über dieses Item wird die Automatik eingeschalten",
       "type": "bool",
       "visu_acl": "rw",
@@ -57,7 +57,7 @@
       "as_plugin": "active",
       //Erste Zustandsermittlung nach 30 Sekunden
       "as_startup_delay" : 10,
-      "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.lock | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren",
+      "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren",
       "as_repeat_actions": "false",
       "as_laststate_item_id": "..state_id",
       "as_laststate_item_name": "..state_name",
