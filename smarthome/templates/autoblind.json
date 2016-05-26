@@ -28,13 +28,13 @@
       "type": "bool",
       "name": "Manuelle Bedienung Positionen",
       "eval": "not ~~.manuell_positionen() if sh.autoblind.is_changed_by(caller, source, ['Visu:*']) else ~~.manuell_positionen()",
-      "eval_trigger": "~~~~.Position | ~~~~.Lamellenposition"
+      "eval_trigger": "~~~.Position | ~~~.Lamellenposition"
     },
     "manuell_taster": {
       "type": "bool",
       "name": "Manuelle Bedienung über Tasten",
       "eval": "not ~~.manuell_taster()",
-      "eval_trigger": "~~~~.Auf_ab | ~~~~.Lamellenverstellung_stop"
+      "eval_trigger": "~~~.Auf_ab | ~~~.Lamellenverstellung_stop"
     },
     "manuell": {
       "type": "bool",
