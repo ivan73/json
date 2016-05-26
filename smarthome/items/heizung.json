@@ -1,0 +1,184 @@
+{
+  "$schema": "../schema/ItemSchema.json",
+  "Heizraum": {
+    "Warmwasser": {
+      "Ist_temperatur": {
+        "type": "num",
+        "eval": "value/10",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "sqlite": "yes",
+        "logo_read": "AM1"
+      },
+      "Soll_temperatur": {
+        "type": "num",
+        "eval_trigger": "Heizraum.Warmwasser.Soll_temperatur_logo_read",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "sqlite": "yes",
+        "Uzsu": {
+          "type": "dict",
+          "visu_acl": "rw",
+          "cache": true,
+          "uzsu_item": "heizraum.warmwasser.soll_temperatur"
+        }
+      },
+      "Soll_temperatur_logo_write": {
+        "type": "num",
+        "eval": "int(sh.Heizraum.Warmwasser.Soll_temperatur() * 10)",
+        "eval_trigger": "Heizraum.Warmwasser.Soll_temperatur",
+        "visu": "yes",
+        "logo_write": "VMW0"
+      },
+      "Soll_temperatur_logo_read": {
+        "type": "num",
+        "eval": "value/10",
+        "logo_read": "VMW0"
+      },
+      "Regelung_aktiv": {
+        "type": "bool",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "logo_read": "M1"
+      },
+      "Durchflussmenge": {
+        "type": "num",
+        "eval": "value/10",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "sqlite": "yes",
+        "logo_read": "AM2"
+      },
+      "Durchflusswaechter": {
+        "type": "bool",
+        "visu": "yes",
+        "logo_read": "I1"
+      },
+      "Ventilstellung": {
+        "type": "num",
+        "eval": "value/10",
+        "visu": "yes",
+        "sqlite": "yes",
+        "logo_read": "AM5"
+      },
+      "Zirkulation_aktiv": {
+        "type": "bool",
+        "visu": "yes",
+        "logo_read": "M2"
+      },
+      "Zirkulation_heizen": {
+        "type": "bool",
+        "visu": "yes",
+        "logo_read": "M3"
+      },
+      "Zirkulation_messen": {
+        "type": "bool",
+        "visu": "yes",
+        "logo_read": "M4"
+      },
+      "Zirkulation_pause": {
+        "type": "bool",
+        "visu": "yes",
+        "logo_read": "M5"
+      },
+      "Zirkulation_pumpe": {
+        "type": "bool",
+        "visu": "yes",
+        "logo_read": "Q3"
+      },
+      "Zirkulation": {
+        "type": "bool",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "logo_read": "VM50.0",
+        "logo_write": "VM50.0",
+        "Uzsu": {
+          "type": "dict",
+          "visu_acl": "rw",
+          "cache": true,
+          "uzsu_item": "Heizraum.Warmwasser.Zirkulation"
+        }
+      }
+    },
+    "Beregnung": {
+      "Pumpe": {
+        "Status": {
+          "type": "bool",
+          "visu": "yes",
+          "logo_read": "Q4"
+        },
+        "Zsu_logo": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "logo_read": "VM51.0",
+          "logo_write": "VM51.0"
+        },
+        "Schalten": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "logo_read": "VM51.1",
+          "logo_write": "VM51.1"
+        }
+      },
+      "Speicher1": {
+        "Unten": {
+          "type": "bool",
+          "visu": "yes",
+          "logo_read": "I3"
+        },
+        "Oben": {
+          "type": "bool",
+          "visu": "yes",
+          "logo_read": "I5"
+        }
+      },
+      "Speicher2": {
+        "Unten": {
+          "type": "bool",
+          "visu": "yes",
+          "logo_read": "I4"
+        }
+      },
+      "Ventil": {
+        "Zsu_logo": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "logo_read": "VM51.4",
+          "logo_write": "VM51.4"
+        },
+        "Schalten": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "logo_read": "VM51.5",
+          "logo_write": "VM51.5"
+        },
+        "Uzsu": {
+          "type": "dict",
+          "visu_acl": "rw",
+          "cache": true,
+          "uzsu_item": "Heizraum.Beregnung.Ventil.Schalten"
+        }
+      },
+      "Frischwasser": {
+        "Beregnung": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "logo_read": "VM51.2",
+          "logo_write": "VM51.2"
+        },
+        "Schalten": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "logo_read": "VM51.3",
+          "logo_write": "VM51.3"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "type": "object",
+    "title": "Properties vom smartvisu-Plugin",
+    "definitions": {
+        "arrayOrder": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$order": {
+                    "type": "number",
+                    "description": "neue Position des vorherigen Arrray-Eintrags",
+                    "minimum": 0
+                }
+            }
+        },
+        "singleWidget": {
+            "type": "string",
+            "description": "Ein widget"
+        },
+        "multilineWidget": {
+            "anyOf": [
+                { "$ref": "#/definitions/singleWidget" },
+                {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/singleWidget" },
+                    "minItems": 1,
+                    "uniqueItems": false
+                }
+            ]
+        },
+        "Widgets": {
+            "anyOf": [
+                { "$ref": "#/definitions/multilineWidget" },
+                {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/multilineWidget" },
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        }
+    },
+    "properties": {
+        "sv_page": {
+            "description": "VISU: Seitentyp",
+            "enum": [
+                "room",
+                "seperator",
+                "overview"
+            ]
+        },
+        "sv_overview": {
+            "type": "string",
+            "description": "VISU: Bestimmt den Typ <typ> der Übersicht, alle items mit sv_item_type = <typ> werden hier rein generiert"
+        },
+        "sv_item_type": {
+            "type": "string",
+            "description": "VISU: Bestimmt den Typ <typ> des Items, dieses wird auf eine Overview-Seite vom Typ <typ> generiert"
+        },
+        "sv_img": {
+            "type": "string",
+            "description": "VISU: Bild, das angezeigt werden soll",
+            "pattern": "^.*[.](png|svg)$"
+        },
+        "sv_nav_aside": {
+            "description": "VISU: Widgets in der Sidebar",
+            "$ref": "#/definitions/Widgets"
+        },
+        "sv_heading_left": {
+            "description": "VISU: Widgets im Seitenkopf links",
+            "$ref": "#/definitions/Widgets"
+        },
+        "sv_heading_center": {
+            "description": "VISU: Widgets im Seitenkopf mitte",
+            "$ref": "#/definitions/Widgets"
+        },
+        "sv_heading_right": {
+            "description": "VISU: Widgets im Seitenkopf rechts",
+            "$ref": "#/definitions/Widgets"
+        },
+        "sv_widget": { "$ref": "#/definitions/Widgets" },
+        "sv_import": {
+            "type": "string",
+            "description": "VISU: Import an additional module"
+        },
+        "visu_acl": {
+            "enum": [
+                "rw",
+                "ro"
+            ]
+        }
+    }
+}

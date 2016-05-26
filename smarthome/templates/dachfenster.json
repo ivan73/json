@@ -1,0 +1,82 @@
+{
+  "$schema": "../schema/ItemSchema.json",
+    "Dachfenster": {
+        //"type": "str",
+        //"visu_acl": "ro",
+        //"eval": "str(~.autoBlind.Rules)",
+        //"eval_trigger": "~",
+        "Auf_ab": {
+            "$order": 1,
+            "type": "bool",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "enforce_updates": true
+        },
+        "Lamellenverstellung_stop": {
+            "$order": 2,
+            "type": "bool",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "enforce_updates": true
+        },
+        "Position": {
+            "$order": 3,
+            "type": "num",
+            "cache": true,
+            "visu": "yes",
+            "visu_acl": "rw"
+        },
+        "Ab": {
+            "$order": 4,
+            "type": "bool",
+            "enforce_updates": true,
+            "knx_dpt": "1",
+            "knx_send": "-/-/-"
+        },
+        "Auf": {
+            "$order": 5,
+            "type": "bool",
+            "enforce_updates": true,
+            "knx_dpt": "1",
+            "knx_send": "-/-/+1"
+        },
+        //"Position_gueltig": {
+        //    "$order": 6,
+        //    "type": "bool",
+        //    "cache": true,
+        //    "visu_acl": "ro"
+        //},
+        //"ReferenzFahren": {
+        //    "$order": 7
+        //},
+        "Roto": {
+            "$order": 8,
+            "roto_plugin": "active",
+            "type": "bool",
+            "eval_trigger": "~~.Auf_ab | ~~.Lamellenverstellung_stop | ~~.Position",
+            "eval": "not ~",
+            "roto_up_down": "~~.Auf_ab",
+            "roto_stop": "~~.Lamellenverstellung_stop",
+            "roto_position": "~~.Position",
+            "roto_actor_open": "~~.Auf",
+            "roto_actor_close": "~~.Ab",
+            "roto_time_up": "55",
+            "roto_time_down": "55",
+            "roto_time_step": "10"
+        },
+        "autoBlind": {
+            //"$order": 10,
+            //"$template": { "source": "autoblind" },
+            //"Rules": {
+            //    "$templated": true,
+            //    "as_plugin": "active"
+            //},
+            //"State": {
+            //    "manuell_taster": {
+            //         "eval_trigger": "~~~~.Position"
+            //    }
+            //}
+        }
+    }
+}
+

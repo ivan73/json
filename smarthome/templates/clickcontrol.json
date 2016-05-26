@@ -1,0 +1,157 @@
+{
+  "$schema": "../schema/ItemSchema.json",
+    "ClickControl": {
+      "Keys": {
+        "S1": {
+          "type": "bool",
+          "knx_dpt": "5",
+          "knx_listen": "6/-/-"
+        },
+        "S2": {
+          "type": "bool",
+          "knx_dpt": "5",
+          "knx_listen": "6/-/+1"
+        },
+        "S3": {
+          "type": "bool",
+          "knx_dpt": "5",
+          "knx_listen": "6/-/+2"
+        },
+        "S4": {
+          "type": "bool",
+          "knx_dpt": "5",
+          "knx_listen": "6/-/+3"
+        }
+      },
+      "Leds": {
+            "Led1": {
+                "type": "bool",
+                "knx_dpt": "1",
+                "knx_send": "7/-/-",
+                "cache":true
+            },
+            "Led2": {
+                "type": "bool",
+                "knx_dpt": "1",
+                "knx_send": "7/-/+1",
+                "cache":true
+            },
+            "Led3": {
+                "type": "bool",
+                "knx_dpt": "1",
+                "knx_send": "7/-/+2",
+                "cache":true
+            },
+            "Led4": {
+              "type": "bool",
+              "knx_dpt": "1",
+              "knx_send": "7/-/+3",
+              "cache": true
+                  },
+            "Led1Prio": {
+                "type": "bool",
+                "knx_dpt": "1",
+                "knx_send": "8/-/-",
+                "cache":true
+            },
+            "Led2Prio": {
+                "type": "bool",
+                "knx_dpt": "1",
+                "knx_send": "8/-/+1",
+                "cache":true
+            },
+            "Led3Prio": {
+                "type": "bool",
+                "knx_dpt": "1",
+                "knx_send": "8/-/+2",
+                "cache":true
+            },
+            "Led4Prio": {
+                "type": "bool",
+                "knx_dpt": "1",
+                "knx_send": "8/-/+3",
+                "cache":true
+            }
+        },
+        "State": {
+            "Auf_ab": {
+                "$order": 1,
+                "type": "bool",
+                "enforce_updates": true
+            },
+            "Lamellenverstellung_stop": {
+                "$order": 2,
+                "type": "bool",
+                "enforce_updates": true
+            },
+            "Zaehler_jalousie": {
+                "type": "num",
+                "cache": true
+            }
+        },
+        "Rules": {
+            "cc_plugin": "active",
+            "type": "bool",
+            "eval_trigger": "~~.Keys.S1 | ~~.Keys.S2 | ~~.Keys.S3 | ~~.Keys.S4",
+            "eval": "not ~~.Rules()",
+            "cc_item_jalousie_auf_ab": "~~.State.Auf_ab",
+            "cc_item_jalousie_lamellenverstellung_stop": "~~.State.Lamellenverstellung_stop",
+            "cc_item_key_S1": "~~.Keys.S1",
+            "cc_item_key_S2": "~~.Keys.S2",
+            "cc_item_key_S3": "~~.Keys.S3",
+            "cc_item_key_S4": "~~.Keys.S4",
+            "cc_item_counter_Jalousie": "~~.State.Zaehler_jalousie",
+            "Jalousie_auf": {
+                "type": "bool",
+                "cc_set_jalousie_auf_ab": "true",
+                "enter": {
+                    "cc_pressed_time": "1000",
+                    "cc_key": "S1"
+                }
+            },
+            "Jalousie_ab": {
+                "type": "bool",
+                "cc_set_jalousie_auf_ab": "true",
+                "enter": {
+                    "cc_pressed_time": "1000",
+                    "cc_key": "S2"
+                }
+            },
+             "Lamellenverstellung_auf": {
+                "type": "bool",
+                "cc_set_jalousie_auf_ab": "true",
+                "enter": {
+                    "cc_pressed_time": "5",
+                    "cc_key": "S1"
+                }
+            },
+            "Lamellenverstellung_ab": {
+                "type": "bool",
+                "cc_set_jalousie_auf_ab": "true",
+                "enter": {
+                    "cc_pressed_time": "5",
+                    "cc_key": "S2"
+                }
+            },
+            "Zaehler_jalousie": {
+                "type": "num",
+                "cc_count_counter_Jalousie": "4",
+                //"cache": true,
+                "enter": {
+                    "cc_pressed_time": "5",
+                    "cc_key": "S1 & S2"
+                }
+            },
+            "Zaehler_jalousie_reset": {
+                "type": "num",
+                "cc_set_counter_Jalousie": "0",
+                //"cache": true,
+                "enter": {
+                    "cc_pressed_time": "1000",
+                    "cc_key": "S1 & S2"
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,735 @@
+{
+  "$schema": "../schema/ItemSchema.json",
+  "Kueche": {
+    "Tasterlogik": {
+      "Events": {
+        "type": "list"
+      },
+      "Keys": {
+        "S1": {
+          "type": "num",
+          "knx_dpt": "5",
+          "knx_listen": "6/2/71"
+        },
+        "S2": {
+          "type": "num",
+          "knx_dpt": "5",
+          "knx_listen": "6/2/72"
+        },
+        "S3": {
+          "type": "num",
+          "knx_dpt": "5",
+          "knx_listen": "6/2/73"
+        },
+        "S4": {
+          "type": "num",
+          "knx_dpt": "5",
+          "knx_listen": "6/2/74"
+        }
+      },
+      "Action": {
+        "Jalousie_auf": {
+          "type": "bool",
+          "duration": "1000",
+          "keys": "S1",
+          "function": "sh.kueche.jalousie.auf_ab(1)"
+        },
+        "Jalousie_ab": {
+          "type": "bool",
+          "duration": "1000",
+          "keys": "S2",
+          "function": "sh.kueche.jalousie.auf_ab(0)"
+        },
+        "Lamellenverstellung_auf": {
+          "type": "bool",
+          "duration": "5",
+          "keys": "S1",
+          "function": "sh.kueche.jalousie.lamellenverstellung_stop(1)"
+        },
+        "Lamellenverstellung_ab": {
+          "type": "bool",
+          "duration": "5",
+          "keys": "S2",
+          "function": "sh.kueche.jalousie.lamellenverstellung_stop(0)"
+        },
+        "Zaehler_jalousie": {
+          "type": "num",
+          "cache": true,
+          "duration": "5",
+          "clicks": "4",
+          "keys": "S1 & S2",
+          "function": "zaehler"
+        },
+        "Zaehler_jalousie_reset": {
+          "type": "bool",
+          "duration": "1000",
+          "clicks": "1",
+          "keys": "S1 & S2",
+          "function": "sh.kueche.tasterlogik.action.zaehler_jalousie(0)"
+        },
+        "Zaehler_szene_kueche": {
+          "type": "num",
+          "cache": true,
+          "duration": "5",
+          "clicks": "3",
+          "keys": "S3",
+          "function": "zaehler"
+        },
+        "Zaehler_szene_kueche_reset": {
+          "type": "bool",
+          "duration": "500",
+          "keys": "S3",
+          "function": "sh.kueche.tasterlogik.action.zaehler_szene_kueche(0)"
+        },
+        "Zaehler_szene_essen": {
+          "type": "num",
+          "cache": true,
+          "duration": "5",
+          "clicks": "3",
+          "keys": "S4",
+          "function": "zaehler"
+        },
+        "Zaehler_szene_essen_reset": {
+          "type": "bool",
+          "duration": "500",
+          "clicks": "1",
+          "keys": "S4",
+          "function": "sh.kueche.tasterlogik.action.zaehler_szene_essen(0)"
+        },
+        "Led_tag": {
+          "type": "bool",
+          "duration": "5000",
+          "keys": "S3",
+          "function": "sh.kueche.tasterlogik.leds.tag_nacht(1)"
+        },
+        "Led_nacht": {
+          "type": "bool",
+          "duration": "5000",
+          "keys": "S4",
+          "function": "sh.kueche.tasterlogik.leds.tag_nacht(0)"
+        }
+      },
+      "Leds": {
+        "Tag_nacht": {
+          "type": "bool",
+          "cache": true,
+          "knx_dpt": "1",
+          "knx_send": "7/2/79"
+        },
+        "S1": {
+          "type": "bool",
+          "knx_dpt": "1",
+          "knx_send": "7/2/71"
+        },
+        "S2": {
+          "type": "bool",
+          "cache": true,
+          "knx_dpt": "1",
+          "knx_send": "7/2/72"
+        },
+        "S3": {
+          "type": "bool",
+          "eval": "True if (sh.kueche.tasterlogik.action.zaehler_szene_kueche()>0)  else False",
+          "eval_trigger": "kueche.tasterlogik.action.zaehler_szene_kueche",
+          "cache": true,
+          "knx_dpt": "1",
+          "knx_send": "7/2/73"
+        },
+        "S4": {
+          "type": "bool",
+          "eval": "True if (sh.kueche.tasterlogik.action.zaehler_szene_essen()>0)  else False",
+          "eval_trigger": "kueche.tasterlogik.action.zaehler_szene_essen",
+          "cache": true,
+          "knx_dpt": "1",
+          "knx_send": "7/2/74"
+        },
+        "S1_prioritaet": {
+          "type": "bool",
+          "eval": "True if (sh.kueche.tasterlogik.action.zaehler_jalousie() == 1)  else False",
+          "eval_trigger": "kueche.tasterlogik.action.zaehler_jalousie",
+          "cache": true,
+          "knx_dpt": "1",
+          "knx_send": "7/2/75"
+        },
+        "S2_prioritaet": {
+          "type": "bool",
+          "eval": "True if (sh.kueche.tasterlogik.action.zaehler_jalousie() == 2)  else False",
+          "eval_trigger": "kueche.tasterlogik.action.zaehler_jalousie",
+          "cache": true,
+          "knx_dpt": "1",
+          "knx_send": "7/2/76"
+        },
+        "S3_prioritaet": {
+          "type": "bool",
+          "eval": "True if (sh.kueche.tasterlogik.action.zaehler_jalousie() == 3)  else False",
+          "eval_trigger": "kueche.tasterlogik.action.zaehler_jalousie",
+          "cache": true,
+          "knx_dpt": "1",
+          "knx_send": "7/2/77"
+        },
+        "S4_prioritaet": {
+          "type": "bool",
+          "eval": "True if (sh.kueche.tasterlogik.action.zaehler_jalousie() == 4)  else False",
+          "eval_trigger": "kueche.tasterlogik.action.zaehler_jalousie",
+          "cache": true,
+          "knx_dpt": "1",
+          "knx_send": "7/2/78"
+        }
+      }
+    },
+    "Szene": {
+      "type": "scene",
+      "eval": "sh.kueche.tasterlogik.action.zaehler_szene_kueche()",
+      "eval_trigger": "kueche.tasterlogik.action.zaehler_szene_kueche",
+      "cache": true,
+      "enforce_updates": true,
+      "Kochen": {
+        "type": "bool"
+      },
+      "Essen": {
+        "type": "bool"
+      },
+      "Kochen_essen": {
+        "type": "bool"
+      },
+      "Party": {
+        "type": "bool"
+      },
+      "Aus": {
+        "type": "bool"
+      }
+    },
+    "Beleuchtung": {
+      "Decke": {
+        "Schalten": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw"
+        },
+        "Dimmen_absolut": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "ow_id": ""
+        },
+        "Dmx": {
+          "type": "num",
+          "eval": "sh.kueche.beleuchtung.decke.dimmen_absolut() * sh.kueche.beleuchtung.decke.schalten()",
+          "eval_trigger": "kueche.beleuchtung.decke.schalten | kueche.beleuchtung.decke.dimmen_absolut"
+        },
+        "Status": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw"
+        }
+      },
+      "Arbeitsplatte": {
+        "Schalten": {
+          "type": "bool",
+          "eval": "True if ((sh.kueche.beleuchtung.arbeitsplatte.dimmen_absolut()>0 and value == 0)  or value) else False",
+          "eval_trigger": "kueche.beleuchtung.arbeitsplatte.dimmen_absolut",
+          "visu": "yes",
+          "visu_acl": "rw"
+        },
+        "Dimmen_absolut": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw"
+        },
+        "Dmx": {
+          "type": "num",
+          "eval": "sh.kueche.beleuchtung.arbeitsplatte.dimmen_absolut() * 2.55 * sh.kueche.beleuchtung.arbeitsplatte.schalten()",
+          "eval_trigger": "kueche.beleuchtung.arbeitsplatte.schalten | kueche.beleuchtung.arbeitsplatte.dimmen_absolut",
+          "dmx_ch": "1"
+        },
+        "Status": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw"
+        }
+      },
+      "Kochfeld": {
+        "Schalten": {
+          "type": "bool",
+          "eval": "True if ((sh.kueche.beleuchtung.kochfeld.dimmen_absolut()>0 and value == 0)  or value) else False",
+          "eval_trigger": "kueche.beleuchtung.kochfeld.dimmen_absolut",
+          "visu": "yes",
+          "visu_acl": "rw"
+        },
+        "Dimmen_absolut": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw"
+        },
+        "Dmx": {
+          "type": "num",
+          "eval": "sh.kueche.beleuchtung.kochfeld.dimmen_absolut() * 2.55 * sh.kueche.beleuchtung.kochfeld.schalten()",
+          "eval_trigger": "kueche.beleuchtung.kochfeld.schalten | kueche.beleuchtung.kochfeld.dimmen_absolut",
+          "dmx_ch": "2"
+        },
+        "Status": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw"
+        }
+      },
+      "Speis": {
+        "Schalten": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw"
+        },
+        "Status": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw"
+        }
+      }
+    },
+    "Heizung": {
+      "Ist_temperatur": {
+        "type": "num",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "cache": true,
+        "sqlite": "yes",
+        "knx_dpt": "9",
+        "knx_listen": "4/2/71"
+      },
+      "Soll_temperatur": {
+        "type": "num",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "cache": true,
+        "sqlite": "yes"
+      },
+      "Status": {
+        "type": "bool",
+        "visu": "yes",
+        "visu_acl": "rw"
+      }
+    },
+    "Rauchmelder": {
+      "Alarm": {
+        "type": "bool",
+        "visu": "yes"
+      },
+      "Stoerung": {
+        "type": "bool",
+        "visu": "yes"
+      }
+    },
+    "Jalousie": {
+      "Auf_ab": {
+        "type": "bool",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "enforce_updates": true,
+        "knx_dpt": "1",
+        "knx_send": "1/3/21"
+      },
+      "Lamellenverstellung_stop": {
+        "type": "bool",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "enforce_updates": true,
+        "knx_dpt": "1",
+        "knx_send": "1/3/22"
+      },
+      "Position": {
+        "type": "num",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "cache": true,
+        "knx_dpt": "5.001"
+      },
+      "Lamellenposition": {
+        "type": "num",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "cache": true,
+        "knx_dpt": "5.001"
+      },
+      "Terrasse": {
+        "Auf_ab": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "enforce_updates": true,
+          "knx_dpt": "1",
+          "knx_send": "3/2/71"
+        },
+        "Lamellenverstellung_stop": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "enforce_updates": true,
+          "knx_dpt": "1",
+          "knx_send": "3/2/72"
+        },
+        "Position": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "knx_dpt": "5",
+          "knx_send": "9/2/71",
+          "Status": {
+            "type": "num",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5",
+            "knx_listen": "10/2/71"
+          }
+        },
+        "Lamellenposition": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "knx_dpt": "5",
+          "knx_send": "9/2/72",
+          "Status": {
+            "type": "num",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5",
+            "knx_listen": "10/2/72"
+          }
+        }
+      },
+      "Esstisch": {
+        "Auf_ab": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "enforce_updates": true,
+          "knx_dpt": "1",
+          "knx_send": "3/2/74"
+        },
+        "Lamellenverstellung_stop": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "enforce_updates": true,
+          "knx_dpt": "1",
+          "knx_send": "3/2/75"
+        },
+        "Position": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "knx_dpt": "5",
+          "knx_send": "9/2/74",
+          "knx_listen": "10/2/74",
+          "Status": {
+            "type": "num",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5",
+            "knx_listen": "10/2/74"
+          }
+        },
+        "Lamellenposition": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "knx_dpt": "5",
+          "knx_send": "9/2/75",
+          "knx_listen": "10/2/75",
+          "Status": {
+            "type": "num",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5",
+            "knx_listen": "10/2/75"
+          }
+        }
+      },
+      "Kochinsel": {
+        "Auf_ab": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "enforce_updates": true,
+          "knx_dpt": "1",
+          "knx_send": "3/2/77"
+        },
+        "Lamellenverstellung_stop": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "enforce_updates": true,
+          "knx_dpt": "1",
+          "knx_send": "3/2/78"
+        },
+        "Position": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "cache": true,
+          "knx_dpt": "5.001",
+          "knx_send": "9/2/77",
+          "knx_listen": "10/2/77",
+          "Status": {
+            "type": "num",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5.001",
+            "knx_listen": "10/2/77"
+          }
+        },
+        "Lamellenposition": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "cache": true,
+          "knx_dpt": "5.001",
+          "knx_send": "9/2/78",
+          "knx_listen": "10/2/78",
+          "Status": {
+            "type": "num",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5.001",
+            "knx_listen": "10/2/78"
+          }
+        }
+      },
+      "Arbeitsflaeche": {
+        "Auf_ab": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "enforce_updates": true,
+          "knx_dpt": "1",
+          "knx_send": "3/2/81"
+        },
+        "Lamellenverstellung_stop": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "enforce_updates": true,
+          "knx_dpt": "1",
+          "knx_send": "3/2/82"
+        },
+        "Position": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "knx_dpt": "5",
+          "knx_send": "9/2/81",
+          "Status": {
+            "type": "num",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5",
+            "knx_listen": "10/2/81"
+          }
+        },
+        "Lamellenposition": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "knx_dpt": "5",
+          "knx_send": "9/2/82",
+          "Status": {
+            "type": "num",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5",
+            "knx_listen": "10/2/82"
+          }
+        }
+      },
+      "Speiss": {
+        "Auf_ab": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "enforce_updates": true,
+          "knx_dpt": "1",
+          "knx_send": "3/2/84"
+        },
+        "Lamellenverstellung_stop": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "enforce_updates": true,
+          "knx_dpt": "1",
+          "knx_send": "3/2/85"
+        },
+        "Position": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "knx_dpt": "5",
+          "knx_send": "9/2/84",
+          "Status": {
+            "type": "num",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5",
+            "knx_listen": "10/2/84"
+          }
+        },
+        "Lamellenposition": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "knx_dpt": "5",
+          "knx_send": "9/2/85",
+          "Status": {
+            "type": "num",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5",
+            "knx_listen": "10/2/85"
+          }
+        }
+      }
+    },
+    "Praesenz": {
+      "type": "bool",
+      "visu": "yes",
+      "visu_acl": "r",
+      "knx_dpt": "1",
+      "knx_listen": "2/2/72",
+      "item": "sh.kueche.tasterlogik.action.zaehler_szene_kueche(1)"
+    }
+  },
+  "Essen": {
+    "Szene": {
+      "type": "scene",
+      "eval": "sh.kueche.tasterlogik.action.zaehler_szene_essen()",
+      "eval_trigger": "kueche.tasterlogik.action.zaehler_szene_essen",
+      "cache": true
+    },
+    "Beleuchtung": {
+      "Tisch": {
+        "Schalten": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw"
+        },
+        "Dimmen_absolut": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "ow_id": ""
+        },
+        "Dmx": {
+          "type": "num"
+        },
+        "Status": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw"
+        }
+      },
+      "Ofen": {
+        "Schalten": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw"
+        },
+        "Dimmen_absolut": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "ow_id": ""
+        },
+        "Dmx": {
+          "type": "num"
+        },
+        "Status": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw"
+        }
+      },
+      "Decke": {
+        "Schalten": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw"
+        },
+        "Dimmen_absolut": {
+          "type": "num",
+          "visu": "yes",
+          "visu_acl": "rw",
+          "ow_id": ""
+        },
+        "Dmx": {
+          "type": "num"
+        },
+        "Status": {
+          "type": "bool",
+          "visu": "yes",
+          "visu_acl": "rw"
+        }
+      }
+    },
+    "Heizung": {
+      "Ist_temperatur": {
+        "type": "num",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "cache": true,
+        "sqlite": "yes"
+      },
+      "Soll_temperatur": {
+        "type": "num",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "cache": true,
+        "sqlite": "yes"
+      },
+      "Status": {
+        "type": "bool",
+        "visu": "yes",
+        "visu_acl": "rw"
+      }
+    },
+    "Rauchmelder": {
+      "Alarm": {
+        "type": "bool",
+        "visu": "yes"
+      },
+      "Stoerung": {
+        "type": "bool",
+        "visu": "yes"
+      }
+    },
+    "Jalousie": {
+      "Auf_ab": {},
+      "Lamellenverstellung_stop": {},
+      "Position": {
+        "Status": {
+          "type": "num",
+          "value": "125"
+        }
+      },
+      "Lamellenposition": {
+        "Status": {
+          "type": "num"
+        }
+      }
+    },
+    "Praesenz": {
+      "type": "bool",
+      "visu": "yes",
+      "visu_acl": "r",
+      "knx_dpt": "1",
+      "knx_listen": "2/2/71",
+      "item": "sh.kueche.tasterlogik.action.zaehler_szene_essen(1)"
+    },
+    "Schiebetuer": {
+      "Status": {
+        "type": "bool",
+        "visu": "yes",
+        "visu_acl": "r",
+        "knx_dpt": "1",
+        "knx_listen": "4/2/75"
+      }
+    }
+  }
+}

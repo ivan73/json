@@ -1,0 +1,374 @@
+   0/2/0 - Wetterstation.Helligkeit.Ost
+   0/2/1 - Wetterstation.Helligkeit.Sued
+   0/2/2 - Wetterstation.Helligkeit.West
+   0/2/3 - Wetterstation.Daemmerung
+   0/2/4 - Wetterstation.Wind
+   0/2/5 - Wetterstation.Temperatur
+   0/2/6 - System.Sonne.Tag
+  1/3/21 - Kueche.Jalousie.Auf_ab
+  1/3/22 - Kueche.Jalousie.Lamellenverstellung_stop
+  2/2/71 - Essen.Praesenz
+  2/2/72 - Kueche.Praesenz
+  3/0/11 - Eg.Garage.Jalousie.Rechts.Auf_ab
+  3/0/12 - Eg.Garage.Jalousie.Rechts.Lamellenverstellung_stop
+  3/0/13 - Eg.Garage.Jalousie.Rechts.ReferenzFahren
+  3/0/14 - Eg.Garage.Jalousie.Links.Auf_ab
+  3/0/15 - Eg.Garage.Jalousie.Links.Lamellenverstellung_stop
+  3/0/16 - Eg.Garage.Jalousie.Links.ReferenzFahren
+  3/0/17 - Eg.Buero.Jalousie.Nord.Auf_ab
+  3/0/18 - Eg.Buero.Jalousie.Nord.Lamellenverstellung_stop
+  3/0/19 - Eg.Buero.Jalousie.Nord.ReferenzFahren
+  3/0/21 - Eg.Buero.Jalousie.Rechts.Auf_ab
+  3/0/22 - Eg.Buero.Jalousie.Rechts.Lamellenverstellung_stop
+  3/0/23 - Eg.Buero.Jalousie.Rechts.ReferenzFahren
+  3/0/24 - Eg.Buero.Jalousie.Mitte.Auf_ab
+  3/0/25 - Eg.Buero.Jalousie.Mitte.Lamellenverstellung_stop
+  3/0/26 - Eg.Buero.Jalousie.Mitte.ReferenzFahren
+  3/0/27 - Eg.Buero.Jalousie.Links.Auf_ab
+  3/0/28 - Eg.Buero.Jalousie.Links.Lamellenverstellung_stop
+  3/0/29 - Eg.Buero.Jalousie.Links.ReferenzFahren
+  3/0/31 - Eg.Bad.Jalousie.Fenster.Auf_ab
+  3/0/32 - Eg.Bad.Jalousie.Fenster.Lamellenverstellung_stop
+  3/0/33 - Eg.Bad.Jalousie.Fenster.ReferenzFahren
+  3/0/41 - Eg.Schlafzimmer.Jalousie.Fenster.Auf_ab
+  3/0/42 - Eg.Schlafzimmer.Jalousie.Fenster.Lamellenverstellung_stop
+  3/0/43 - Eg.Schlafzimmer.Jalousie.Fenster.ReferenzFahren
+  3/0/51 - Eg.Wohnzimmer.Jalousie.Wiesen.Auf_ab
+  3/0/52 - Eg.Wohnzimmer.Jalousie.Wiesen.Lamellenverstellung_stop
+  3/0/53 - Eg.Wohnzimmer.Jalousie.Wiesen.ReferenzFahren
+  3/0/54 - Eg.Wohnzimmer.Jalousie.Huette.Auf_ab
+  3/0/55 - Eg.Wohnzimmer.Jalousie.Huette.Lamellenverstellung_stop
+  3/0/56 - Eg.Wohnzimmer.Jalousie.Huette.ReferenzFahren
+ 3/0/61  - Eg.Kueche.Jalousie.Alle.Auf_ab, Eg.Kueche.Jalousie.Tuer.Auf_ab
+ 3/0/62  - Eg.Kueche.Jalousie.Alle.Lamellenverstellung_stop, Eg.Kueche.Jalousie.Tuer.Lamellenverstellung_stop
+  3/0/63 - Eg.Kueche.Jalousie.Tuer.ReferenzFahren
+ 3/0/64  - Eg.Kueche.Jalousie.Alle.Auf_ab, Eg.Kueche.Jalousie.Esstisch.Auf_ab
+ 3/0/65  - Eg.Kueche.Jalousie.Alle.Lamellenverstellung_stop, Eg.Kueche.Jalousie.Esstisch.Lamellenverstellung_stop
+  3/0/66 - Eg.Kueche.Jalousie.Esstisch.ReferenzFahren
+  3/0/67 - Eg.Kueche.Jalousie.Alle.Auf_ab, Eg.Kueche.Jalousie.Kochen.Auf_ab
+  3/0/68 - Eg.Kueche.Jalousie.Alle.Lamellenverstellung_stop, Eg.Kueche.Jalousie.Kochen.Lamellenverstellung_stop
+  3/0/69 - Eg.Kueche.Jalousie.Kochen.ReferenzFahren
+  3/1/11 - Og.Bad.Jalousie.Fenster.Auf_ab
+  3/1/12 - Og.Bad.Jalousie.Fenster.Lamellenverstellung_stop
+  3/1/13 - Og.Bad.Jalousie.Fenster.ReferenzFahren
+  3/1/21 - Og.Balkonwiesen.Jalousie.Sylvia.Auf_ab
+  3/1/22 - Og.Balkonwiesen.Jalousie.Sylvia.Lamellenverstellung_stop
+  3/1/23 - Og.Balkonwiesen.Jalousie.Sylvia.ReferenzFahren
+  3/1/31 - Og.Balkonwiesen.Jalousie.Ivan_rechts.Auf_ab
+  3/1/32 - Og.Balkonwiesen.Jalousie.Ivan_rechts.Lamellenverstellung_stop
+  3/1/33 - Og.Balkonwiesen.Jalousie.Ivan_rechts.ReferenzFahren
+  3/1/34 - Og.Balkonwiesen.Jalousie.Ivan_links.Auf_ab
+  3/1/35 - Og.Balkonwiesen.Jalousie.Ivan_links.Lamellenverstellung_stop
+  3/1/36 - Og.Balkonwiesen.Jalousie.Ivan_links.ReferenzFahren
+  3/1/41 - Og.Balkonwiesen.Jalousie.Wohnzimmer.Auf_ab
+  3/1/42 - Og.Balkonwiesen.Jalousie.Wohnzimmer.Lamellenverstellung_stop
+  3/1/43 - Og.Balkonwiesen.Jalousie.Wohnzimmer.ReferenzFahren
+  3/1/44 - Og.Wohnzimmer.Jalousie.Wiesen.Auf_ab
+  3/1/45 - Og.Wohnzimmer.Jalousie.Wiesen.Lamellenverstellung_stop
+  3/1/46 - Og.Wohnzimmer.Jalousie.Wiesen.ReferenzFahren
+  3/1/47 - Og.Wohnzimmer.Jalousie.Carabinieri.Auf_ab
+  3/1/48 - Og.Wohnzimmer.Jalousie.Carabinieri.Lamellenverstellung_stop
+  3/1/49 - Og.Wohnzimmer.Jalousie.Carabinieri.ReferenzFahren
+  3/1/51 - Og.Kueche.Jalousie.Fenster.Auf_ab
+  3/1/52 - Og.Kueche.Jalousie.Fenster.Lamellenverstellung_stop
+  3/1/53 - Og.Kueche.Jalousie.Fenster.ReferenzFahren
+  3/1/61 - Og.Balkonstrasse.Jalousie.Treppenhaus.Auf_ab
+  3/1/62 - Og.Balkonstrasse.Jalousie.Treppenhaus.Lamellenverstellung_stop
+  3/1/63 - Og.Balkonstrasse.Jalousie.Treppenhaus.ReferenzFahren
+  3/1/64 - Og.Balkonstrasse.Jalousie.Schlafzimmer.Auf_ab
+  3/1/65 - Og.Balkonstrasse.Jalousie.Schlafzimmer.Lamellenverstellung_stop
+  3/1/66 - Og.Balkonstrasse.Jalousie.Schlafzimmer.ReferenzFahren
+  3/1/71 - Og.Schlafzimmer.Jalousie.Fenster.Auf_ab
+  3/1/72 - Og.Schlafzimmer.Jalousie.Fenster.Lamellenverstellung_stop
+  3/1/73 - Og.Schlafzimmer.Jalousie.Fenster.ReferenzFahren
+  3/2/11 - Dg.Eltern.Jalousie.Fenster.Auf_ab
+  3/2/12 - Dg.Eltern.Jalousie.Fenster.Lamellenverstellung_stop
+  3/2/13 - Dg.Eltern.Jalousie.Fenster.ReferenzFahren
+  3/2/21 - Dg.Gaeste.Jalousie.Fenster.Auf_ab
+  3/2/22 - Dg.Gaeste.Jalousie.Fenster.Lamellenverstellung_stop
+  3/2/23 - Dg.Gaeste.Jalousie.Fenster.ReferenzFahren
+  3/2/31 - Dg.Carla.Jalousie.Fenster.Auf_ab
+  3/2/32 - Dg.Carla.Jalousie.Fenster.Lamellenverstellung_stop
+  3/2/33 - Dg.Carla.Jalousie.Fenster.ReferenzFahren
+  3/2/41 - Dg.Mattia.Jalousie.Fenster.Auf_ab
+  3/2/42 - Dg.Mattia.Jalousie.Fenster.Lamellenverstellung_stop
+  3/2/43 - Dg.Mattia.Jalousie.Fenster.ReferenzFahren
+  3/2/61 - Dg.Wohnzimmer.Jalousie.Fenster.Auf_ab
+  3/2/62 - Dg.Wohnzimmer.Jalousie.Fenster.Lamellenverstellung_stop
+  3/2/63 - Dg.Wohnzimmer.Jalousie.Fenster.ReferenzFahren
+  3/2/64 - Dg.Wohnzimmer.Jalousie.Terasse.Auf_ab
+  3/2/65 - Dg.Wohnzimmer.Jalousie.Terasse.Lamellenverstellung_stop
+  3/2/66 - Dg.Wohnzimmer.Jalousie.Terasse.ReferenzFahren
+  3/2/71 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Auf_ab, Kueche.Jalousie.Terrasse.Auf_ab
+  3/2/72 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Lamellenverstellung_stop, Kueche.Jalousie.Terrasse.Lamellenverstellung_stop
+  3/2/73 - Dg.Essen.Jalousie.Terasse_Schiebetuer.ReferenzFahren
+  3/2/74 - Dg.Essen.Jalousie.Terasse.Auf_ab, Kueche.Jalousie.Esstisch.Auf_ab
+  3/2/75 - Dg.Essen.Jalousie.Terasse.Lamellenverstellung_stop, Kueche.Jalousie.Esstisch.Lamellenverstellung_stop
+  3/2/76 - Dg.Essen.Jalousie.Terasse.ReferenzFahren
+  3/2/77 - Dg.Essen.Jalousie.Fenster.Auf_ab, Kueche.Jalousie.Kochinsel.Auf_ab
+  3/2/78 - Dg.Essen.Jalousie.Fenster.Lamellenverstellung_stop, Kueche.Jalousie.Kochinsel.Lamellenverstellung_stop
+  3/2/79 - Dg.Essen.Jalousie.Fenster.ReferenzFahren
+  3/2/81 - Dg.Kueche.Jalousie.Kochinsel.Auf_ab, Kueche.Jalousie.Arbeitsflaeche.Auf_ab
+  3/2/82 - Dg.Kueche.Jalousie.Kochinsel.Lamellenverstellung_stop, Kueche.Jalousie.Arbeitsflaeche.Lamellenverstellung_stop
+  3/2/83 - Dg.Kueche.Jalousie.Kochinsel.ReferenzFahren
+  3/2/84 - Dg.Kueche.Jalousie.Arbeitsflaeche.Auf_ab, Kueche.Jalousie.Speiss.Auf_ab
+  3/2/85 - Dg.Kueche.Jalousie.Arbeitsflaeche.Lamellenverstellung_stop, Kueche.Jalousie.Speiss.Lamellenverstellung_stop
+  3/2/86 - Dg.Kueche.Jalousie.Arbeitsflaeche.ReferenzFahren
+  3/2/87 - Dg.Kueche.Jalousie.Speiss.Auf_ab
+  3/2/88 - Dg.Kueche.Jalousie.Speiss.Lamellenverstellung_stop
+  3/2/89 - Dg.Kueche.Jalousie.Speiss.ReferenzFahren
+  3/2/91 - Dg.Bad.Jalousie.Fenster_klein.Auf_ab
+  3/2/92 - Dg.Bad.Jalousie.Fenster_klein.Lamellenverstellung_stop
+  3/2/93 - Dg.Bad.Jalousie.Fenster_klein.ReferenzFahren
+  3/2/94 - Dg.Bad.Jalousie.Fenster_gross.Auf_ab
+  3/2/95 - Dg.Bad.Jalousie.Fenster_gross.Lamellenverstellung_stop
+  3/2/96 - Dg.Bad.Jalousie.Fenster_gross.ReferenzFahren
+ 3/2/111 - Dg.Flur.Jalousie.Fenster.Auf_ab
+ 3/2/112 - Dg.Flur.Jalousie.Fenster.Lamellenverstellung_stop
+ 3/2/113 - Dg.Flur.Jalousie.Fenster.ReferenzFahren
+  4/2/11 - Dg.Eltern.Einzelraumregelung.Ist_temperatur
+  4/2/12 - Dg.Eltern.Einzelraumregelung.Soll_temperatur
+  4/2/21 - Dg.Gaeste.Einzelraumregelung.Ist_temperatur
+  4/2/22 - Dg.Gaeste.Einzelraumregelung.Soll_temperatur
+  4/2/31 - Dg.Carla.Einzelraumregelung.Ist_temperatur
+  4/2/32 - Dg.Carla.Einzelraumregelung.Soll_temperatur
+  4/2/41 - Dg.Mattia.Einzelraumregelung.Ist_temperatur
+  4/2/42 - Dg.Mattia.Einzelraumregelung.Soll_temperatur
+  4/2/61 - Dg.Wohnzimmer.Einzelraumregelung.Ist_temperatur
+  4/2/62 - Dg.Wohnzimmer.Einzelraumregelung.Soll_temperatur
+  4/2/65 - Dg.Wohnzimmer.Schiebetuer.Status
+  4/2/71 - Dg.Essen.Einzelraumregelung.Ist_temperatur, Kueche.Heizung.Ist_temperatur
+  4/2/72 - Dg.Essen.Einzelraumregelung.Soll_temperatur
+  4/2/75 - Dg.Essen.Schiebetuer.Status, Essen.Schiebetuer.Status
+  4/2/81 - Dg.Kueche.Einzelraumregelung.Ist_temperatur
+  4/2/82 - Dg.Kueche.Einzelraumregelung.Soll_temperatur
+  4/2/91 - Dg.Bad.Einzelraumregelung.Ist_temperatur
+  4/2/92 - Dg.Bad.Einzelraumregelung.Soll_temperatur
+ 4/2/111 - Dg.Flur.Einzelraumregelung.Ist_temperatur
+ 4/2/112 - Dg.Flur.Einzelraumregelung.Soll_temperatur
+ 4/2/114 - Dg.Flur.Dachfenster.Ab
+ 4/2/115 - Dg.Flur.Dachfenster.Auf
+ 4/2/121 - Dg.Kriechboden.Dachfenster.Ab
+ 4/2/122 - Dg.Kriechboden.Dachfenster.Auf
+ 4/2/131 - Dg.TagesWC.Einzelraumregelung.Ist_temperatur
+ 4/2/132 - Dg.TagesWC.Einzelraumregelung.Soll_temperatur
+  6/2/71 - Kueche.Tasterlogik.Keys.S1
+  6/2/72 - Kueche.Tasterlogik.Keys.S2
+  6/2/73 - Kueche.Tasterlogik.Keys.S3
+  6/2/74 - Kueche.Tasterlogik.Keys.S4
+  6/2/81 - Dg.Kueche.ClickControl.Keys.S1
+  6/2/82 - Dg.Kueche.ClickControl.Keys.S2
+  6/2/83 - Dg.Kueche.ClickControl.Keys.S3
+  6/2/84 - Dg.Kueche.ClickControl.Keys.S4
+  7/2/71 - Kueche.Tasterlogik.Leds.S1
+  7/2/72 - Kueche.Tasterlogik.Leds.S2
+  7/2/73 - Kueche.Tasterlogik.Leds.S3
+  7/2/74 - Kueche.Tasterlogik.Leds.S4
+  7/2/75 - Kueche.Tasterlogik.Leds.S1_prioritaet
+  7/2/76 - Kueche.Tasterlogik.Leds.S2_prioritaet
+  7/2/77 - Kueche.Tasterlogik.Leds.S3_prioritaet
+  7/2/78 - Kueche.Tasterlogik.Leds.S4_prioritaet
+  7/2/79 - Kueche.Tasterlogik.Leds.Tag_nacht
+  7/2/81 - Dg.Kueche.ClickControl.Leds.Led1
+  7/2/82 - Dg.Kueche.ClickControl.Leds.Led2
+  7/2/83 - Dg.Kueche.ClickControl.Leds.Led3
+  7/2/84 - Dg.Kueche.ClickControl.Leds.Led4
+  8/2/81 - Dg.Kueche.ClickControl.Leds.Led1Prio
+  8/2/82 - Dg.Kueche.ClickControl.Leds.Led2Prio
+  8/2/83 - Dg.Kueche.ClickControl.Leds.Led3Prio
+  8/2/84 - Dg.Kueche.ClickControl.Leds.Led4Prio
+  9/0/11 - Eg.Garage.Jalousie.Rechts.Position
+  9/0/12 - Eg.Garage.Jalousie.Rechts.Lamellenposition
+  9/0/14 - Eg.Garage.Jalousie.Links.Position
+  9/0/15 - Eg.Garage.Jalousie.Links.Lamellenposition
+  9/0/17 - Eg.Buero.Jalousie.Nord.Position
+  9/0/18 - Eg.Buero.Jalousie.Nord.Lamellenposition
+  9/0/21 - Eg.Buero.Jalousie.Rechts.Position
+  9/0/22 - Eg.Buero.Jalousie.Rechts.Lamellenposition
+  9/0/24 - Eg.Buero.Jalousie.Mitte.Position
+  9/0/25 - Eg.Buero.Jalousie.Mitte.Lamellenposition
+  9/0/27 - Eg.Buero.Jalousie.Links.Position
+  9/0/28 - Eg.Buero.Jalousie.Links.Lamellenposition
+  9/0/31 - Eg.Bad.Jalousie.Fenster.Position
+  9/0/32 - Eg.Bad.Jalousie.Fenster.Lamellenposition
+  9/0/41 - Eg.Schlafzimmer.Jalousie.Fenster.Position
+  9/0/42 - Eg.Schlafzimmer.Jalousie.Fenster.Lamellenposition
+  9/0/51 - Eg.Wohnzimmer.Jalousie.Wiesen.Position
+  9/0/52 - Eg.Wohnzimmer.Jalousie.Wiesen.Lamellenposition
+  9/0/54 - Eg.Wohnzimmer.Jalousie.Huette.Position
+  9/0/55 - Eg.Wohnzimmer.Jalousie.Huette.Lamellenposition
+ 9/0/61  - Eg.Kueche.Jalousie.Alle.Position, Eg.Kueche.Jalousie.Tuer.Position
+ 9/0/62  - Eg.Kueche.Jalousie.Alle.Lamellenposition, Eg.Kueche.Jalousie.Tuer.Lamellenposition
+ 9/0/64  - Eg.Kueche.Jalousie.Alle.Position, Eg.Kueche.Jalousie.Esstisch.Position
+ 9/0/65  - Eg.Kueche.Jalousie.Alle.Lamellenposition, Eg.Kueche.Jalousie.Esstisch.Lamellenposition
+  9/0/67 - Eg.Kueche.Jalousie.Alle.Position, Eg.Kueche.Jalousie.Kochen.Position
+  9/0/68 - Eg.Kueche.Jalousie.Alle.Lamellenposition, Eg.Kueche.Jalousie.Kochen.Lamellenposition
+  9/1/11 - Og.Bad.Jalousie.Fenster.Position
+  9/1/12 - Og.Bad.Jalousie.Fenster.Lamellenposition
+  9/1/21 - Og.Balkonwiesen.Jalousie.Sylvia.Position
+  9/1/22 - Og.Balkonwiesen.Jalousie.Sylvia.Lamellenposition
+  9/1/31 - Og.Balkonwiesen.Jalousie.Ivan_rechts.Position
+  9/1/32 - Og.Balkonwiesen.Jalousie.Ivan_rechts.Lamellenposition
+  9/1/34 - Og.Balkonwiesen.Jalousie.Ivan_links.Position
+  9/1/35 - Og.Balkonwiesen.Jalousie.Ivan_links.Lamellenposition
+  9/1/41 - Og.Balkonwiesen.Jalousie.Wohnzimmer.Position
+  9/1/42 - Og.Balkonwiesen.Jalousie.Wohnzimmer.Lamellenposition
+  9/1/44 - Og.Wohnzimmer.Jalousie.Wiesen.Position
+  9/1/45 - Og.Wohnzimmer.Jalousie.Wiesen.Lamellenposition
+  9/1/47 - Og.Wohnzimmer.Jalousie.Carabinieri.Position
+  9/1/48 - Og.Wohnzimmer.Jalousie.Carabinieri.Lamellenposition
+  9/1/51 - Og.Kueche.Jalousie.Fenster.Position
+  9/1/52 - Og.Kueche.Jalousie.Fenster.Lamellenposition
+  9/1/61 - Og.Balkonstrasse.Jalousie.Treppenhaus.Position
+  9/1/62 - Og.Balkonstrasse.Jalousie.Treppenhaus.Lamellenposition
+  9/1/64 - Og.Balkonstrasse.Jalousie.Schlafzimmer.Position
+  9/1/65 - Og.Balkonstrasse.Jalousie.Schlafzimmer.Lamellenposition
+  9/1/71 - Og.Schlafzimmer.Jalousie.Fenster.Position
+  9/1/72 - Og.Schlafzimmer.Jalousie.Fenster.Lamellenposition
+  9/2/11 - Dg.Eltern.Jalousie.Fenster.Position
+  9/2/12 - Dg.Eltern.Jalousie.Fenster.Lamellenposition
+  9/2/21 - Dg.Gaeste.Jalousie.Fenster.Position
+  9/2/22 - Dg.Gaeste.Jalousie.Fenster.Lamellenposition
+  9/2/31 - Dg.Carla.Jalousie.Fenster.Position
+  9/2/32 - Dg.Carla.Jalousie.Fenster.Lamellenposition
+  9/2/41 - Dg.Mattia.Jalousie.Fenster.Position
+  9/2/42 - Dg.Mattia.Jalousie.Fenster.Lamellenposition
+  9/2/61 - Dg.Wohnzimmer.Jalousie.Fenster.Position
+  9/2/62 - Dg.Wohnzimmer.Jalousie.Fenster.Lamellenposition
+  9/2/64 - Dg.Wohnzimmer.Jalousie.Terasse.Position
+  9/2/65 - Dg.Wohnzimmer.Jalousie.Terasse.Lamellenposition
+  9/2/71 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Position, Kueche.Jalousie.Terrasse.Position
+  9/2/72 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Lamellenposition, Kueche.Jalousie.Terrasse.Lamellenposition
+  9/2/74 - Dg.Essen.Jalousie.Terasse.Position, Kueche.Jalousie.Esstisch.Position
+  9/2/75 - Dg.Essen.Jalousie.Terasse.Lamellenposition, Kueche.Jalousie.Esstisch.Lamellenposition
+  9/2/77 - Dg.Essen.Jalousie.Fenster.Position, Kueche.Jalousie.Kochinsel.Position
+  9/2/78 - Dg.Essen.Jalousie.Fenster.Lamellenposition, Kueche.Jalousie.Kochinsel.Lamellenposition
+  9/2/81 - Dg.Kueche.Jalousie.Kochinsel.Position, Kueche.Jalousie.Arbeitsflaeche.Position
+  9/2/82 - Dg.Kueche.Jalousie.Kochinsel.Lamellenposition, Kueche.Jalousie.Arbeitsflaeche.Lamellenposition
+  9/2/84 - Dg.Kueche.Jalousie.Arbeitsflaeche.Position, Kueche.Jalousie.Speiss.Position
+  9/2/85 - Dg.Kueche.Jalousie.Arbeitsflaeche.Lamellenposition, Kueche.Jalousie.Speiss.Lamellenposition
+  9/2/87 - Dg.Kueche.Jalousie.Speiss.Position
+  9/2/88 - Dg.Kueche.Jalousie.Speiss.Lamellenposition
+  9/2/91 - Dg.Bad.Jalousie.Fenster_klein.Position
+  9/2/92 - Dg.Bad.Jalousie.Fenster_klein.Lamellenposition
+  9/2/94 - Dg.Bad.Jalousie.Fenster_gross.Position
+  9/2/95 - Dg.Bad.Jalousie.Fenster_gross.Lamellenposition
+ 9/2/111 - Dg.Flur.Jalousie.Fenster.Position
+ 9/2/112 - Dg.Flur.Jalousie.Fenster.Lamellenposition
+ 10/0/11 - Eg.Garage.Jalousie.Rechts.Position
+ 10/0/12 - Eg.Garage.Jalousie.Rechts.Lamellenposition
+ 10/0/13 - Eg.Garage.Jalousie.Rechts.Position_gueltig, Eg.Garage.Jalousie.Rechts.knx_read_logic
+ 10/0/14 - Eg.Garage.Jalousie.Links.Position
+ 10/0/15 - Eg.Garage.Jalousie.Links.Lamellenposition
+ 10/0/16 - Eg.Garage.Jalousie.Links.Position_gueltig, Eg.Garage.Jalousie.Links.knx_read_logic
+ 10/0/17 - Eg.Buero.Jalousie.Nord.Position
+ 10/0/18 - Eg.Buero.Jalousie.Nord.Lamellenposition
+ 10/0/19 - Eg.Buero.Jalousie.Nord.Position_gueltig, Eg.Buero.Jalousie.Nord.knx_read_logic
+ 10/0/21 - Eg.Buero.Jalousie.Rechts.Position
+ 10/0/22 - Eg.Buero.Jalousie.Rechts.Lamellenposition
+ 10/0/23 - Eg.Buero.Jalousie.Rechts.Position_gueltig, Eg.Buero.Jalousie.Rechts.knx_read_logic
+ 10/0/24 - Eg.Buero.Jalousie.Mitte.Position
+ 10/0/25 - Eg.Buero.Jalousie.Mitte.Lamellenposition
+ 10/0/26 - Eg.Buero.Jalousie.Mitte.Position_gueltig, Eg.Buero.Jalousie.Mitte.knx_read_logic
+ 10/0/27 - Eg.Buero.Jalousie.Links.Position
+ 10/0/28 - Eg.Buero.Jalousie.Links.Lamellenposition
+ 10/0/29 - Eg.Buero.Jalousie.Links.Position_gueltig, Eg.Buero.Jalousie.Links.knx_read_logic
+ 10/0/31 - Eg.Bad.Jalousie.Fenster.Position
+ 10/0/32 - Eg.Bad.Jalousie.Fenster.Lamellenposition
+ 10/0/33 - Eg.Bad.Jalousie.Fenster.Position_gueltig, Eg.Bad.Jalousie.Fenster.knx_read_logic
+ 10/0/41 - Eg.Schlafzimmer.Jalousie.Fenster.Position
+ 10/0/42 - Eg.Schlafzimmer.Jalousie.Fenster.Lamellenposition
+ 10/0/43 - Eg.Schlafzimmer.Jalousie.Fenster.Position_gueltig, Eg.Schlafzimmer.Jalousie.Fenster.knx_read_logic
+ 10/0/51 - Eg.Wohnzimmer.Jalousie.Wiesen.Position
+ 10/0/52 - Eg.Wohnzimmer.Jalousie.Wiesen.Lamellenposition
+ 10/0/53 - Eg.Wohnzimmer.Jalousie.Wiesen.Position_gueltig, Eg.Wohnzimmer.Jalousie.Wiesen.knx_read_logic
+ 10/0/54 - Eg.Wohnzimmer.Jalousie.Huette.Position
+ 10/0/55 - Eg.Wohnzimmer.Jalousie.Huette.Lamellenposition
+ 10/0/56 - Eg.Wohnzimmer.Jalousie.Huette.Position_gueltig, Eg.Wohnzimmer.Jalousie.Huette.knx_read_logic
+ 10/0/61 - Eg.Kueche.Jalousie.Tuer.Position
+ 10/0/62 - Eg.Kueche.Jalousie.Tuer.Lamellenposition
+ 10/0/63 - Eg.Kueche.Jalousie.Tuer.Position_gueltig, Eg.Kueche.Jalousie.Tuer.knx_read_logic
+ 10/0/64 - Eg.Kueche.Jalousie.Esstisch.Position
+ 10/0/65 - Eg.Kueche.Jalousie.Esstisch.Lamellenposition
+ 10/0/66 - Eg.Kueche.Jalousie.Esstisch.Position_gueltig, Eg.Kueche.Jalousie.Esstisch.knx_read_logic
+ 10/0/67 - Eg.Kueche.Jalousie.Kochen.Position
+ 10/0/68 - Eg.Kueche.Jalousie.Kochen.Lamellenposition
+ 10/0/69 - Eg.Kueche.Jalousie.Kochen.Position_gueltig, Eg.Kueche.Jalousie.Kochen.knx_read_logic
+ 10/1/11 - Og.Bad.Jalousie.Fenster.Position
+ 10/1/12 - Og.Bad.Jalousie.Fenster.Lamellenposition
+ 10/1/13 - Og.Bad.Jalousie.Fenster.Position_gueltig, Og.Bad.Jalousie.Fenster.knx_read_logic
+ 10/1/21 - Og.Balkonwiesen.Jalousie.Sylvia.Position
+ 10/1/22 - Og.Balkonwiesen.Jalousie.Sylvia.Lamellenposition
+ 10/1/23 - Og.Balkonwiesen.Jalousie.Sylvia.Position_gueltig, Og.Balkonwiesen.Jalousie.Sylvia.knx_read_logic
+ 10/1/31 - Og.Balkonwiesen.Jalousie.Ivan_rechts.Position
+ 10/1/32 - Og.Balkonwiesen.Jalousie.Ivan_rechts.Lamellenposition
+ 10/1/33 - Og.Balkonwiesen.Jalousie.Ivan_rechts.Position_gueltig, Og.Balkonwiesen.Jalousie.Ivan_rechts.knx_read_logic
+ 10/1/34 - Og.Balkonwiesen.Jalousie.Ivan_links.Position
+ 10/1/35 - Og.Balkonwiesen.Jalousie.Ivan_links.Lamellenposition
+ 10/1/36 - Og.Balkonwiesen.Jalousie.Ivan_links.Position_gueltig, Og.Balkonwiesen.Jalousie.Ivan_links.knx_read_logic
+ 10/1/41 - Og.Balkonwiesen.Jalousie.Wohnzimmer.Position
+ 10/1/42 - Og.Balkonwiesen.Jalousie.Wohnzimmer.Lamellenposition
+ 10/1/43 - Og.Balkonwiesen.Jalousie.Wohnzimmer.Position_gueltig, Og.Balkonwiesen.Jalousie.Wohnzimmer.knx_read_logic
+ 10/1/44 - Og.Wohnzimmer.Jalousie.Wiesen.Position
+ 10/1/45 - Og.Wohnzimmer.Jalousie.Wiesen.Lamellenposition
+ 10/1/46 - Og.Wohnzimmer.Jalousie.Wiesen.Position_gueltig, Og.Wohnzimmer.Jalousie.Wiesen.knx_read_logic
+ 10/1/47 - Og.Wohnzimmer.Jalousie.Carabinieri.Position
+ 10/1/48 - Og.Wohnzimmer.Jalousie.Carabinieri.Lamellenposition
+ 10/1/49 - Og.Wohnzimmer.Jalousie.Carabinieri.Position_gueltig, Og.Wohnzimmer.Jalousie.Carabinieri.knx_read_logic
+ 10/1/51 - Og.Kueche.Jalousie.Fenster.Position
+ 10/1/52 - Og.Kueche.Jalousie.Fenster.Lamellenposition
+ 10/1/53 - Og.Kueche.Jalousie.Fenster.Position_gueltig, Og.Kueche.Jalousie.Fenster.knx_read_logic
+ 10/1/61 - Og.Balkonstrasse.Jalousie.Treppenhaus.Position
+ 10/1/62 - Og.Balkonstrasse.Jalousie.Treppenhaus.Lamellenposition
+ 10/1/63 - Og.Balkonstrasse.Jalousie.Treppenhaus.Position_gueltig, Og.Balkonstrasse.Jalousie.Treppenhaus.knx_read_logic
+ 10/1/64 - Og.Balkonstrasse.Jalousie.Schlafzimmer.Position
+ 10/1/65 - Og.Balkonstrasse.Jalousie.Schlafzimmer.Lamellenposition
+ 10/1/66 - Og.Balkonstrasse.Jalousie.Schlafzimmer.Position_gueltig, Og.Balkonstrasse.Jalousie.Schlafzimmer.knx_read_logic
+ 10/1/71 - Og.Schlafzimmer.Jalousie.Fenster.Position
+ 10/1/72 - Og.Schlafzimmer.Jalousie.Fenster.Lamellenposition
+ 10/1/73 - Og.Schlafzimmer.Jalousie.Fenster.Position_gueltig, Og.Schlafzimmer.Jalousie.Fenster.knx_read_logic
+ 10/2/11 - Dg.Eltern.Jalousie.Fenster.Position
+ 10/2/12 - Dg.Eltern.Jalousie.Fenster.Lamellenposition
+ 10/2/13 - Dg.Eltern.Jalousie.Fenster.Position_gueltig, Dg.Eltern.Jalousie.Fenster.knx_read_logic
+ 10/2/21 - Dg.Gaeste.Jalousie.Fenster.Position
+ 10/2/22 - Dg.Gaeste.Jalousie.Fenster.Lamellenposition
+ 10/2/23 - Dg.Gaeste.Jalousie.Fenster.Position_gueltig, Dg.Gaeste.Jalousie.Fenster.knx_read_logic
+ 10/2/31 - Dg.Carla.Jalousie.Fenster.Position
+ 10/2/32 - Dg.Carla.Jalousie.Fenster.Lamellenposition
+ 10/2/33 - Dg.Carla.Jalousie.Fenster.Position_gueltig, Dg.Carla.Jalousie.Fenster.knx_read_logic
+ 10/2/41 - Dg.Mattia.Jalousie.Fenster.Position
+ 10/2/42 - Dg.Mattia.Jalousie.Fenster.Lamellenposition
+ 10/2/43 - Dg.Mattia.Jalousie.Fenster.Position_gueltig, Dg.Mattia.Jalousie.Fenster.knx_read_logic
+ 10/2/61 - Dg.Wohnzimmer.Jalousie.Fenster.Position
+ 10/2/62 - Dg.Wohnzimmer.Jalousie.Fenster.Lamellenposition
+ 10/2/63 - Dg.Wohnzimmer.Jalousie.Fenster.Position_gueltig, Dg.Wohnzimmer.Jalousie.Fenster.knx_read_logic
+ 10/2/64 - Dg.Wohnzimmer.Jalousie.Terasse.Position
+ 10/2/65 - Dg.Wohnzimmer.Jalousie.Terasse.Lamellenposition
+ 10/2/66 - Dg.Wohnzimmer.Jalousie.Terasse.Position_gueltig, Dg.Wohnzimmer.Jalousie.Terasse.knx_read_logic
+ 10/2/71 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Position, Kueche.Jalousie.Terrasse.Position.Status
+ 10/2/72 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Lamellenposition, Kueche.Jalousie.Terrasse.Lamellenposition.Status
+ 10/2/73 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Position_gueltig, Dg.Essen.Jalousie.Terasse_Schiebetuer.knx_read_logic
+ 10/2/74 - Dg.Essen.Jalousie.Terasse.Position, Kueche.Jalousie.Esstisch.Position, Kueche.Jalousie.Esstisch.Position.Status
+ 10/2/75 - Dg.Essen.Jalousie.Terasse.Lamellenposition, Kueche.Jalousie.Esstisch.Lamellenposition, Kueche.Jalousie.Esstisch.Lamellenposition.Status
+ 10/2/76 - Dg.Essen.Jalousie.Terasse.Position_gueltig, Dg.Essen.Jalousie.Terasse.knx_read_logic
+ 10/2/77 - Dg.Essen.Jalousie.Fenster.Position, Kueche.Jalousie.Kochinsel.Position, Kueche.Jalousie.Kochinsel.Position.Status
+ 10/2/78 - Dg.Essen.Jalousie.Fenster.Lamellenposition, Kueche.Jalousie.Kochinsel.Lamellenposition, Kueche.Jalousie.Kochinsel.Lamellenposition.Status
+ 10/2/79 - Dg.Essen.Jalousie.Fenster.Position_gueltig, Dg.Essen.Jalousie.Fenster.knx_read_logic
+ 10/2/81 - Dg.Kueche.Jalousie.Kochinsel.Position, Kueche.Jalousie.Arbeitsflaeche.Position.Status
+ 10/2/82 - Dg.Kueche.Jalousie.Kochinsel.Lamellenposition, Kueche.Jalousie.Arbeitsflaeche.Lamellenposition.Status
+ 10/2/83 - Dg.Kueche.Jalousie.Kochinsel.Position_gueltig, Dg.Kueche.Jalousie.Kochinsel.knx_read_logic
+ 10/2/84 - Dg.Kueche.Jalousie.Arbeitsflaeche.Position, Kueche.Jalousie.Speiss.Position.Status
+ 10/2/85 - Dg.Kueche.Jalousie.Arbeitsflaeche.Lamellenposition, Kueche.Jalousie.Speiss.Lamellenposition.Status
+ 10/2/86 - Dg.Kueche.Jalousie.Arbeitsflaeche.Position_gueltig, Dg.Kueche.Jalousie.Arbeitsflaeche.knx_read_logic
+ 10/2/87 - Dg.Kueche.Jalousie.Speiss.Position
+ 10/2/88 - Dg.Kueche.Jalousie.Speiss.Lamellenposition
+ 10/2/89 - Dg.Kueche.Jalousie.Speiss.Position_gueltig, Dg.Kueche.Jalousie.Speiss.knx_read_logic
+ 10/2/91 - Dg.Bad.Jalousie.Fenster_klein.Position
+ 10/2/92 - Dg.Bad.Jalousie.Fenster_klein.Lamellenposition
+ 10/2/93 - Dg.Bad.Jalousie.Fenster_klein.Position_gueltig, Dg.Bad.Jalousie.Fenster_klein.knx_read_logic
+ 10/2/94 - Dg.Bad.Jalousie.Fenster_gross.Position
+ 10/2/95 - Dg.Bad.Jalousie.Fenster_gross.Lamellenposition
+ 10/2/96 - Dg.Bad.Jalousie.Fenster_gross.Position_gueltig, Dg.Bad.Jalousie.Fenster_gross.knx_read_logic
+10/2/111 - Dg.Flur.Jalousie.Fenster.Position
+10/2/112 - Dg.Flur.Jalousie.Fenster.Lamellenposition
+10/2/113 - Dg.Flur.Jalousie.Fenster.Position_gueltig, Dg.Flur.Jalousie.Fenster.knx_read_logic

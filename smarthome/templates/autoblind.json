@@ -1,0 +1,117 @@
+{
+  "$schema": "../schema/ItemSchema.json",
+  "autoBlind": {
+    "$order": 2,
+    "state_id": {
+      "type": "str",
+      "visu_acl": "ro",
+      "cache": true
+    },
+    "state_name": {
+      "type": "str",
+      "visu_acl": "ro",
+      "cache": true
+    },
+    "lock": {
+      "description": "Über dieses Item wird die Automatik eingeschalten",
+      "type": "bool",
+      "visu_acl": "rw",
+      "cache": true
+    },
+    "suspend": {
+      "description": "Status: Automatik ist deaktiviert",
+      "type": "bool",
+      "visu_acl": "ro"
+      //"cache": true
+    },
+    "manuell_positionen": {
+      "type": "bool",
+      "name": "Manuelle Bedienung Positionen",
+      "eval": "not ~~.manuell_positionen() if sh.autoblind.is_changed_by(caller, source, ['Visu:*']) else ~~.manuell_positionen()",
+      "eval_trigger": "~~~~.Position | ~~~~.Lamellenposition"
+    },
+    "manuell_taster": {
+      "type": "bool",
+      "name": "Manuelle Bedienung über Tasten",
+      "eval": "not ~~.manuell_taster()",
+      "eval_trigger": "~~~~.Auf_ab | ~~~~.Lamellenverstellung_stop"
+    },
+    "manuell": {
+      "type": "bool",
+      "name": "Manuelle Bedienung",
+      "as_manual_logitem": "~",
+      "as_manual_exclude": "Init:*",
+      "eval": "not ~~.manuell()",
+      "eval_trigger": "~~.manuell_positionen | ~~.manuell_taster"
+    },
+    "beschatten": {
+      "type": "bool",
+      "name": "manuelles Beschatten",
+      "visu_acl": "rw",
+      "cache": true
+    },
+
+    "Rules": {
+      "$order": 3,
+      "type": "bool",
+      "as_plugin": "active",
+      "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.lock | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren",
+      "as_repeat_actions": "false",
+      "as_laststate_item_id": "~~.state_id",
+      "as_laststate_item_name": "~~.state_name",
+      
+      "Lock": {
+        "$order": 1,
+        "as_use": "Jalousie_default.Lock"
+      },
+
+      "Referenzfahrt_ende": {
+        "$order": 10,
+        "as_use":"Jalousie_default.Referenzfahrt_ende"
+      },
+      "Referenzfahrt": {
+        "$order": 11,
+        "as_use":"Jalousie_default.Referenzfahrt"
+      },
+      "PositionUngueltig": {
+        "$order": 12,
+        "as_use":"Jalousie_default.PositionUngueltig"
+      },
+      "Suspend": {
+        "$order": 20,
+        "as_use":"Jalousie_default.Suspend"
+      },
+      //"Beschatten_manuell_end": {
+      //  "$order": 30,
+      //  "as_use":"Jalousie_default.Beschatten_manuell_end"
+      //},
+      //"Beschatten_manuell": {
+      //  "$order": 31,
+      //  "as_use":"Jalousie_default.Beschatten_manuell"
+      //},
+      "Morgendaemmerung": {
+        "$order": 40,
+        "as_use":"Jalousie_default.Morgendaemmerung"
+      },
+      "Tag": {
+        "$order": 50,
+        "as_use":"Jalousie_default.Tag"
+      },
+      "Abenddaemmerung": {
+        "$order": 60,
+        "as_use":"Jalousie_default.Abenddaemmerung"
+      },
+      "Nacht": {
+        "$order": 70,
+        "as_use":"Jalousie_default.Nacht"
+      },
+      "Pause": {
+        "$order": 100,
+        "as_use":"Jalousie_default.Pause"
+      }
+    }
+  }
+}
+
+
+

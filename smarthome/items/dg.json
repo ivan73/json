@@ -1,0 +1,744 @@
+{
+  "$schema": "../schema/ItemSchema.json",
+  "Dg": {
+    "Trigger": {
+      "$order": 1,
+      "type": "bool",
+      "enforce_updates": true,
+      "cycle": "300 = 1"
+    },
+    "Eltern": {
+      "Jalousie": {
+        "Fenster": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/11"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Eltern",
+              "Beschatten": {
+                "as_use":"Jalousie_default.Beschatten_Ost"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        }
+
+      },
+      "Einzelraumregelung": {
+        "$template": {
+          "source": "einzelraumregelung",
+          "knx": "0/2/11"
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": "False"
+        
+      }
+    },
+    "Gaeste": {
+      "Jalousie": {
+        "Fenster": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/21"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Gaestezimmer",
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        }
+      },
+      "Einzelraumregelung": {
+        "$template": {
+          "source": "einzelraumregelung",
+          "knx": "0/2/21"
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": "False",
+        "visu_acl": "rw",
+        "cache": true,
+        "sqlite": "yes",
+        "knx_dpt": "1",
+        "knx_listen": "2/2/10"
+      }
+    },
+    "Flur": {
+      "Jalousie": {
+        "Fenster": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/111"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Flur",
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        }
+      },
+      "Einzelraumregelung": {
+        "$template": {
+          "source": "einzelraumregelung",
+          "knx": "0/2/111"
+        }
+      },
+      "Dachfenster": {
+        "$template": {
+
+          "source": "dachfenster",
+          "knx": "4/2/114"
+        },
+        "autoBlind": {
+          "Rules": {
+            "$templated": true,
+            "as_plugin": "nactive",
+            "name": "Dg Flur Dachfenster"
+          }
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": "False"
+        
+      }
+    },
+    "Carla": {
+      "Jalousie": {
+        "Fenster": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/31"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Carla Zimmer",
+              "Beschatten": {
+                "as_use":"Jalousie_default.Beschatten_West"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        }
+      },
+      "Einzelraumregelung": {
+        "$template": {
+          "source": "einzelraumregelung",
+          "knx": "0/2/31"
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": "False"
+        
+      }
+    },
+    "Mattia": {
+      "Jalousie": {
+        "Fenster": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/41"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Mattia Zimmer",
+              "Beschatten": {
+                "as_use":"Jalousie_default.Beschatten_West"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        }
+      },
+      "Einzelraumregelung": {
+        "$template": {
+          "source": "einzelraumregelung",
+          "knx": "0/2/41"
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": "False"
+        
+      }
+    },
+    "Wohnzimmer": {
+      "Jalousie": {
+        "Fenster": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/61"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Wohnzimmer Fenster",
+              "Beschatten": {
+                "as_use": "Jalousie_default.Beschatten_West"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        },
+        "Terasse": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/64"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Wohnzimmer Terasse",
+              "Beschatten": {
+                "as_use": "Jalousie_default.Beschatten_Sued"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        }
+      },
+      "Einzelraumregelung": {
+        "$template": {
+          "source": "einzelraumregelung",
+          "knx": "0/2/61"
+        }
+      },
+      "Schiebetuer": {
+        "Status": {
+          "type": "bool",
+          "visu_acl": "ro",
+          "knx_dpt": "1",
+          "knx_listen": "4/2/65"
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": "False"
+        
+      }
+    },
+    "Kueche": {
+      "Beleuchtung": {
+        "Arbeitsplatte": {
+          "Schalten": {
+            "type": "bool",
+            "visu_acl": "rw"
+          },
+          "Dimmen": {
+            "type": "num",
+            "visu_acl": "rw",
+            "dmx_ch": "1"
+          }
+        }
+      },
+      "Jalousie": {
+        "Kochinsel": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/81"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Fenster Kochinsel",
+              "Beschatten": {
+                "as_use":"Jalousie_default.Beschatten_Sued"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        },
+        "Arbeitsflaeche": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/84"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Fenster Arbeitsflaeche",
+              "Beschatten": {
+                "as_use":"Jalousie_default.Beschatten_West"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        },
+        "Speiss": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/87"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Fenster Speiss",
+              "Beschatten": {
+                "as_use": "Jalousie_default.Beschatten_West"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        }
+      },
+      "Einzelraumregelung": {
+        "$template": {
+          "source": "einzelraumregelung",
+          "knx": "0/2/81"
+        }
+      },
+      "ClickControl": {
+        "$template": {
+          "source": "clickcontrol",
+          "knx": "0/2/81"
+        },
+        "Leds": {
+          "$templated": true,
+            "Led2Prio": {
+                "eval": "True if (~~~.State.Zaehler_jalousie()==3)  else False",
+                "eval_trigger": "~~~.State.Zaehler_jalousie"
+            },
+            "Led3Prio": {
+                "eval": "True if (~~~.State.Zaehler_jalousie()==2 or ~~~.State.Zaehler_jalousie()==4)  else False",
+                "eval_trigger": "~~~.State.Zaehler_jalousie"
+            },
+            "Led4Prio": {
+            "eval": "True if (~~~.State.Zaehler_jalousie()==1 or ~~~.State.Zaehler_jalousie()==4)  else False",
+            "eval_trigger": "~~~.State.Zaehler_jalousie"
+          }
+
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": "False"
+        
+      }
+    },
+    "Essen": {
+      "Beleuchtung": {
+        "Tisch": {
+          "Schalten": {
+            "type": "bool",
+            "visu_acl": "rw"
+          },
+          "DMX": {
+            "type": "num",
+            "visu_acl": "rw",
+            "dmx_ch": "1"
+          }
+        }
+      },
+      "Jalousie": {
+        "Terasse": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/74"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Essen Terasse",
+              "Beschatten": {
+                "as_use": "Jalousie_default.Beschatten_Ost"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        },
+        "Terasse_Schiebetuer": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/71"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Essen Terasse Schiebetuer",
+              "Beschatten": {
+                "as_use":"Jalousie_default.Beschatten_Ost"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        },
+        "Fenster": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/77"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Esstisch",
+              "Beschatten": {
+                "as_use":"Jalousie_default.Beschatten_Sued"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        }
+      },
+      "Einzelraumregelung": {
+        "$template": {
+          "source": "einzelraumregelung",
+          "knx": "0/2/71"
+        }
+      },
+      "Schiebetuer": {
+        "Status": {
+          "type": "bool",
+          "visu_acl": "ro",
+          "knx_dpt": "1",
+          "knx_listen": "4/2/75"
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": "False"
+        
+      }
+    },
+    "Bad": {
+      "Jalousie": {
+        "Fenster_klein": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/91"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Bad Fenster klein",
+              "Beschatten": {
+                "as_use":"Jalousie_default.Beschatten_West"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        },
+        "Fenster_gross": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/2/94"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Dg Bad Fenster groß",
+              "Beschatten": {
+                "as_use":"Jalousie_default.Beschatten_West"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        }
+      },
+      "Einzelraumregelung": {
+        "$template": {
+          "source": "einzelraumregelung",
+          "knx": "0/2/91"
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": "False"
+        
+      }
+    },
+    "TagesWC": {
+      "Einzelraumregelung": {
+        "$template": {
+          "source": "einzelraumregelung",
+          "knx": "0/2/131"
+        }
+      },
+      "Praesenz": {
+        "type": "bool",
+        "value": "False"
+        
+      }
+    },
+    "Kriechboden": {
+      "Dachfenster": {
+        "$template": {
+          "source": "dachfenster",
+          "knx": "4/2/121"
+        },
+        "autoBlind": {
+          "Rules": {
+            "$templated": true,
+            "as_plugin": "nactive",
+            "name": "Dg Flur Dachfenster"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "../schema/ItemSchema.json",
+    "Jalousie": {
+        "type": "str",
+        "visu_acl": "ro",
+        "eval": "str(~.autoBlind.Rules)",
+        "eval_trigger": "~",
+        "Auf_ab": {
+            "$order": 1,
+            "type": "bool",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "enforce_updates": true,
+            "knx_dpt": "1",
+            "knx_send": "3/-/-"
+        },
+        "Lamellenverstellung_stop": {
+            "$order": 2,
+            "type": "bool",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "enforce_updates": true,
+            "knx_dpt": "1",
+            "knx_send": "3/-/+1"
+        },
+        "Position": {
+            "$order": 3,
+            "type": "num",
+            "cache": true,
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5.001",
+            "knx_send": "9/-/-",
+            "knx_listen": "10/-/-"
+        },
+        "Lamellenposition": {
+            "$order": 4,
+            "type": "num",
+            "cache": true,
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5.001",
+            "knx_send": "9/-/+1",
+            "knx_listen": "10/-/+1"
+        },
+        "Position_gueltig": {
+            "$order": 5,
+            "type": "bool",
+            "cache": true,
+            "visu_acl": "ro",
+            "knx_dpt": "1",
+            "knx_listen": "10/-/+2",
+            "knx_init": "10/-/+2"
+        },
+        "knx_read_logic": {
+            "$order": 6,
+            "type": "bool",
+            "eval_trigger": "~~.Auf_ab | ~~.Lamellenverstellung_stop | ~~.Position | ~~.Lamellenposition",
+            "eval": "not ~~.knx_read_logic()",
+            "info": "es wird über eine Logik das Lesen der GA read_adress in die Wege geleitet",
+            "knx_listen": "10/-/+2"
+        },
+        "ReferenzFahren": {
+            "$order": 7,
+            "type": "bool",
+            "knx_dpt": "1",
+            "knx_send": "3/-/+2"
+        },
+        "autoBlind": {
+            "$order": 10,
+            "$template": { "source": "autoblind" },
+            "Rules": {
+                "$templated": true,
+                "as_plugin": "active"
+            }
+        }
+    }
+}
+

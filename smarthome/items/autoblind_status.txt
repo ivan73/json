@@ -1,0 +1,52 @@
+Morgendaemmerung
+    06:00
+    lux >20 <200
+    altitude >-5  <10
+    
+Tag
+    07:00
+    lux >200
+    altitude >0
+    lux_o <1000 lux_s <1000 lux_w <1000
+    
+Tag_Sonne_Ost
+    07:00
+    altitude >0
+    lux_o >1000 lux_s <1000 lux_w <1000
+    
+Tag_Sonne_Ost_Beschatten
+    07:00
+    altitude >0
+    lux_o >1000 lux_s <1000 lux_w <1000
+    beschatten
+
+Tag_Sonne_Sued
+    07:00
+    altitude >0
+    lux_o >1000 lux_s <1000 lux_w <1000
+    
+Tag_Sonne_Sued_Beschatten
+    07:00
+    altitude >0
+    lux_o >1000 lux_s <1000 lux_w <1000
+    
+Tag_Sonne_West
+    07:00
+    altitude >0
+    lux_o >1000 lux_s <1000 lux_w <1000
+    
+Tag_Sonne_West_Beschatten
+    07:00
+    altitude >0
+    lux_o >1000 lux_s <1000 lux_w <1000
+
+    
+Abenddaemmerung
+    azimut >180
+    altitude <20 >-10
+    lux <200 >30
+
+Nacht
+    azimut >180
+    altitude <0
+    lux <30

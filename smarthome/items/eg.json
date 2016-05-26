@@ -1,0 +1,318 @@
+{
+  "$schema": "../schema/ItemSchema.json",
+  "Eg": {
+    "Trigger": {
+      "$order": 1,
+      "type": "bool",
+      "enforce_updates": true,
+      "cycle": "300 = 1"
+    },
+    "Garage": {
+      "Jalousie": {
+        "Rechts": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/0/11"
+          }
+        },
+        "Links": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/0/14"
+          }
+        }
+      }
+    },
+    "Buero": {
+      "Jalousie": {
+        "Nord": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/0/17"
+          }
+        },
+        "Rechts": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/0/21"
+          }
+        },
+        "Mitte": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/0/24"
+          }
+        },
+        "Links": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/0/27"
+          }
+        }
+      }
+    },
+    "Bad": {
+      "Jalousie": {
+        "Fenster": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/0/31"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Eg Raff. Bad",
+              "Abenddaemmerung": {
+                "as_set_Position": "100"
+                //"as_set_Lamellenposition": "0"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "100"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Schlafzimmer": {
+      "Jalousie": {
+        "Fenster": {
+          "type": "str",
+          "visu_acl": "ro",
+          "cache": true,
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/0/41"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Eg Raff. Schlafzimmer",
+              "Referenzfahrt": {
+                "enter_auto": {
+                  "as_min_Daemmerung": "30"
+                }
+              },
+              "Abenddaemmerung": {
+                "enter_uhrzeit": {
+                  "as_min_time": "19:30"
+                },
+                "as_set_Position": "100"
+                //"as_set_Lamellenposition": "0"
+              },
+              "Nacht": {
+                "enter_uhrzeit": {
+                  "as_min_time": "20:00"
+                },
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "100"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Wohnzimmer": {
+      "Jalousie": {
+        "Wiesen": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/0/51"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Eg Raff. Wohnzimmer Wiesen",
+              "Abenddaemmerung": {
+                "as_set_Position": "50",
+                "as_set_Lamellenposition": "0"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "50",
+                "as_set_Lamellenposition": "0"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "20",
+                "as_set_Lamellenposition": "20"
+              }
+            }
+          }
+        },
+        "Huette": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/0/54"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Eg Raff. Wohnzimmer Huette",
+              "Abenddaemmerung": {
+                "as_set_Position": "50",
+                "as_set_Lamellenposition": "50"
+              },
+              "Morgendaemmerung": {
+                "as_set_Position": "50",
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "75"
+              },
+
+              "Tag": {
+                "as_set_Position": "20",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Kueche": {
+      "Jalousie": {
+        "Alle": {
+          "Auf_ab": {
+            "type": "bool",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "enforce_updates": true,
+            "knx_dpt": "1",
+            "knx_send": "3/0/61 | 3/0/64 | 3/0/67"
+          },
+          "Lamellenverstellung_stop": {
+            "type": "bool",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "enforce_updates": true,
+            "knx_dpt": "1",
+            "knx_send": "3/0/62 | 3/0/65 | 3/0/68"
+          },
+          "Position": {
+            "type": "num",
+            "cache": true,
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5.001",
+            "knx_send": "9/0/61 | 9/0/64 | 9/0/67"
+          },
+          "Lamellenposition": {
+            "type": "num",
+            "cache": true,
+            "visu": "yes",
+            "visu_acl": "rw",
+            "knx_dpt": "5.001",
+            "knx_send": "9/0/62 | 9/0/65 | 9/0/68"
+          }
+        },
+        "Tuer": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/0/61"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Eg Raff. Küche Tür",
+              "Abenddaemmerung": {
+                "as_set_Position": "50",
+                "as_set_Lamellenposition": "50"
+              },
+              "Morgendaemmerung": {
+                "as_set_Lamellenposition": "50"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              },
+
+              "Tag": {
+                "as_set_Position": "40",
+                "as_set_Lamellenposition": "0"
+              }
+            }
+          }
+        },
+        "Esstisch": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/0/64"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Eg Raff. Küche Esstisch",
+
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Sonne_ost": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              },
+              "Tag": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "25"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "20"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              }
+            }
+          }
+        },
+        "Kochen": {
+          "$template": {
+            "source": "jalousie",
+            "knx": "0/0/67"
+          },
+          "autoBlind": {
+            "Rules": {
+              "$templated": true,
+              "as_plugin": "active",
+              "name": "Eg Raff. Küche Kochen",
+
+              "Morgendaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "50"
+              },
+              "Sonne_ost": {
+                "as_set_Position": "30",
+                "as_set_Lamellenposition": "0"
+              },
+              "Tag": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "25"
+              },
+              "Abenddaemmerung": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "20"
+              },
+              "Nacht": {
+                "as_set_Position": "100",
+                "as_set_Lamellenposition": "70"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  }

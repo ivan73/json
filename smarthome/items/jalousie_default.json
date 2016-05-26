@@ -1,0 +1,317 @@
+{
+  "$schema": "../schema/ItemSchema.json",
+  "Jalousie_default": {
+    
+    "as_item_Brightness_ost_gt43k": "Wetterstation.Helligkeit.Ost_gt43k",
+    "as_item_Brightness_ost_gt35k": "Wetterstation.Helligkeit.Ost_gt35k",
+    "as_item_Brightness_ost_gt25k": "Wetterstation.Helligkeit.Ost_gt25k",
+    "as_item_Brightness_ost_gt20k": "Wetterstation.Helligkeit.Ost_gt20k",
+    "as_item_Brightness_sued_gt43k": "Wetterstation.Helligkeit.Sued_gt43k",
+    "as_item_Brightness_sued_gt35k": "Wetterstation.Helligkeit.Sued_gt35k",
+    "as_item_Brightness_sued_gt25k": "Wetterstation.Helligkeit.Sued_gt25k",
+    "as_item_Brightness_sued_gt20k": "Wetterstation.Helligkeit.Sued_gt20k",
+    "as_item_Brightness_west_gt43k": "Wetterstation.Helligkeit.West_gt43k",
+    "as_item_Brightness_west_gt35k": "Wetterstation.Helligkeit.West_gt35k",
+    "as_item_Brightness_west_gt25k": "Wetterstation.Helligkeit.West_gt25k",
+    "as_item_Brightness_west_gt20k": "Wetterstation.Helligkeit.West_gt20k",
+    "as_item_tag": "System.Sonne.Tag",
+    "as_item_Daemmerung": "Wetterstation.Daemmerung",
+    "as_item_lock": "..lock",
+    "as_item_suspend": "..suspend",
+    "as_item_manuell": "..manuell",
+    "as_item_manuell_positionen": "..manuell_positionen",
+    "as_item_beschatten": "..beschatten",
+    "as_item_Position": "...Position",
+    "as_mindelta_Position": "10",
+    "as_item_Lamellenposition": "...Lamellenposition",
+    "as_mindelta_Lamellenposition": "5",
+    "as_item_PositionGueltig": "...Position_gueltig",
+    "as_item_ReferenzFahren": "...ReferenzFahren",
+    "as_item_ReferenzPruefen": "...knx_read_logic",
+    "as_item_temperature": ".....Einzelraumregelung.Ist_temperatur",
+    "as_item_praesenz": ".....Praesenz",
+
+    "Lock": {
+      "$order": 1,
+      "type": "foo",
+      "name": "Automatik AUS",
+      "as_set_suspend": "False",
+      "enter": {
+        "as_value_lock": "True"
+      }
+    },
+
+    "Referenzfahrt_ende": {
+      "$order": 10,
+      "type": "foo",
+      "name": "Ende Referenzfahrt",
+      "as_set_ReferenzFahren": "False",
+      "as_value_ReferenzPruefen": "0",
+      "enter": {
+        "as_value_ReferenzFahren": "True",
+        "as_agemin_ReferenzFahren": "60"
+      },
+      "enter_pos_ok": {
+        "as_value_ReferenzFahren": "True",
+        "as_value_PositionGueltig": "True"
+      }
+    },
+    "Referenzfahrt": {
+      "$order": 11,
+      "type": "foo",
+      "name": "Referenzfahrt",
+      "as_set_ReferenzFahren": "True",
+      "as_value_ReferenzPruefen": "False",
+      "as_delay_ReferenzPruefen": "60",
+      "enter_auto": {
+        "as_value_PositionGueltig": "False",
+        "as_min_Daemmerung": "30",
+        "as_min_time": "08:00",
+        "as_max_time": "21:00",
+        "as_agemin_ReferenzFahren": "3600"
+      },
+      "enter_manuell": {
+        "as_value_PositionGueltig": "False",
+        "as_value_trigger_source": "eval: autoblind_eval.get_relative_itemid('..manuell_positionen')"
+      },
+      "enter_stay": {
+        "as_value_laststate": "var:current.state_id",
+        "as_value_PositionGueltig": "False"
+      }
+    },
+    "PositionUngueltig": {
+      "$order": 12,
+      "type": "foo",
+      "name": "Referenzfahrt erforderlich (ganz Auf)",
+      "as_value_ReferenzPruefen": "0",
+      "enter": {
+        "as_value_PositionGueltig": "False",
+        "as_value_ReferenzFahren": "False"
+      }
+    },
+    "Suspend": {
+      "$order": 20,
+      "type": "foo",
+      "name": "Automatik ausgesetzt",
+      "as_name": "eval: autoblind_eval.insert_suspend_time('..suspend', suspend_text='Ausgesetzt bis %X')",
+      "as_set_suspend": "True",
+      //"as_set_beschatten": "False",
+      "enter_manuell_positionen": {
+        "$order": 1,
+        "as_value_trigger_source": "eval: autoblind_eval.get_relative_itemid('..manuell_positionen')"
+      },
+      "enter_manuell": {
+        "$order": 2,
+        "as_value_trigger_source": "eval: autoblind_eval.get_relative_itemid('..manuell')"
+      },
+      "enter_stay": {
+        "$order": 3,
+        "as_value_laststate": "var:current.state_id",
+        "as_agemax_manuell": "3600",
+        "as_value_suspend": "True",
+        //"as_value_beschatten": "False"
+      }
+    },
+    "Beschatten_Ost": {
+      "$order": 30,
+      "type": "foo",
+      "name": "Beschatten Ost-Seite",
+      "as_set_Position": "100",
+      "as_set_Lamellenposition": "eval: int((90-(sh.System.Sonne.Hoehe()))*8/10) if (int(sh.System.Sonne.Hoehe()) > 0) else 45",
+      "as_set_suspend": "False",
+      "enter": {
+        "as_value_praesenz": "False",
+        "as_value_Brightness_ost_gt43k": "True",
+        "as_minage_Brightness_ost_gt43k": "60",
+        "as_min_sun_altitude": "0",
+        "as_min_temperature": "22"
+      },
+      "enter_hysterese": {
+        "as_value_praesenz": "False",
+        "as_value_laststate": "var:current.state_id",
+        "as_value_Brightness_ost_gt25k": "True",
+        "as_min_sun_altitude": "0"
+      },
+      "enter_delay": {
+        "as_value_praesenz": "False",
+        "as_value_laststate": "var:current.state_id",
+        "as_value_Brightness_ost_gt25k": "False",
+        "as_maxage_Brightness_ost_gt25k": "1200",
+        "as_min_sun_altitude": "0"
+      },
+      "enter_praesenz": {
+        "as_value_praesenz": "True",
+        "as_value_Brightness_ost_gt35k": "True",
+        "as_minage_Brightness_ost_gt35k": "60",
+        "as_min_sun_altitude": "0",
+        "as_min_temperature": "22"
+      },
+      "enter_praesenz_hysterese": {
+        "as_value_praesenz": "True",
+        "as_value_laststate": "var:current.state_id",
+        "as_value_Brightness_ost_gt20k": "True",
+        "as_min_sun_altitude": "0"
+      },
+      "enter_praesenz_delay": {
+        "as_value_praesenz": "True",
+        "as_value_laststate": "var:current.state_id",
+        "as_value_Brightness_ost_gt20k": "False",
+        "as_maxage_brightnes_ost_gt20k": "1200",
+        "as_min_sun_altitude": "0"
+      }
+    },
+    "Beschatten_Sued": {
+      "$order": 30,
+      "type": "foo",
+      "name": "Beschatten Süd-Seite",
+      "as_set_Position": "100",
+      "as_set_Lamellenposition": "eval: int((90-(sh.System.Sonne.Hoehe()))*8/10) if (int(sh.System.Sonne.Hoehe()) > 0) else 45",
+      "as_set_suspend": "False",
+      "enter": {
+        "as_value_praesenz": "False",
+        "as_value_Brightness_sued_gt43k": "True",
+        "as_minage_Brightness_sued_gt43k": "60",
+        "as_min_sun_altitude": "0",
+        "as_min_temperature": "22"
+      },
+      "enter_hysterese": {
+        "as_value_praesenz": "False",
+        "as_value_laststate": "var:current.state_id",
+        "as_value_Brightness_sued_gt25k": "True",
+        "as_min_sun_altitude": "0"
+      },
+      "enter_delay": {
+        "as_value_praesenz": "False",
+        "as_value_laststate": "var:current.state_id",
+        "as_value_Brightness_sued_gt25k": "False",
+        "as_maxage_Brightness_sued_gt25k": "1200",
+        "as_min_sun_altitude": "0"
+      },
+      "enter_praesenz": {
+        "as_value_praesenz": "True",
+        "as_value_Brightness_sued_gt35k": "True",
+        "as_minage_Brightness_sued_gt35k": "60",
+        "as_min_sun_altitude": "0",
+        "as_min_temperature": "22"
+      },
+      "enter_praesenz_hysterese": {
+        "as_value_praesenz": "True",
+        "as_value_laststate": "var:current.state_id",
+        "as_value_Brightness_sued_gt20k": "True",
+        "as_min_sun_altitude": "0"
+      },
+      "enter_praesenz_delay": {
+        "as_value_praesenz": "True",
+        "as_value_laststate": "var:current.state_id",
+        "as_value_Brightness_sued_gt20k": "False",
+        "as_maxage_Brightness_sued_gt20k": "1200",
+        "as_min_sun_altitude": "0"
+      }
+    },
+    "Beschatten_West": {
+      "$order": 30,
+      "type": "foo",
+      "name": "Beschatten West-Seite",
+      "as_set_Position": "100",
+      "as_set_Lamellenposition": "eval: int((90-(sh.System.Sonne.Hoehe()))*8/10) if (int(sh.System.Sonne.Hoehe()) > 0) else 45",
+      "as_set_suspend": "False",
+      "enter": {
+        "as_value_praesenz": "False",
+        "as_value_Brightness_west_gt43k": "True",
+        "as_minage_Brightness_west_gt43k": "60",
+        "as_min_sun_altitude": "0",
+        "as_min_temperature": "22"
+      },
+      "enter_hysterese": {
+        "as_value_praesenz": "False",
+        "as_value_laststate": "var:current.state_id",
+        "as_value_Brightness_west_gt25k": "True",
+        "as_min_sun_altitude": "0"
+      },
+      "enter_delay": {
+        "as_value_praesenz": "False",
+        "as_value_laststate": "var:current.state_id",
+        "as_value_Brightness_west_gt25k": "False",
+        "as_maxage_Brightness_west_gt25k": "1200",
+        "as_min_sun_altitude": "0"
+      },
+      "enter_praesenz": {
+        "as_value_praesenz": "True",
+        "as_value_Brightness_west_gt35k": "True",
+        "as_minage_Brightness_west_gt35k": "60",
+        "as_min_sun_altitude": "0",
+        "as_min_temperature": "22"
+      },
+      "enter_praesenz_hysterese": {
+        "as_value_praesenz": "True",
+        "as_value_laststate": "var:current.state_id",
+        "as_value_Brightness_west_gt20k": "True",
+        "as_min_sun_altitude": "0"
+      },
+      "enter_praesenz_delay": {
+        "as_value_praesenz": "True",
+        "as_value_laststate": "var:current.state_id",
+        "as_value_Brightness_west_gt20k": "False",
+        "as_maxage_Brightness_west_gt20k": "1200",
+        "as_min_sun_altitude": "0"
+      }
+    },
+
+    "Morgendaemmerung": {
+      "$order": 40,
+      "type": "foo",
+      "name": "Morgendämmerung",
+      "as_set_suspend": "False",
+      "enter": {
+        "as_min_time": "06:00",
+        "as_min_sun_altitude": "-5",
+        "as_max_sun_altitude": "5",
+        "as_min_Daemmerung": "20",
+        "as_max_Daemmerung": "200"
+      }
+    },
+
+    "Tag": {
+      "$order": 50,
+      "type": "foo",
+      "name": "Tag",
+      "as_set_suspend": "False",
+      "enter": {
+        "as_min_sun_altitude": "0",
+        "as_min_Daemmerung": "200",
+        "as_min_time": "07:00"
+      }
+    },
+    "Abenddaemmerung": {
+      "$order": 60,
+      "type": "foo",
+      "name": "Abenddämmerung",
+      "as_set_suspend": "False",
+      "enter": {
+        "as_max_sun_altitude": "20",
+        "as_min_sun_altitude": "-10",
+        "as_min_sun_azimut": "180",
+        "as_max_Daemmerung": "200",
+        "as_min_Daemmerung": "30"
+      }
+    },
+    "Nacht": {
+      "$order": 70,
+      "type": "foo",
+      "name": "Nacht",
+      "as_set_suspend": "False",
+      "enter": {
+        "as_max_sun_altitude": "0",
+        "as_max_Daemmerung": "30"
+      }
+    },
+    "Pause": {
+      "$order": 100,
+      "type": "foo",
+      "name": "keine AutoPosition aktiv"
+    }
+  }
+}
+
+
+
