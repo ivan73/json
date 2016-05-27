@@ -274,7 +274,7 @@
       "name": "Morgendämmerung",
       "as_set_suspend": "False",
       "enter": {
-        "as_min_time": "06:30",
+        "as_min_time": "06:00",
         "as_min_sun_altitude": "-5",
         "as_max_sun_altitude": "5",
         "as_min_Daemmerung": "20",
@@ -285,7 +285,7 @@
         "as_max_time": "06:30",
         "as_min_sun_altitude": "-5",
         //"as_max_sun_altitude": "5",
-        "as_min_Daemmerung": "20",
+        "as_min_Daemmerung": "20"
         //"as_max_Daemmerung": "200"
       }
     },
