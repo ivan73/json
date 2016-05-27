@@ -172,7 +172,7 @@
       }
     },
     "Beschatten_Sued": {
-      "$order": 30,
+      "$order": 31,
       "type": "foo",
       "name": "Beschatten Süd-Seite",
       "as_set_Position": "100",
@@ -220,7 +220,7 @@
       }
     },
     "Beschatten_West": {
-      "$order": 30,
+      "$order": 32,
       "type": "foo",
       "name": "Beschatten West-Seite",
       "as_set_Position": "100",
@@ -274,11 +274,19 @@
       "name": "Morgendämmerung",
       "as_set_suspend": "False",
       "enter": {
-        "as_min_time": "06:00",
+        "as_min_time": "06:30",
         "as_min_sun_altitude": "-5",
         "as_max_sun_altitude": "5",
         "as_min_Daemmerung": "20",
         "as_max_Daemmerung": "200"
+      },
+      "enter_time": {
+        "as_min_time": "06:00",
+        "as_max_time": "06:30",
+        "as_min_sun_altitude": "-5",
+        //"as_max_sun_altitude": "5",
+        "as_min_Daemmerung": "20",
+        //"as_max_Daemmerung": "200"
       }
     },
 

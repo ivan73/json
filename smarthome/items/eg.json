@@ -298,6 +298,7 @@
               "as_plugin": "active",
               "name": "Eg Raff. Küche Tür",
               "Beschatten": {
+                "$order": 30,
                 "as_use": "Jalousie_default.Beschatten_Sued"
               },
               "Abenddaemmerung": {
@@ -330,6 +331,7 @@
               "as_plugin": "active",
               "name": "Eg Raff. Küche Esstisch",
               "Beschatten": {
+                "$order": 30,
                 "as_use": "Jalousie_default.Beschatten_Ost"
               },
               "Morgendaemmerung": {
