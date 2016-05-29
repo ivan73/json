@@ -106,139 +106,168 @@
       }
     }
   },
-  "Wetterstation": {
-    "Helligkeit": {
-      "Ost": {
-        "type": "num",
-        "visu": "yes",
-        "cache": true,
-        "visu_acl": "ro",
-        "knx_dpt": "9",
-        "knx_listen": "0/2/0"
-      },
-      "Sued": {
-        "type": "num",
-        "visu": "yes",
-        "cache": true,
-        "visu_acl": "ro",
-        "knx_dpt": "9",
-        "knx_listen": "0/2/1"
-      },
-      "West": {
-        "type": "num",
-        "visu": "yes",
-        "cache": true,
-        "visu_acl": "ro",
-        "knx_dpt": "9",
-        "knx_listen": "0/2/2"
-      },
-      "Ost_gt43k": {
-        "type": "bool",
-        "name": "Helligkeit an der Ostseite größer als 43 kLux",
-        "eval": "~~.Ost() > 43000 and ~~.Ost() < 43000 and  ~~.Ost() < 43000",
-        "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
-      },
-      "Ost_gt35k": {
-        "type": "bool",
-        "name": "Helligkeit an der Ostseite größer als 35 kLux",
-        "eval": "~~.Ost() > 35000 and ~~.Ost() < 35000 and  ~~.Ost() < 35000",
-        "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
-      },
-      "Ost_gt25k": {
-        "type": "bool",
-        "name": "Helligkeit an der Ostseite größer als 25 kLux",
-        "eval": "~~.Ost() > 25000 and ~~.Ost() < 25000 and  ~~.Ost() < 25000",
-        "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
-      },
-      "Ost_gt20k": {
-        "type": "bool",
-        "name": "Helligkeit an der Ostseite größer als 20 kLux",
-        "eval": "~~.Ost() > 20000 and ~~.Ost() < 20000 and  ~~.Ost() < 20000",
-        "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
-      },
-      "Sued_gt43k": {
-        "type": "bool",
-        "name": "Helligkeit an der Suedseite größer als 43 kLux",
-        "eval": "~~.Ost() < 43000 and ~~.Ost() > 43000 and  ~~.Ost() < 43000",
-        "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
-      },
-      "Sued_gt35k": {
-        "type": "bool",
-        "name": "Helligkeit an der Suedseite größer als 35 kLux",
-        "eval": "~~.Ost() < 35000 and ~~.Ost() > 35000 and  ~~.Ost() < 35000",
-        "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
-      },
-      "Sued_gt25k": {
-        "type": "bool",
-        "name": "Helligkeit an der Suedseite größer als 25 kLux",
-        "eval": "~~.Ost() < 25000 and ~~.Ost() > 25000 and  ~~.Ost() < 25000",
-        "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
-      },
-      "Sued_gt20k": {
-        "type": "bool",
-        "name": "Helligkeit an der Suedseite größer als 20 kLux",
-        "eval": "~~.Ost() < 20000 and ~~.Ost() > 20000 and  ~~.Ost() < 20000",
-        "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
-      },
-      "West_gt43k": {
-        "type": "bool",
-        "name": "Helligkeit an der Westseite größer als 43 kLux",
-        "eval": "~~.Ost() < 43000 and ~~.Ost() < 43000 and  ~~.Ost() > 43000",
-        "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
-      },
-      "West_gt35k": {
-        "type": "bool",
-        "name": "Helligkeit an der Westseite größer als 35 kLux",
-        "eval": "~~.Ost() < 35000 and ~~.Ost() < 35000 and  ~~.Ost() > 35000",
-        "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
-      },
-      "West_gt25k": {
-        "type": "bool",
-        "name": "Helligkeit an der Westseite größer als 25 kLux",
-        "eval": "~~.Ost() < 25000 and ~~.Ost() < 25000 and  ~~.Ost() > 25000",
-        "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
-      },
-      "West_gt20k": {
-        "type": "bool",
-        "name": "Helligkeit an der Westseite größer als 25 kLux",
-        "eval": "~~.Ost() < 20000 and ~~.Ost() < 20000 and  ~~.Ost() > 20000",
-        "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
-      }
+    "Wetterstation": {
+        "Helligkeit": {
+            "Ost": {
+                "type": "num",
+                "visu": "yes",
+                "cache": true,
+                "visu_acl": "ro",
+                "knx_dpt": "9",
+                "knx_listen": "0/2/0"
+            },
+            "Sued": {
+                "type": "num",
+                "visu": "yes",
+                "cache": true,
+                "visu_acl": "ro",
+                "knx_dpt": "9",
+                "knx_listen": "0/2/1"
+            },
+            "West": {
+                "type": "num",
+                "visu": "yes",
+                "cache": true,
+                "visu_acl": "ro",
+                "knx_dpt": "9",
+                "knx_listen": "0/2/2"
+            },
+            "Ost_gt43k": {
+                "type": "bool",
+                "name": "Helligkeit an der Ostseite größer als 43 kLux",
+                "eval": "~~.Ost() > 43000 and ~~.Sued() < 43000 and  ~~.West() < 43000",
+                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+            },
+            "Ost_gt35k": {
+                "type": "bool",
+                "name": "Helligkeit an der Ostseite größer als 35 kLux",
+                "eval": "~~.Ost() > 35000 and ~~.Sued() < 35000 and  ~~.West() < 35000",
+                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+            },
+            "Ost_gt25k": {
+                "type": "bool",
+                "name": "Helligkeit an der Ostseite größer als 25 kLux",
+                "eval": "~~.Ost() > 25000 and ~~.Sued() < 25000 and  ~~.West() < 25000",
+                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+            },
+            "Ost_gt20k": {
+                "type": "bool",
+                "name": "Helligkeit an der Ostseite größer als 20 kLux",
+                "eval": "~~.Ost() > 20000 and ~~.Sued() < 20000 and  ~~.West() < 20000",
+                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+            },
+            "Sued_gt43k": {
+                "type": "bool",
+                "name": "Helligkeit an der Suedseite größer als 43 kLux",
+                "eval": "~~.Ost() < 43000 and ~~.Sued() > 43000 and  ~~.West() < 43000",
+                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+            },
+            "Sued_gt35k": {
+                "type": "bool",
+                "name": "Helligkeit an der Suedseite größer als 35 kLux",
+                "eval": "~~.Ost() < 35000 and ~~.Sued() > 35000 and  ~~.West() < 35000",
+                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+            },
+            "Sued_gt25k": {
+                "type": "bool",
+                "name": "Helligkeit an der Suedseite größer als 25 kLux",
+                "eval": "~~.Ost() < 25000 and ~~.Sued() > 25000 and  ~~.West() < 25000",
+                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+            },
+            "Sued_gt20k": {
+                "type": "bool",
+                "name": "Helligkeit an der Suedseite größer als 20 kLux",
+                "eval": "~~.Ost() < 20000 and ~~.Sued() > 20000 and  ~~.West() < 20000",
+                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+            },
+            "West_gt43k": {
+                "type": "bool",
+                "name": "Helligkeit an der Westseite größer als 43 kLux",
+                "eval": "~~.Ost() < 43000 and ~~.Sued() < 43000 and  ~~.West() > 43000",
+                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+            },
+            "West_gt35k": {
+                "type": "bool",
+                "name": "Helligkeit an der Westseite größer als 35 kLux",
+                "eval": "~~.Ost() < 35000 and ~~.Sued() < 35000 and  ~~.West() > 35000",
+                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+            },
+            "West_gt25k": {
+                "type": "bool",
+                "name": "Helligkeit an der Westseite größer als 25 kLux",
+                "eval": "~~.Ost() < 25000 and ~~.Sued() < 25000 and  ~~.West() > 25000",
+                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+            },
+            "West_gt20k": {
+                "type": "bool",
+                "name": "Helligkeit an der Westseite größer als 25 kLux",
+                "eval": "~~.Ost() < 20000 and ~~.Sued() < 20000 and  ~~.West() > 20000",
+                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+            }
+        },
+        "Daemmerung": {
+            "type": "num",
+            "visu": "yes",
+            "cache": true,
+            "visu_acl": "ro",
+            "knx_dpt": "9",
+            "knx_listen": "0/2/3"
+        },
+        "Wind": {
+            "type": "num",
+            "visu": "yes",
+            "cache": true,
+            "sqlite": "yes",
+            "visu_acl": "ro",
+            "knx_dpt": "9",
+            "knx_listen": "0/2/4"
+        },
+        "Wind_kmh": {
+            "type": "num",
+            "visu": "yes",
+            "cache": true,
+            "sqlite": "yes",
+            "visu_acl": "ro",
+            "eval_trigger": "~~.Wind",
+            "eval": "(~~.Wind()*3.6)"
+        },
+        "Temperatur": {
+            "type": "num",
+            "visu": "yes",
+            "cache": true,
+            "sqlite": "yes",
+            "visu_acl": "ro",
+            "knx_dpt": "9",
+            "knx_listen": "0/2/5"
+        }
     },
-    "Daemmerung": {
-      "type": "num",
-      "visu": "yes",
-      "cache": true,
-      "visu_acl": "ro",
-      "knx_dpt": "9",
-      "knx_listen": "0/2/3"
-    },
-    "Wind": {
-      "type": "num",
-      "visu": "yes",
-      "cache": true,
-      "sqlite": "yes",
-      "visu_acl": "ro",
-      "knx_dpt": "9",
-      "knx_listen": "0/2/4"
-    },
-    "Wind_kmh": {
-      "type": "num",
-      "visu": "yes",
-      "cache": true,
-      "sqlite": "yes",
-      "visu_acl": "ro",
-      "eval_trigger": "~~.Wind",
-      "eval": "(~~.Wind()*3.6)"
-    },
-    "Temperatur": {
-      "type": "num",
-      "visu": "yes",
-      "cache": true,
-      "sqlite": "yes",
-      "visu_acl": "ro",
-      "knx_dpt": "9",
-      "knx_listen": "0/2/5"
+    "Watchdog": {
+        "Trigger": {
+            "$order": 1,
+            "type": "bool",
+            "enforce_updates": true,
+            "autotimer": "1 = 0",
+            "cycle": "5 = 1",
+            "knx_dpt": "1",
+            "knx_send": "0/0/200"
+        },
+        "Status": {
+            "$order": 1,
+            "type": "bool",
+            "visu_acl": "rw",
+            "cache": true,
+            "knx_dpt": "1",
+            "knx_listen": "0/0/201"
+        }
+        //"Out": {
+        //    "$order": 2,
+        //    "type": "bool",
+        //    "enforce_updates": true,
+        //    "eval_trigger": "~~.Trigger" ,
+        //    "eval": "not ~~.Out()",
+        //    "knx_dpt": "1",
+        //    "knx_send": "0/0/200"
+
+        //}
     }
-  }
 }

@@ -1,0 +1,33 @@
+{
+    "$schema": "../schema/ItemSchema.json",
+    "Klingel": {
+        "Eg": {
+            "$order": 1,
+            "type": "bool",
+            "visu_acl": "rw",
+            "cache": true,
+            "knx_dpt": "1",
+            "knx_listen": "1/0/200",
+            "memlog": "klingellogger"
+              
+        },
+        "Og": {
+            "$order": 1,
+            "type": "bool",
+            "visu_acl": "rw",
+            "cache": true,
+            "knx_dpt": "1",
+            "knx_listen": "1/0/201"
+        },
+        "Dg": {
+            "$order": 1,
+            "type": "bool",
+            "visu_acl": "rw",
+            "cache": true,
+            "knx_dpt": "1",
+            "knx_listen": "1/0/202"
+        },
+
+    }
+}
+    

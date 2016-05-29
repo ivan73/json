@@ -285,7 +285,7 @@
         "as_max_time": "06:30",
         "as_min_sun_altitude": "-5",
         //"as_max_sun_altitude": "5",
-        "as_min_Daemmerung": "20"
+        "as_min_Daemmerung": "200"
         //"as_max_Daemmerung": "200"
       }
     },
@@ -298,7 +298,7 @@
       "enter": {
         "as_min_sun_altitude": "0",
         "as_min_Daemmerung": "200",
-        "as_min_time": "07:00"
+        "as_min_time": "06:30"
       }
     },
     "Abenddaemmerung": {

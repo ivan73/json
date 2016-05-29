@@ -31,7 +31,8 @@
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "50",
                 "enter": {
-                  "as_min_time": "07:30"
+                  "as_min_time": "07:30",
+                  "as_max_time": "08:00"
                 }
               },
               "Nacht": {

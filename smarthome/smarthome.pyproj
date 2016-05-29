@@ -51,6 +51,7 @@
     <Content Include="items\heizung.json" />
     <Content Include="items\kueche.json" />
     <Content Include="items\og.json" />
+    <Content Include="items\klingel.json" />
     <Content Include="items\system.json" />
     <Content Include="schema\autoblind_plugin.json" />
     <Content Include="schema\catalog.json" />
