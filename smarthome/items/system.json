@@ -257,7 +257,8 @@
             "visu_acl": "rw",
             "cache": true,
             "knx_dpt": "1",
-            "knx_listen": "0/0/201"
+            "knx_listen": "0/0/201",
+            "memlog": "watchdoglogger"
         }
         //"Out": {
         //    "$order": 2,
