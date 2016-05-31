@@ -114,12 +114,12 @@
   3/2/64 - Dg.Wohnzimmer.Jalousie.Terasse.Auf_ab
   3/2/65 - Dg.Wohnzimmer.Jalousie.Terasse.Lamellenverstellung_stop
   3/2/66 - Dg.Wohnzimmer.Jalousie.Terasse.ReferenzFahren
-  3/2/71 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Auf_ab, Kueche.Jalousie.Terrasse.Auf_ab
-  3/2/72 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Lamellenverstellung_stop, Kueche.Jalousie.Terrasse.Lamellenverstellung_stop
-  3/2/73 - Dg.Essen.Jalousie.Terasse_Schiebetuer.ReferenzFahren
-  3/2/74 - Dg.Essen.Jalousie.Terasse.Auf_ab, Kueche.Jalousie.Esstisch.Auf_ab
-  3/2/75 - Dg.Essen.Jalousie.Terasse.Lamellenverstellung_stop, Kueche.Jalousie.Esstisch.Lamellenverstellung_stop
-  3/2/76 - Dg.Essen.Jalousie.Terasse.ReferenzFahren
+  3/2/71 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Auf_ab, Kueche.Jalousie.Terrasse.Auf_ab
+  3/2/72 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Lamellenverstellung_stop, Kueche.Jalousie.Terrasse.Lamellenverstellung_stop
+  3/2/73 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.ReferenzFahren
+  3/2/74 - Dg.Essen.Jalousie.Terrasse.Auf_ab, Kueche.Jalousie.Esstisch.Auf_ab
+  3/2/75 - Dg.Essen.Jalousie.Terrasse.Lamellenverstellung_stop, Kueche.Jalousie.Esstisch.Lamellenverstellung_stop
+  3/2/76 - Dg.Essen.Jalousie.Terrasse.ReferenzFahren
   3/2/77 - Dg.Essen.Jalousie.Fenster.Auf_ab, Kueche.Jalousie.Kochinsel.Auf_ab
   3/2/78 - Dg.Essen.Jalousie.Fenster.Lamellenverstellung_stop, Kueche.Jalousie.Kochinsel.Lamellenverstellung_stop
   3/2/79 - Dg.Essen.Jalousie.Fenster.ReferenzFahren
@@ -252,10 +252,10 @@
   9/2/62 - Dg.Wohnzimmer.Jalousie.Fenster.Lamellenposition
   9/2/64 - Dg.Wohnzimmer.Jalousie.Terasse.Position
   9/2/65 - Dg.Wohnzimmer.Jalousie.Terasse.Lamellenposition
-  9/2/71 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Position, Kueche.Jalousie.Terrasse.Position
-  9/2/72 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Lamellenposition, Kueche.Jalousie.Terrasse.Lamellenposition
-  9/2/74 - Dg.Essen.Jalousie.Terasse.Position, Kueche.Jalousie.Esstisch.Position
-  9/2/75 - Dg.Essen.Jalousie.Terasse.Lamellenposition, Kueche.Jalousie.Esstisch.Lamellenposition
+  9/2/71 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Position, Kueche.Jalousie.Terrasse.Position
+  9/2/72 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Lamellenposition, Kueche.Jalousie.Terrasse.Lamellenposition
+  9/2/74 - Dg.Essen.Jalousie.Terrasse.Position, Kueche.Jalousie.Esstisch.Position
+  9/2/75 - Dg.Essen.Jalousie.Terrasse.Lamellenposition, Kueche.Jalousie.Esstisch.Lamellenposition
   9/2/77 - Dg.Essen.Jalousie.Fenster.Position, Kueche.Jalousie.Kochinsel.Position
   9/2/78 - Dg.Essen.Jalousie.Fenster.Lamellenposition, Kueche.Jalousie.Kochinsel.Lamellenposition
   9/2/81 - Dg.Kueche.Jalousie.Kochinsel.Position, Kueche.Jalousie.Arbeitsflaeche.Position
@@ -360,12 +360,12 @@
  10/2/64 - Dg.Wohnzimmer.Jalousie.Terasse.Position
  10/2/65 - Dg.Wohnzimmer.Jalousie.Terasse.Lamellenposition
  10/2/66 - Dg.Wohnzimmer.Jalousie.Terasse.Position_gueltig, Dg.Wohnzimmer.Jalousie.Terasse.knx_read_logic
- 10/2/71 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Position, Kueche.Jalousie.Terrasse.Position.Status
- 10/2/72 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Lamellenposition, Kueche.Jalousie.Terrasse.Lamellenposition.Status
- 10/2/73 - Dg.Essen.Jalousie.Terasse_Schiebetuer.Position_gueltig, Dg.Essen.Jalousie.Terasse_Schiebetuer.knx_read_logic
- 10/2/74 - Dg.Essen.Jalousie.Terasse.Position, Kueche.Jalousie.Esstisch.Position, Kueche.Jalousie.Esstisch.Position.Status
- 10/2/75 - Dg.Essen.Jalousie.Terasse.Lamellenposition, Kueche.Jalousie.Esstisch.Lamellenposition, Kueche.Jalousie.Esstisch.Lamellenposition.Status
- 10/2/76 - Dg.Essen.Jalousie.Terasse.Position_gueltig, Dg.Essen.Jalousie.Terasse.knx_read_logic
+ 10/2/71 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Position, Kueche.Jalousie.Terrasse.Position.Status
+ 10/2/72 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Lamellenposition, Kueche.Jalousie.Terrasse.Lamellenposition.Status
+ 10/2/73 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Position_gueltig, Dg.Essen.Jalousie.Terrasse_Schiebetuer.knx_read_logic
+ 10/2/74 - Dg.Essen.Jalousie.Terrasse.Position, Kueche.Jalousie.Esstisch.Position, Kueche.Jalousie.Esstisch.Position.Status
+ 10/2/75 - Dg.Essen.Jalousie.Terrasse.Lamellenposition, Kueche.Jalousie.Esstisch.Lamellenposition, Kueche.Jalousie.Esstisch.Lamellenposition.Status
+ 10/2/76 - Dg.Essen.Jalousie.Terrasse.Position_gueltig, Dg.Essen.Jalousie.Terrasse.knx_read_logic
  10/2/77 - Dg.Essen.Jalousie.Fenster.Position, Kueche.Jalousie.Kochinsel.Position, Kueche.Jalousie.Kochinsel.Position.Status
  10/2/78 - Dg.Essen.Jalousie.Fenster.Lamellenposition, Kueche.Jalousie.Kochinsel.Lamellenposition, Kueche.Jalousie.Kochinsel.Lamellenposition.Status
  10/2/79 - Dg.Essen.Jalousie.Fenster.Position_gueltig, Dg.Essen.Jalousie.Fenster.knx_read_logic

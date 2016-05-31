@@ -529,7 +529,7 @@
         }
       },
       "Jalousie": {
-        "Terasse": {
+        "Terrasse": {
           "$template": {
             "source": "jalousie",
             "knx": "0/2/74"
@@ -538,7 +538,7 @@
             "Rules": {
               "$templated": true,
               "as_plugin": "active",
-              "name": "Dg Essen Terasse",
+              "name": "Dg Essen Terrasse",
               "Beschatten": {
                 "$order": 30,
                 "as_use": "Jalousie_default.Beschatten_Ost"
@@ -563,7 +563,7 @@
             }
           }
         },
-        "Terasse_Schiebetuer": {
+        "Terrasse_Schiebetuer": {
           "$template": {
             "source": "jalousie",
             "knx": "0/2/71"
@@ -572,7 +572,7 @@
             "Rules": {
               "$templated": true,
               "as_plugin": "active",
-              "name": "Dg Essen Terasse Schiebetuer",
+              "name": "Dg Essen Terrasse Schiebetuer",
               "Beschatten": {
                 "$order": 30,
                 "as_use": "Jalousie_default.Beschatten_Ost"

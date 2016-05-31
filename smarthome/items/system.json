@@ -247,7 +247,7 @@
             "type": "bool",
             "enforce_updates": true,
             "autotimer": "1 = 0",
-            "cycle": "5 = 1",
+            "cycle": "25 = 1",
             "knx_dpt": "1",
             "knx_send": "0/0/200"
         },
