@@ -111,64 +111,95 @@
       }
     },
     "Flur": {
-      "Jalousie": {
-        "Fenster": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/111"
-          },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Dg Flur",
-              "Abenddaemmerung": {
-                "as_set_Position": "100",
-                "as_set_Lamellenposition": "0"
-              },
-              "Morgendaemmerung": {
-                "as_set_Position": "100",
-                "as_set_Lamellenposition": "50"
-              },
-              "Nacht": {
-                "as_set_Position": "100",
-                "as_set_Lamellenposition": "70"
-              },
+        "Jalousie": {
+            "Fenster": {
+                "$template": {
+                    "source": "jalousie",
+                    "knx": "0/2/111"
+                },
+                "autoBlind": {
+                    "Rules": {
+                        "$templated": true,
+                        "as_plugin": "active",
+                        "name": "Dg Flur",
+                        "Abenddaemmerung": {
+                            "as_set_Position": "100",
+                            "as_set_Lamellenposition": "0"
+                        },
+                        "Morgendaemmerung": {
+                            "as_set_Position": "100",
+                            "as_set_Lamellenposition": "50"
+                        },
+                        "Nacht": {
+                            "as_set_Position": "100",
+                            "as_set_Lamellenposition": "70"
+                        },
 
-              "Tag": {
-                "as_set_Position": "30",
-                "as_set_Lamellenposition": "0"
-              }
+                        "Tag": {
+                            "as_set_Position": "30",
+                            "as_set_Lamellenposition": "0"
+                        }
+                    }
+                }
             }
-          }
-        }
-      },
-      "Einzelraumregelung": {
-        "$template": {
-          "source": "einzelraumregelung",
-          "knx": "0/2/111"
-        }
-      },
-      "Dachfenster": {
-        "$template": {
-
-          "source": "dachfenster",
-          "knx": "4/2/114"
         },
-        "autoBlind": {
-          "Rules": {
-            "$templated": true,
-            "as_plugin": "nactive",
-            "name": "Dg Flur Dachfenster"
-          }
+        "Einzelraumregelung": {
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "0/2/111"
+            }
+        },
+        "Dachfenster": {
+            "$template": {
+
+                "source": "dachfenster",
+                "knx": "4/2/114"
+            },
+            "autoBlind": {
+                "Rules": {
+                    "$templated": true,
+                    "as_plugin": "nactive",
+                    "name": "Dg Flur Dachfenster"
+                }
+            }
+        },
+        "Praesenz": {
+            "$template": {
+                "source": "praesenz",
+                "knx": "2/2/0"
+            }
+        },
+        "ClickControl": {
+            "$template": {
+                "source": "clickcontrol",
+                "knx": "6/2/111"
+            },
+            "Rules": {
+                "Zaehler_jalousie": {
+                    "cc_count_counter_Jalousie": 2
+                }
+
+                },
+            "Leds": {
+                "$templated": true,
+                "Led1Prio": {
+                    "eval": "True if (~~~.State.Zaehler_jalousie()==1 or ~~~.State.Zaehler_jalousie()==2)  else False",
+                    "eval_trigger": "~~~.State.Zaehler_jalousie"
+                },
+                "Led2Prio": {
+                    "eval": "True if (~~~.State.Zaehler_jalousie()==1 or ~~~.State.Zaehler_jalousie()==2)  else False",
+                    "eval_trigger": "~~~.State.Zaehler_jalousie"
+                },
+                "Led3Prio": {
+                    "eval": "True if (~~~.State.Zaehler_jalousie()==2)  else False",
+                    "eval_trigger": "~~~.State.Zaehler_jalousie"
+                },
+                "Led4Prio": {
+                    "eval": "True if (~~~.State.Zaehler_jalousie()==2)  else False",
+                    "eval_trigger": "~~~.State.Zaehler_jalousie"
+                }
+            }
         }
-      },
-      "Praesenz": {
-        "$template": {
-          "source": "praesenz",
-          "knx": "2/2/0"
-        }
-      }
     },
     "Carla": {
       "Jalousie": {
@@ -488,7 +519,7 @@
       "ClickControl": {
         "$template": {
           "source": "clickcontrol",
-          "knx": "0/2/81"
+          "knx": "6/2/81"
         },
         "Leds": {
           "$templated": true,

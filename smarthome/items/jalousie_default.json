@@ -1,4 +1,4 @@
-{
+Ôªø{
   "$schema": "../schema/ItemSchema.json",
   "Jalousie_default": {
 
@@ -174,7 +174,7 @@
     "Beschatten_Sued": {
       "$order": 31,
       "type": "foo",
-      "name": "Beschatten S¸d-Seite",
+      "name": "Beschatten S√ºd-Seite",
       "as_set_Position": "100",
       "as_set_Lamellenposition": "eval: int((90-(sh.System.Sonne.Hoehe()))*8/10) if (int(sh.System.Sonne.Hoehe()) > 0) else 45",
       "as_set_suspend": "False",
@@ -271,10 +271,11 @@
     "Morgendaemmerung": {
       "$order": 40,
       "type": "foo",
-      "name": "Morgend‰mmerung",
+      "name": "Morgend√§mmerung",
       "as_set_suspend": "False",
       "enter": {
         "as_min_time": "06:00",
+        "as_max_time": "12:00",
         "as_min_sun_altitude": "-5",
         "as_max_sun_altitude": "5",
         "as_min_Daemmerung": "20",
@@ -304,7 +305,7 @@
     "Abenddaemmerung": {
       "$order": 60,
       "type": "foo",
-      "name": "Abendd‰mmerung",
+      "name": "Abendd√§mmerung",
       "as_set_suspend": "False",
       "enter": {
         "as_max_sun_altitude": "20",
