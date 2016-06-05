@@ -198,7 +198,17 @@
                     "eval": "True if (~~~.State.Zaehler_jalousie()==2)  else False",
                     "eval_trigger": "~~~.State.Zaehler_jalousie"
                 }
-            }
+            },
+            //"Jalousie_to_set": {
+            //    "Auf_ab": {
+            //        "eval":  "~~~.State.Auf_ab()",
+            //        "eval_trigger": "~~~.State.Zaehler_jalousie"
+            //    },
+            //    "Lamellenverstellung_stop": {
+            //        "eval": "True if (~~~.State.Zaehler_jalousie()==2)  else False",
+            //        "eval_trigger": "~~~.State.Zaehler_jalousie"
+            //    }
+            //}
         }
     },
     "Carla": {
@@ -487,7 +497,7 @@
               "name": "Dg Fenster Speiss",
               "Beschatten": {
                 "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_West"
+                "as_use": "Jalousie_default.Beschatten_Ost"
               },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
