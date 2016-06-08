@@ -179,7 +179,54 @@
                     "cc_count_counter_Jalousie": 2
                 }
 
+            },
+            "State": {
+                "Auf_ab": {
+                    "Fenster": {
+                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 0)",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                             "item":"sh.Dg.Flur.Jalousie.Fenster.Auf_ab" 
+                        }
+                    },
+                    "Dachfenster": {
+                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 1)",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                                "item":"sh.Dg.Flur.Dachfenster.Auf_ab" 
+                        }
+                    }
                 },
+                "Lamellenverstellung_stop": {
+                    "Fenster": {
+                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 0)",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                            "item": "sh.Dg.Flur.Jalousie.Fenster.Lamellenverstellung_stop" 
+                        }
+                    },
+                    "Dachfenster": {
+                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 1)",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                                "item":"sh.Dg.Flur.Dachfenster.Lamellenverstellung_stop" 
+                        }
+                    }
+                }
+            },
+
             "Leds": {
                 "$templated": true,
                 "Led1Prio": {
@@ -528,9 +575,55 @@
       },
       "ClickControl": {
         "$template": {
-          "source": "clickcontrol",
-          "knx": "6/2/81"
+            "source": "clickcontrol",
+            "knx": "6/2/81"
         },
+         "State": {
+                "Auf_ab": {
+                    "Arbeitsflaeche": {
+                        "eval": "~~() if ~~~.Zaehler_jalousie()==0 else value",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                             "item":"sh.Dg.Kueche.Jalousie.Arbeitsflaeche.Auf_ab" 
+                        }
+                    },
+                    "Kochinsel": {
+                        "eval": "~~() if ~~~.Zaehler_jalousie()==1 else value",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                                "item":"sh.Dg.Kueche.Jalousie.Kochinsel.Auf_ab" 
+                        }
+                    }
+                },
+                "Lamellenverstellung_stop": {
+                    "Arbeitsflaeche": {
+                        "eval": "~~() if  ~~~.Zaehler_jalousie()==0 else value",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                            "item": "sh.Dg.Kueche.Jalousie.Arbeitsflaeche.Lamellenverstellung_stop" 
+                        }
+                    },
+                    "Kochinsel": {
+                        "eval": "~~() if  ~~~.Zaehler_jalousie()==1 else value",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                                "item":"sh.Dg.Kueche.Jalousie.Kochinsel.Lamellenverstellung_stop" 
+                        }
+                    }
+                }
+            },
         "Leds": {
           "$templated": true,
           "Led2Prio": {
