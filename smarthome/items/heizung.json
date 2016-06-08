@@ -21,7 +21,7 @@
           "type": "dict",
           "visu_acl": "rw",
           "cache": true,
-          "uzsu_item": "heizraum.warmwasser.soll_temperatur"
+          "uzsu_item": "Heizraum.Warmwasser.Soll_temperatur"
         }
       },
       "Soll_temperatur_logo_write": {

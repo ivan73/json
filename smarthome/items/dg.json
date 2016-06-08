@@ -346,7 +346,7 @@
             }
           }
         },
-        "Terasse": {
+        "Terrasse": {
           "$template": {
             "source": "jalousie",
             "knx": "0/2/64"

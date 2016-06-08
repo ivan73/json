@@ -111,9 +111,9 @@
   3/2/61 - Dg.Wohnzimmer.Jalousie.Fenster.Auf_ab
   3/2/62 - Dg.Wohnzimmer.Jalousie.Fenster.Lamellenverstellung_stop
   3/2/63 - Dg.Wohnzimmer.Jalousie.Fenster.ReferenzFahren
-  3/2/64 - Dg.Wohnzimmer.Jalousie.Terasse.Auf_ab
-  3/2/65 - Dg.Wohnzimmer.Jalousie.Terasse.Lamellenverstellung_stop
-  3/2/66 - Dg.Wohnzimmer.Jalousie.Terasse.ReferenzFahren
+  3/2/64 - Dg.Wohnzimmer.Jalousie.Terrasse.Auf_ab
+  3/2/65 - Dg.Wohnzimmer.Jalousie.Terrasse.Lamellenverstellung_stop
+  3/2/66 - Dg.Wohnzimmer.Jalousie.Terrasse.ReferenzFahren
   3/2/71 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Auf_ab, Kueche.Jalousie.Terrasse.Auf_ab
   3/2/72 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Lamellenverstellung_stop, Kueche.Jalousie.Terrasse.Lamellenverstellung_stop
   3/2/73 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.ReferenzFahren
@@ -262,8 +262,8 @@
   9/2/42 - Dg.Mattia.Jalousie.Fenster.Lamellenposition
   9/2/61 - Dg.Wohnzimmer.Jalousie.Fenster.Position
   9/2/62 - Dg.Wohnzimmer.Jalousie.Fenster.Lamellenposition
-  9/2/64 - Dg.Wohnzimmer.Jalousie.Terasse.Position
-  9/2/65 - Dg.Wohnzimmer.Jalousie.Terasse.Lamellenposition
+  9/2/64 - Dg.Wohnzimmer.Jalousie.Terrasse.Position
+  9/2/65 - Dg.Wohnzimmer.Jalousie.Terrasse.Lamellenposition
   9/2/71 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Position, Kueche.Jalousie.Terrasse.Position
   9/2/72 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Lamellenposition, Kueche.Jalousie.Terrasse.Lamellenposition
   9/2/74 - Dg.Essen.Jalousie.Terrasse.Position, Kueche.Jalousie.Esstisch.Position
@@ -369,9 +369,9 @@
  10/2/61 - Dg.Wohnzimmer.Jalousie.Fenster.Position
  10/2/62 - Dg.Wohnzimmer.Jalousie.Fenster.Lamellenposition
  10/2/63 - Dg.Wohnzimmer.Jalousie.Fenster.Position_gueltig, Dg.Wohnzimmer.Jalousie.Fenster.knx_read_logic
- 10/2/64 - Dg.Wohnzimmer.Jalousie.Terasse.Position
- 10/2/65 - Dg.Wohnzimmer.Jalousie.Terasse.Lamellenposition
- 10/2/66 - Dg.Wohnzimmer.Jalousie.Terasse.Position_gueltig, Dg.Wohnzimmer.Jalousie.Terasse.knx_read_logic
+ 10/2/64 - Dg.Wohnzimmer.Jalousie.Terrasse.Position
+ 10/2/65 - Dg.Wohnzimmer.Jalousie.Terrasse.Lamellenposition
+ 10/2/66 - Dg.Wohnzimmer.Jalousie.Terrasse.Position_gueltig, Dg.Wohnzimmer.Jalousie.Terrasse.knx_read_logic
  10/2/71 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Position, Kueche.Jalousie.Terrasse.Position.Status
  10/2/72 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Lamellenposition, Kueche.Jalousie.Terrasse.Lamellenposition.Status
  10/2/73 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Position_gueltig, Dg.Essen.Jalousie.Terrasse_Schiebetuer.knx_read_logic
