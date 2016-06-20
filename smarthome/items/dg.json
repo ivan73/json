@@ -510,7 +510,7 @@
               "name": "Dg Fenster Arbeitsflaeche",
               "Beschatten": {
                 "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_West"
+                "as_use": "Jalousie_default.Beschatten_Ost"
               },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
@@ -801,7 +801,7 @@
               "name": "Dg Bad Fenster klein",
               "Beschatten": {
                 "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_West"
+                "as_use": "Jalousie_default.Beschatten_Ost"
               },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
@@ -835,7 +835,7 @@
               "name": "Dg Bad Fenster groß",
               "Beschatten": {
                 "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_West"
+                "as_use": "Jalousie_default.Beschatten_Ost"
               },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
