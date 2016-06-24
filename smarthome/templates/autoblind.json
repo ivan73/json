@@ -52,65 +52,70 @@
     },
 
     "Rules": {
-      "$order": 3,
-      "type": "bool",
-      "as_plugin": "active",
-      //Erste Zustandsermittlung nach 30 Sekunden
-      "as_startup_delay" : 10,
-      "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren",
-      "as_repeat_actions": "true",
-      "as_laststate_item_id": "..state_id",
-      "as_laststate_item_name": "..state_name",
-      
-      "Lock": {
-        "$order": 1,
-        "as_use": "Jalousie_default.Lock"
-      },
+        "$order": 3,
+        "type": "bool",
+        "as_plugin": "active",
+        //Erste Zustandsermittlung nach 30 Sekunden
+        "as_startup_delay": 10,
+        "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren",
+        "as_repeat_actions": "true",
+        "as_laststate_item_id": "..state_id",
+        "as_laststate_item_name": "..state_name",
 
-      "Referenzfahrt_ende": {
-        "$order": 10,
-        "as_use":"Jalousie_default.Referenzfahrt_ende"
-      },
-      "Referenzfahrt": {
-        "$order": 11,
-        "as_use":"Jalousie_default.Referenzfahrt"
-      },
-      "PositionUngueltig": {
-        "$order": 12,
-        "as_use":"Jalousie_default.PositionUngueltig"
-      },
-      "Suspend": {
-        "$order": 20,
-        "as_use":"Jalousie_default.Suspend"
-      },
-      //"Beschatten_manuell_end": {
-      //  "$order": 30,
-      //  "as_use":"Jalousie_default.Beschatten_manuell_end"
-      //},
-      //"Beschatten_manuell": {
-      //  "$order": 31,
-      //  "as_use":"Jalousie_default.Beschatten_manuell"
-      //},
-      "Morgendaemmerung": {
-        "$order": 40,
-        "as_use":"Jalousie_default.Morgendaemmerung"
-      },
-      "Tag": {
-        "$order": 50,
-        "as_use":"Jalousie_default.Tag"
-      },
-      "Abenddaemmerung": {
-        "$order": 60,
-        "as_use":"Jalousie_default.Abenddaemmerung"
-      },
-      "Nacht": {
-        "$order": 70,
-        "as_use":"Jalousie_default.Nacht"
-      },
-      "Pause": {
-        "$order": 100,
-        "as_use":"Jalousie_default.Pause"
-      }
+        "Lock": {
+            "$order": 1,
+            "as_use": "Jalousie_default.Lock"
+        },
+
+        "Referenzfahrt_ende": {
+            "$order": 10,
+            "as_use": "Jalousie_default.Referenzfahrt_ende"
+        },
+        "Referenzfahrt": {
+            "$order": 11,
+            "as_use": "Jalousie_default.Referenzfahrt"
+        },
+        "PositionUngueltig": {
+            "$order": 12,
+            "as_use": "Jalousie_default.PositionUngueltig"
+        },
+        "Suspend": {
+            "$order": 20,
+            "as_use": "Jalousie_default.Suspend"
+        },
+        //"Beschatten_manuell_end": {
+        //  "$order": 30,
+        //  "as_use":"Jalousie_default.Beschatten_manuell_end"
+        //},
+        //"Beschatten_manuell": {
+        //  "$order": 31,
+        //  "as_use":"Jalousie_default.Beschatten_manuell"
+        //},
+
+        "Beschatten_Manuell": {
+            "$order": 33,
+            "as_use": "Jalousie_default.Beschatten_Manuell"
+        },
+        "Morgendaemmerung": {
+            "$order": 40,
+            "as_use": "Jalousie_default.Morgendaemmerung"
+        },
+        "Tag": {
+            "$order": 50,
+            "as_use": "Jalousie_default.Tag"
+        },
+        "Abenddaemmerung": {
+            "$order": 60,
+            "as_use": "Jalousie_default.Abenddaemmerung"
+        },
+        "Nacht": {
+            "$order": 70,
+            "as_use": "Jalousie_default.Nacht"
+        },
+        "Pause": {
+            "$order": 100,
+            "as_use": "Jalousie_default.Pause"
+        }
     }
   }
 }
