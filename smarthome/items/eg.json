@@ -369,7 +369,10 @@
               "$templated": true,
               "as_plugin": "active",
               "name": "Eg Raff. Küche Kochen",
-
+              "Beschatten": {
+                "$order": 30,
+                "as_use": "Jalousie_default.Beschatten_Ost"
+              },
               "Morgendaemmerung": {
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "50"

@@ -8,8 +8,11 @@
       "cycle": "300 = 1"
     },
     "Ist_temperatur": {
-      "type": "num",
-      "value": 22
+        "type": "num",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "value": 22,
+        "cache": true
     },
     "Praesenz": {
       "type": "bool",
@@ -45,8 +48,11 @@
       },
       "Einzelraumregelung": {
         "Ist_temperatur": {
-          "type": "num",
-          "value": 22
+            "type": "num",
+            "value": 22,
+            "cache": true,
+            "eval": "~~~~.Ist_temperatur()",
+            "eval_trigger": "~~~~.Ist_temperatur"
         }
       },
       "Praesenz": {
@@ -68,7 +74,11 @@
             "Rules": {
               "$templated": true,
               "as_plugin": "active",
-              "name": "Og Raff. Balkonwiesen Sylvia",
+                "name": "Og Raff. Balkonwiesen Sylvia",
+                "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_West"
+                },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "0"
@@ -98,7 +108,11 @@
             "Rules": {
               "$templated": true,
               "as_plugin": "active",
-              "name": "Og Raff. Balkonwiesen Ivan_rechts",
+                "name": "Og Raff. Balkonwiesen Ivan_rechts",
+                "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_West"
+                },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "0"
@@ -128,7 +142,11 @@
             "Rules": {
               "$templated": true,
               "as_plugin": "active",
-              "name": "Og Raff. Balkonwiesen Ivan_links",
+                "name": "Og Raff. Balkonwiesen Ivan_links",
+                "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_West"
+                },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "0"
@@ -158,7 +176,11 @@
             "Rules": {
               "$templated": true,
               "as_plugin": "active",
-              "name": "Og Raff. Balkonwiesen Wohnzimmer",
+                "name": "Og Raff. Balkonwiesen Wohnzimmer",
+                "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_West"
+                },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "0"
@@ -182,8 +204,11 @@
       },
       "Einzelraumregelung": {
         "Ist_temperatur": {
-          "type": "num",
-          "value": 22
+            "type": "num",
+            "value": 22,
+            "cache": true,
+            "eval": "~~~~.Ist_temperatur()",
+            "eval_trigger": "~~~~.Ist_temperatur"
         }
       },
       "Praesenz": {
@@ -205,7 +230,11 @@
             "Rules": {
               "$templated": true,
               "as_plugin": "active",
-              "name": "Og Raff. Wohnzimmer Wiesen",
+                "name": "Og Raff. Wohnzimmer Wiesen",
+                 "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_West"
+                },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "50"
@@ -235,7 +264,11 @@
             "Rules": {
               "$templated": true,
               "as_plugin": "active",
-              "name": "Og Raff. Wohnzimmer Carabinieri",
+                "name": "Og Raff. Wohnzimmer Carabinieri",
+                "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_Sued"
+                },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "50"
@@ -259,8 +292,11 @@
       },
       "Einzelraumregelung": {
         "Ist_temperatur": {
-          "type": "num",
-          "value": 22
+            "type": "num",
+            "value": 22,
+            "cache": true,
+            "eval": "~~~~.Ist_temperatur()",
+            "eval_trigger": "~~~~.Ist_temperatur"
         }
       },
       "Praesenz": {
@@ -282,7 +318,11 @@
             "Rules": {
               "$templated": true,
               "as_plugin": "active",
-              "name": "Og Raff. Küche Fenster",
+                "name": "Og Raff. Küche Fenster",
+                "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_Sued"
+                },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "50"
@@ -306,8 +346,11 @@
       },
       "Einzelraumregelung": {
         "Ist_temperatur": {
-          "type": "num",
-          "value": 22
+            "type": "num",
+            "value": 22,
+            "cache": true,
+            "eval": "~~~~.Ist_temperatur()",
+            "eval_trigger": "~~~~.Ist_temperatur"
         }
       },
       "Praesenz": {
@@ -329,11 +372,15 @@
             "Rules": {
               "$templated": true,
               "as_plugin": "active",
-              "name": "Og Raff. Balkonstrasse Treppenhaus",
-              "Abenddaemmerung": {
-                "as_set_Position": "100",
-                "as_set_Lamellenposition": "0"
-              },
+                "name": "Og Raff. Balkonstrasse Treppenhaus",
+                "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_Ost"
+                },
+                "Abenddaemmerung": {
+                    "as_set_Position": "100",
+                    "as_set_Lamellenposition": "0"
+                },
               "Morgendaemmerung": {
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "50"
@@ -359,7 +406,11 @@
             "Rules": {
               "$templated": true,
               "as_plugin": "active",
-              "name": "Og Raff. Balkonstrasse Schlafzimmer",
+                "name": "Og Raff. Balkonstrasse Schlafzimmer",
+                "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_Ost"
+                },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "0"
@@ -390,8 +441,11 @@
       },
       "Einzelraumregelung": {
         "Ist_temperatur": {
-          "type": "num",
-          "value": 22
+            "type": "num",
+            "value": 22,
+            "cache": true,
+            "eval": "~~~~.Ist_temperatur()",
+            "eval_trigger": "~~~~.Ist_temperatur"
         }
       },
       "Praesenz": {
@@ -414,11 +468,15 @@
               "$templated": true,
               "as_plugin": "active",
               "name": "Og Raff. Schlafzimmer Fenster",
-              "Referenzfahrt": {
-                "enter_auto": {
-                  "as_min_Daemmerung": "30"
-                }
-              },
+                "Referenzfahrt": {
+                    "enter_auto": {
+                        "as_min_Daemmerung": "30"
+                    }
+                },
+                "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_Ost"
+                },
               "Abenddaemmerung": {
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "0"
@@ -449,8 +507,11 @@
       },
       "Einzelraumregelung": {
         "Ist_temperatur": {
-          "type": "num",
-          "value": 22
+            "type": "num",
+            "value": 22,
+            "cache": true,
+            "eval": "~~~~.Ist_temperatur()",
+            "eval_trigger": "~~~~.Ist_temperatur"
         }
       },
       "Praesenz": {

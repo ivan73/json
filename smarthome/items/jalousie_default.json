@@ -31,8 +31,22 @@
         "as_item_temperature": ".....Einzelraumregelung.Ist_temperatur",
         "as_item_praesenz": ".....Praesenz",
 
-        "Lock": {
+        "Beschatten_Lock": {
             "$order": 1,
+            "type": "foo",
+            "name": "AutoAUS Zu 70%",
+            "as_set_Position": "100",
+            "as_set_Lamellenposition": "70",
+            "enter": {
+                "as_value_automatik": "False",
+                "as_value_ReferenzFahren": "False",
+                "as_value_PositionGueltig": "True",
+                "as_value_beschatten": "True"
+            }
+        },
+        
+        "Lock": {
+            "$order": 2,
             "type": "foo",
             "name": "Automatik AUS",
             "as_set_suspend": "False",
@@ -83,7 +97,7 @@
             "$order": 12,
             "type": "foo",
             "name": "Referenzfahrt erforderlich (ganz Auf)",
-            "as_value_ReferenzPruefen": "0",
+            "as_value_ReferenzPruefen": "False",
             "enter": {
                 "as_value_PositionGueltig": "False",
                 "as_value_ReferenzFahren": "False"

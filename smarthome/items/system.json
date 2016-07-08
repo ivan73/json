@@ -135,74 +135,86 @@
             "Ost_gt43k": {
                 "type": "bool",
                 "name": "Helligkeit an der Ostseite größer als 43 kLux",
-                "eval": "~~.Ost() > 43000 and ~~.Sued() < 43000 and  ~~.West() < 43000",
-                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+                //"eval": "~~.Ost() > 43000 and ~~.Sued() < 43000 and  ~~.West() < 43000",
+                "eval": "~~.Ost() > 43000",
+                "eval_trigger": "~~.Ost"
             },
             "Ost_gt35k": {
                 "type": "bool",
                 "name": "Helligkeit an der Ostseite größer als 35 kLux",
-                "eval": "~~.Ost() > 35000 and ~~.Sued() < 35000 and  ~~.West() < 35000",
-                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+                //"eval": "~~.Ost() > 35000 and ~~.Sued() < 35000 and  ~~.West() < 35000",
+                "eval": "~~.Ost() > 35000",
+                "eval_trigger": "~~.Ost"
             },
             "Ost_gt25k": {
                 "type": "bool",
                 "name": "Helligkeit an der Ostseite größer als 25 kLux",
-                "eval": "~~.Ost() > 25000 and ~~.Sued() < 25000 and  ~~.West() < 25000",
-                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+                //"eval": "~~.Ost() > 25000 and ~~.Sued() < 25000 and  ~~.West() < 25000",
+                "eval": "~~.Ost() > 25000",
+                "eval_trigger": "~~.Ost"
             },
             "Ost_gt20k": {
                 "type": "bool",
                 "name": "Helligkeit an der Ostseite größer als 20 kLux",
-                "eval": "~~.Ost() > 20000 and ~~.Sued() < 20000 and  ~~.West() < 20000",
-                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+                //"eval": "~~.Ost() > 20000 and ~~.Sued() < 20000 and  ~~.West() < 20000",
+                "eval": "~~.Ost() > 20000",
+                "eval_trigger": "~~.Ost"
             },
             "Sued_gt43k": {
                 "type": "bool",
                 "name": "Helligkeit an der Suedseite größer als 43 kLux",
-                "eval": "~~.Ost() < 43000 and ~~.Sued() > 43000 and  ~~.West() < 43000",
-                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+                //"eval": "~~.Ost() < 43000 and ~~.Sued() > 43000 and  ~~.West() < 43000",
+                "eval": "~~.Sued() > 43000",
+                "eval_trigger": "~~.Sued"
             },
             "Sued_gt35k": {
                 "type": "bool",
                 "name": "Helligkeit an der Suedseite größer als 35 kLux",
-                "eval": "~~.Ost() < 35000 and ~~.Sued() > 35000 and  ~~.West() < 35000",
-                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+                //"eval": "~~.Ost() < 35000 and ~~.Sued() > 35000 and  ~~.West() < 35000",
+                "eval": "~~.Sued() > 35000",
+                "eval_trigger": "~~.Sued"
             },
             "Sued_gt25k": {
                 "type": "bool",
                 "name": "Helligkeit an der Suedseite größer als 25 kLux",
-                "eval": "~~.Ost() < 25000 and ~~.Sued() > 25000 and  ~~.West() < 25000",
-                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+                //"eval": "~~.Ost() < 25000 and ~~.Sued() > 25000 and  ~~.West() < 25000",
+                "eval": "~~.Sued() > 25000",
+                "eval_trigger": "~~.Sued"
             },
             "Sued_gt20k": {
                 "type": "bool",
                 "name": "Helligkeit an der Suedseite größer als 20 kLux",
-                "eval": "~~.Ost() < 20000 and ~~.Sued() > 20000 and  ~~.West() < 20000",
-                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+                //"eval": "~~.Ost() < 20000 and ~~.Sued() > 20000 and  ~~.West() < 20000",
+                "eval": "~~.Sued() > 20000",
+                "eval_trigger": "~~.Sued"
             },
             "West_gt43k": {
                 "type": "bool",
                 "name": "Helligkeit an der Westseite größer als 43 kLux",
-                "eval": "~~.Ost() < 43000 and ~~.Sued() < 43000 and  ~~.West() > 43000",
-                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+                //"eval": "~~.Ost() < 43000 and ~~.Sued() < 43000 and  ~~.West() > 43000",
+                "eval": "~~.West() > 43000",
+                "eval_trigger": "~~.West"
             },
             "West_gt35k": {
                 "type": "bool",
                 "name": "Helligkeit an der Westseite größer als 35 kLux",
-                "eval": "~~.Ost() < 35000 and ~~.Sued() < 35000 and  ~~.West() > 35000",
-                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+                //"eval": "~~.Ost() < 35000 and ~~.Sued() < 35000 and  ~~.West() > 35000",
+                "eval": "~~.West() > 35000",
+                "eval_trigger": "~~.West"
             },
             "West_gt25k": {
                 "type": "bool",
                 "name": "Helligkeit an der Westseite größer als 25 kLux",
-                "eval": "~~.Ost() < 25000 and ~~.Sued() < 25000 and  ~~.West() > 25000",
-                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+                //"eval": "~~.Ost() < 25000 and ~~.Sued() < 25000 and  ~~.West() > 25000",
+                "eval": "~~.West() > 25000",
+                "eval_trigger": "~~.West"
             },
             "West_gt20k": {
                 "type": "bool",
                 "name": "Helligkeit an der Westseite größer als 25 kLux",
-                "eval": "~~.Ost() < 20000 and ~~.Sued() < 20000 and  ~~.West() > 20000",
-                "eval_trigger": "~~.Ost | ~~.Sued | ~~.West"
+                //"eval": "~~.Ost() < 20000 and ~~.Sued() < 20000 and  ~~.West() > 20000",
+                "eval": "~~.West() > 20000",
+                "eval_trigger": "~~.West"
             }
         },
         "Daemmerung": {

@@ -62,8 +62,12 @@
         "as_laststate_item_id": "..state_id",
         "as_laststate_item_name": "..state_name",
 
-        "Lock": {
+        "Beschatten_Lock": {
             "$order": 1,
+            "as_use": "Jalousie_default.Beschatten_Lock"
+        },
+        "Lock": {
+            "$order": 2,
             "as_use": "Jalousie_default.Lock"
         },
 
