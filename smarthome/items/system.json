@@ -243,6 +243,24 @@
             "eval_trigger": "~~.Wind",
             "eval": "(~~.Wind()*3.6)"
         },
+        "Wind_Alarm_65": {
+            "type": "bool",
+            "visu": "yes",
+            "cache": true,
+            "sqlite": "yes",
+            "visu_acl": "ro",
+            "knx_dpt": "1",
+            "knx_listen": "0/0/41"
+        },
+        "Wind_Alarm_80": {
+            "type": "bool",
+            "visu": "yes",
+            "cache": true,
+            "sqlite": "yes",
+            "visu_acl": "ro",
+            "knx_dpt": "1",
+            "knx_listen": "0/0/42"
+        },
         "Temperatur": {
             "type": "num",
             "visu": "yes",
