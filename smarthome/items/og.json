@@ -419,6 +419,7 @@
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "50",
                 "enter": {
+                    "as_item_MorgendaemmerungAktive": true,
                     "as_min_time": "07:30",
                     "as_max_time": "08:00"
                 }
@@ -432,7 +433,8 @@
                 "as_set_Position": "20",
                 "as_set_Lamellenposition": "0",
                 "enter": {
-                  "as_min_time": "08:00"
+                    "as_item_TagAktive": true,
+                    "as_min_time": "08:00"
                 }
               }
             }
@@ -485,8 +487,9 @@
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "80",
                 "enter": {
-                  "as_min_time": "07:30",
-                  "as_max_time": "08:00"
+                    "as_item_MorgendaemmerungAktive": true,
+                    "as_min_time": "07:30",
+                    "as_max_time": "08:00"
                 }
               },
               "Nacht": {
@@ -498,7 +501,8 @@
                 "as_set_Position": "30",
                 "as_set_Lamellenposition": "0",
                 "enter": {
-                  "as_min_time": "08:30"
+                    "as_item_TagAktive": true,
+                    "as_min_time": "08:30"
                 }
               }
             }

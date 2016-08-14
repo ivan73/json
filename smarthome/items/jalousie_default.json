@@ -30,7 +30,11 @@
         "as_item_ReferenzPruefen": "...knx_read_logic",
         "as_item_temperature": ".....Einzelraumregelung.Ist_temperatur",
         "as_item_praesenz": ".....Praesenz",
-
+        "as_item_MorgendaemmerungAktive": "...Parameter.Morgendaemmerung.Aktive",
+        "as_item_TagAktive": "...Parameter.Tag.Aktive",
+        "as_item_AbenddaemmerngAktive": "...Parameter.Abenddaemmerung.Aktive",
+        "as_item_NachtAktive": "...Parameter.Nacht.Aktive",
+        "as_item_BeschattenAktive": "...Parameter.Beschatten.Aktive",
         "Beschatten_Lock": {
             "$order": 1,
             "type": "foo",
@@ -139,12 +143,13 @@
             "$order": 30,
             "type": "foo",
             "name": "Beschatten Ost-Seite",
-            "as_set_Position": "100",
+            "as_set_Position": "item: ...Parameter.Beschatten.Position",
             //"as_set_Lamellenposition": "eval: int((90-(sh.System.Sonne.Hoehe()))*8/10) if (int(sh.System.Sonne.Hoehe()) > 0) else 45",
 
             "as_set_Lamellenposition": "eval: int((50-(sh.System.Sonne.Hoehe()))*15/10) if (int(sh.System.Sonne.Hoehe()) < 50) else 0",
             "as_set_suspend": "False",
             "enter": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "False",
                 "as_value_Brightness_ost_gt43k": "True",
                 "as_agemin_Brightness_ost_gt43k": "60",
@@ -153,12 +158,14 @@
                 "as_min_time": "08:00"
             },
             "enter_hysterese": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "False",
                 "as_value_laststate": "var:current.state_id",
                 "as_value_Brightness_ost_gt25k": "True",
                 "as_min_sun_altitude": "0"
             },
             "enter_delay": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "False",
                 "as_value_laststate": "var:current.state_id",
                 "as_value_Brightness_ost_gt25k": "False",
@@ -166,6 +173,7 @@
                 "as_min_sun_altitude": "0"
             },
             "enter_praesenz": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "True",
                 "as_value_Brightness_ost_gt35k": "True",
                 "as_agemin_Brightness_ost_gt35k": "60",
@@ -174,12 +182,14 @@
                 "as_min_time": "08:00"
             },
             "enter_praesenz_hysterese": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "True",
                 "as_value_laststate": "var:current.state_id",
                 "as_value_Brightness_ost_gt20k": "True",
                 "as_min_sun_altitude": "0"
             },
             "enter_praesenz_delay": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "True",
                 "as_value_laststate": "var:current.state_id",
                 "as_value_Brightness_ost_gt20k": "False",
@@ -191,11 +201,12 @@
             "$order": 31,
             "type": "foo",
             "name": "Beschatten Süd-Seite",
-            "as_set_Position": "100",
+            "as_set_Position": "item: ...Parameter.Beschatten.Position",
             //"as_set_Lamellenposition": "eval: int((90-(sh.System.Sonne.Hoehe()))*8/10) if (int(sh.System.Sonne.Hoehe()) > 0) else 45",
             "as_set_Lamellenposition": "eval: int((50-(sh.System.Sonne.Hoehe()))*15/10) if (int(sh.System.Sonne.Hoehe()) < 50) else 0",
             "as_set_suspend": "False",
             "enter": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "False",
                 "as_value_Brightness_sued_gt43k": "True",
                 "as_agemin_Brightness_sued_gt43k": "60",
@@ -203,12 +214,14 @@
                 "as_min_temperature": "22"
             },
             "enter_hysterese": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "False",
                 "as_value_laststate": "var:current.state_id",
                 "as_value_Brightness_sued_gt25k": "True",
                 "as_min_sun_altitude": "0"
             },
             "enter_delay": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "False",
                 "as_value_laststate": "var:current.state_id",
                 "as_value_Brightness_sued_gt25k": "False",
@@ -216,6 +229,7 @@
                 "as_min_sun_altitude": "0"
             },
             "enter_praesenz": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "True",
                 "as_value_Brightness_sued_gt35k": "True",
                 "as_agemin_Brightness_sued_gt35k": "60",
@@ -223,12 +237,14 @@
                 "as_min_temperature": "22"
             },
             "enter_praesenz_hysterese": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "True",
                 "as_value_laststate": "var:current.state_id",
                 "as_value_Brightness_sued_gt20k": "True",
                 "as_min_sun_altitude": "0"
             },
             "enter_praesenz_delay": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "True",
                 "as_value_laststate": "var:current.state_id",
                 "as_value_Brightness_sued_gt20k": "False",
@@ -240,11 +256,12 @@
             "$order": 32,
             "type": "foo",
             "name": "Beschatten West-Seite",
-            "as_set_Position": "100",
+            "as_set_Position": "item: ...Parameter.Beschatten.Position",
             //"as_set_Lamellenposition": "eval: int((90-(sh.System.Sonne.Hoehe()))*8/10) if (int(sh.System.Sonne.Hoehe()) > 0) else 45",
              "as_set_Lamellenposition": "eval: int((50-(sh.System.Sonne.Hoehe()))*15/10) if (int(sh.System.Sonne.Hoehe()) < 50) else 0",
             "as_set_suspend": "False",
             "enter": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "False",
                 "as_value_Brightness_west_gt43k": "True",
                 "as_agemin_Brightness_west_gt43k": "60",
@@ -252,12 +269,14 @@
                 "as_min_temperature": "22"
             },
             "enter_hysterese": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "False",
                 "as_value_laststate": "var:current.state_id",
                 "as_value_Brightness_west_gt25k": "True",
                 "as_min_sun_altitude": "0"
             },
             "enter_delay": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "False",
                 "as_value_laststate": "var:current.state_id",
                 "as_value_Brightness_west_gt25k": "False",
@@ -265,6 +284,7 @@
                 "as_min_sun_altitude": "0"
             },
             "enter_praesenz": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "True",
                 "as_value_Brightness_west_gt35k": "True",
                 "as_agemin_Brightness_west_gt35k": "60",
@@ -272,12 +292,14 @@
                 "as_min_temperature": "22"
             },
             "enter_praesenz_hysterese": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "True",
                 "as_value_laststate": "var:current.state_id",
                 "as_value_Brightness_west_gt20k": "True",
                 "as_min_sun_altitude": "0"
             },
             "enter_praesenz_delay": {
+                "as_value_BeschattenAktive": "True",
                 "as_value_praesenz": "True",
                 "as_value_laststate": "var:current.state_id",
                 "as_value_Brightness_west_gt20k": "False",
@@ -289,7 +311,7 @@
             "$order": 33,
             "type": "foo",
             "name": "Beschatten Manuell",
-            "as_set_Position": "100",
+            "as_set_Position": "item: ...Parameter.Beschatten.Position",
             //"as_set_Lamellenposition": "eval: int((90-(sh.System.Sonne.Hoehe()))*8/10) if (int(sh.System.Sonne.Hoehe()) > 0) else 45",
             "as_set_Lamellenposition": "eval: int((50-(sh.System.Sonne.Hoehe()))*15/10) if (int(sh.System.Sonne.Hoehe()) < 50) else 0",
             "as_set_suspend": "False",
@@ -305,7 +327,10 @@
             "type": "foo",
             "name": "Morgendämmerung",
             "as_set_suspend": "False",
+            "as_set_Position": "item: ...Parameter.Morgendaemmerung.Position",
+            "as_set_Lamellenposition": "item: ...Parameter.Morgendaemmerung.Lamellenposition",
             "enter": {
+                "as_item_MorgendaemmerungAktive": true,
                 "as_min_time": "06:00",
                 "as_max_time": "12:00",
                 "as_min_sun_altitude": "-5",
@@ -328,7 +353,10 @@
             "type": "foo",
             "name": "Tag",
             "as_set_suspend": "False",
+            "as_set_Position": "item: ...Parameter.Morgendaemmerung.Position",
+            "as_set_Lamellenposition": "item: ...Parameter.Morgendaemmerung.Lamellenposition",
             "enter": {
+                "as_item_TagAktive": true,
                 "as_min_sun_altitude": "0",
                 "as_min_Daemmerung": "200",
                 "as_min_time": "06:30"
@@ -339,7 +367,10 @@
             "type": "foo",
             "name": "Abenddämmerung",
             "as_set_suspend": "False",
+            "as_set_Position": "item: ...Parameter.Morgendaemmerung.Position",
+            "as_set_Lamellenposition": "item: ...Parameter.Morgendaemmerung.Lamellenposition",
             "enter": {
+                "as_item_AbendaemmerungAktive": true,
                 "as_max_sun_altitude": "20",
                 "as_min_sun_altitude": "-10",
                 "as_min_sun_azimut": "180",
@@ -352,7 +383,10 @@
             "type": "foo",
             "name": "Nacht",
             "as_set_suspend": "False",
+            "as_set_Position": "item: ...Parameter.Morgendaemmerung.Position",
+            "as_set_Lamellenposition": "item: ...Parameter.Morgendaemmerung.Lamellenposition",
             "enter": {
+                "as_item_NachtAktive": true,
                 "as_max_sun_altitude": "10",
                 "as_max_Daemmerung": "30"
             }

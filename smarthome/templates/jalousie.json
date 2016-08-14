@@ -68,10 +68,19 @@
         },
         "autoBlind": {
             "$order": 10,
-            "$template": { "source": "autoblind" },
+            "$template": {
+                "source": "autoblind" 
+
+            },
             "Rules": {
                 "$templated": true,
                 "as_plugin": "active"
+            }
+        },
+        "Parameter": {
+            "$order": 11,
+            "$template": {
+                "source": "autoblind_parameter" 
             }
         }
     }

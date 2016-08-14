@@ -139,6 +139,7 @@
                 //"as_set_Position": "100",
                 "as_set_Lamellenposition": "80",
                 "enter_time": {
+                    "as_item_MorgendaemmerungAktive": true,
                     "as_min_time": "07:30",
                     "as_max_time": "08:00"
 
@@ -146,14 +147,16 @@
               },
               "Abenddaemmerung": {
                 "enter_uhrzeit": {
-                  "as_min_time": "19:30"
+                    "as_item_AbenddaemmerungAktive": true,
+                    "as_min_time": "19:30"
                 },
                 "as_set_Position": "100"
                 //"as_set_Lamellenposition": "0"
               },
               "Nacht": {
                 "enter_uhrzeit": {
-                  "as_min_time": "20:00"
+                    "as_item_NachtAktive": true,
+                    "as_min_time": "20:00"
                 },
                 "as_set_Position": "100",
                 "as_set_Lamellenposition": "100"

@@ -74,6 +74,7 @@
     <Content Include="templates\dachfenster.json" />
     <Content Include="templates\clickcontrol.json" />
     <Content Include="templates\einzelraumregelung.json" />
+    <Content Include="templates\autoblind_parameter.json" />
     <Content Include="templates\jalousie.json" />
     <Content Include="templates\praesenz.json" />
   </ItemGroup>

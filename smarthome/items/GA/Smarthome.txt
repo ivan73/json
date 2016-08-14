@@ -1,3 +1,5 @@
+  0/0/41 - Wetterstation.Wind_Alarm_65
+  0/0/42 - Wetterstation.Wind_Alarm_80
  0/0/200 - Watchdog.Trigger
  0/0/201 - Watchdog.Status
    0/2/0 - Wetterstation.Helligkeit.Ost

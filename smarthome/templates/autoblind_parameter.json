@@ -1,0 +1,100 @@
+{
+  "$schema": "../schema/ItemSchema.json",
+    "Parameter": {
+        "Morgendaemmerung": {
+            "Aktive": {
+                "type": "bool",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": true
+            },
+            "Position": {
+                "type": "num",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": "100"
+            },
+            "Lamellenposition": {
+                "type": "num",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": "50"
+            }
+        },
+        "Tag": {
+            "Aktive": {
+                "type": "bool",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": true
+            }
+            ,"Position": {
+                "type": "num",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": "100"
+            },
+            "Lamellenposition": {
+                "type": "num",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": "0"
+            }
+        },
+        "Abenddaemmerung": {
+            "Aktive": {
+                "type": "bool",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": true
+            },
+            "Position": {
+                "type": "num",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": "100"
+            },
+            "Lamellenposition": {
+                "type": "num",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": "50"
+            }
+        },
+        "Nacht": {
+            "Aktive": {
+                "type": "bool",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": true
+            },
+            "Position": {
+                "type": "num",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": "100"
+            },
+            "Lamellenposition": {
+                "type": "num",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": "80"
+            }
+        },
+        "Beschatten": {
+            "Aktive": {
+                "type": "bool",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": true
+            },
+            "Position": {
+                "type": "num",
+                "cache": true,
+                "visu_acl": "rw",
+                "value": "100"
+            }
+        }
+    }
+}
+
