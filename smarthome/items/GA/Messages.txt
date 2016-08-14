@@ -1,123 +1,3 @@
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Eltern.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Eltern.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Eltern.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Eltern.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Eltern.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Eltern.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Eltern.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Eltern.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Gaeste.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Gaeste.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Gaeste.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Gaeste.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Gaeste.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Gaeste.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Gaeste.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Gaeste.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Flur.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Flur.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Flur.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Flur.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Flur.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Flur.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Flur.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Flur.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Carla.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Carla.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Carla.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Carla.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Carla.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Carla.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Carla.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Carla.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Mattia.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Mattia.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Mattia.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Mattia.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Mattia.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Mattia.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Mattia.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Mattia.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Terrasse.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Terrasse.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Terrasse.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Terrasse.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Terrasse.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Terrasse.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Terrasse.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Terrasse.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Kochinsel.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Kochinsel.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Kochinsel.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Kochinsel.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Kochinsel.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Kochinsel.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Kochinsel.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Kochinsel.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Arbeitsflaeche.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Arbeitsflaeche.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Arbeitsflaeche.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Arbeitsflaeche.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Arbeitsflaeche.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Arbeitsflaeche.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Arbeitsflaeche.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Arbeitsflaeche.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Speiss.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Speiss.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Speiss.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Speiss.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Speiss.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Speiss.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Speiss.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Kueche.Jalousie.Speiss.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse_Schiebetuer.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse_Schiebetuer.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse_Schiebetuer.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse_Schiebetuer.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse_Schiebetuer.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse_Schiebetuer.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse_Schiebetuer.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse_Schiebetuer.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_klein.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_klein.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_klein.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_klein.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_klein.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_klein.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_klein.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_klein.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_gross.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_gross.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_gross.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_gross.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_gross.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_gross.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_gross.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\dg.json, Path: Dg.Bad.Jalousie.Fenster_gross.AutoBlind.Rules.Tag.as_set_Lamellenposition
 AutoBlind reference not found: as_item_Position, referenced in File: items\eg.json, Path: Eg.Bad.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Position
 AutoBlind reference not found: as_item_Position, referenced in File: items\eg.json, Path: Eg.Bad.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Position
 AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\eg.json, Path: Eg.Bad.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Lamellenposition
@@ -277,21 +157,26 @@ Item not found: ...Parameter.Morgendaemmerung.Aktive, referenced in File: items\
 Item not found: ...Parameter.Tag.Aktive, referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_TagAktive
 Item not found: ...Parameter.Abenddaemmerung.Aktive, referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_AbenddaemmerngAktive
 Item not found: ...Parameter.Nacht.Aktive, referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_NachtAktive
+Item not found: ...Parameter.Beschatten.Aktive, referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_BeschattenAktive
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Referenzfahrt.enter_stay.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Suspend.enter_stay.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Suspend.enter_stay_tag.as_value_laststate
+Item not found: ...Parameter.Beschatten.Position, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Ost.as_set_Position
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Ost.enter_hysterese.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Ost.enter_delay.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Ost.enter_praesenz_hysterese.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Ost.enter_praesenz_delay.as_value_laststate
+Item not found: ...Parameter.Beschatten.Position, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Sued.as_set_Position
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Sued.enter_hysterese.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Sued.enter_delay.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Sued.enter_praesenz_hysterese.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Sued.enter_praesenz_delay.as_value_laststate
+Item not found: ...Parameter.Beschatten.Position, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_West.as_set_Position
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_West.enter_hysterese.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_West.enter_delay.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_West.enter_praesenz_hysterese.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_West.enter_praesenz_delay.as_value_laststate
+Item not found: ...Parameter.Beschatten.Position, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Manuell.as_set_Position
 Item not found: ...Parameter.Morgendaemmerung.Position, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Morgendaemmerung.as_set_Position
 Item not found: ...Parameter.Morgendaemmerung.Lamellenposition, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Morgendaemmerung.as_set_Lamellenposition
 Item not found: True, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Morgendaemmerung.enter.as_item_MorgendaemmerungAktive
