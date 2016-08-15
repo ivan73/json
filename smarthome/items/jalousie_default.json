@@ -32,7 +32,7 @@
         "as_item_praesenz": ".....Praesenz",
         "as_item_MorgendaemmerungAktive": "...Parameter.Morgendaemmerung.Aktive",
         "as_item_TagAktive": "...Parameter.Tag.Aktive",
-        "as_item_AbenddaemmerngAktive": "...Parameter.Abenddaemmerung.Aktive",
+        "as_item_AbenddaemmerungAktive": "...Parameter.Abenddaemmerung.Aktive",
         "as_item_NachtAktive": "...Parameter.Nacht.Aktive",
         "as_item_BeschattenAktive": "...Parameter.Beschatten.Aktive",
         "Beschatten_Lock": {
@@ -330,7 +330,7 @@
             "as_set_Position": "item: ...Parameter.Morgendaemmerung.Position",
             "as_set_Lamellenposition": "item: ...Parameter.Morgendaemmerung.Lamellenposition",
             "enter": {
-                "as_item_MorgendaemmerungAktive": true,
+                "as_value_MorgendaemmerungAktive": true,
                 "as_min_time": "06:00",
                 "as_max_time": "12:00",
                 "as_min_sun_altitude": "-5",
@@ -353,10 +353,10 @@
             "type": "foo",
             "name": "Tag",
             "as_set_suspend": "False",
-            "as_set_Position": "item: ...Parameter.Morgendaemmerung.Position",
-            "as_set_Lamellenposition": "item: ...Parameter.Morgendaemmerung.Lamellenposition",
+            "as_set_Position": "item: ...Parameter.Tag.Position",
+            "as_set_Lamellenposition": "item: ...Parameter.Tag.Lamellenposition",
             "enter": {
-                "as_item_TagAktive": true,
+                "as_value_TagAktive": "True",
                 "as_min_sun_altitude": "0",
                 "as_min_Daemmerung": "200",
                 "as_min_time": "06:30"
@@ -367,10 +367,10 @@
             "type": "foo",
             "name": "Abenddämmerung",
             "as_set_suspend": "False",
-            "as_set_Position": "item: ...Parameter.Morgendaemmerung.Position",
-            "as_set_Lamellenposition": "item: ...Parameter.Morgendaemmerung.Lamellenposition",
+            "as_set_Position": "item: ...Parameter.Abenddaemmerung.Position",
+            "as_set_Lamellenposition": "item: ...Parameter.Abenddaemmerung.Lamellenposition",
             "enter": {
-                "as_item_AbendaemmerungAktive": true,
+                "as_value_AbenddaemmerungAktive": "True",
                 "as_max_sun_altitude": "20",
                 "as_min_sun_altitude": "-10",
                 "as_min_sun_azimut": "180",
@@ -383,10 +383,10 @@
             "type": "foo",
             "name": "Nacht",
             "as_set_suspend": "False",
-            "as_set_Position": "item: ...Parameter.Morgendaemmerung.Position",
-            "as_set_Lamellenposition": "item: ...Parameter.Morgendaemmerung.Lamellenposition",
+            "as_set_Position": "item: ...Parameter.Nacht.Position",
+            "as_set_Lamellenposition": "item: ...Parameter.Nacht.Lamellenposition",
             "enter": {
-                "as_item_NachtAktive": true,
+                "as_value_NachtAktive": "True",
                 "as_max_sun_altitude": "10",
                 "as_max_Daemmerung": "30"
             }
