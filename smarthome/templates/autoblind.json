@@ -34,7 +34,7 @@
       "type": "bool",
       "name": "Manuelle Bedienung über Tasten",
       "eval": "not ~~.manuell_taster()",
-      "eval_trigger": "~~~.Auf_ab | ~~~.Lamellenverstellung_stop"
+      "eval_trigger": "~~~.Auf_ab | ~~~.Lamellenverstellung_stop | ~~~.ManuellKNX"
     },
     "manuell": {
       "type": "bool",

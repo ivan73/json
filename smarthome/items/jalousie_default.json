@@ -48,9 +48,21 @@
                 "as_value_beschatten": "True"
             }
         },
+        "Schiebetuer": {
+            "$order": 4,
+            "type": "foo",
+            "name": "Schiebetuer",
+            "as_set_suspend": "False",
+            "as_set_Position": "30", //"item: ...Parameter.Morgendaemmerung.Position",
+            //"as_set_Lamellenposition": "item: ...Parameter.Morgendaemmerung.Lamellenposition",
+            "enter": {
+                "as_min_Position": "30",
+                "as_value_schiebetuer": "True"
+            }
+        },
         
         "Lock": {
-            "$order": 2,
+            "$order": 6,
             "type": "foo",
             "name": "Automatik AUS",
             "as_set_suspend": "False",
@@ -114,10 +126,10 @@
             "as_name": "eval: autoblind_eval.insert_suspend_time('..suspend', suspend_text='Ausgesetzt bis %X')",
             "as_set_suspend": "True",
             //"as_set_beschatten": "False",
-            "enter_manuell_positionen": {
-                "$order": 1,
-                "as_value_trigger_source": "eval: autoblind_eval.get_relative_itemid('..manuell_positionen')"
-            },
+            //"enter_manuell_positionen": {
+            //    "$order": 1,
+            //    "as_value_trigger_source": "eval: autoblind_eval.get_relative_itemid('..manuell_positionen')"
+            //},
             "enter_manuell": {
                 "$order": 2,
                 "as_value_trigger_source": "eval: autoblind_eval.get_relative_itemid('..manuell')"

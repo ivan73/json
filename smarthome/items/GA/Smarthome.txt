@@ -101,6 +101,8 @@
   3/2/11 - Dg.Eltern.Jalousie.Fenster.Auf_ab
   3/2/12 - Dg.Eltern.Jalousie.Fenster.Lamellenverstellung_stop
   3/2/13 - Dg.Eltern.Jalousie.Fenster.ReferenzFahren
+ 3/2/14  - Dg.Eltern.Jalousie.Fenster.ManuellKNX, Dg.Bad.Jalousie.Fenster_gross.ManuellKNX
+  3/2/15 - Dg.Eltern.Jalousie.Fenster.ManuellKNX, Dg.Bad.Jalousie.Fenster_gross.ManuellKNX
   3/2/21 - Dg.Gaeste.Jalousie.Fenster.Auf_ab
   3/2/22 - Dg.Gaeste.Jalousie.Fenster.Lamellenverstellung_stop
   3/2/23 - Dg.Gaeste.Jalousie.Fenster.ReferenzFahren
@@ -116,6 +118,8 @@
   3/2/64 - Dg.Wohnzimmer.Jalousie.Terrasse.Auf_ab
   3/2/65 - Dg.Wohnzimmer.Jalousie.Terrasse.Lamellenverstellung_stop
   3/2/66 - Dg.Wohnzimmer.Jalousie.Terrasse.ReferenzFahren
+ 3/2/68  - Dg.Wohnzimmer.Jalousie.Fenster.ManuellKNX, Dg.Wohnzimmer.Jalousie.Terrasse.ManuellKNX
+  3/2/69 - Dg.Wohnzimmer.Jalousie.Fenster.ManuellKNX, Dg.Wohnzimmer.Jalousie.Terrasse.ManuellKNX
   3/2/71 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Auf_ab, Kueche.Jalousie.Terrasse.Auf_ab
   3/2/72 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Lamellenverstellung_stop, Kueche.Jalousie.Terrasse.Lamellenverstellung_stop
   3/2/73 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.ReferenzFahren
@@ -140,9 +144,15 @@
   3/2/94 - Dg.Bad.Jalousie.Fenster_gross.Auf_ab
   3/2/95 - Dg.Bad.Jalousie.Fenster_gross.Lamellenverstellung_stop
   3/2/96 - Dg.Bad.Jalousie.Fenster_gross.ReferenzFahren
+ 3/2/97  - Dg.Bad.Jalousie.Fenster_klein.ManuellKNX, Dg.Bad.Jalousie.Fenster_gross.ManuellKNX
+  3/2/98 - Dg.Bad.Jalousie.Fenster_klein.ManuellKNX, Dg.Bad.Jalousie.Fenster_gross.ManuellKNX
  3/2/111 - Dg.Flur.Jalousie.Fenster.Auf_ab
  3/2/112 - Dg.Flur.Jalousie.Fenster.Lamellenverstellung_stop
  3/2/113 - Dg.Flur.Jalousie.Fenster.ReferenzFahren
+3/2/171  - Dg.Kueche.Jalousie.Kochinsel.ManuellKNX, Dg.Essen.Jalousie.Fenster.ManuellKNX
+ 3/2/172 - Dg.Kueche.Jalousie.Kochinsel.ManuellKNX, Dg.Essen.Jalousie.Fenster.ManuellKNX
+3/2/174  - Dg.Essen.Jalousie.Terrasse.ManuellKNX, Dg.Essen.Jalousie.Terrasse_Schiebetuer.ManuellKNX
+ 3/2/175 - Dg.Essen.Jalousie.Terrasse.ManuellKNX, Dg.Essen.Jalousie.Terrasse_Schiebetuer.ManuellKNX
   4/2/11 - Dg.Eltern.Einzelraumregelung.Ist_temperatur
   4/2/12 - Dg.Eltern.Einzelraumregelung.Soll_temperatur
   4/2/21 - Dg.Gaeste.Einzelraumregelung.Ist_temperatur

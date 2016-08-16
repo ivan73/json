@@ -10,10 +10,13 @@
     "Eltern": {
       "Jalousie": {
         "Fenster": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/11"
-          },
+            "$template": {
+                "source": "jalousie",
+                "knx": "0/2/11"
+            },
+            "ManuellKNX": {
+                "knx_listen": "3/2/14 | 3/2/15"
+            },
           "autoBlind": {
             "Rules": {
               "$templated": true,
@@ -23,26 +26,15 @@
                 "$order": 30,
                 "as_use": "Jalousie_default.Beschatten_Ost"
               },
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
               "Morgendaemmerung": {
-                //"as_set_Position": "100",
-                //"as_set_Lamellenposition": "50",
                 "enter": {
                     "as_value_MorgendaemmerungAktive": "True",
                     "as_min_time": "07:30",
                     "as_max_time": "08:00"
                 }
               },
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
+             
               "Tag": {
-                //"as_set_Position": "30",
-                //"as_set_Lamellenposition": "0",
                 "enter": {
                     "as_value_TagAktive": "True",
                     "as_min_time": "08:00"
@@ -78,23 +70,6 @@
               "$templated": true,
               "as_plugin": "active",
               "name": "Dg Gaestezimmer"
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
-
-              //"Tag": {
-              //  "as_set_Position": "30",
-              //  "as_set_Lamellenposition": "0"
-              //}
             }
           }
         }
@@ -124,23 +99,6 @@
                         "$templated": true,
                         "as_plugin": "active",
                         "name": "Dg Flur"
-                        //"Abenddaemmerung": {
-                        //    "as_set_Position": "100",
-                        //    "as_set_Lamellenposition": "0"
-                        //},
-                        //"Morgendaemmerung": {
-                        //    "as_set_Position": "100",
-                        //    "as_set_Lamellenposition": "50"
-                        //},
-                        //"Nacht": {
-                        //    "as_set_Position": "100",
-                        //    "as_set_Lamellenposition": "70"
-                        //},
-
-                        //"Tag": {
-                        //    "as_set_Position": "30",
-                        //    "as_set_Lamellenposition": "0"
-                        //}
                     }
                 }
             }
@@ -247,17 +205,7 @@
                     "eval": "True if (~~~.State.Zaehler_jalousie()==2)  else False",
                     "eval_trigger": "~~~.State.Zaehler_jalousie"
                 }
-            },
-            //"Jalousie_to_set": {
-            //    "Auf_ab": {
-            //        "eval":  "~~~.State.Auf_ab()",
-            //        "eval_trigger": "~~~.State.Zaehler_jalousie"
-            //    },
-            //    "Lamellenverstellung_stop": {
-            //        "eval": "True if (~~~.State.Zaehler_jalousie()==2)  else False",
-            //        "eval_trigger": "~~~.State.Zaehler_jalousie"
-            //    }
-            //}
+            }
         }
     },
     "Carla": {
@@ -276,22 +224,6 @@
                 "$order": 30,
                 "as_use": "Jalousie_default.Beschatten_West"
               }
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
-              //"Tag": {
-              //  "as_set_Position": "30",
-              //  "as_set_Lamellenposition": "0"
-              //}
             }
           }
         }
@@ -325,23 +257,6 @@
                 "$order": 30,
                 "as_use": "Jalousie_default.Beschatten_West"
               }
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
-
-              //"Tag": {
-              //  "as_set_Position": "30",
-              //  "as_set_Lamellenposition": "0"
-              //}
             }
           }
         }
@@ -362,10 +277,13 @@
     "Wohnzimmer": {
       "Jalousie": {
         "Fenster": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/61"
-          },
+            "$template": {
+                "source": "jalousie",
+                "knx": "0/2/61"
+            },
+            "ManuellKNX": {
+                "knx_listen": "3/2/68 | 3/2/69"
+            },
           "autoBlind": {
             "Rules": {
               "$templated": true,
@@ -375,57 +293,32 @@
                 "$order": 30,
                 "as_use": "Jalousie_default.Beschatten_West"
               }
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
-
-              //"Tag": {
-              //  "as_set_Position": "30",
-              //  "as_set_Lamellenposition": "0"
-              //}
             }
           }
         },
         "Terrasse": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/64"
-          },
+            "$template": {
+                "source": "jalousie",
+                "knx": "0/2/64"
+            },
+            "ManuellKNX": {
+                "knx_listen": "3/2/68 | 3/2/69"
+            },
           "autoBlind": {
             "Rules": {
               "$templated": true,
               "as_plugin": "active",
-              "name": "Dg Wohnzimmer Terasse",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Sued"
-              }
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
-
-              //"Tag": {
-              //  "as_set_Position": "30",
-              //  "as_set_Lamellenposition": "0"
-              //}
+                "name": "Dg Wohnzimmer Terasse",
+                "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren | ~~~~~.Schiebetuer.Status",
+                "as_item_schiebetuer": ".....Schiebetuer.Status",
+                "Schiebetuer": {
+                    "$order": 6,
+                    "as_use": "Jalousie_default.Schiebetuer"
+                },
+                "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_Sued"
+                }
             }
           }
         }
@@ -467,10 +360,13 @@
       },
       "Jalousie": {
         "Kochinsel": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/81"
-          },
+            "$template": {
+                "source": "jalousie",
+                "knx": "0/2/81"
+            },
+            "ManuellKNX": {
+                "knx_listen": "3/2/171 | 3/2/172"
+            },
           "autoBlind": {
             "Rules": {
               "$templated": true,
@@ -478,25 +374,11 @@
               "name": "Dg Fenster Kochinsel",
               "Beschatten": {
                 "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Sued"
-              },
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
-
-              //"Tag": {
-              //  "as_set_Position": "30",
-              //  "as_set_Lamellenposition": "0"
-              //}
+                "as_use": "Jalousie_default.Beschatten_Sued",
+                "enter": {
+                    "as_max_sun_altitude": "38"
+                }
+              }
             }
           }
         },
@@ -514,23 +396,6 @@
                 "$order": 30,
                 "as_use": "Jalousie_default.Beschatten_Ost"
               }
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
-
-              //"Tag": {
-              //  "as_set_Position": "30",
-              //  "as_set_Lamellenposition": "0"
-              //}
             }
           }
         },
@@ -548,23 +413,6 @@
                 "$order": 30,
                 "as_use": "Jalousie_default.Beschatten_Ost"
               }
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
-
-              //"Tag": {
-              //  "as_set_Position": "30",
-              //  "as_set_Lamellenposition": "0"
-              //}
             }
           }
         }
@@ -666,10 +514,13 @@
       },
       "Jalousie": {
         "Terrasse": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/74"
-          },
+            "$template": {
+                "source": "jalousie",
+                "knx": "0/2/74"
+            },
+            "ManuellKNX": {
+                "knx_listen": "3/2/174 | 3/2/175"
+            },
           "autoBlind": {
             "Rules": {
               "$templated": true,
@@ -677,71 +528,45 @@
               "name": "Dg Essen Terrasse",
               "Beschatten": {
                 "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Ost",
-                "enter": {
-                    "as_max_sun_altitude": "38"
-                }
-                //38 min
+                "as_use": "Jalousie_default.Beschatten_West"
               }
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
-
-              //"Tag": {
-              //  "as_set_Position": "30",
-              //  "as_set_Lamellenposition": "0"
-              //}
             }
           }
         },
         "Terrasse_Schiebetuer": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/71"
-          },
+            "$template": {
+                "source": "jalousie",
+                "knx": "0/2/71"
+            },
+            "ManuellKNX": {
+                "knx_listen": "3/2/174 | 3/2/175"
+            },
           "autoBlind": {
             "Rules": {
               "$templated": true,
               "as_plugin": "active",
-              "name": "Dg Essen Terrasse Schiebetuer",
+                "name": "Dg Essen Terrasse Schiebetuer",
+                "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren | ~~~~~.Schiebetuer.Status",
+                "as_item_schiebetuer": ".....Schiebetuer.Status",
+                "Schiebetuer": {
+                    "$order": 6,
+                    "as_use": "Jalousie_default.Schiebetuer"
+                },
               "Beschatten": {
                 "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Ost"
+                "as_use": "Jalousie_default.Beschatten_West"
               }
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
-
-              //"Tag": {
-              //  "as_set_Position": "30",
-              //  "as_set_Lamellenposition": "0"
-              //}
             }
           }
         },
         "Fenster": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/77"
-          },
+            "$template": {
+                "source": "jalousie",
+                "knx": "0/2/77"
+            },
+            "ManuellKNX": {
+                "knx_listen": "3/2/171 | 3/2/172"
+            },
           "autoBlind": {
             "Rules": {
               "$templated": true,
@@ -749,25 +574,11 @@
               "name": "Dg Esstisch",
               "Beschatten": {
                 "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Sued"
+                "as_use": "Jalousie_default.Beschatten_Sued",
+                "enter": {
+                    "as_max_sun_altitude": "38"
+                }
               }
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
-
-              //"Tag": {
-              //  "as_set_Position": "30",
-              //  "as_set_Lamellenposition": "0"
-              //}
             }
           }
         }
@@ -796,10 +607,13 @@
     "Bad": {
       "Jalousie": {
         "Fenster_klein": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/91"
-          },
+            "$template": {
+                "source": "jalousie",
+                "knx": "0/2/91"
+            },
+            "ManuellKNX": {
+                "knx_listen": "3/2/97 | 3/2/98"
+            },
           "autoBlind": {
             "Rules": {
               "$templated": true,
@@ -809,31 +623,17 @@
                 "$order": 30,
                 "as_use": "Jalousie_default.Beschatten_Ost"
               }
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
-
-              //"Tag": {
-              //  "as_set_Position": "30",
-              //  "as_set_Lamellenposition": "0"
-              //}
             }
           }
         },
         "Fenster_gross": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/94"
-          },
+            "$template": {
+                "source": "jalousie",
+                "knx": "0/2/94"
+            },
+            "ManuellKNX": {
+                "knx_listen": "3/2/14 | 3/2/15 | 3/2/97 | 3/2/98"
+            },
           "autoBlind": {
             "Rules": {
               "$templated": true,
@@ -843,23 +643,6 @@
                 "$order": 30,
                 "as_use": "Jalousie_default.Beschatten_Ost"
               }
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "0"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
-
-              //"Tag": {
-              //  "as_set_Position": "30",
-              //  "as_set_Lamellenposition": "0"
-              //}
             }
           }
         }

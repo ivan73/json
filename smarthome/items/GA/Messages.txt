@@ -4,65 +4,13 @@ AutoBlind reference not found: as_item_Daemmerung, referenced in File: items\eg.
 AutoBlind reference not found: as_item_MorgendaemmerungAktive, referenced in File: items\eg.json, Path: Eg.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.enter_time.as_value_MorgendaemmerungAktive
 AutoBlind reference not found: as_item_AbenddaemmerungAktive, referenced in File: items\eg.json, Path: Eg.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.enter_uhrzeit.as_value_AbenddaemmerungAktive
 AutoBlind reference not found: as_item_NachtAktive, referenced in File: items\eg.json, Path: Eg.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Nacht.enter_uhrzeit.as_value_NachtAktive
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Bad.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Bad.Jalousie.Fenster.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Bad.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Bad.Jalousie.Fenster.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Bad.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Bad.Jalousie.Fenster.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Sylvia.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Sylvia.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Sylvia.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Sylvia.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Sylvia.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Sylvia.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Sylvia.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Sylvia.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_rechts.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_rechts.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_rechts.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_rechts.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_rechts.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_rechts.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_rechts.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_rechts.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_links.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_links.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_links.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_links.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_links.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_links.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_links.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Ivan_links.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Wohnzimmer.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Wohnzimmer.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Wohnzimmer.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Wohnzimmer.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Wohnzimmer.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Wohnzimmer.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Wohnzimmer.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Balkonwiesen.Jalousie.Wohnzimmer.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Wiesen.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Wiesen.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Wiesen.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Wiesen.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Wiesen.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Wiesen.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Wiesen.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Wiesen.AutoBlind.Rules.Tag.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Carabinieri.AutoBlind.Rules.Abenddaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Carabinieri.AutoBlind.Rules.Abenddaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Carabinieri.AutoBlind.Rules.Morgendaemmerung.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Carabinieri.AutoBlind.Rules.Morgendaemmerung.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Carabinieri.AutoBlind.Rules.Nacht.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Carabinieri.AutoBlind.Rules.Nacht.as_set_Lamellenposition
-AutoBlind reference not found: as_item_Position, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Carabinieri.AutoBlind.Rules.Tag.as_set_Position
-AutoBlind reference not found: as_item_Lamellenposition, referenced in File: items\og.json, Path: Og.Wohnzimmer.Jalousie.Carabinieri.AutoBlind.Rules.Tag.as_set_Lamellenposition
 AutoBlind reference not found: as_item_MorgendaemmerungAktive, referenced in File: items\og.json, Path: Og.Balkonstrasse.Jalousie.Schlafzimmer.AutoBlind.Rules.Morgendaemmerung.enter.as_value_MorgendaemmerungAktive
 AutoBlind reference not found: as_item_TagAktive, referenced in File: items\og.json, Path: Og.Balkonstrasse.Jalousie.Schlafzimmer.AutoBlind.Rules.Tag.enter.as_value_TagAktive
 AutoBlind reference not found: as_item_Daemmerung, referenced in File: items\og.json, Path: Og.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Referenzfahrt.enter_auto.as_min_Daemmerung
 AutoBlind reference not found: as_item_MorgendaemmerungAktive, referenced in File: items\og.json, Path: Og.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.enter.as_value_MorgendaemmerungAktive
 AutoBlind reference not found: as_item_TagAktive, referenced in File: items\og.json, Path: Og.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Tag.enter.as_value_TagAktive
+Item not found: .....Schiebetuer.Status, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Terrasse.AutoBlind.Rules.as_item_schiebetuer
+Item not found: .....Schiebetuer.Status, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse_Schiebetuer.AutoBlind.Rules.as_item_schiebetuer
 Item not found: , referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_automatik
 Item not found: , referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_suspend
 Item not found: , referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_manuell

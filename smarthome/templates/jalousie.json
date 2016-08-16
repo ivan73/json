@@ -13,6 +13,7 @@
             "enforce_updates": true,
             "knx_dpt": "1",
             "knx_send": "3/-/-"
+            //"knx_listen": "3/-/-"
         },
         "Lamellenverstellung_stop": {
             "$order": 2,
@@ -22,6 +23,7 @@
             "enforce_updates": true,
             "knx_dpt": "1",
             "knx_send": "3/-/+1"
+            //"knx_listen": "3/-/+1"
         },
         "Position": {
             "$order": 3,
@@ -65,6 +67,12 @@
             "type": "bool",
             "knx_dpt": "1",
             "knx_send": "3/-/+2"
+        },
+        "ManuellKNX": {
+            "$order": 8,
+            "type": "bool",
+            "enforce_updates": true,
+            "knx_dpt": "1"
         },
         "autoBlind": {
             "$order": 10,
