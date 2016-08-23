@@ -119,17 +119,15 @@
                 "as_value_ReferenzFahren": "False"
             }
         },
+        
         "Suspend": {
             "$order": 20,
             "type": "foo",
             "name": "Automatik ausgesetzt",
+            "enforce_updates": true,
             "as_name": "eval: autoblind_eval.insert_suspend_time('..suspend', suspend_text='Ausgesetzt bis %X')",
             "as_set_suspend": "True",
-            //"as_set_beschatten": "False",
-            //"enter_manuell_positionen": {
-            //    "$order": 1,
-            //    "as_value_trigger_source": "eval: autoblind_eval.get_relative_itemid('..manuell_positionen')"
-            //},
+            
             "enter_manuell": {
                 "$order": 2,
                 "as_value_trigger_source": "eval: autoblind_eval.get_relative_itemid('..manuell')"
@@ -139,16 +137,6 @@
                 "as_value_laststate": "var:current.state_id",
                 "as_agemax_manuell": "3600",
                 "as_value_suspend": "True"
-                //"as_value_beschatten": "False"
-            },
-            "enter_stay_tag": {
-                "$order": 4,
-                "as_value_laststate": "var:current.state_id",
-                //"as_agemax_manuell": "3600",
-                "as_value_suspend": "True",
-                "as_min_sun_altitude": "0",
-                "as_min_Daemmerung": "30"
-                //"as_value_beschatten": "False"
             }
         },
         "Beschatten_Ost": {
