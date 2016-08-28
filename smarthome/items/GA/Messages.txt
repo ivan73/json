@@ -29,8 +29,7 @@ Item not found: ...Parameter.Abenddaemmerung.Aktive, referenced in File: items\j
 Item not found: ...Parameter.Nacht.Aktive, referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_NachtAktive
 Item not found: ...Parameter.Beschatten.Aktive, referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_BeschattenAktive
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Referenzfahrt.enter_stay.as_value_laststate
-Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.SuspendNight.enter_stay.as_value_laststate
-Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Suspend.enter_stay.as_value_laststate
+Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Suspend.enter_stay_time.as_value_laststate
 Item not found: ...Parameter.Beschatten.Position, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Ost.as_set_Position
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Ost.enter_hysterese.as_value_laststate
 Item not found: var:current.state_id, referenced in File: items\jalousie_default.json, Path: Jalousie_default.Beschatten_Ost.enter_delay.as_value_laststate

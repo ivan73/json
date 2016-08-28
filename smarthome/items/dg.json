@@ -61,10 +61,13 @@
     "Gaeste": {
       "Jalousie": {
         "Fenster": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/21"
-          },
+            "$template": {
+                "source": "jalousie",
+                "knx": "0/2/21"
+            },
+            "ManuellKNX": {
+                "knx_listen": "3/2/21 | 3/2/22"
+            },
           "autoBlind": {
             "Rules": {
               "$templated": true,
@@ -94,6 +97,9 @@
                     "source": "jalousie",
                     "knx": "0/2/111"
                 },
+                "ManuellKNX": {
+                "knx_listen": "3/2/111 | 3/2/112"
+            },
                 "autoBlind": {
                     "Rules": {
                         "$templated": true,
@@ -211,10 +217,13 @@
     "Carla": {
       "Jalousie": {
         "Fenster": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/31"
-          },
+            "$template": {
+                "source": "jalousie",
+                "knx": "0/2/31"
+            },
+            "ManuellKNX": {
+                "knx_listen": "3/2/31 | 3/2/32"
+            },
           "autoBlind": {
             "Rules": {
               "$templated": true,
@@ -244,10 +253,13 @@
     "Mattia": {
       "Jalousie": {
         "Fenster": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/41"
-          },
+            "$template": {
+                "source": "jalousie",
+                "knx": "0/2/41"
+            },
+            "ManuellKNX": {
+                "knx_listen": "3/2/41 | 3/2/42"
+            },
           "autoBlind": {
             "Rules": {
               "$templated": true,
@@ -312,7 +324,7 @@
                 "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren | ~~~~~.Schiebetuer.Status",
                 "as_item_schiebetuer": ".....Schiebetuer.Status",
                 "Schiebetuer": {
-                    "$order": 6,
+                    "$order": 2,
                     "as_use": "Jalousie_default.Schiebetuer"
                 },
                 "Beschatten": {
@@ -549,7 +561,7 @@
                 "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren | ~~~~~.Schiebetuer.Status",
                 "as_item_schiebetuer": ".....Schiebetuer.Status",
                 "Schiebetuer": {
-                    "$order": 6,
+                    "$order": 2,
                     "as_use": "Jalousie_default.Schiebetuer"
                 },
               "Beschatten": {

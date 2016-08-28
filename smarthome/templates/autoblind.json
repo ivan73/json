@@ -27,24 +27,28 @@
     "manuell_positionen": {
         "type": "bool",
         "name": "Manuelle Bedienung Positionen",
-        //"eval": "not ~~.manuell_positionen() if sh.autoblind.is_changed_by(caller, source, ['Visu:*']) else ~~.manuell_positionen()",
+        //"enforce_updates": true,
         "as_manual_include": "Visu:*",
+        //"as_manual_exclude": "Init:*",
         "as_manual_invert": "True",
         "eval_trigger": "~~~.Position | ~~~.Lamellenposition"
     },
     "manuell_taster": {
         "type": "bool",
         "name": "Manuelle Bedienung über Tasten",
+        //"enforce_updates": true,
+       // "as_manual_exclude": "Init:*",
         "eval": "not ~~.manuell_taster()",
         "as_manual_invert": "True",
-        "eval_trigger": "~~~.Auf_ab | ~~~.Lamellenverstellung_stop | ~~~.ManuellKNX"
+        "eval_trigger": "~~~.Auf_ab | ~~~.Lamellenverstellung_stop | ~~~.ManuellKNX",
+        "as_manual_logitem": "~"
     },
     "manuell": {
         "type": "bool",
         "name": "Manuelle Bedienung",
         "as_manual_logitem": "~",
+        //"enforce_updates": true,
         //"as_manual_exclude": "Init:*",
-        //"eval": "not ~~.manuell()",
         "as_manual_invert": "True",
         "eval_trigger": "~~.manuell_positionen | ~~.manuell_taster"
     },
@@ -67,11 +71,11 @@
         "as_laststate_item_name": "..state_name",
 
         "Beschatten_Lock": {
-            "$order": 1,
+            "$order": 4,
             "as_use": "Jalousie_default.Beschatten_Lock"
         },
         "Lock": {
-            "$order": 2,
+            "$order": 6,
             "as_use": "Jalousie_default.Lock"
         },
 
@@ -87,23 +91,14 @@
             "$order": 12,
             "as_use": "Jalousie_default.PositionUngueltig"
         },
-        "SuspendNight": {
-            "$order": 20,
-            "as_use": "Jalousie_default.SuspendNight"
-        },
+        //"SuspendNight": {
+        //    "$order": 20,
+        //    "as_use": "Jalousie_default.SuspendNight"
+        //},
         "Suspend": {
             "$order": 22,
             "as_use": "Jalousie_default.Suspend"
         },
-        //"Beschatten_manuell_end": {
-        //  "$order": 30,
-        //  "as_use":"Jalousie_default.Beschatten_manuell_end"
-        //},
-        //"Beschatten_manuell": {
-        //  "$order": 31,
-        //  "as_use":"Jalousie_default.Beschatten_manuell"
-        //},
-
         "Beschatten_Manuell": {
             "$order": 33,
             "as_use": "Jalousie_default.Beschatten_Manuell"

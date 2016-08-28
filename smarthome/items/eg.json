@@ -57,10 +57,13 @@
           }
         },
         "Links": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/0/27"
-          }
+            "$template": {
+                "source": "jalousie",
+                "knx": "0/0/27"
+            },
+            "ManuellKNX": {
+                "knx_listen": "3/0/27 | 3/0/28"
+            }
         }
       },
       "Einzelraumregelung": {

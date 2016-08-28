@@ -41,8 +41,8 @@
   3/0/24 - Eg.Buero.Jalousie.Mitte.Auf_ab
   3/0/25 - Eg.Buero.Jalousie.Mitte.Lamellenverstellung_stop
   3/0/26 - Eg.Buero.Jalousie.Mitte.ReferenzFahren
-  3/0/27 - Eg.Buero.Jalousie.Links.Auf_ab
-  3/0/28 - Eg.Buero.Jalousie.Links.Lamellenverstellung_stop
+  3/0/27 - Eg.Buero.Jalousie.Links.Auf_ab, Eg.Buero.Jalousie.Links.ManuellKNX
+  3/0/28 - Eg.Buero.Jalousie.Links.Lamellenverstellung_stop, Eg.Buero.Jalousie.Links.ManuellKNX
   3/0/29 - Eg.Buero.Jalousie.Links.ReferenzFahren
   3/0/31 - Eg.Bad.Jalousie.Fenster.Auf_ab
   3/0/32 - Eg.Bad.Jalousie.Fenster.Lamellenverstellung_stop
@@ -103,14 +103,14 @@
   3/2/13 - Dg.Eltern.Jalousie.Fenster.ReferenzFahren
  3/2/14  - Dg.Eltern.Jalousie.Fenster.ManuellKNX, Dg.Bad.Jalousie.Fenster_gross.ManuellKNX
   3/2/15 - Dg.Eltern.Jalousie.Fenster.ManuellKNX, Dg.Bad.Jalousie.Fenster_gross.ManuellKNX
-  3/2/21 - Dg.Gaeste.Jalousie.Fenster.Auf_ab
-  3/2/22 - Dg.Gaeste.Jalousie.Fenster.Lamellenverstellung_stop
+  3/2/21 - Dg.Gaeste.Jalousie.Fenster.Auf_ab, Dg.Gaeste.Jalousie.Fenster.ManuellKNX
+  3/2/22 - Dg.Gaeste.Jalousie.Fenster.Lamellenverstellung_stop, Dg.Gaeste.Jalousie.Fenster.ManuellKNX
   3/2/23 - Dg.Gaeste.Jalousie.Fenster.ReferenzFahren
-  3/2/31 - Dg.Carla.Jalousie.Fenster.Auf_ab
-  3/2/32 - Dg.Carla.Jalousie.Fenster.Lamellenverstellung_stop
+  3/2/31 - Dg.Carla.Jalousie.Fenster.Auf_ab, Dg.Carla.Jalousie.Fenster.ManuellKNX
+  3/2/32 - Dg.Carla.Jalousie.Fenster.Lamellenverstellung_stop, Dg.Carla.Jalousie.Fenster.ManuellKNX
   3/2/33 - Dg.Carla.Jalousie.Fenster.ReferenzFahren
-  3/2/41 - Dg.Mattia.Jalousie.Fenster.Auf_ab
-  3/2/42 - Dg.Mattia.Jalousie.Fenster.Lamellenverstellung_stop
+  3/2/41 - Dg.Mattia.Jalousie.Fenster.Auf_ab, Dg.Mattia.Jalousie.Fenster.ManuellKNX
+  3/2/42 - Dg.Mattia.Jalousie.Fenster.Lamellenverstellung_stop, Dg.Mattia.Jalousie.Fenster.ManuellKNX
   3/2/43 - Dg.Mattia.Jalousie.Fenster.ReferenzFahren
   3/2/61 - Dg.Wohnzimmer.Jalousie.Fenster.Auf_ab
   3/2/62 - Dg.Wohnzimmer.Jalousie.Fenster.Lamellenverstellung_stop
@@ -146,8 +146,8 @@
   3/2/96 - Dg.Bad.Jalousie.Fenster_gross.ReferenzFahren
  3/2/97  - Dg.Bad.Jalousie.Fenster_klein.ManuellKNX, Dg.Bad.Jalousie.Fenster_gross.ManuellKNX
   3/2/98 - Dg.Bad.Jalousie.Fenster_klein.ManuellKNX, Dg.Bad.Jalousie.Fenster_gross.ManuellKNX
- 3/2/111 - Dg.Flur.Jalousie.Fenster.Auf_ab
- 3/2/112 - Dg.Flur.Jalousie.Fenster.Lamellenverstellung_stop
+ 3/2/111 - Dg.Flur.Jalousie.Fenster.Auf_ab, Dg.Flur.Jalousie.Fenster.ManuellKNX
+ 3/2/112 - Dg.Flur.Jalousie.Fenster.Lamellenverstellung_stop, Dg.Flur.Jalousie.Fenster.ManuellKNX
  3/2/113 - Dg.Flur.Jalousie.Fenster.ReferenzFahren
 3/2/171  - Dg.Kueche.Jalousie.Kochinsel.ManuellKNX, Dg.Essen.Jalousie.Fenster.ManuellKNX
  3/2/172 - Dg.Kueche.Jalousie.Kochinsel.ManuellKNX, Dg.Essen.Jalousie.Fenster.ManuellKNX
