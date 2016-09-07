@@ -149,7 +149,7 @@
             "State": {
                 "Auf_ab": {
                     "Fenster": {
-                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 0)",
+                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 0) else None",
                         "eval_trigger": "~~",
                         "set_item": {
                             "type": "bool",
@@ -159,7 +159,7 @@
                         }
                     },
                     "Dachfenster": {
-                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 1)",
+                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 1) else None",
                         "eval_trigger": "~~",
                         "set_item": {
                             "type": "bool",
@@ -171,7 +171,7 @@
                 },
                 "Lamellenverstellung_stop": {
                     "Fenster": {
-                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 0)",
+                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 0) else None",
                         "eval_trigger": "~~",
                         "set_item": {
                             "type": "bool",
@@ -181,7 +181,7 @@
                         }
                     },
                     "Dachfenster": {
-                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 1)",
+                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 1) else None",
                         "eval_trigger": "~~",
                         "set_item": {
                             "type": "bool",

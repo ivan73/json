@@ -60,8 +60,8 @@
             "roto_position": "~~.Position",
             "roto_actor_open": "~~.Auf",
             "roto_actor_close": "~~.Ab",
-            "roto_time_up": "55",
-            "roto_time_down": "55",
+            "roto_time_up": "60",
+            "roto_time_down": "65",
             "roto_time_step": "10"
         },
         "autoBlind": {

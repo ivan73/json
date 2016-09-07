@@ -29,7 +29,7 @@
         "name": "Manuelle Bedienung Positionen",
         //"enforce_updates": true,
         "as_manual_include": "Visu:*",
-        //"as_manual_exclude": "Init:*",
+        "as_manual_exclude": "Init:*",
         "as_manual_invert": "True",
         "eval_trigger": "~~~.Position | ~~~.Lamellenposition"
     },
@@ -37,7 +37,7 @@
         "type": "bool",
         "name": "Manuelle Bedienung über Tasten",
         //"enforce_updates": true,
-       // "as_manual_exclude": "Init:*",
+        "as_manual_exclude": "Init:*",
         "eval": "not ~~.manuell_taster()",
         "as_manual_invert": "True",
         "eval_trigger": "~~~.Auf_ab | ~~~.Lamellenverstellung_stop | ~~~.ManuellKNX",
@@ -48,7 +48,7 @@
         "name": "Manuelle Bedienung",
         "as_manual_logitem": "~",
         //"enforce_updates": true,
-        //"as_manual_exclude": "Init:*",
+        "as_manual_exclude": "Init:*",
         "as_manual_invert": "True",
         "eval_trigger": "~~.manuell_positionen | ~~.manuell_taster"
     },
@@ -64,7 +64,7 @@
         "type": "bool",
         "as_plugin": "active",
         //Erste Zustandsermittlung nach 30 Sekunden
-        "as_startup_delay": 10,
+        //"as_startup_delay": 10, // in Sekunden
         "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren",
         "as_repeat_actions": "true",
         "as_laststate_item_id": "..state_id",

@@ -182,7 +182,7 @@
                 "as_value_Brightness_ost_gt43k": "True",
                 "as_agemin_Brightness_ost_gt43k": "60",
                 "as_min_sun_altitude": "0",
-                "as_min_temperature": "22",
+                "as_min_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur",
                 "as_min_time": "08:00"
             },
             "enter_hysterese": {
@@ -206,7 +206,7 @@
                 "as_value_Brightness_ost_gt35k": "True",
                 "as_agemin_Brightness_ost_gt35k": "60",
                 "as_min_sun_altitude": "0",
-                "as_min_temperature": "22",
+                "as_min_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur",
                 "as_min_time": "08:00"
             },
             "enter_praesenz_hysterese": {
@@ -239,7 +239,7 @@
                 "as_value_Brightness_sued_gt43k": "True",
                 "as_agemin_Brightness_sued_gt43k": "60",
                 "as_min_sun_altitude": "0",
-                "as_min_temperature": "22"
+                "as_min_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur"
             },
             "enter_hysterese": {
                 "as_value_BeschattenAktive": "True",
@@ -262,7 +262,7 @@
                 "as_value_Brightness_sued_gt35k": "True",
                 "as_agemin_Brightness_sued_gt35k": "60",
                 "as_min_sun_altitude": "0",
-                "as_min_temperature": "22"
+                "as_min_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur"
             },
             "enter_praesenz_hysterese": {
                 "as_value_BeschattenAktive": "True",
@@ -294,7 +294,7 @@
                 "as_value_Brightness_west_gt43k": "True",
                 "as_agemin_Brightness_west_gt43k": "60",
                 "as_min_sun_altitude": "0",
-                "as_min_temperature": "22"
+                "as_min_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur"
             },
             "enter_hysterese": {
                 "as_value_BeschattenAktive": "True",
@@ -317,7 +317,7 @@
                 "as_value_Brightness_west_gt35k": "True",
                 "as_agemin_Brightness_west_gt35k": "60",
                 "as_min_sun_altitude": "0",
-                "as_min_temperature": "22"
+                "as_min_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur"
             },
             "enter_praesenz_hysterese": {
                 "as_value_BeschattenAktive": "True",

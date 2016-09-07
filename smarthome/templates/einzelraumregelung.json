@@ -1,27 +1,37 @@
 {
   "$schema": "../schema/ItemSchema.json",
-    "Einzelraumregelung": {
-        "Ist_temperatur": {
-            "$order": 1,
-            "type": "num",
-            "visu": "yes",
-            "visu_acl": "rw",
-            "cache": true,
-            "sqlite": "yes",
-            "knx_dpt": "9",
-            "knx_listen": "4/-/-"
-        },
-         "Soll_temperatur": {
-            "$order": 2,
-            "type": "num",
-            "visu": "yes",
-            "visu_acl": "rw",
-            "cache": true,
-            "sqlite": "yes",
-            "knx_dpt": "9",
-            "knx_listen": "4/-/+1"
-        }
-       
+  "Einzelraumregelung": {
+    "Ist_temperatur": {
+      "$order": 1,
+      "type": "num",
+      "visu": "yes",
+      "visu_acl": "rw",
+      "cache": true,
+      "sqlite": "yes",
+      "knx_dpt": "9",
+      "knx_listen": "4/-/-"
+    },
+    "Soll_temperatur": {
+      "$order": 2,
+      "type": "num",
+      "visu": "yes",
+      "visu_acl": "rw",
+      "cache": true,
+      "sqlite": "yes",
+      "knx_dpt": "9",
+      "knx_listen": "4/-/+1"
+    },
+    "Beschatten_temperatur": {
+      "$order": 3,
+      "type": "num",
+      "visu": "yes",
+      "visu_acl": "rw",
+      "cache": true,
+      "sqlite": "yes",
+      "value": "26"
+      //"eval": ""
     }
+
+  }
 }
 

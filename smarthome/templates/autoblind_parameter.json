@@ -1,100 +1,124 @@
 {
   "$schema": "../schema/ItemSchema.json",
-    "Parameter": {
-        "Morgendaemmerung": {
-            "Aktive": {
-                "type": "bool",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": true
-            },
-            "Position": {
-                "type": "num",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": "100"
-            },
-            "Lamellenposition": {
-                "type": "num",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": "50"
-            }
-        },
-        "Tag": {
-            "Aktive": {
-                "type": "bool",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": true
-            }
-            ,"Position": {
-                "type": "num",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": "100"
-            },
-            "Lamellenposition": {
-                "type": "num",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": "0"
-            }
-        },
-        "Abenddaemmerung": {
-            "Aktive": {
-                "type": "bool",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": true
-            },
-            "Position": {
-                "type": "num",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": "100"
-            },
-            "Lamellenposition": {
-                "type": "num",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": "50"
-            }
-        },
-        "Nacht": {
-            "Aktive": {
-                "type": "bool",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": true
-            },
-            "Position": {
-                "type": "num",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": "100"
-            },
-            "Lamellenposition": {
-                "type": "num",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": "80"
-            }
-        },
-        "Beschatten": {
-            "Aktive": {
-                "type": "bool",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": true
-            },
-            "Position": {
-                "type": "num",
-                "cache": true,
-                "visu_acl": "rw",
-                "value": "100"
-            }
+  "Parameter": {
+    "Morgendaemmerung": {
+      "Aktive": {
+        "type": "bool",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": true
+      },
+      "Position": {
+        "type": "num",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": "100"
+      },
+      "Lamellenposition": {
+        "type": "num",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": "50"
+      },
+      "Zeit_ok": {
+        "type": "bool",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": "true",
+        "Uzsu": {
+          "type": "dict",
+          "visu_acl": "rw",
+          "cache": true,
+          "uzsu_item": "~~"
         }
+      }
+    },
+    "Tag": {
+      "Aktive": {
+        "type": "bool",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": true
+      },
+      "Position": {
+        "type": "num",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": "100"
+      },
+      "Lamellenposition": {
+        "type": "num",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": "0"
+      }
+    },
+    "Abenddaemmerung": {
+      "Aktive": {
+        "type": "bool",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": true
+      },
+      "Position": {
+        "type": "num",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": "100"
+      },
+      "Lamellenposition": {
+        "type": "num",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": "50"
+      }
+    },
+    "Nacht": {
+      "Aktive": {
+        "type": "bool",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": true
+      },
+      "Position": {
+        "type": "num",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": "100"
+      },
+      "Lamellenposition": {
+        "type": "num",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": "80"
+      }
+    },
+    "Beschatten": {
+      "Aktive": {
+        "type": "bool",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": true
+      },
+      "Position": {
+        "type": "num",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": "100"
+      },
+      "Temperatur": {
+        "type": "num",
+        "cache": true,
+        "visu_acl": "rw",
+        "value": "2",
+        "set_item": {
+            "type": "bool",
+            "eval": "~~~~.Einzelraumregelung.Soll_temperatur()+ ~~()",
+            "eval_trigger": "~~",
+            "item": "~~~~.Einzelraumregelung.Beschatten_temperatur"
+        }
+      }
     }
+  }
 }
 
