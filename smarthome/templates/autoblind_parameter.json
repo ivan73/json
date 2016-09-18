@@ -105,19 +105,19 @@
         "cache": true,
         "visu_acl": "rw",
         "value": "100"
-      },
-      "Temperatur": {
-        "type": "num",
-        "cache": true,
-        "visu_acl": "rw",
-        "value": "2",
-        "set_item": {
-            "type": "bool",
-            "eval": "~~~~.Einzelraumregelung.Soll_temperatur()+ ~~()",
-            "eval_trigger": "~~",
-            "item": "~~~~.Einzelraumregelung.Beschatten_temperatur"
-        }
       }
+      //"Temperatur": {
+      //  "type": "num",
+      //  "cache": true,
+      //  "visu_acl": "rw",
+      //  "value": "2",
+      //  "set_item": {
+      //      "type": "bool",
+      //      "eval": "~~~~.Einzelraumregelung.Soll_temperatur()+ ~~()",
+      //      "eval_trigger": "~~",
+      //      "item": "~~~~.Einzelraumregelung.Beschatten_temperatur"
+      //  }
+      //}
     }
   }
 }

@@ -5,21 +5,40 @@
       "$order": 1,
       "type": "num",
       "visu": "yes",
-      "visu_acl": "rw",
+      "visu_acl": "ro",
       "cache": true,
       "sqlite": "yes",
       "knx_dpt": "9",
       "knx_listen": "4/-/-"
     },
     "Soll_temperatur": {
+        "$order": 2,
+        "type": "num",
+        "visu": "yes",
+        "visu_acl": "rw",
+        "cache": true,
+        "sqlite": "yes",
+        "knx_dpt": "9",
+        "knx_send": "4/-/+1"
+    },
+    "StatusStellwert": {
       "$order": 2,
+      "type": "num",
+      "visu": "yes",
+      "visu_acl": "ro",
+      "cache": true,
+      "sqlite": "yes",
+      "knx_dpt": "5.001",
+      "knx_listen": "4/-/+2"
+    },
+    "Beschatten_temperaturOffset": {
+      "$order": 3,
       "type": "num",
       "visu": "yes",
       "visu_acl": "rw",
       "cache": true,
       "sqlite": "yes",
-      "knx_dpt": "9",
-      "knx_listen": "4/-/+1"
+      "value": "2"
     },
     "Beschatten_temperatur": {
       "$order": 3,
@@ -28,10 +47,10 @@
       "visu_acl": "rw",
       "cache": true,
       "sqlite": "yes",
-      "value": "26"
-      //"eval": ""
+      "value": "26",
+      "eval": "~~.Soll_temperatur()+ ~~.Beschatten_temperaturOffset()",
+      "eval_trigger": "~~.Beschatten_temperaturOffset"
     }
-
   }
 }
 

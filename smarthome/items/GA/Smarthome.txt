@@ -155,30 +155,40 @@
  3/2/175 - Dg.Essen.Jalousie.Terrasse.ManuellKNX, Dg.Essen.Jalousie.Terrasse_Schiebetuer.ManuellKNX
   4/2/11 - Dg.Eltern.Einzelraumregelung.Ist_temperatur
   4/2/12 - Dg.Eltern.Einzelraumregelung.Soll_temperatur
+  4/2/13 - Dg.Eltern.Einzelraumregelung.StatusStellwert
   4/2/21 - Dg.Gaeste.Einzelraumregelung.Ist_temperatur
   4/2/22 - Dg.Gaeste.Einzelraumregelung.Soll_temperatur
+  4/2/23 - Dg.Gaeste.Einzelraumregelung.StatusStellwert
   4/2/31 - Dg.Carla.Einzelraumregelung.Ist_temperatur
   4/2/32 - Dg.Carla.Einzelraumregelung.Soll_temperatur
+  4/2/33 - Dg.Carla.Einzelraumregelung.StatusStellwert
   4/2/41 - Dg.Mattia.Einzelraumregelung.Ist_temperatur
   4/2/42 - Dg.Mattia.Einzelraumregelung.Soll_temperatur
+  4/2/43 - Dg.Mattia.Einzelraumregelung.StatusStellwert
   4/2/61 - Dg.Wohnzimmer.Einzelraumregelung.Ist_temperatur
   4/2/62 - Dg.Wohnzimmer.Einzelraumregelung.Soll_temperatur
+  4/2/63 - Dg.Wohnzimmer.Einzelraumregelung.StatusStellwert
   4/2/65 - Dg.Wohnzimmer.Schiebetuer.Status
   4/2/71 - Dg.Essen.Einzelraumregelung.Ist_temperatur, Kueche.Heizung.Ist_temperatur
   4/2/72 - Dg.Essen.Einzelraumregelung.Soll_temperatur
+  4/2/73 - Dg.Essen.Einzelraumregelung.StatusStellwert
   4/2/75 - Dg.Essen.Schiebetuer.Status, Essen.Schiebetuer.Status
   4/2/81 - Dg.Kueche.Einzelraumregelung.Ist_temperatur
   4/2/82 - Dg.Kueche.Einzelraumregelung.Soll_temperatur
+  4/2/83 - Dg.Kueche.Einzelraumregelung.StatusStellwert
   4/2/91 - Dg.Bad.Einzelraumregelung.Ist_temperatur
   4/2/92 - Dg.Bad.Einzelraumregelung.Soll_temperatur
+  4/2/93 - Dg.Bad.Einzelraumregelung.StatusStellwert
  4/2/111 - Dg.Flur.Einzelraumregelung.Ist_temperatur
  4/2/112 - Dg.Flur.Einzelraumregelung.Soll_temperatur
+ 4/2/113 - Dg.Flur.Einzelraumregelung.StatusStellwert
  4/2/114 - Dg.Flur.Dachfenster.Ab
  4/2/115 - Dg.Flur.Dachfenster.Auf
  4/2/121 - Dg.Kriechboden.Dachfenster.Ab
  4/2/122 - Dg.Kriechboden.Dachfenster.Auf
  4/2/131 - Dg.TagesWC.Einzelraumregelung.Ist_temperatur
  4/2/132 - Dg.TagesWC.Einzelraumregelung.Soll_temperatur
+ 4/2/133 - Dg.TagesWC.Einzelraumregelung.StatusStellwert
   6/2/71 - Kueche.Tasterlogik.Keys.S1
   6/2/72 - Kueche.Tasterlogik.Keys.S2
   6/2/73 - Kueche.Tasterlogik.Keys.S3
