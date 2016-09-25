@@ -8,55 +8,71 @@
       "cycle": "300 = 1"
     },
     "Eltern": {
-      "Jalousie": {
-        "Fenster": {
-            "$template": {
-                "source": "jalousie",
-                "knx": "0/2/11"
-            },
-            "ManuellKNX": {
-                "knx_listen": "3/2/14 | 3/2/15"
-            },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Dg Eltern",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Ost"
-              },
-              "Morgendaemmerung": {
-                "enter": {
-                    "as_value_MorgendaemmerungAktive": "True",
-                    "as_min_time": "07:30",
-                    "as_max_time": "08:00"
-                }
-              },
-             
-              "Tag": {
-                "enter": {
-                    "as_value_TagAktive": "True",
-                    "as_min_time": "08:00"
-                }
-              }
-            }
-          }
-        }
+        "Jalousie": {
+            "Fenster": {
+                "$template": {
+                    "source": "jalousie",
+                    "knx": "0/2/11"
+                },
+                "ManuellKNX": {
+                    "knx_listen": "3/2/14 | 3/2/15"
+                },
+                "autoBlind": {
+                    "Rules": {
+                        "$templated": true,
+                        "as_plugin": "active",
+                        "name": "Dg Eltern",
+                        "Beschatten": {
+                            "$order": 30,
+                            "as_use": "Jalousie_default.Beschatten_Ost"
+                        },
+                        "Morgendaemmerung": {
+                            "enter": {
+                                "as_value_MorgendaemmerungAktive": "True",
+                                "as_min_time": "07:30",
+                                "as_max_time": "08:00"
+                            }
+                        },
 
-      },
-      "Einzelraumregelung": {
-        "$template": {
-          "source": "einzelraumregelung",
-          "knx": "0/2/11"
+                        "Tag": {
+                            "enter": {
+                                "as_value_TagAktive": "True",
+                                "as_min_time": "08:00"
+                            }
+                        }
+                    }
+                }
+            }
+
+        },
+        "Einzelraumregelung": {
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "0/2/11"
+            }
+        },
+        "Praesenz": {
+            "$template": {
+                "source": "praesenz",
+                "knx": "2/2/10"
+            }
         }
-      },
-      "Praesenz": {
-        "$template": {
-          "source": "praesenz",
-          "knx": "2/2/10"
+    },
+    "Umkleide": {
+        "Beleuchtung": {
+            "Panel": {
+                "type": "num",
+                "cache": true,
+                "visu_acl": "rw",
+                "DMX": {
+                    "type": "num",
+                    "cache": true,
+                    "dmx_ch": "3",
+                    "eval": "~~()",
+                    "eval_trigger": "~~"
+                }
+            }
         }
-      }
     },
     "Gaeste": {
       "Jalousie": {
@@ -91,6 +107,36 @@
       }
     },
     "Flur": {
+        "Beleuchtung": {
+            "Panel": {
+                "type": "num",
+                "cache": true,
+                "visu_acl": "rw",
+                "DMX": {
+                    "type": "num",
+                    "cache": true,
+                    "dmx_ch": "3",
+                    "eval": "~~()",
+                    "eval_trigger": "~~"
+                }
+            },
+        "Wand": {
+          "DMX": {
+            "type": "num",
+            "cache": true,
+            "visu_acl": "rw",
+            "dmx_ch": "1"
+          }
+        },
+        "Boden": {
+          "DMX": {
+            "type": "num",
+            "cache": true,
+            "visu_acl": "rw",
+            "dmx_ch": "1"
+          }
+        }
+      },
         "Jalousie": {
             "Fenster": {
                 "$template": {
@@ -98,8 +144,8 @@
                     "knx": "0/2/111"
                 },
                 "ManuellKNX": {
-                "knx_listen": "3/2/111 | 3/2/112"
-            },
+                    "knx_listen": "3/2/111 | 3/2/112"
+                },
                 "autoBlind": {
                     "Rules": {
                         "$templated": true,
@@ -155,7 +201,7 @@
                             "type": "bool",
                             "eval": "~~()",
                             "eval_trigger": "~~",
-                             "item":"sh.Dg.Flur.Jalousie.Fenster.Auf_ab" 
+                            "item": "sh.Dg.Flur.Jalousie.Fenster.Auf_ab"
                         }
                     },
                     "Dachfenster": {
@@ -165,7 +211,7 @@
                             "type": "bool",
                             "eval": "~~()",
                             "eval_trigger": "~~",
-                                "item":"sh.Dg.Flur.Dachfenster.Auf_ab" 
+                            "item": "sh.Dg.Flur.Dachfenster.Auf_ab"
                         }
                     }
                 },
@@ -177,7 +223,7 @@
                             "type": "bool",
                             "eval": "~~()",
                             "eval_trigger": "~~",
-                            "item": "sh.Dg.Flur.Jalousie.Fenster.Lamellenverstellung_stop" 
+                            "item": "sh.Dg.Flur.Jalousie.Fenster.Lamellenverstellung_stop"
                         }
                     },
                     "Dachfenster": {
@@ -187,7 +233,7 @@
                             "type": "bool",
                             "eval": "~~()",
                             "eval_trigger": "~~",
-                                "item":"sh.Dg.Flur.Dachfenster.Lamellenverstellung_stop" 
+                            "item": "sh.Dg.Flur.Dachfenster.Lamellenverstellung_stop"
                         }
                     }
                 }
