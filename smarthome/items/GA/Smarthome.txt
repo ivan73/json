@@ -25,6 +25,8 @@
   2/2/72 - Kueche.Praesenz
   2/2/80 - Dg.Kueche.Praesenz
   2/2/90 - Dg.Bad.Praesenz
+ 2/2/111 - Dg.Flur.Beleuchtung.Schalten
+ 2/2/112 - Dg.Flur.Beleuchtung.Nacht
  2/2/130 - Dg.TagesWC.Praesenz
   3/0/11 - Eg.Garage.Jalousie.Rechts.Auf_ab
   3/0/12 - Eg.Garage.Jalousie.Rechts.Lamellenverstellung_stop

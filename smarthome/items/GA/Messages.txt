@@ -9,6 +9,11 @@ AutoBlind reference not found: as_item_TagAktive, referenced in File: items\og.j
 AutoBlind reference not found: as_item_Daemmerung, referenced in File: items\og.json, Path: Og.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Referenzfahrt.enter_auto.as_min_Daemmerung
 AutoBlind reference not found: as_item_MorgendaemmerungAktive, referenced in File: items\og.json, Path: Og.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Morgendaemmerung.enter.as_value_MorgendaemmerungAktive
 AutoBlind reference not found: as_item_TagAktive, referenced in File: items\og.json, Path: Og.Schlafzimmer.Jalousie.Fenster.AutoBlind.Rules.Tag.enter.as_value_TagAktive
+Item not found: ...Szene, referenced in File: items\beleuchtung_default.json, Path: Beleuchtung_default.as_item_Szene
+Item not found: ...Schalten, referenced in File: items\beleuchtung_default.json, Path: Beleuchtung_default.as_item_Schalten
+Item not found: ...Nacht, referenced in File: items\beleuchtung_default.json, Path: Beleuchtung_default.as_item_Nacht
+Item not found: ~~~~~~.Trigger, referenced in File: items\dg.json, Path: Dg.Flur.Beleuchtung.AutoLight.Rules.eval_trigger
+Item not found: .Trigger, referenced in File: items\dg.json, Path: Dg.Flur.Beleuchtung.AutoLight.Rules.eval_trigger
 Item not found: .....Schiebetuer.Status, referenced in File: items\dg.json, Path: Dg.Wohnzimmer.Jalousie.Terrasse.AutoBlind.Rules.as_item_schiebetuer
 Item not found: .....Schiebetuer.Status, referenced in File: items\dg.json, Path: Dg.Essen.Jalousie.Terrasse_Schiebetuer.AutoBlind.Rules.as_item_schiebetuer
 Item not found: , referenced in File: items\jalousie_default.json, Path: Jalousie_default.as_item_automatik

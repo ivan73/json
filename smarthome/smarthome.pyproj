@@ -45,6 +45,7 @@
   <ItemGroup>
     <Content Include="items\dg.json" />
     <Content Include="items\eg.json" />
+    <Content Include="items\beleuchtung_default.json" />
     <Content Include="items\jalousie_default.json" />
     <Content Include="items\GA\Messages.txt" />
     <Content Include="items\GA\Smarthome.txt" />
@@ -70,11 +71,13 @@
     <Content Include="schema\uzsu_plugin.json" />
     <Content Include="schema\wol_plugin.json" />
     <Content Include="schema\xbmc_plugin.json" />
+    <Content Include="templates\autolight.json" />
     <Content Include="templates\autoblind.json" />
     <Content Include="templates\dachfenster.json" />
     <Content Include="templates\clickcontrol.json" />
     <Content Include="templates\einzelraumregelung.json" />
     <Content Include="templates\autoblind_parameter.json" />
+    <Content Include="templates\beleuchtung.json" />
     <Content Include="templates\jalousie.json" />
     <Content Include="templates\praesenz.json" />
   </ItemGroup>

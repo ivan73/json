@@ -1,0 +1,44 @@
+{
+  "$schema": "../schema/ItemSchema.json",
+  "AutoLight": {
+    "$order": 2,
+    "state_id": {
+      "type": "str",
+      "visu_acl": "ro",
+      "cache": true
+    },
+    "state_name": {
+      "type": "str",
+      "visu_acl": "ro",
+      "cache": true
+    },
+
+    "Rules": {
+        "$order": 3,
+        "type": "bool",
+        "as_plugin": "active",
+        //Erste Zustandsermittlung nach 30 Sekunden
+        //"as_startup_delay": 10, // in Sekunden
+        "eval_trigger": "~~~~~~.Trigger | ~~~.Schalten | ~~~.Nacht",
+        //"as_repeat_actions": "true",
+        "as_laststate_item_id": "..state_id",
+        "as_laststate_item_name": "..state_name",
+
+        "Grundbeleuchtung": {
+            "$order": 1,
+            "as_use": "Beleuchtung_default.Grundbeleuchtung"
+        },
+        "Nacht": {
+            "$order": 2,
+            "as_use": "Beleuchtung_default.Nacht"
+        },
+        "Aus": {
+            "$order": 9,
+            "as_use": "Beleuchtung_default.Aus"
+        }
+    }
+  }
+}
+
+
+

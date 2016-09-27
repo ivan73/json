@@ -108,6 +108,10 @@
     },
     "Flur": {
         "Beleuchtung": {
+            "$template": {
+                "source": "beleuchtung",
+                "knx": "2/2/111"
+            },
             "Panel": {
                 "type": "num",
                 "cache": true,
@@ -120,23 +124,23 @@
                     "eval_trigger": "~~"
                 }
             },
-        "Wand": {
-          "DMX": {
-            "type": "num",
-            "cache": true,
-            "visu_acl": "rw",
-            "dmx_ch": "1"
-          }
+            "Wand": {
+                "DMX": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "dmx_ch": "1"
+                }
+            },
+            "Boden": {
+                "DMX": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "dmx_ch": "1"
+                }
+            }
         },
-        "Boden": {
-          "DMX": {
-            "type": "num",
-            "cache": true,
-            "visu_acl": "rw",
-            "dmx_ch": "1"
-          }
-        }
-      },
         "Jalousie": {
             "Fenster": {
                 "$template": {

@@ -1,0 +1,51 @@
+{
+  "$schema": "../schema/ItemSchema.json",
+    "Beleuchtung": {
+        "type": "str",
+        "visu_acl": "ro",
+        "eval": "str(~.autoLight.Rules)",
+        "eval_trigger": "~",
+        "Szene": {
+            "$order": 0,
+            "type": "scene",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "enforce_updates": true,
+            "cache": true
+        },
+        "Schalten": {
+            "$order": 1,
+            "type": "bool",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "enforce_updates": true,
+            "knx_dpt": "1",
+            "knx_send": "-/-/-",
+            "knx_listen": "-/-/-",
+            "cache": true
+        },
+        "Nacht": {
+            "$order": 2,
+            "type": "bool",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "enforce_updates": true,
+            "knx_dpt": "1",
+            "knx_send": "-/-/+1",
+            "knx_listen": "-/-/+1",
+            "cache": true
+        },
+        "AutoLight": {
+            "$order": 10,
+            "$template": {
+                "source": "autolight"
+            },
+        }
+        //    "Rules": {
+        //        "$templated": true,
+        //        "as_plugin": "active"
+        //    }
+        //}
+    }
+}
+
