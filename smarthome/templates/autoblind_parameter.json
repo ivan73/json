@@ -14,24 +14,18 @@
         "visu_acl": "rw",
         "value": "100"
       },
-      "Lamellenposition": {
-        "type": "num",
-        "cache": true,
-        "visu_acl": "rw",
-        "value": "50"
-      },
-      "Zeit_ok": {
-        "type": "bool",
-        "cache": true,
-        "visu_acl": "rw",
-        "value": "true",
-        "Uzsu": {
-          "type": "dict",
-          "visu_acl": "rw",
-          "cache": true,
-          "uzsu_item": "~~"
+        "Lamellenposition": {
+            "type": "num",
+            "cache": true,
+            "visu_acl": "rw",
+            "value": "50"
+        },
+        "Uhrzeit": {
+            "type": "str",
+            "cache": true,
+            "visu_acl": "rw",
+            "value": "06:00"
         }
-      }
     },
     "Tag": {
       "Aktive": {
@@ -46,12 +40,19 @@
         "visu_acl": "rw",
         "value": "100"
       },
-      "Lamellenposition": {
-        "type": "num",
-        "cache": true,
-        "visu_acl": "rw",
-        "value": "0"
-      }
+        "Lamellenposition": {
+            "type": "num",
+            "cache": true,
+            "visu_acl": "rw",
+            "value": "0"
+        },
+         
+        "Uhrzeit": {
+            "type": "str",
+            "cache": true,
+            "visu_acl": "rw",
+            "value": "06:30"
+        }
     },
     "Abenddaemmerung": {
       "Aktive": {

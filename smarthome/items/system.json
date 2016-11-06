@@ -1,111 +1,118 @@
 {
   "$schema": "../schema/ItemSchema.json",
-  "System": {
-    "Sonne": {
-      "Berechnung": {
-        "type": "bool",
-        "visu": "yes",
-        "enforce_updates": true,
-        "crontab": "init | sunrise-12 | 1 0 * *"
-      },
-      "Aufgang": {
-        "type": "foo",
-        "visu": "yes",
-        "visu_acl": "ro",
-        "eval": "sh.sun.rise().astimezone(sh.tzinfo()).strftime(\"%H:%M\")",
-        "eval_trigger": "~~.Berechnung",
-        "enforce_updates": true
-      },
-      "Untergang": {
-        "type": "foo",
-        "visu": "yes",
-        "visu_acl": "ro",
-        "eval": "sh.sun.set().astimezone(sh.tzinfo()).strftime(\"%H:%M\")",
-        "eval_trigger": "~~.Berechnung",
-        "enforce_updates": true
-      },
-      "Aufgang_daemmerung": {
-        "type": "foo",
-        "visu": "yes",
-        "visu_acl": "ro",
-        "eval": "sh.sun.rise(-6).astimezone(sh.tzinfo()).strftime(\"%H:%M\")",
-        "eval_trigger": "~~.Berechnung",
-        "enforce_updates": true
-      },
-      "Untergang_daemmerung": {
-        "type": "foo",
-        "visu": "yes",
-        "visu_acl": "ro",
-        "eval": "sh.sun.set(-6).astimezone(sh.tzinfo()).strftime(\"%H:%M\")",
-        "eval_trigger": "~~.Berechnung",
-        "enforce_updates": true
-      },
-      "Position": {
-        "type": "num",
-        "visu": "yes",
-        "visu_acl": "ro"
-      },
-      "Hoehe": {
-        "type": "num",
-        "visu": "yes",
-        "visu_acl": "ro"
-      },
-      "Tag": {
-        "type": "num",
-        "visu": "yes",
-        "visu_acl": "ro",
-        "eval": "sh.env.location.day()",
-        "eval_trigger": "env.location.day",
-        "enforce_updates": true,
-        "knx_dpt": "1",
-        "knx_send": "0/2/6"
-      }
+    "System": {
+        "Sonne": {
+            "Berechnung": {
+                "type": "bool",
+                "visu": "yes",
+                "enforce_updates": true,
+                "crontab": "init | sunrise-12 | 1 0 * *"
+            },
+            "Aufgang": {
+                "type": "foo",
+                "visu": "yes",
+                "visu_acl": "ro",
+                "eval": "sh.sun.rise().astimezone(sh.tzinfo()).strftime(\"%H:%M\")",
+                "eval_trigger": "~~.Berechnung",
+                "enforce_updates": true
+            },
+            "Untergang": {
+                "type": "foo",
+                "visu": "yes",
+                "visu_acl": "ro",
+                "eval": "sh.sun.set().astimezone(sh.tzinfo()).strftime(\"%H:%M\")",
+                "eval_trigger": "~~.Berechnung",
+                "enforce_updates": true
+            },
+            "Aufgang_daemmerung": {
+                "type": "foo",
+                "visu": "yes",
+                "visu_acl": "ro",
+                "eval": "sh.sun.rise(-6).astimezone(sh.tzinfo()).strftime(\"%H:%M\")",
+                "eval_trigger": "~~.Berechnung",
+                "enforce_updates": true
+            },
+            "Untergang_daemmerung": {
+                "type": "foo",
+                "visu": "yes",
+                "visu_acl": "ro",
+                "eval": "sh.sun.set(-6).astimezone(sh.tzinfo()).strftime(\"%H:%M\")",
+                "eval_trigger": "~~.Berechnung",
+                "enforce_updates": true
+            },
+            "Position": {
+                "type": "num",
+                "visu": "yes",
+                "visu_acl": "ro"
+            },
+            "Hoehe": {
+                "type": "num",
+                "visu": "yes",
+                "visu_acl": "ro"
+            },
+            "Tag": {
+                "type": "num",
+                "visu": "yes",
+                "visu_acl": "ro",
+                "eval": "sh.env.location.day()",
+                "eval_trigger": "env.location.day",
+                "enforce_updates": true,
+                "knx_dpt": "1",
+                "knx_send": "0/2/6"
+            }
+        },
+        "Mond": {
+            "Berechnung": {
+                "type": "bool",
+                "visu": "yes",
+                "eval_trigger": "~~.Berechnung",
+                "enforce_updates": true,
+                "crontab": "init | 1 0 * *"
+            },
+            "Aufgang": {
+                "type": "foo",
+                "visu": "yes",
+                "eval": "sh.moon.rise().astimezone(sh.tzinfo()).strftime(\"%H:%M\")",
+                "eval_trigger": "~~.Berechnung",
+                "enforce_updates": true
+            },
+            "Untergang": {
+                "type": "foo",
+                "visu": "yes",
+                "eval": "sh.moon.set().astimezone(sh.tzinfo()).strftime(\"%H:%M\")",
+                "eval_trigger": "~~.Berechnung",
+                "enforce_updates": true
+            },
+            "Position": {
+                "type": "foo",
+                "visu": "yes",
+                "eval": "sh.moon.pos()",
+                "eval_trigger": "~~.Berechnung",
+                "enforce_updates": true
+            },
+            "Licht": {
+                "type": "num",
+                "visu": "yes",
+                "eval": "sh.moon.light()",
+                "eval_trigger": "~~.Berechnung",
+                "enforce_updates": true
+            },
+            "Phase": {
+                "type": "num",
+                "visu": "yes",
+                "eval": "sh.moon.phase()",
+                "eval_trigger": "~~.Berechnung",
+                "enforce_updates": true
+            }
+        },
+    //    "Minute": {
+    //    "type": "bool",
+    //    "enforce_updates": true,
+    //    "cycle": "20 = 1",
+    //    "eval": "1 if ~ 0"
+    //}
     },
-    "Mond": {
-      "Berechnung": {
-        "type": "bool",
-        "visu": "yes",
-        "eval_trigger": "~~.Berechnung",
-        "enforce_updates": true,
-        "crontab": "init | 1 0 * *"
-      },
-      "Aufgang": {
-        "type": "foo",
-        "visu": "yes",
-        "eval": "sh.moon.rise().astimezone(sh.tzinfo()).strftime(\"%H:%M\")",
-        "eval_trigger": "~~.Berechnung",
-        "enforce_updates": true
-      },
-      "Untergang": {
-        "type": "foo",
-        "visu": "yes",
-        "eval": "sh.moon.set().astimezone(sh.tzinfo()).strftime(\"%H:%M\")",
-        "eval_trigger": "~~.Berechnung",
-        "enforce_updates": true
-      },
-      "Position": {
-        "type": "foo",
-        "visu": "yes",
-        "eval": "sh.moon.pos()",
-        "eval_trigger": "~~.Berechnung",
-        "enforce_updates": true
-      },
-      "Licht": {
-        "type": "num",
-        "visu": "yes",
-        "eval": "sh.moon.light()",
-        "eval_trigger": "~~.Berechnung",
-        "enforce_updates": true
-      },
-      "Phase": {
-        "type": "num",
-        "visu": "yes",
-        "eval": "sh.moon.phase()",
-        "eval_trigger": "~~.Berechnung",
-        "enforce_updates": true
-      }
-    }
-  },
+
     "Wetterstation": {
         "Helligkeit": {
             "Ost": {
@@ -271,6 +278,7 @@
             "knx_listen": "0/2/5"
         }
     },
+
     "Watchdog": {
         "Trigger": {
             "$order": 1,
@@ -300,5 +308,7 @@
         //    "knx_send": "0/0/200"
 
         //}
-    }
+    },
+
+    
 }

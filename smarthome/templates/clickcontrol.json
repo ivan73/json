@@ -1,76 +1,108 @@
 {
-  "$schema": "../schema/ItemSchema.json",
+    "$schema": "../schema/ItemSchema.json",
     "ClickControl": {
-      "Keys": {
-        "S1": {
-          "type": "bool",
-          "knx_dpt": "5",
-          "knx_listen": "6/-/-"
+        "Keys": {
+            "S1": {
+                "type": "bool",
+                "knx_dpt": "1",
+                "knx_listen": "6/-/-",
+                //"knx_send": "6/-/-",
+                "visu_acl": "rw"
+            },
+            "S2": {
+                "type": "bool",
+                "knx_dpt": "1",
+                "knx_listen": "6/-/+1",
+                //"knx_send": "6/-/+1",
+                "visu_acl": "rw"
+            },
+            "S3": {
+                "type": "bool",
+                "knx_dpt": "1",
+                "knx_listen": "6/-/+2",
+                //"knx_send": "6/-/+2",
+                "visu_acl": "rw"
+            },
+            "S4": {
+                "type": "bool",
+                "knx_dpt": "1",
+                "knx_listen": "6/-/+3",
+                //"knx_send": "6/-/+3",
+                "visu_acl": "rw"
+            },
+            "Panik": {
+                "type": "bool",
+                "knx_dpt": "1",
+                "knx_listen": "6/-/+8",
+                //"knx_send": "6/-/+8",
+                "visu_acl": "rw"
+            }
         },
-        "S2": {
-          "type": "bool",
-          "knx_dpt": "5",
-          "knx_listen": "6/-/+1"
-        },
-        "S3": {
-          "type": "bool",
-          "knx_dpt": "5",
-          "knx_listen": "6/-/+2"
-        },
-        "S4": {
-          "type": "bool",
-          "knx_dpt": "5",
-          "knx_listen": "6/-/+3"
-        }
-      },
-      "Leds": {
+        "Leds": {
             "Led1": {
                 "type": "bool",
                 "knx_dpt": "1",
                 "knx_send": "7/-/-",
-                "cache":true
+                "cache": true
             },
             "Led2": {
                 "type": "bool",
                 "knx_dpt": "1",
                 "knx_send": "7/-/+1",
-                "cache":true
+                "cache": true
             },
             "Led3": {
                 "type": "bool",
                 "knx_dpt": "1",
                 "knx_send": "7/-/+2",
-                "cache":true
+                "cache": true
             },
             "Led4": {
-              "type": "bool",
-              "knx_dpt": "1",
-              "knx_send": "7/-/+3",
-              "cache": true
-                  },
+                "type": "bool",
+                "knx_dpt": "1",
+                "knx_send": "7/-/+3",
+                "cache": true
+            },
+
+            "LedOrientierungslicht": {
+                "type": "bool",
+                "visu_acl": "rw",
+                "knx_dpt": "1",
+                "knx_send": "7/-/+4",
+                "knx_listen": "7/-/+5",
+                "cache": true
+            },
+            "LedSchlafen": {
+                "type": "bool",
+                "visu_acl": "rw",
+                "knx_dpt": "1",
+                "knx_send": "7/-/+5",
+                "knx_listen": "7/-/+5",
+                "cache": true
+            },
             "Led1Prio": {
                 "type": "bool",
                 "knx_dpt": "1",
                 "knx_send": "8/-/-",
-                "cache":true
+                "cache": true
             },
             "Led2Prio": {
                 "type": "bool",
                 "knx_dpt": "1",
                 "knx_send": "8/-/+1",
-                "cache":true
+                "cache": true
             },
             "Led3Prio": {
                 "type": "bool",
                 "knx_dpt": "1",
                 "knx_send": "8/-/+2",
-                "cache":true
+                "cache": true
             },
             "Led4Prio": {
                 "type": "bool",
                 "knx_dpt": "1",
                 "knx_send": "8/-/+3",
-                "cache":true
+                "cache": true
             }
         },
         "State": {
@@ -86,11 +118,50 @@
             },
             "Zaehler_jalousie": {
                 "type": "num",
-                "cache": true
+                //"cache": true,
+                "autotimer": "60 = 0"
+            },
+            "Auf_ab_send": {
+                "type": "bool",
+                "enforce_updates": true,
+                "eval": "~~.Auf_ab() if ( ~~.Zaehler_jalousie() == 0) else None",
+                "eval_trigger": "~~.Auf_ab",
+                "knx_dpt": "1",
+                "knx_send": "3/-/-"
+            },
+
+            "Lamellenverstellung_stop_send": {
+                "type": "bool",
+                "enforce_updates": true,
+                "eval": "~~.Lamellenverstellung_stop() if ( ~~.Zaehler_jalousie() == 0) else None",
+                "eval_trigger": "~~.Lamellenverstellung_stop",
+                "knx_dpt": "1",
+                "knx_send": "3/-/+1"
+            },
+
+            "Key_S3_um": {
+                "type": "bool",
+                "cache": true,
+                "visu_acl": "rw"
+            },
+            "Key_S3L_um": {
+                "type": "bool",
+                "cache": true,
+                "visu_acl": "rw"
+            },
+            "Key_S4_um": {
+                "type": "bool",
+                "cache": true,
+                "visu_acl": "rw"
+            },
+            "Key_S4L_um": {
+                "type": "bool",
+                "cache": true,
+                "visu_acl": "rw"
             }
         },
         "Rules": {
-            "cc_plugin": "active",
+            "cc_plugin": "nactive",
             "type": "bool",
             "eval_trigger": "~~.Keys.S1 | ~~.Keys.S2 | ~~.Keys.S3 | ~~.Keys.S4",
             "eval": "not ~~.Rules()",
@@ -101,9 +172,13 @@
             "cc_item_key_S3": "~~.Keys.S3",
             "cc_item_key_S4": "~~.Keys.S4",
             "cc_item_counter_Jalousie": "~~.State.Zaehler_jalousie",
+            "cc_item_Key_S3_um": "~~.State.Key_S3_um",
+            "cc_item_Key_S3L_um": "~~.State.Key_S3L_um",
+            "cc_item_Key_S4_um": "~~.State.Key_S4_um",
+            "cc_item_Key_S4L_um": "~~.State.Key_S4L_um",
             "Jalousie_auf": {
                 "type": "bool",
-                "cc_set_jalousie_auf_ab": "true",
+                "cc_set_jalousie_auf_ab": "false",
                 "enter": {
                     "cc_pressed_time": "1000",
                     "cc_key": "S1"
@@ -117,9 +192,9 @@
                     "cc_key": "S2"
                 }
             },
-             "Lamellenverstellung_auf": {
+            "Lamellenverstellung_auf": {
                 "type": "bool",
-                "cc_set_jalousie_auf_ab": "true",
+                "cc_set_jalousie_lamellenverstellung_stop": "false",
                 "enter": {
                     "cc_pressed_time": "5",
                     "cc_key": "S1"
@@ -127,7 +202,7 @@
             },
             "Lamellenverstellung_ab": {
                 "type": "bool",
-                "cc_set_jalousie_auf_ab": "true",
+                "cc_set_jalousie_lamellenverstellung_stop": "true",
                 "enter": {
                     "cc_pressed_time": "5",
                     "cc_key": "S2"
@@ -150,8 +225,41 @@
                     "cc_pressed_time": "1000",
                     "cc_key": "S1 & S2"
                 }
+            },
+            "Key_S3_um": {
+                "type": "bool",
+                "cc_set_Key_S3_um": "toggle",
+                "enter": {
+                    "cc_pressed_time": "5",
+                    "cc_key": "S3"
+                }
+            },
+            "Key_S3L_um": {
+                "type": "bool",
+                "cc_set_Key_S3L_um": "toggle",
+                "enter": {
+                    "cc_pressed_time": "1000",
+                    "cc_key": "S3"
+                }
+            },
+            "Key_S4_um": {
+                "type": "bool",
+                "cc_set_Key_S4_um": "toggle",
+                "enter": {
+                    "cc_pressed_time": "5",
+                    "cc_key": "S4"
+                }
+            },
+            "Key_S4L_um": {
+                "type": "bool",
+                "cc_set_Key_S4L_um": "toggle",
+                "enter": {
+                    "cc_pressed_time": "1000",
+                    "cc_key": "S4"
+                }
             }
         }
     }
 }
+
 

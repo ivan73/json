@@ -60,7 +60,7 @@
             "eval_trigger": "~~.Auf_ab | ~~.Lamellenverstellung_stop | ~~.Position | ~~.Lamellenposition",
             "eval": "not ~~.knx_read_logic()",
             "info": "es wird über eine Logik das Lesen der GA knx_listen in die Wege geleitet",
-            "knx_listen": "10/-/+2"
+            "knx_lesen": "10/-/+2"
         },
         "ReferenzFahren": {
             "$order": 7,

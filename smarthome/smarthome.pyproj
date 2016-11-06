@@ -50,7 +50,6 @@
     <Content Include="items\GA\Messages.txt" />
     <Content Include="items\GA\Smarthome.txt" />
     <Content Include="items\heizung.json" />
-    <Content Include="items\kueche.json" />
     <Content Include="items\og.json" />
     <Content Include="items\klingel.json" />
     <Content Include="items\system.json" />
@@ -79,7 +78,7 @@
     <Content Include="templates\autoblind_parameter.json" />
     <Content Include="templates\beleuchtung.json" />
     <Content Include="templates\jalousie.json" />
-    <Content Include="templates\praesenz.json" />
+    <Content Include="templates\status.json" />
   </ItemGroup>
   <Import Condition="Exists($(PtvsTargetsFile))" Project="$(PtvsTargetsFile)" />
   <Import Condition="!Exists($(PtvsTargetsFile))" Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />

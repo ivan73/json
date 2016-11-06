@@ -65,7 +65,7 @@
         "as_plugin": "active",
         //Erste Zustandsermittlung nach 30 Sekunden
         //"as_startup_delay": 10, // in Sekunden
-        "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren",
+        "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren | ~~~~~.Status.Schlafen",
         "as_repeat_actions": "true",
         "as_laststate_item_id": "..state_id",
         "as_laststate_item_name": "..state_name",
@@ -98,6 +98,10 @@
         "Suspend": {
             "$order": 22,
             "as_use": "Jalousie_default.Suspend"
+        },
+         "Schlafen": {
+            "$order": 25,
+            "as_use": "Jalousie_default.Schlafen"
         },
         "Beschatten_Manuell": {
             "$order": 33,

@@ -1,755 +1,1389 @@
 {
-  "$schema": "../schema/ItemSchema.json",
-  "Dg": {
-    "Trigger": {
-      "$order": 1,
-      "type": "bool",
-      "enforce_updates": true,
-      "cycle": "300 = 1"
-    },
-    "Eltern": {
-        "Jalousie": {
-            "Fenster": {
+    "$schema": "../schema/ItemSchema.json",
+    "Dg": {
+        "Trigger": {
+            "$order": 1,
+            "type": "bool",
+            "enforce_updates": true,
+            "cycle": "300 = 1"
+        },
+        "Beleuchtung": {
+            "DMX_Status": {
+                "type": "bool",
+                "visu_acl": "ro"
+            },
+            "Strom": {
+                "$order": 2,
+                "type": "num",
+                "visu_acl": "ro",
+                "enforce_updates": true,
+                "knx_dpt": "9",
+                "knx_listen": "4/4/0",
+                "cache": true
+            },
+            "Arbeit": {
+                "$order": 2,
+                "type": "num",
+                "visu_acl": "ro",
+                "enforce_updates": true,
+                "knx_dpt": "13",
+                "knx_listen": "4/4/1",
+                "cache": true,
+                "sqlite": "yes",
+                "Tag": {
+                    "type": "num",
+                    "visu_acl": "ro",
+                    "cache": true,
+                    "eval_trigger": "~~",
+                    "eval": "~~.sql() - ~~.sql.db('min','24h')"
+                },
+                "Woche": {
+                    "type": "num",
+                    "visu_acl": "ro",
+                    "cache": true,
+                    "eval_trigger": "~~",
+                    "eval": "~~.sql() - ~~.sql.db('min','7d')"
+                }
+            },
+            "StromSekundaer": {
+                "type": "num",
+                "visu_acl": "ro",
+                "cache": true,
+                "eval": "~~.Strom()* 230 / 1000 / 24",
+                "eval_trigger": "~~.Strom",
+                "sqlite": "yes"
+            },
+            "Leistung": {
+                "type": "num",
+                "visu_acl": "ro",
+                "cache": true,
+                "eval": "~~.Strom()* 230 / 1000",
+                "eval_trigger": "~~.Strom",
+                "sqlite": "yes"
+            }
+        },
+        "Eltern": {
+            "Beleuchtung": {
                 "$template": {
-                    "source": "jalousie",
-                    "knx": "0/2/11"
+                    "source": "beleuchtung",
+                    "knx": "2/2/11"
                 },
-                "ManuellKNX": {
-                    "knx_listen": "3/2/14 | 3/2/15"
+                "Panel": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "28",
+                        "eval": "~~()",
+                        "eval_trigger": "~~",
+                        "enforce_updates": true
+                    }
                 },
-                "autoBlind": {
-                    "Rules": {
-                        "$templated": true,
-                        "as_plugin": "active",
-                        "name": "Dg Eltern",
-                        "Beschatten": {
-                            "$order": 30,
-                            "as_use": "Jalousie_default.Beschatten_Ost"
-                        },
-                        "Morgendaemmerung": {
-                            "enter": {
-                                "as_value_MorgendaemmerungAktive": "True",
-                                "as_min_time": "07:30",
-                                "as_max_time": "08:00"
-                            }
-                        },
+                "Stripe": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "29",
+                        "eval": "~~()",
+                        "eval_trigger": "~~",
+                        "enforce_updates": true
+                    }
+                }
+            },
+            "Jalousie": {
+                "Fenster": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/11"
+                    },
+                    "ManuellKNX": {
+                        "knx_listen": "3/2/14 | 3/2/15"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Eltern",
+                            "Beschatten": {
+                                "$order": 30,
+                                "as_use": "Jalousie_default.Beschatten_Ost"
+                            },
+                            "Morgendaemmerung": {
+                                "enter": {
+                                    "as_value_MorgendaemmerungAktive": "True",
+                                    "as_min_time": "07:30",
+                                    "as_max_time": "08:00"
+                                }
+                            },
 
-                        "Tag": {
-                            "enter": {
-                                "as_value_TagAktive": "True",
-                                "as_min_time": "08:00"
+                            "Tag": {
+                                "enter": {
+                                    "as_value_TagAktive": "True",
+                                    "as_min_time": "08:00"
+                                }
                             }
                         }
                     }
                 }
-            }
 
-        },
-        "Einzelraumregelung": {
-            "$template": {
-                "source": "einzelraumregelung",
-                "knx": "0/2/11"
-            }
-        },
-        "Praesenz": {
-            "$template": {
-                "source": "praesenz",
-                "knx": "2/2/10"
-            }
-        }
-    },
-    "Umkleide": {
-        "Beleuchtung": {
-            "Panel": {
-                "type": "num",
-                "cache": true,
-                "visu_acl": "rw",
-                "DMX": {
-                    "type": "num",
-                    "cache": true,
-                    "dmx_ch": "3",
-                    "eval": "~~()",
-                    "eval_trigger": "~~"
-                }
-            }
-        }
-    },
-    "Gaeste": {
-      "Jalousie": {
-        "Fenster": {
-            "$template": {
-                "source": "jalousie",
-                "knx": "0/2/21"
             },
-            "ManuellKNX": {
-                "knx_listen": "3/2/21 | 3/2/22"
-            },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Dg Gaestezimmer"
-            }
-          }
-        }
-      },
-      "Einzelraumregelung": {
-        "$template": {
-          "source": "einzelraumregelung",
-          "knx": "0/2/21"
-        }
-      },
-      "Praesenz": {
-        "$template": {
-          "source": "praesenz",
-          "knx": "2/2/20"
-        }
-      }
-    },
-    "Flur": {
-        "Beleuchtung": {
-            "$template": {
-                "source": "beleuchtung",
-                "knx": "2/2/111"
-            },
-            "Panel": {
-                "type": "num",
-                "cache": true,
-                "visu_acl": "rw",
-                "DMX": {
-                    "type": "num",
-                    "cache": true,
-                    "dmx_ch": "3",
-                    "eval": "~~()",
-                    "eval_trigger": "~~"
-                }
-            },
-            "Wand": {
-                "DMX": {
-                    "type": "num",
-                    "cache": true,
-                    "visu_acl": "rw",
-                    "dmx_ch": "1"
-                }
-            },
-            "Boden": {
-                "DMX": {
-                    "type": "num",
-                    "cache": true,
-                    "visu_acl": "rw",
-                    "dmx_ch": "1"
-                }
-            }
-        },
-        "Jalousie": {
-            "Fenster": {
+            "Einzelraumregelung": {
                 "$template": {
-                    "source": "jalousie",
+                    "source": "einzelraumregelung",
+                    "knx": "0/2/11"
+                }
+            },
+            "Status": {
+                "$template": {
+                    "source": "status",
+                    "knx": "2/2/11"
+                }
+            },
+            "ClickControl": {
+                "$template": {
+                    "source": "clickcontrol",
+                    "knx": "6/2/11"
+                },
+                "Rules": {
+                    "cc_plugin": "active"
+                }
+            }
+        },
+        "Umkleide": {
+            "Beleuchtung": {
+                "$template": {
+                    "source": "beleuchtung",
+                    "knx": "2/2/141"
+                },
+                "Nacht": {
+                    "$templated": true,
+                    "knx_send": "2/2/92",
+                    "knx_listen": "2/2/92"
+                },
+                "Panel": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "16",
+                        "eval": "~~()",
+                        "eval_trigger": "~~",
+                        "enforce_updates": true
+                    }
+                }
+            },
+            "Status": {
+                "$template": {
+                    "source": "status",
+                    "knx": "2/2/141"
+                }
+            },
+            "ClickControl": {
+                "$template": {
+                    "source": "clickcontrol",
+                    "knx": "6/2/141"
+                }
+            }
+        },
+        "Gaeste": {
+            "Beleuchtung": {
+                "$template": {
+                    "source": "beleuchtung",
+                    "knx": "2/2/21"
+                },
+                "Panel": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "12",
+                        "eval": "~~()",
+                        "eval_trigger": "~~",
+                        "enforce_updates": true
+                    }
+                },
+                "Stripe": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "13",
+                        "eval": "~~()",
+                        "eval_trigger": "~~",
+                        "enforce_updates": true
+                    }
+                }
+            },
+            "Jalousie": {
+                "Fenster": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/21"
+                    },
+                    "ManuellKNX": {
+                        "knx_listen": "3/2/21 | 3/2/22"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Gaestezimmer"
+                        }
+                    }
+                }
+            },
+            "Einzelraumregelung": {
+                "$template": {
+                    "source": "einzelraumregelung",
+                    "knx": "0/2/21"
+                }
+            },
+            "Status": {
+                "$template": {
+                    "source": "status",
+                    "knx": "2/2/21"
+                }
+            },
+            "ClickControl": {
+                "$template": {
+                    "source": "clickcontrol",
+                    "knx": "6/2/21"
+                },
+                "Rules": {
+                    "cc_plugin": "active"
+                }
+            }
+        },
+        "Flur": {
+            "Beleuchtung": {
+                "$template": {
+                    "source": "beleuchtung",
+                    "knx": "2/2/111"
+                },
+                "Panel": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "3",
+                        "eval": "~~()",
+                        "eval_trigger": "~~",
+                        "enforce_updates": true
+                    }
+                },
+                "Wand": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "2",
+                        "eval": "~~()",
+                        "eval_trigger": "~~",
+                        "enforce_updates": true
+                    }
+                },
+                "Boden": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "4",
+                        "eval": "~~()",
+                        "eval_trigger": "~~",
+                        "enforce_updates": true
+                    }
+                }
+            },
+            "Jalousie": {
+                "Fenster": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/111"
+                    },
+                    "ManuellKNX": {
+                        "knx_listen": "3/2/111 | 3/2/112"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Flur"
+                        }
+                    }
+                }
+            },
+            "Einzelraumregelung": {
+                "$template": {
+                    "source": "einzelraumregelung",
                     "knx": "0/2/111"
                 },
-                "ManuellKNX": {
-                    "knx_listen": "3/2/111 | 3/2/112"
+                "Ist_temperatur": {
+                    "$templated": true,
+                    "knx_listen": "4/2/71"
+                }
+            },
+            "Dachfenster": {
+                "$template": {
+
+                    "source": "dachfenster",
+                    "knx": "4/2/114"
                 },
                 "autoBlind": {
                     "Rules": {
                         "$templated": true,
-                        "as_plugin": "active",
-                        "name": "Dg Flur"
+                        "as_plugin": "nactive",
+                        "name": "Dg Flur Dachfenster"
                     }
                 }
-            }
-        },
-        "Einzelraumregelung": {
-            "$template": {
-                "source": "einzelraumregelung",
-                "knx": "0/2/111"
-            }
-        },
-        "Dachfenster": {
-            "$template": {
-
-                "source": "dachfenster",
-                "knx": "4/2/114"
             },
-            "autoBlind": {
+            "Status": {
+                "$template": {
+                    "source": "status",
+                    "knx": "2/2/111"
+                }
+            },
+            "ClickControl": {
+                "$template": {
+                    "source": "clickcontrol",
+                    "knx": "6/2/111"
+                },
                 "Rules": {
+                    "cc_plugin": "active",
+                    "Zaehler_jalousie": {
+                        "cc_count_counter_Jalousie": 2
+                    }
+                },
+                "State": {
+                    "Auf_ab": {
+                        //"Fenster": {
+                        //    "eval": "~~() if ( ~~~.Zaehler_jalousie() == 0) else None",
+                        //    "eval_trigger": "~~",
+                        //    "set_item": {
+                        //        "type": "bool",
+                        //        "eval": "~~()",
+                        //        "eval_trigger": "~~",
+                        //        "item": "sh.Dg.Flur.Jalousie.Fenster.Auf_ab",
+                        //        "enforce_updates": true
+                        //    }
+                        //},
+                        "Dachfenster": {
+                            "eval": "~~() if ( ~~~.Zaehler_jalousie() == 1) else None",
+                            "eval_trigger": "~~",
+                            "set_item": {
+                                "type": "bool",
+                                "eval": "~~()",
+                                "eval_trigger": "~~",
+                                "item": "sh.Dg.Flur.Dachfenster.Auf_ab",
+                                "enforce_updates": true
+                            }
+                        }
+                    },
+                    "Lamellenverstellung_stop": {
+                        //    "Fenster": {
+                        //        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 0) else None",
+                        //        "eval_trigger": "~~",
+                        //        "set_item": {
+                        //            "type": "bool",
+                        //            "eval": "~~()",
+                        //            "eval_trigger": "~~",
+                        //            "item": "sh.Dg.Flur.Jalousie.Fenster.Lamellenverstellung_stop",
+                        //            "enforce_updates": true
+                        //        }
+                        //    },
+                        "Dachfenster": {
+                            "eval": "~~() if ( ~~~.Zaehler_jalousie() == 1) else None",
+                            "eval_trigger": "~~",
+                            "set_item": {
+                                "type": "bool",
+                                "eval": "~~()",
+                                "eval_trigger": "~~",
+                                "item": "sh.Dg.Flur.Dachfenster.Lamellenverstellung_stop",
+                                "enforce_updates": true
+                            }
+                        }
+                    }
+
+                },
+                "Leds": {
                     "$templated": true,
-                    "as_plugin": "nactive",
-                    "name": "Dg Flur Dachfenster"
+                    "Led1Prio": {
+                        "eval": "True if (~~~.State.Zaehler_jalousie()==1 or ~~~.State.Zaehler_jalousie()==2)  else False",
+                        "eval_trigger": "~~~.State.Zaehler_jalousie"
+                    },
+                    "Led2Prio": {
+                        "eval": "True if (~~~.State.Zaehler_jalousie()==1 or ~~~.State.Zaehler_jalousie()==2)  else False",
+                        "eval_trigger": "~~~.State.Zaehler_jalousie"
+                    },
+                    "Led3Prio": {
+                        "eval": "True if (~~~.State.Zaehler_jalousie()==2)  else False",
+                        "eval_trigger": "~~~.State.Zaehler_jalousie"
+                    },
+                    "Led4Prio": {
+                        "eval": "True if (~~~.State.Zaehler_jalousie()==2)  else False",
+                        "eval_trigger": "~~~.State.Zaehler_jalousie"
+                    }
                 }
             }
         },
-        "Praesenz": {
-            "$template": {
-                "source": "praesenz",
-                "knx": "2/2/0"
-            }
-        },
-        "ClickControl": {
-            "$template": {
-                "source": "clickcontrol",
-                "knx": "6/2/111"
-            },
-            "Rules": {
-                "Zaehler_jalousie": {
-                    "cc_count_counter_Jalousie": 2
-                }
 
-            },
-            "State": {
-                "Auf_ab": {
-                    "Fenster": {
-                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 0) else None",
-                        "eval_trigger": "~~",
-                        "set_item": {
-                            "type": "bool",
-                            "eval": "~~()",
-                            "eval_trigger": "~~",
-                            "item": "sh.Dg.Flur.Jalousie.Fenster.Auf_ab"
-                        }
-                    },
-                    "Dachfenster": {
-                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 1) else None",
-                        "eval_trigger": "~~",
-                        "set_item": {
-                            "type": "bool",
-                            "eval": "~~()",
-                            "eval_trigger": "~~",
-                            "item": "sh.Dg.Flur.Dachfenster.Auf_ab"
-                        }
+        "Carla": {
+            "Beleuchtung": {
+                "$template": {
+                    "source": "beleuchtung",
+                    "knx": "2/2/31"
+                },
+                "Panel": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "14",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
                     }
                 },
-                "Lamellenverstellung_stop": {
-                    "Fenster": {
-                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 0) else None",
-                        "eval_trigger": "~~",
-                        "set_item": {
-                            "type": "bool",
-                            "eval": "~~()",
-                            "eval_trigger": "~~",
-                            "item": "sh.Dg.Flur.Jalousie.Fenster.Lamellenverstellung_stop"
-                        }
+                "Leiste": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "15",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                }
+            },
+            "Jalousie": {
+                "Fenster": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/31"
                     },
-                    "Dachfenster": {
-                        "eval": "~~() if ( ~~~.Zaehler_jalousie() == 1) else None",
-                        "eval_trigger": "~~",
-                        "set_item": {
-                            "type": "bool",
-                            "eval": "~~()",
-                            "eval_trigger": "~~",
-                            "item": "sh.Dg.Flur.Dachfenster.Lamellenverstellung_stop"
+                    "ManuellKNX": {
+                        "knx_listen": "3/2/31 | 3/2/32"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Carla Zimmer",
+                            "Beschatten": {
+                                "$order": 30,
+                                "as_use": "Jalousie_default.Beschatten_West"
+                            }
                         }
                     }
                 }
             },
+            "Einzelraumregelung": {
+                "$template": {
+                    "source": "einzelraumregelung",
+                    "knx": "0/2/31"
+                }
+            },
+            "Status": {
+                "$template": {
+                    "source": "status",
+                    "knx": "2/2/31"
+                }
+            },
+            "ClickControl": {
+                "$template": {
+                    "source": "clickcontrol",
+                    "knx": "6/2/31"
+                },
+                "Rules": {
+                    "cc_plugin": "active"
+                }
+            }
+        },
+        "Mattia": {
+            "Beleuchtung": {
+                "$template": {
+                    "source": "beleuchtung",
+                    "knx": "2/2/41"
+                },
+                "Panel": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "17",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                },
+                "Leiste": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "18",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                }
+            },
+            "Jalousie": {
+                "Fenster": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/41"
+                    },
+                    "ManuellKNX": {
+                        "knx_listen": "3/2/41 | 3/2/42"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Mattia Zimmer",
+                            "Beschatten": {
+                                "$order": 30,
+                                "as_use": "Jalousie_default.Beschatten_West"
+                            }
+                        }
+                    }
+                }
+            },
+            "Einzelraumregelung": {
+                "$template": {
+                    "source": "einzelraumregelung",
+                    "knx": "0/2/41"
+                }
+            },
+            "Status": {
+                "$template": {
+                    "source": "status",
+                    "knx": "2/2/41"
+                }
+            },
+            "ClickControl": {
+                "$template": {
+                    "source": "clickcontrol",
+                    "knx": "6/2/41"
+                },
+                "Rules": {
+                    "cc_plugin": "active"
+                }
+            }
+        },
+        "Wohnzimmer": {
+            "Beleuchtung": {
+                "$template": {
+                    "source": "beleuchtung",
+                    "knx": "2/2/61"
+                },
+                "Panel": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "11",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                },
+                "Stripe": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "35",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                },
+                "Stripe_RGB": {
+                    "R": {
+                        "type": "num",
+                        "cache": true,
+                        "visu_acl": "rw",
+                        "crontab": "init",
+                        "DMX": {
+                            "type": "num",
+                            "cache": true,
+                            "dmx_ch": "36",
+                            "eval": "~~()",
+                            "eval_trigger": "~~"
+                        }
+                    },
+                    "G": {
+                        "type": "num",
+                        "cache": true,
+                        "visu_acl": "rw",
+                        "crontab": "init",
+                        "DMX": {
+                            "type": "num",
+                            "cache": true,
+                            "dmx_ch": "37",
+                            "eval": "~~()",
+                            "eval_trigger": "~~"
+                        }
+                    },
+                    "B": {
+                        "type": "num",
+                        "cache": true,
+                        "visu_acl": "rw",
+                        "crontab": "init",
+                        "DMX": {
+                            "type": "num",
+                            "cache": true,
+                            "dmx_ch": "38",
+                            "eval": "~~()",
+                            "eval_trigger": "~~"
+                        }
+                    }
+                }
+            },
+            "Jalousie": {
+                "Fenster": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/61"
+                    },
+                    "ManuellKNX": {
+                        "knx_listen": "3/2/68 | 3/2/69"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Wohnzimmer Fenster",
+                            "Beschatten": {
+                                "$order": 30,
+                                "as_use": "Jalousie_default.Beschatten_West"
+                            }
+                        }
+                    }
+                },
+                "Terrasse": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/64"
+                    },
+                    "ManuellKNX": {
+                        "knx_listen": "3/2/68 | 3/2/69"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Wohnzimmer Terasse",
+                            "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren | ~~~~~.Schiebetuer.Status",
+                            "as_item_schiebetuer": ".....Schiebetuer.Status",
+                            "Schiebetuer": {
+                                "$order": 2,
+                                "as_use": "Jalousie_default.Schiebetuer"
+                            },
+                            "Beschatten": {
+                                "$order": 30,
+                                "as_use": "Jalousie_default.Beschatten_Sued"
+                            }
+                        }
+                    }
+                }
+            },
+            "Einzelraumregelung": {
+                "$template": {
+                    "source": "einzelraumregelung",
+                    "knx": "0/2/61"
+                }
+            },
+            "Schiebetuer": {
+                "Status": {
+                    "type": "bool",
+                    "visu_acl": "ro",
+                    "knx_dpt": "1",
+                    "knx_listen": "4/2/65"
+                }
+            },
+            "Status": {
+                "$template": {
+                    "source": "status",
+                    "knx": "2/2/61"
+                }
+            },
+            "ClickControl": {
+                "$template": {
+                    "source": "clickcontrol",
+                    "knx": "6/2/61"
+                },
+                "Rules": {
+                    "cc_plugin": "active"
+                },
+                "State": {
+                    "Auf_ab_send": {
+                        "$templated": true,
+                        "knx_send": "3/2/68"
+                    },
+                    "Lamellenverstellung_stop_send": {
+                        "$templated": true,
+                        "knx_send": "3/2/69"
+                    }
+                }
+            }
+        },
+        "Kueche": {
+            "Beleuchtung": {
+                "$template": {
+                    "source": "beleuchtung",
+                    "knx": "2/2/71"
+                },
+                //"Kochen": {
+                //    "$templated": true,
+                //    "knx_send": "2/2/87",
+                //    "knx_listen": "2/2/87"
+                //},
+                "Insel": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "8",
+                        "eval": "~~()",
+                        "eval_trigger": "~~",
+                        "enforce_updates": true
+                    }
+                },
+                "Arbeitsplatte": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "7",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                },
+                "Essen": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "9",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                }
+            },
+            "Jalousie": {
+                "Kochinsel": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/81"
+                    },
+                    "ManuellKNX": {
+                        "knx_listen": "3/2/171 | 3/2/172"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Fenster Kochinsel",
+                            "Beschatten": {
+                                "$order": 30,
+                                "as_use": "Jalousie_default.Beschatten_Sued",
+                                "enter": {
+                                    "as_max_sun_altitude": "38"
+                                }
+                            }
+                        }
+                    }
+                },
+                "Arbeitsflaeche": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/84"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Fenster Arbeitsflaeche",
+                            "Beschatten": {
+                                "$order": 30,
+                                "as_use": "Jalousie_default.Beschatten_Ost"
+                            }
+                        }
+                    }
+                },
+                "Speiss": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/87"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Fenster Speiss",
+                            "Beschatten": {
+                                "$order": 30,
+                                "as_use": "Jalousie_default.Beschatten_Ost"
+                            }
+                        }
+                    }
+                }
+            },
+            "Einzelraumregelung": {
+                "$template": {
+                    "source": "einzelraumregelung",
+                    "knx": "0/2/81"
+                }
+            },
+            "Status": {
+                "$template": {
+                    "source": "status",
+                    "knx": "2/2/71"
+                }
+            },
+            "ClickControl": {
+                "$template": {
+                    "source": "clickcontrol",
+                    "knx": "6/2/71"
+                },
+                "Rules": {
+                    "cc_plugin": "active"
+                },
+                "State": {
+                    "$delete": [ "Auf_ab_send" , "Lamellenverstellung_stop_send" ],
 
-            "Leds": {
-                "$templated": true,
-                "Led1Prio": {
-                    "eval": "True if (~~~.State.Zaehler_jalousie()==1 or ~~~.State.Zaehler_jalousie()==2)  else False",
-                    "eval_trigger": "~~~.State.Zaehler_jalousie"
-                },
-                "Led2Prio": {
-                    "eval": "True if (~~~.State.Zaehler_jalousie()==1 or ~~~.State.Zaehler_jalousie()==2)  else False",
-                    "eval_trigger": "~~~.State.Zaehler_jalousie"
-                },
-                "Led3Prio": {
-                    "eval": "True if (~~~.State.Zaehler_jalousie()==2)  else False",
-                    "eval_trigger": "~~~.State.Zaehler_jalousie"
-                },
-                "Led4Prio": {
-                    "eval": "True if (~~~.State.Zaehler_jalousie()==2)  else False",
-                    "eval_trigger": "~~~.State.Zaehler_jalousie"
-                }
-            }
-        }
-    },
-    "Carla": {
-      "Jalousie": {
-        "Fenster": {
-            "$template": {
-                "source": "jalousie",
-                "knx": "0/2/31"
-            },
-            "ManuellKNX": {
-                "knx_listen": "3/2/31 | 3/2/32"
-            },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Dg Carla Zimmer",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_West"
-              }
-            }
-          }
-        }
-      },
-      "Einzelraumregelung": {
-        "$template": {
-          "source": "einzelraumregelung",
-          "knx": "0/2/31"
-        }
-      },
-      "Praesenz": {
-        "$template": {
-          "source": "praesenz",
-          "knx": "2/2/30"
-        }
-      }
-    },
-    "Mattia": {
-      "Jalousie": {
-        "Fenster": {
-            "$template": {
-                "source": "jalousie",
-                "knx": "0/2/41"
-            },
-            "ManuellKNX": {
-                "knx_listen": "3/2/41 | 3/2/42"
-            },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Dg Mattia Zimmer",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_West"
-              }
-            }
-          }
-        }
-      },
-      "Einzelraumregelung": {
-        "$template": {
-          "source": "einzelraumregelung",
-          "knx": "0/2/41"
-        }
-      },
-      "Praesenz": {
-        "$template": {
-          "source": "praesenz",
-          "knx": "2/2/40"
-        }
-      }
-    },
-    "Wohnzimmer": {
-      "Jalousie": {
-        "Fenster": {
-            "$template": {
-                "source": "jalousie",
-                "knx": "0/2/61"
-            },
-            "ManuellKNX": {
-                "knx_listen": "3/2/68 | 3/2/69"
-            },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Dg Wohnzimmer Fenster",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_West"
-              }
-            }
-          }
-        },
-        "Terrasse": {
-            "$template": {
-                "source": "jalousie",
-                "knx": "0/2/64"
-            },
-            "ManuellKNX": {
-                "knx_listen": "3/2/68 | 3/2/69"
-            },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-                "name": "Dg Wohnzimmer Terasse",
-                "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren | ~~~~~.Schiebetuer.Status",
-                "as_item_schiebetuer": ".....Schiebetuer.Status",
-                "Schiebetuer": {
-                    "$order": 2,
-                    "as_use": "Jalousie_default.Schiebetuer"
-                },
-                "Beschatten": {
-                    "$order": 30,
-                    "as_use": "Jalousie_default.Beschatten_Sued"
-                }
-            }
-          }
-        }
-      },
-      "Einzelraumregelung": {
-        "$template": {
-          "source": "einzelraumregelung",
-          "knx": "0/2/61"
-        }
-      },
-      "Schiebetuer": {
-        "Status": {
-          "type": "bool",
-          "visu_acl": "ro",
-          "knx_dpt": "1",
-          "knx_listen": "4/2/65"
-        }
-      },
-      "Praesenz": {
-        "$template": {
-          "source": "praesenz",
-          "knx": "2/2/60"
-        }
-      }
-    },
-    "Kueche": {
-      "Beleuchtung": {
-        "Arbeitsplatte": {
-          "Schalten": {
-            "type": "bool",
-            "visu_acl": "rw"
-          },
-          "Dimmen": {
-            "type": "num",
-            "visu_acl": "rw",
-            "dmx_ch": "1"
-          }
-        }
-      },
-      "Jalousie": {
-        "Kochinsel": {
-            "$template": {
-                "source": "jalousie",
-                "knx": "0/2/81"
-            },
-            "ManuellKNX": {
-                "knx_listen": "3/2/171 | 3/2/172"
-            },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Dg Fenster Kochinsel",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Sued",
-                "enter": {
-                    "as_max_sun_altitude": "38"
-                }
-              }
-            }
-          }
-        },
-        "Arbeitsflaeche": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/84"
-          },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Dg Fenster Arbeitsflaeche",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Ost"
-              }
-            }
-          }
-        },
-        "Speiss": {
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/2/87"
-          },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Dg Fenster Speiss",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Ost"
-              }
-            }
-          }
-        }
-      },
-      "Einzelraumregelung": {
-        "$template": {
-          "source": "einzelraumregelung",
-          "knx": "0/2/81"
-        }
-      },
-      "ClickControl": {
-        "$template": {
-            "source": "clickcontrol",
-            "knx": "6/2/81"
-        },
-         "State": {
-                "Auf_ab": {
-                    "Arbeitsflaeche": {
-                        "eval": "~~() if ~~~.Zaehler_jalousie()==0 else value",
-                        "eval_trigger": "~~",
-                        "set_item": {
-                            "type": "bool",
-                            "eval": "~~()",
-                            "eval_trigger": "~~",
-                             "item":"sh.Dg.Kueche.Jalousie.Arbeitsflaeche.Auf_ab" 
-                        }
+                    //"Auf_ab_send": {
+                    //    "$templated": true,
+                    //    "knx_send": "3/2/171"
+                    //},
+                    //"Lamellenverstellung_stop_send": {
+                    //    "$templated": true,
+                    //    "knx_send": "3/2/90"
+                    //},
+                    "Auf_ab": {
+                        //"Arbeitsflaeche": {
+                        //    "eval": "~~() if ~~~.Zaehler_jalousie()==0 else value",
+                        //    "eval_trigger": "~~",
+                        //    "set_item": {
+                        //        "type": "bool",
+                        //        "eval": "~~()",
+                        //        "eval_trigger": "~~",
+                        //        "item": "sh.Dg.Kueche.Jalousie.Arbeitsflaeche.Auf_ab"
+                        //    }
+                        //},
+                        //"Kochinsel": {
+                        //    "eval": "~~() if ~~~.Zaehler_jalousie()==1 else value",
+                        //    "eval_trigger": "~~",
+                        //    "set_item": {
+                        //        "type": "bool",
+                        //        "eval": "~~()",
+                        //        "eval_trigger": "~~",
+                        //        "item": "sh.Dg.Kueche.Jalousie.Kochinsel.Auf_ab"
+                        //    }
+                        //}
                     },
-                    "Kochinsel": {
-                        "eval": "~~() if ~~~.Zaehler_jalousie()==1 else value",
-                        "eval_trigger": "~~",
-                        "set_item": {
-                            "type": "bool",
-                            "eval": "~~()",
-                            "eval_trigger": "~~",
-                                "item":"sh.Dg.Kueche.Jalousie.Kochinsel.Auf_ab" 
-                        }
-                    }
-                },
-                "Lamellenverstellung_stop": {
-                    "Arbeitsflaeche": {
-                        "eval": "~~() if  ~~~.Zaehler_jalousie()==0 else value",
-                        "eval_trigger": "~~",
-                        "set_item": {
-                            "type": "bool",
-                            "eval": "~~()",
-                            "eval_trigger": "~~",
-                            "item": "sh.Dg.Kueche.Jalousie.Arbeitsflaeche.Lamellenverstellung_stop" 
-                        }
+                    "Lamellenverstellung_stop": {
+                        //"Arbeitsflaeche": {
+                        //    "eval": "~~() if  ~~~.Zaehler_jalousie()==0 else value",
+                        //    "eval_trigger": "~~",
+                        //    "set_item": {
+                        //        "type": "bool",
+                        //        "eval": "~~()",
+                        //        "eval_trigger": "~~",
+                        //        "item": "sh.Dg.Kueche.Jalousie.Arbeitsflaeche.Lamellenverstellung_stop"
+                        //    }
+                        //},
+                        //"Kochinsel": {
+                        //    "eval": "~~() if  ~~~.Zaehler_jalousie()==1 else value",
+                        //    "eval_trigger": "~~",
+                        //    "set_item": {
+                        //        "type": "bool",
+                        //        "eval": "~~()",
+                        //        "eval_trigger": "~~",
+                        //        "item": "sh.Dg.Kueche.Jalousie.Kochinsel.Lamellenverstellung_stop"
+                        //    }
+                        //}
                     },
-                    "Kochinsel": {
-                        "eval": "~~() if  ~~~.Zaehler_jalousie()==1 else value",
-                        "eval_trigger": "~~",
-                        "set_item": {
-                            "type": "bool",
-                            "eval": "~~()",
-                            "eval_trigger": "~~",
-                                "item":"sh.Dg.Kueche.Jalousie.Kochinsel.Lamellenverstellung_stop" 
+                    "Leds": {
+                        "$templated": true,
+                        "Led2Prio": {
+                            "eval": "True if (~~~.State.Zaehler_jalousie()==3)  else False",
+                            "eval_trigger": "~~~.State.Zaehler_jalousie"
+                        },
+                        "Led3Prio": {
+                            "eval": "True if (~~~.State.Zaehler_jalousie()==2 or ~~~.State.Zaehler_jalousie()==4)  else False",
+                            "eval_trigger": "~~~.State.Zaehler_jalousie"
+                        },
+                        "Led4Prio": {
+                            "eval": "True if (~~~.State.Zaehler_jalousie()==1 or ~~~.State.Zaehler_jalousie()==4)  else False",
+                            "eval_trigger": "~~~.State.Zaehler_jalousie"
                         }
-                    }
-                }
-            },
-        "Leds": {
-          "$templated": true,
-          "Led2Prio": {
-            "eval": "True if (~~~.State.Zaehler_jalousie()==3)  else False",
-            "eval_trigger": "~~~.State.Zaehler_jalousie"
-          },
-          "Led3Prio": {
-            "eval": "True if (~~~.State.Zaehler_jalousie()==2 or ~~~.State.Zaehler_jalousie()==4)  else False",
-            "eval_trigger": "~~~.State.Zaehler_jalousie"
-          },
-          "Led4Prio": {
-            "eval": "True if (~~~.State.Zaehler_jalousie()==1 or ~~~.State.Zaehler_jalousie()==4)  else False",
-            "eval_trigger": "~~~.State.Zaehler_jalousie"
-          }
 
-        }
-      },
-      "Praesenz": {
-        "$template": {
-          "source": "praesenz",
-          "knx": "2/2/80"
-        }
-      }
-    },
-    "Essen": {
-      "Beleuchtung": {
-        "Tisch": {
-          "Schalten": {
-            "type": "bool",
-            "visu_acl": "rw"
-          },
-          "DMX": {
-            "type": "num",
-            "visu_acl": "rw",
-            "dmx_ch": "1"
-          }
-        }
-      },
-      "Jalousie": {
-        "Terrasse": {
-            "$template": {
-                "source": "jalousie",
-                "knx": "0/2/74"
-            },
-            "ManuellKNX": {
-                "knx_listen": "3/2/174 | 3/2/175"
-            },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Dg Essen Terrasse",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_West"
-              }
-            }
-          }
-        },
-        "Terrasse_Schiebetuer": {
-            "$template": {
-                "source": "jalousie",
-                "knx": "0/2/71"
-            },
-            "ManuellKNX": {
-                "knx_listen": "3/2/174 | 3/2/175"
-            },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-                "name": "Dg Essen Terrasse Schiebetuer",
-                "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren | ~~~~~.Schiebetuer.Status",
-                "as_item_schiebetuer": ".....Schiebetuer.Status",
-                "Schiebetuer": {
-                    "$order": 2,
-                    "as_use": "Jalousie_default.Schiebetuer"
-                },
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_West"
-              }
-            }
-          }
-        },
-        "Fenster": {
-            "$template": {
-                "source": "jalousie",
-                "knx": "0/2/77"
-            },
-            "ManuellKNX": {
-                "knx_listen": "3/2/171 | 3/2/172"
-            },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Dg Esstisch",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Sued",
-                "enter": {
-                    "as_max_sun_altitude": "38"
+                    }
                 }
-              }
             }
-          }
-        }
-      },
-      "Einzelraumregelung": {
-        "$template": {
-          "source": "einzelraumregelung",
-          "knx": "0/2/71"
-        }
-      },
-      "Schiebetuer": {
-        "Status": {
-          "type": "bool",
-          "visu_acl": "ro",
-          "knx_dpt": "1",
-          "knx_listen": "4/2/75"
-        }
-      },
-      "Praesenz": {
-        "$template": {
-          "source": "praesenz",
-          "knx": "2/2/70"
-        }
-      }
-    },
-    "Bad": {
-      "Jalousie": {
-        "Fenster_klein": {
-            "$template": {
-                "source": "jalousie",
-                "knx": "0/2/91"
-            },
-            "ManuellKNX": {
-                "knx_listen": "3/2/97 | 3/2/98"
-            },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Dg Bad Fenster klein",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Ost"
-              }
-            }
-          }
         },
-        "Fenster_gross": {
-            "$template": {
-                "source": "jalousie",
-                "knx": "0/2/94"
+        "Essen": {
+            "Beleuchtung": {
+                
             },
-            "ManuellKNX": {
-                "knx_listen": "3/2/14 | 3/2/15 | 3/2/97 | 3/2/98"
+            "Jalousie": {
+                "Terrasse": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/74"
+                    },
+                    "ManuellKNX": {
+                        "knx_listen": "3/2/174 | 3/2/175"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Essen Terrasse",
+                            "Beschatten": {
+                                "$order": 30,
+                                "as_use": "Jalousie_default.Beschatten_West"
+                            }
+                        }
+                    }
+                },
+                "Terrasse_Schiebetuer": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/71"
+                    },
+                    "ManuellKNX": {
+                        "knx_listen": "3/2/174 | 3/2/175"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Essen Terrasse Schiebetuer",
+                            "eval_trigger": "~~~~~~.Trigger | ~~.manuell | ~~.suspend | ~~.automatik | ~~.beschatten | ~~~.Position_gueltig | ~~~.ReferenzFahren | ~~~~~.Schiebetuer.Status",
+                            "as_item_schiebetuer": ".....Schiebetuer.Status",
+                            "Schiebetuer": {
+                                "$order": 2,
+                                "as_use": "Jalousie_default.Schiebetuer"
+                            },
+                            "Beschatten": {
+                                "$order": 30,
+                                "as_use": "Jalousie_default.Beschatten_West"
+                            }
+                        }
+                    }
+                },
+                "Fenster": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/77"
+                    },
+                    "ManuellKNX": {
+                        "knx_listen": "3/2/171 | 3/2/172"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Esstisch",
+                            "Beschatten": {
+                                "$order": 30,
+                                "as_use": "Jalousie_default.Beschatten_Sued",
+                                "enter": {
+                                    "as_max_sun_altitude": "38"
+                                }
+                            }
+                        }
+                    }
+                }
             },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Dg Bad Fenster groß",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Ost"
-              }
+            "Einzelraumregelung": {
+                "$template": {
+                    "source": "einzelraumregelung",
+                    "knx": "0/2/71"
+                }
+            },
+            "Schiebetuer": {
+                "Status": {
+                    "type": "bool",
+                    "visu_acl": "ro",
+                    "knx_dpt": "1",
+                    "knx_listen": "4/2/75"
+                }
+            },
+            "Status": {
+                "$template": {
+                    "source": "status",
+                    "knx": "2/2/71"
+                }
             }
-          }
-        }
-      },
-      "Einzelraumregelung": {
-        "$template": {
-          "source": "einzelraumregelung",
-          "knx": "0/2/91"
-        }
-      },
-      "Praesenz": {
-        "$template": {
-          "source": "praesenz",
-          "knx": "2/2/90"
-        }
-      }
-    },
-    "TagesWC": {
-      "Einzelraumregelung": {
-        "$template": {
-          "source": "einzelraumregelung",
-          "knx": "0/2/131"
-        }
-      },
-      "Praesenz": {
-        "$template": {
-          "source": "praesenz",
-          "knx": "2/2/130"
-        }
-      }
-    },
-    "Kriechboden": {
-      "Dachfenster": {
-        "$template": {
-          "source": "dachfenster",
-          "knx": "4/2/121"
+            //"ClickControl": {
+            //    "$template": {
+            //        "source": "clickcontrol",
+            //        "knx": "6/2/71"
+            //    },
+            //    "Rules": {
+            //        "cc_plugin": "active"
+            //    }
+            //}
         },
-        "autoBlind": {
-          "Rules": {
-            "$templated": true,
-            "as_plugin": "nactive",
-            "name": "Dg Flur Dachfenster"
-          }
+        "Bad": {
+            "Beleuchtung": {
+                "$template": {
+                    "source": "beleuchtung",
+                    "knx": "2/2/91"
+                },
+                "Spiegel": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "21",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                },
+                "PanelWanne": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "22",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                },
+                "PanelDusche": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "23",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                },
+                "Spiegel": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "21",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                }
+            },
+            "Jalousie": {
+                "Fenster_klein": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/91"
+                    },
+                    "ManuellKNX": {
+                        "knx_listen": "3/2/97 | 3/2/98"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Bad Fenster klein",
+                            "Beschatten": {
+                                "$order": 30,
+                                "as_use": "Jalousie_default.Beschatten_Ost"
+                            }
+                        }
+                    }
+                },
+                "Fenster_gross": {
+                    "$template": {
+                        "source": "jalousie",
+                        "knx": "0/2/94"
+                    },
+                    "ManuellKNX": {
+                        "knx_listen": "3/2/14 | 3/2/15 | 3/2/97 | 3/2/98"
+                    },
+                    "autoBlind": {
+                        "Rules": {
+                            "$templated": true,
+                            "as_plugin": "active",
+                            "name": "Dg Bad Fenster groß",
+                            "Beschatten": {
+                                "$order": 30,
+                                "as_use": "Jalousie_default.Beschatten_Ost"
+                            }
+                        }
+                    }
+                }
+            },
+            "Einzelraumregelung": {
+                "$template": {
+                    "source": "einzelraumregelung",
+                    "knx": "0/2/91"
+                }
+            },
+            "Status": {
+                "$template": {
+                    "source": "status",
+                    "knx": "2/2/91"
+                }
+            },
+            "ClickControl": {
+                "$template": {
+                    "source": "clickcontrol",
+                    "knx": "6/2/91"
+                },
+                "Rules": {
+                    "cc_plugin": "active"
+                }
+            }
+        },
+        "TagesWC": {
+            "Beleuchtung": {
+                "$template": {
+                    "source": "beleuchtung",
+                    "knx": "2/2/131"
+                },
+                "Panel": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "6",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                },
+                "Spiegel": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "99",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                },
+                "Stripe": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "99",
+                        "eval": "~~()",
+                        "eval_trigger": "~~"
+                    }
+                }
+            },
+            "Einzelraumregelung": {
+                "$template": {
+                    "source": "einzelraumregelung",
+                    "knx": "0/2/131"
+                }
+            },
+            "Status": {
+                "$template": {
+                    "source": "status",
+                    "knx": "2/2/131"
+                }
+            },
+            "ClickControl": {
+                "$template": {
+                    "source": "clickcontrol",
+                    "knx": "6/2/131"
+                },
+                "Rules": {
+                    "cc_plugin": "active"
+                }
+            },
+            "Luefter": {
+                "type": "bool",
+                "visu_acl": "rw",
+                "knx_dpt": "1",
+                "knx_send": "4/2/135"
+              //  "Nachlauf10": {
+              //  "name": "Nachlauf",
+              //  "type": "num",
+              //  "value": 2,
+              //  "autotimer": "300 = 2",
+              //  "eval": "~~() if int(value) > 1 else 1",
+              //  "eval_trigger": "~~"
+              //}
+            }
+        },
+        "Kriechboden": {
+            "Dachfenster": {
+                "$template": {
+                    "source": "dachfenster",
+                    "knx": "4/2/121"
+                },
+                "autoBlind": {
+                    "Rules": {
+                        "$templated": true,
+                        "as_plugin": "nactive",
+                        "name": "Dg Flur Dachfenster"
+                    }
+                }
+            }
+        },
+        "Treppenhaus": {
+            "Beleuchtung": {
+                "$template": {
+                    "source": "beleuchtung",
+                    "knx": "2/2/201"
+                },
+                "StripeBodest": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "27",
+                        "eval": "~~()",
+                        "eval_trigger": "~~",
+                        "enforce_updates": true
+                    }
+                },
+                "StripeTreppe": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "26",
+                        "eval": "~~()",
+                        "eval_trigger": "~~",
+                        "enforce_updates": true
+                    }
+                }
+            },
+            "Status": {
+                "$template": {
+                    "source": "status",
+                    "knx": "2/2/201"
+                }
+            },
+            "ClickControl": {
+                "$template": {
+                    "source": "clickcontrol",
+                    "knx": "6/2/201"
+                },
+                "Rules": {
+                    "cc_plugin": "active"
+                }
+            }
+        },
+        "Buero": {
+            "Beleuchtung": {
+                "$template": {
+                    "source": "beleuchtung",
+                    "knx": "2/2/121"
+                },
+                "Panel": {
+                    "type": "num",
+                    "cache": true,
+                    "visu_acl": "rw",
+                    "crontab": "init",
+                    "DMX": {
+                        "type": "num",
+                        "cache": true,
+                        "dmx_ch": "1",
+                        "eval": "~~()",
+                        "eval_trigger": "~~",
+                        "enforce_updates": true
+                    }
+                }
+            },
+            "Status": {
+                "$template": {
+                    "source": "status",
+                    "knx": "2/2/121"
+                }
+            },
+            "ClickControl": {
+                "$template": {
+                    "source": "clickcontrol",
+                    "knx": "6/2/121"
+                }
+            }
         }
-      }
     }
-  }
 }
+
+
+

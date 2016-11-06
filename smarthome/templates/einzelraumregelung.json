@@ -2,14 +2,14 @@
   "$schema": "../schema/ItemSchema.json",
   "Einzelraumregelung": {
     "Ist_temperatur": {
-      "$order": 1,
-      "type": "num",
-      "visu": "yes",
-      "visu_acl": "ro",
-      "cache": true,
-      "sqlite": "yes",
-      "knx_dpt": "9",
-      "knx_listen": "4/-/-"
+        "$order": 1,
+        "type": "num",
+        "visu": "yes",
+        "visu_acl": "ro",
+        "cache": true,
+        "sqlite": "yes",
+        "knx_dpt": "9",
+        "knx_listen": "4/-/-"
     },
     "Soll_temperatur": {
         "$order": 2,

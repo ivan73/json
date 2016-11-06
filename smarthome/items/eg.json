@@ -23,18 +23,20 @@
         }
       },
       "Einzelraumregelung": {
-        "Ist_temperatur": {
-          "type": "num",
-          "value": 22
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "4/0/11"
+            }
+        },
+        "Status": {
+            "$template": {
+                "source": "status",
+                "knx": "2/0/11"
+            },
+            "Count": {
+                "$delete": [ "autotimer" ]
+            }
         }
-      },
-      "Praesenz": {
-        "type": "bool",
-        "value": false,
-        "visu_acl": "rw",
-        "cache": true,
-        "sqlite": "yes"
-      }
     },
     "Buero": {
       "Jalousie": {
@@ -67,18 +69,135 @@
         }
       },
       "Einzelraumregelung": {
-        "Ist_temperatur": {
-          "type": "num",
-          "value": 22
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "4/0/11"
+            }
+        },
+        "Status": {
+            "$template": {
+                "source": "status",
+                "knx": "2/0/21"
+            },
+            "Count": {
+                "$delete": [ "autotimer" ]
+            }
+        },
+
+        "ClickControl": {
+            "$template": {
+                "source": "clickcontrol",
+                "knx": "6/1/21"
+            },
+            "Rules": {
+                "cc_plugin": "active",
+                "Zaehler_jalousie": {
+                    "cc_count_counter_Jalousie": 4
+                }
+
+            },
+            "State": {
+                "Auf_ab": {
+                    "Links": {
+                        "eval": "~~() if (~~~.Zaehler_jalousie() == 0 or ~~~.Zaehler_jalousie() == 1) else None",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                            "item": "sh.Eg.Buero.Jalousie.Links.Auf_ab"
+                        }
+                    },
+                    "Mitte": {
+                        "eval": "~~() if (~~~.Zaehler_jalousie() == 0 or ~~~.Zaehler_jalousie() == 2) else None",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                            "item": "sh.Eg.Buero.Jalousie.Mitte.Auf_ab"
+                        }
+                    },
+                    "Rechts": {
+                        "eval": "~~() if (~~~.Zaehler_jalousie() == 0 or ~~~.Zaehler_jalousie() == 3) else None",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                            "item": "sh.Eg.Buero.Jalousie.Rechts.Auf_ab"
+                        }
+                    },
+                     "Nord": {
+                        "eval": "~~() if (~~~.Zaehler_jalousie() == 0 or ~~~.Zaehler_jalousie() == 4) else None",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                            "item": "sh.Eg.Buero.Jalousie.Nord.Auf_ab"
+                        }
+                    }
+                },
+                "Lamellenverstellung_stop": {
+                    "Links": {
+                        "eval": "~~() if (~~~.Zaehler_jalousie() == 0 or ~~~.Zaehler_jalousie() == 1) else None",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                            "item": "sh.Eg.Buero.Jalousie.Links.Lamellenverstellung_stop"
+                        }
+                    },
+                    "Mitte": {
+                        "eval": "~~() if (~~~.Zaehler_jalousie() == 0 or ~~~.Zaehler_jalousie() == 2) else None",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                            "item": "sh.Eg.Buero.Jalousie.Mitte.Lamellenverstellung_stop"
+                        }
+                    },
+                    "Rechts": {
+                        "eval": "~~() if (~~~.Zaehler_jalousie() == 0 or ~~~.Zaehler_jalousie() == 3) else None",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                            "item": "sh.Eg.Buero.Jalousie.Rechts.Lamellenverstellung_stop"
+                        }
+                    },
+                     "Nord": {
+                        "eval": "~~() if (~~~.Zaehler_jalousie() == 0 or ~~~.Zaehler_jalousie() == 4) else None",
+                        "eval_trigger": "~~",
+                        "set_item": {
+                            "type": "bool",
+                            "eval": "~~()",
+                            "eval_trigger": "~~",
+                            "item": "sh.Eg.Buero.Jalousie.Nord.Lamellenverstellung_stop"
+                        }
+                    }
+                }
+            },
+            "Leds": {
+                "$templated": true,
+                "Led1Prio": {
+                    "eval": "True if (~~~.State.Zaehler_jalousie()==1 or ~~~.State.Zaehler_jalousie()==2)  else False",
+                    "eval_trigger": "~~~.State.Zaehler_jalousie"
+                },
+                "Led2Prio": {
+                    "eval": "True if (~~~.State.Zaehler_jalousie()==3 or ~~~.State.Zaehler_jalousie()==2)  else False",
+                    "eval_trigger": "~~~.State.Zaehler_jalousie"
+                },
+                "Led3Prio": {
+                    "eval": "True if (~~~.State.Zaehler_jalousie()==4)  else False",
+                    "eval_trigger": "~~~.State.Zaehler_jalousie"
+                }
+            }
         }
-      },
-      "Praesenz": {
-        "type": "bool",
-        "value": false,
-        "visu_acl": "rw",
-        "cache": true,
-        "sqlite": "yes"
-      }
     },
     "Bad": {
       "Jalousie": {
@@ -104,84 +223,91 @@
           }
         }
       },
-      "Einzelraumregelung": {
-        "Ist_temperatur": {
-          "type": "num",
-          "value": 22
+        "Einzelraumregelung": {
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "4/0/11"
+            }
+        },
+        "Status": {
+            "$template": {
+                "source": "status",
+                "knx": "2/0/31"
+
+            }
+            //"Count": {
+            //    "$delete": [ "autotimer" ]
+            //}
         }
-      },
-      "Praesenz": {
-        "type": "bool",
-        "value": false,
-        "visu_acl": "rw",
-        "cache": true,
-        "sqlite": "yes"
-      }
+
     },
     "Schlafzimmer": {
-      "Jalousie": {
-        "Fenster": {
-          "type": "str",
-          "visu_acl": "ro",
-          "cache": true,
-          "$template": {
-            "source": "jalousie",
-            "knx": "0/0/41"
-          },
-          "autoBlind": {
-            "Rules": {
-              "$templated": true,
-              "as_plugin": "active",
-              "name": "Eg Raff. Schlafzimmer",
-              "Referenzfahrt": {
-                "enter_auto": {
-                  "as_min_Daemmerung": "30"
-                }
-              },
-              "Morgendaemmerung": {
-                //"as_set_Position": "100",
-                //"as_set_Lamellenposition": "80",
-                "enter_time": {
-                    "as_value_MorgendaemmerungAktive": "True",
-                    "as_min_time": "07:30",
-                    "as_max_time": "08:00"
+        "Jalousie": {
+            "Fenster": {
+                "type": "str",
+                "visu_acl": "ro",
+                "cache": true,
+                "$template": {
+                    "source": "jalousie",
+                    "knx": "0/0/41"
+                },
+                "autoBlind": {
+                    "Rules": {
+                        "$templated": true,
+                        "as_plugin": "active",
+                        "name": "Eg Raff. Schlafzimmer",
+                        "Referenzfahrt": {
+                            "enter_auto": {
+                                "as_min_Daemmerung": "30"
+                            }
+                        },
+                        "Morgendaemmerung": {
+                            //"as_set_Position": "100",
+                            //"as_set_Lamellenposition": "80",
+                            "enter_time": {
+                                "as_value_MorgendaemmerungAktive": "True",
+                                "as_min_time": "07:30",
+                                "as_max_time": "08:00"
 
+                            }
+                        },
+                        "Abenddaemmerung": {
+                            "enter_uhrzeit": {
+                                "as_value_AbenddaemmerungAktive": "True",
+                                "as_min_time": "19:30"
+                            }
+                            //"as_set_Position": "100"
+                            //"as_set_Lamellenposition": "0"
+                        },
+                        "Nacht": {
+                            "enter_uhrzeit": {
+                                "as_value_NachtAktive": "True",
+                                "as_min_time": "20:00"
+                            }
+                            //"as_set_Position": "100",
+                            //"as_set_Lamellenposition": "100"
+                        }
+                    }
                 }
-              },
-              "Abenddaemmerung": {
-                "enter_uhrzeit": {
-                    "as_value_AbenddaemmerungAktive": "True",
-                    "as_min_time": "19:30"
-                }
-                //"as_set_Position": "100"
-                //"as_set_Lamellenposition": "0"
-              },
-              "Nacht": {
-                "enter_uhrzeit": {
-                    "as_value_NachtAktive": "True",
-                    "as_min_time": "20:00"
-                }
-                //"as_set_Position": "100",
-                //"as_set_Lamellenposition": "100"
-              }
             }
-          }
+        },
+        "Einzelraumregelung": {
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "4/0/11"
+            }
+        },
+        "Status": {
+            "$template": {
+                "source": "status",
+                "knx": "2/0/41"
+            },
+            "Count": {
+                "$delete": [ "autotimer" ]
+            }
         }
-      },
-      "Einzelraumregelung": {
-        "Ist_temperatur": {
-          "type": "num",
-          "value": 22
-        }
-      },
-      "Praesenz": {
-        "type": "bool",
-        "value": false,
-        "visu_acl": "rw",
-        "cache": true,
-        "sqlite": "yes"
-      }
     },
+
     "Wohnzimmer": {
       "Jalousie": {
         "Wiesen": {
@@ -246,18 +372,20 @@
         }
       },
       "Einzelraumregelung": {
-        "Ist_temperatur": {
-          "type": "num",
-          "value": 22
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "4/0/11"
+            }
+        },
+        "Status": {
+            "$template": {
+                "source": "status",
+                "knx": "2/0/51"
+            },
+            "Count": {
+                "$delete": [ "autotimer" ]
+            }
         }
-      },
-      "Praesenz": {
-        "type": "bool",
-        "value": false,
-        "visu_acl": "rw",
-        "cache": true,
-        "sqlite": "yes"
-      }
     },
     "Kueche": {
       "Jalousie": {
@@ -404,18 +532,20 @@
         }
       },
       "Einzelraumregelung": {
-        "Ist_temperatur": {
-          "type": "num",
-          "value": 22
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "4/0/11"
+            }
+        },
+        "Status": {
+            "$template": {
+                "source": "status",
+                "knx": "2/0/61"
+            },
+            "Count": {
+                "$delete": [ "autotimer" ]
+            }
         }
-      },
-      "Praesenz": {
-        "type": "bool",
-        "value": false,
-        "visu_acl": "rw",
-        "cache": true,
-        "sqlite": "yes"
-      }
     }
   }
 }

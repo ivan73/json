@@ -35,21 +35,20 @@
         }
       },
       "Einzelraumregelung": {
-        "Ist_temperatur": {
-            "type": "num",
-            "value": 22,
-            "cache": true,
-            "eval": "~~~~.Ist_temperatur()",
-            "eval_trigger": "~~~~.Ist_temperatur"
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "4/1/11"
+            }
+        },
+      "Status": {
+            "$template": {
+                "source": "status",
+                "knx": "2/1/11"
+            },
+            "Count": {
+                "$delete": [ "autotimer" ]
+            }
         }
-      },
-      "Praesenz": {
-        "type": "bool",
-        "value": false,
-        "visu_acl": "rw",
-        "cache": true,
-        "sqlite": "yes"
-      }
     },
     "Balkonwiesen": {
       "Jalousie": {
@@ -123,21 +122,20 @@
         }
       },
       "Einzelraumregelung": {
-        "Ist_temperatur": {
-            "type": "num",
-            "value": 22,
-            "cache": true,
-            "eval": "~~~~.Ist_temperatur()",
-            "eval_trigger": "~~~~.Ist_temperatur"
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "4/1/11"
+            }
+        },
+      "Status": {
+            "$template": {
+                "source": "status",
+                "knx": "2/1/21"
+            },
+            "Count": {
+                "$delete": [ "autotimer" ]
+            }
         }
-      },
-      "Praesenz": {
-        "type": "bool",
-        "value": false,
-        "visu_acl": "rw",
-        "cache": true,
-        "sqlite": "yes"
-      }
     },
     "Wohnzimmer": {
       "Jalousie": {
@@ -177,21 +175,20 @@
         }
       },
       "Einzelraumregelung": {
-        "Ist_temperatur": {
-            "type": "num",
-            "value": 22,
-            "cache": true,
-            "eval": "~~~~.Ist_temperatur()",
-            "eval_trigger": "~~~~.Ist_temperatur"
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "4/1/11"
+            }
+        },
+      "Status": {
+            "$template": {
+                "source": "status",
+                "knx": "2/1/41"
+            },
+            "Count": {
+                "$delete": [ "autotimer" ]
+            }
         }
-      },
-      "Praesenz": {
-        "type": "bool",
-        "value": false,
-        "visu_acl": "rw",
-        "cache": true,
-        "sqlite": "yes"
-      }
     },
     "Kueche": {
       "Jalousie": {
@@ -214,21 +211,20 @@
         }
       },
       "Einzelraumregelung": {
-        "Ist_temperatur": {
-            "type": "num",
-            "value": 22,
-            "cache": true,
-            "eval": "~~~~.Ist_temperatur()",
-            "eval_trigger": "~~~~.Ist_temperatur"
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "4/1/11"
+            }
+        },
+      "Status": {
+            "$template": {
+                "source": "status",
+                "knx": "2/1/51"
+            },
+            "Count": {
+                "$delete": [ "autotimer" ]
+            }
         }
-      },
-      "Praesenz": {
-        "type": "bool",
-        "value": false,
-        "visu_acl": "rw",
-        "cache": true,
-        "sqlite": "yes"
-      }
     },
     "Balkonstrasse": {
       "Jalousie": {
@@ -281,21 +277,20 @@
         }
       },
       "Einzelraumregelung": {
-        "Ist_temperatur": {
-            "type": "num",
-            "value": 22,
-            "cache": true,
-            "eval": "~~~~.Ist_temperatur()",
-            "eval_trigger": "~~~~.Ist_temperatur"
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "4/1/11"
+            }
+        },
+      "Status": {
+            "$template": {
+                "source": "status",
+                "knx": "2/1/61"
+            },
+            "Count": {
+                "$delete": [ "autotimer" ]
+            }
         }
-      },
-      "Praesenz": {
-        "type": "bool",
-        "value": false,
-        "visu_acl": "rw",
-        "cache": true,
-        "sqlite": "yes"
-      }
     },
     "Schlafzimmer": {
       "Jalousie": {
@@ -336,21 +331,20 @@
         }
       },
       "Einzelraumregelung": {
-        "Ist_temperatur": {
-            "type": "num",
-            "value": 22,
-            "cache": true,
-            "eval": "~~~~.Ist_temperatur()",
-            "eval_trigger": "~~~~.Ist_temperatur"
+            "$template": {
+                "source": "einzelraumregelung",
+                "knx": "4/1/11"
+            }
+        },
+      "Status": {
+            "$template": {
+                "source": "status",
+                "knx": "2/1/71"
+            },
+            "Count": {
+                "$delete": [ "autotimer" ]
+            }
         }
-      },
-      "Praesenz": {
-        "type": "bool",
-        "value": false,
-        "visu_acl": "rw",
-        "cache": true,
-        "sqlite": "yes"
-      }
     }
   }
 }

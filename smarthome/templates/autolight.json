@@ -2,6 +2,21 @@
   "$schema": "../schema/ItemSchema.json",
   "AutoLight": {
     "$order": 2,
+    //"Trigger": {
+    //  "Count": {
+    //    "type": "num",
+    //    "eval": "(~~()-1) if int(value) > 1 else 0",
+    //    "eval_trigger": "~~.Clock"
+    //  },
+    //  "Clock": {
+    //    "name": "",
+    //    "type": "num",
+    //    "value": 2,
+    //    "autotimer": "60 = 2",
+    //    "eval": "~~() if int(value) > 1 else 1",
+    //    "eval_trigger": "~~"
+    //  }
+    //},
     "state_id": {
       "type": "str",
       "visu_acl": "ro",
@@ -14,28 +29,99 @@
     },
 
     "Rules": {
-        "$order": 3,
-        "type": "bool",
-        "as_plugin": "active",
-        //Erste Zustandsermittlung nach 30 Sekunden
-        //"as_startup_delay": 10, // in Sekunden
-        "eval_trigger": "~~~~~~.Trigger | ~~~.Schalten | ~~~.Nacht",
-        //"as_repeat_actions": "true",
-        "as_laststate_item_id": "..state_id",
-        "as_laststate_item_name": "..state_name",
+      "$order": 3,
+      "type": "bool",
+      "as_plugin": "active",
+      //Erste Zustandsermittlung nach 30 Sekunden
+      "as_startup_delay": 120, // in Sekunden
+        "eval_trigger": "~~~~.Status.PM_Schalten | ~~~~.Status.PM_Schalten2  | ~~~~.Status.Nachlauf | ~~~~.Status.Nacht | ~~~~.ClickControl.State.Key_S3_um | ~~~~.ClickControl.State.Key_S3L_um | ~~~~.ClickControl.State.Key_S4_um | ~~~~.ClickControl.State.Key_S4L_um",
+        "eval": "not ~()",
+      //"as_repeat_actions": "true",
+      "as_laststate_item_id": "..state_id",
+      "as_laststate_item_name": "..state_name",
 
-        "Grundbeleuchtung": {
-            "$order": 1,
-            "as_use": "Beleuchtung_default.Grundbeleuchtung"
+        "S3_Aus_Manuell": {
+            "$order": 0,
+            "as_use": "Beleuchtung_default.S3_Aus_Manuell"
         },
-        "Nacht": {
-            "$order": 2,
-            "as_use": "Beleuchtung_default.Nacht"
+        "S3_Ein_Manuell_Tag": {
+            "$order": 31,
+            "as_use": "Beleuchtung_default.S3_Ein_Manuell_Tag"
         },
-        "Aus": {
-            "$order": 9,
-            "as_use": "Beleuchtung_default.Aus"
-        }
+        "S3_Ein_Manuell_Nacht": {
+            "$order": 32,
+            "as_use": "Beleuchtung_default.S3_Ein_Manuell_Nacht"
+        },
+
+        "PM1_2_Tag": {
+            "$order": 81,
+            "as_use": "Beleuchtung_default.PM1_2_Tag"
+        },
+        "PM1_2_Nacht": {
+            "$order": 82,
+            "as_use": "Beleuchtung_default.PM1_2_Nacht"
+        },
+        "PM1_Tag": {
+            "$order": 83,
+            "as_use": "Beleuchtung_default.PM1_Tag"
+        },
+        "PM1_Nacht": {
+            "$order": 84,
+            "as_use": "Beleuchtung_default.PM1_Nacht"
+        },
+         "PM2_Tag": {
+            "$order": 85,
+            "as_use": "Beleuchtung_default.PM2_Tag"
+        },
+        "PM2_Nacht": {
+            "$order": 86,
+            "as_use": "Beleuchtung_default.PM2_Nacht"
+        },
+         
+        "S3L_Tag": {
+            "$order": 11,
+            "as_use": "Beleuchtung_default.S3L_Tag"
+        },
+        "S3L_Nacht": {
+            "$order": 12,
+            "as_use": "Beleuchtung_default.S3L_Nacht"
+        },
+      //  "S3L_Tag_Aus": {
+      //  "$order": 13,
+      //  "as_use": "Beleuchtung_default.S3L_Tag_Aus"
+      //},
+      //"S3L_Nacht_Aus": {
+      //  "$order": 14,
+      //  "as_use": "Beleuchtung_default.S3L_Nacht_Aus"
+      //},
+        "S4_Tag": {
+            "$order": 41,
+            "as_use": "Beleuchtung_default.S4_Tag"
+        },
+      "S4_Nacht": {
+        "$order": 42,
+        "as_use": "Beleuchtung_default.S4_Nacht"
+      },
+      "S4L_Tag": {
+        "$order": 43,
+        "as_use": "Beleuchtung_default.S4L_Tag"
+      },
+      "S4L_Nacht": {
+        "$order": 44,
+        "as_use": "Beleuchtung_default.S4L_Nacht"
+      },
+      "S3_S4_Tag": {
+        "$order": 21,
+        "as_use": "Beleuchtung_default.S3_S4_Tag"
+      },
+      "S3_S4_Nacht": {
+        "$order": 22,
+        "as_use": "Beleuchtung_default.S3_S4_Nacht"
+      },
+      "Aus": {
+        "$order": 100,
+        "as_use": "Beleuchtung_default.Aus"
+      }
     }
   }
 }
