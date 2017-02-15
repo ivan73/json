@@ -27,17 +27,19 @@
     "manuell_positionen": {
         "type": "bool",
         "name": "Manuelle Bedienung Positionen",
+        "as_manual_logitem": "~",
         //"enforce_updates": true,
         "as_manual_include": "Visu:*",
-        "as_manual_exclude": "Init:*",
+        //"as_manual_exclude": "Init:*",
         "as_manual_invert": "True",
         "eval_trigger": "~~~.Position | ~~~.Lamellenposition"
     },
     "manuell_taster": {
         "type": "bool",
         "name": "Manuelle Bedienung über Tasten",
+        "as_manual_logitem": "~",
         //"enforce_updates": true,
-        "as_manual_exclude": "Init:*",
+        //"as_manual_exclude": "Init:*",
         "eval": "not ~~.manuell_taster()",
         "as_manual_invert": "True",
         "eval_trigger": "~~~.Auf_ab | ~~~.Lamellenverstellung_stop | ~~~.ManuellKNX",
@@ -48,7 +50,7 @@
         "name": "Manuelle Bedienung",
         "as_manual_logitem": "~",
         //"enforce_updates": true,
-        "as_manual_exclude": "Init:*",
+        //"as_manual_exclude": "Init:*",
         "as_manual_invert": "True",
         "eval_trigger": "~~.manuell_positionen | ~~.manuell_taster"
     },
@@ -78,7 +80,10 @@
             "$order": 6,
             "as_use": "Jalousie_default.Lock"
         },
-
+        //"AutoEin": {
+        //    "$order": 7,
+        //    "as_use": "Jalousie_default.AutoEin"
+        //},
         "Referenzfahrt_ende": {
             "$order": 10,
             "as_use": "Jalousie_default.Referenzfahrt_ende"
@@ -99,6 +104,14 @@
             "$order": 22,
             "as_use": "Jalousie_default.Suspend"
         },
+        "WindWarnung": {
+            "$order": 23,
+            "as_use": "Jalousie_default.WindWarnung"
+        },
+        "WindAlarm": {
+            "$order": 24,
+            "as_use": "Jalousie_default.WindAlarm"
+        },
          "Schlafen": {
             "$order": 25,
             "as_use": "Jalousie_default.Schlafen"
@@ -108,19 +121,19 @@
             "as_use": "Jalousie_default.Beschatten_Manuell"
         },
         "Morgendaemmerung": {
-            "$order": 40,
+            "$order": 50,
             "as_use": "Jalousie_default.Morgendaemmerung"
         },
         "Tag": {
-            "$order": 50,
+            "$order": 60,
             "as_use": "Jalousie_default.Tag"
         },
         "Abenddaemmerung": {
-            "$order": 60,
+            "$order": 70,
             "as_use": "Jalousie_default.Abenddaemmerung"
         },
         "Nacht": {
-            "$order": 70,
+            "$order": 80,
             "as_use": "Jalousie_default.Nacht"
         },
         "Pause": {

@@ -14,6 +14,8 @@
     "as_item_Brightness_west_gt35k": "Wetterstation.Helligkeit.West_gt35k",
     "as_item_Brightness_west_gt25k": "Wetterstation.Helligkeit.West_gt25k",
     "as_item_Brightness_west_gt20k": "Wetterstation.Helligkeit.West_gt20k",
+    "as_item_WindWarnung": "Wetterstation.WindWarnung",
+    "as_item_WindAlarm": "Wetterstation.WindAlarm",
     "as_item_tag": "System.Sonne.Tag",
     "as_item_Daemmerung": "Wetterstation.Daemmerung",
     "as_item_automatik": "..automatik",
@@ -36,28 +38,32 @@
     "as_item_AbenddaemmerungAktive": "...Parameter.Abenddaemmerung.Aktive",
     "as_item_NachtAktive": "...Parameter.Nacht.Aktive",
     "as_item_BeschattenAktive": "...Parameter.Beschatten.Aktive",
+    "as_item_HeizenAktive": "...Parameter.Heizen.Aktive",
+    "as_item_Heizperiode": "System.Jahreszeit.Heizperiode",
+    "as_item_WindWarnungAktive": "...Parameter.WindWarnung.Aktive",
+    "as_item_WindAlarmAktive": "...Parameter.WindAlarm.Aktive",
 
     "Schiebetuer": {
-      "$order": 2,
-      "type": "foo",
-      "name": "Schiebetuer",
-      "as_set_suspend": "False",
-      "as_set_Position": "0",
-      "as_set_Lamellenposition": "0",
-      "enter": {
-        "as_value_schiebetuer": "True"
-      }
-      //"enter_stay": {
-      //    "as_value_laststate": "var:current.state_id",
-      //    "as_value_schiebetuer": "True"
-      //}
+        "$order": 2,
+        "type": "foo",
+        "name": "Schiebetuer",
+        "as_set_suspend": "False",
+        "as_set_Position": "0",
+        "as_set_Lamellenposition": "0",
+        "enter": {
+            "as_value_schiebetuer": "True"
+        }
+        //"enter_stay": {
+        //    "as_value_laststate": "var:current.state_id",
+        //    "as_value_schiebetuer": "True"
+        //}
     },
     "Beschatten_Lock": {
       "$order": 4,
       "type": "foo",
       "name": "AutoAUS Zu 70%",
       "as_set_Position": "100",
-      "as_set_Lamellenposition": "70",
+        "as_set_Lamellenposition": "70",
       "enter": {
         "as_value_automatik": "False",
         "as_value_ReferenzFahren": "False",
@@ -66,14 +72,24 @@
       }
     },
     "Lock": {
-      "$order": 6,
-      "type": "foo",
-      "name": "Automatik AUS",
-      "as_set_suspend": "False",
-      "enter": {
-        "as_value_automatik": "False"
-      }
+        "$order": 6,
+        "type": "foo",
+        "name": "Automatik AUS",
+        "as_set_suspend": "False",
+        "enter": {
+            "as_value_automatik": "False"
+        }
     },
+    //"AutoEin": {
+    //  "$order": 7,
+    //  "type": "foo",
+    //  "name": "Automatik Ein",
+    //    "as_set_suspend": "False",
+    //    "as_set_Leds1": "0",
+    //  "enter": {
+    //    "as_agemax_AutoEin": "5"
+    //  }
+    //},
 
     "Referenzfahrt_ende": {
       "$order": 10,
@@ -102,7 +118,7 @@
         "as_min_Daemmerung": "30",
         "as_min_time": "08:00",
         "as_max_time": "21:00",
-        "as_agemin_ReferenzFahren": "3600"
+        "as_agemin_ReferenzFahren": "600"
       },
       "enter_manuell": {
         "as_value_PositionGueltig": "False",
@@ -123,49 +139,59 @@
         "as_value_ReferenzFahren": "False"
       }
     },
-    // "SuspendNight": {
-    //    "$order": 20,
-    //    "type": "foo",
-    //    "name": "Automatik für eine Zeit ausgesetzt",
-    //    "enforce_updates": true,
-    //    "as_name": "eval: autoblind_eval.insert_suspend_time('..suspend', suspend_text='Pause bis %X')",
-    //    "as_set_suspend": "True",
-
-    //    "enter_manuell": {
-    //        "$order": 2,
-    //        "as_max_sun_altitude": "20",
-    //        "as_max_Daemmerung": "200",
-    //        "as_value_trigger_source": "eval: autoblind_eval.get_relative_itemid('..manuell')"
-    //    },
-    //    "enter_stay": {
-    //        "$order": 3,
-    //        "as_value_laststate": "var:current.state_id",
-    //        "as_agemax_manuell":  "var:item.suspend_time",
-    //        "as_value_suspend": "True"
-    //    }
-    //},
     "Suspend": {
         "$order": 22,
         "type": "foo",
         "name": "Automatik ausgesetzt bis Abend",
         "enforce_updates": true,
         "as_name": "eval: autoblind_eval.insert_suspend_time('..suspend', suspend_text='Pause bis %X')",
-        "as_set_suspend": "True",
-        "enter_manuell": {
+        //"as_set_suspend": "True",
+
+        "on_enter_or_stay": {
+            "$order": 1,
+            "as_action_suspend": "function: special | value: suspend:..suspend,..manuell | order: 1",
+            "as_action_retrigger": "function: set | value: True | delay: var:item.suspend_remaining | order: 2"
+        },
+        "on_leave": {
             "$order": 2,
+            "as_action_suspend": "function: set | value: False"
+        },
+        "enter_manuell": {
+            "$order": 3,
+            "type": "foo",
             "as_value_trigger_source": "eval: autoblind_eval.get_relative_itemid('..manuell')"
         },
-        //"enter_stay": {
-        //    "$order": 3,
-        //    "as_value_laststate": "var:current.state_id",
-        //    "as_value_suspend": "True",
-        //    "as_max_Daemmerung": "200"
-        //},
-        "enter_stay_time": {
-            "$order": 3,
+        "enter_stay": {
+            "$order": 4,
+            "type": "foo",
             "as_value_laststate": "var:current.state_id",
-            "as_value_suspend": "True",
-            "as_agemax_manuell": "var:item.suspend_time"
+            "as_agemax_manuell": "var:item.suspend_time",
+            "as_value_suspend": true
+        }
+    },
+    "WindWarnung": {
+        "$order": 23,
+        "type": "foo",
+        "name": "WindWarnung",
+        "as_set_suspend": "False",
+        "as_set_Lamellenposition": "item: ...Parameter.WindWarnung.Lamellenposition",
+        //"as_set_Position": "eval: int(sh...Parameter.WindWarnung.Position()) if int(sh...Parameter.WindWarnung.Position()) > -1 else None",
+        "as_set_Position":"item: ...Parameter.WindWarnung.Position",
+        "enter": {
+            "as_value_WindWarnung": "True",
+            "as_value_WindWarnungAktive": "True"
+        }
+    },
+    "WindAlarm": {
+        "$order": 24,
+        "type": "foo",
+        "name": "WindAlarm",
+        "as_set_suspend": "False",
+        "as_set_Lamellenposition": "item: ...Parameter.WindAlarm.Lamellenposition",
+        "as_set_Position": "item: ...Parameter.WindAlarm.Position",
+        "enter": {
+            "as_value_WindAlarm": "True",
+            "as_value_WindAlarmAktive": "True"
         }
     },
     "Schlafen": {
@@ -187,16 +213,17 @@
       "name": "Beschatten Ost-Seite",
       "as_set_Position": "item: ...Parameter.Beschatten.Position",
       "as_set_Lamellenposition": "eval: int((50-(sh.System.Sonne.Hoehe()))*15/10) if (int(sh.System.Sonne.Hoehe()) < 50) else 0",
-      "as_set_suspend": "False",
-      "enter": {
-        "as_value_BeschattenAktive": "True",
-        "as_value_praesenz": "False",
-        "as_value_Brightness_ost_gt43k": "True",
-        "as_agemin_Brightness_ost_gt43k": "60",
-        "as_min_sun_altitude": "0",
-        "as_min_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur",
-        "as_min_time": "item: ...Parameter.Tag.Uhrzeit"
-      },
+        "as_set_suspend": "False",
+        "enter": {
+            "as_value_Heizperiode": "False",
+            "as_value_BeschattenAktive": "True",
+            "as_value_praesenz": "False",
+            "as_value_Brightness_ost_gt43k": "True",
+            "as_agemin_Brightness_ost_gt43k": "60",
+            "as_min_sun_altitude": "0",
+            "as_min_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur",
+            "as_min_time": "item: ...Parameter.Tag.Uhrzeit"
+        },
       "enter_hysterese": {
         "as_value_BeschattenAktive": "True",
         "as_value_praesenz": "False",
@@ -213,6 +240,7 @@
         "as_min_sun_altitude": "0"
       },
       "enter_praesenz": {
+        "as_value_Heizperiode": "False",
         "as_value_BeschattenAktive": "True",
         "as_value_praesenz": "True",
         "as_value_Brightness_ost_gt35k": "True",
@@ -243,8 +271,9 @@
       "name": "Beschatten Süd-Seite",
       "as_set_Position": "item: ...Parameter.Beschatten.Position",
       "as_set_Lamellenposition": "eval: int((50-(sh.System.Sonne.Hoehe()))*15/10) if (int(sh.System.Sonne.Hoehe()) < 50) else 0",
-      "as_set_suspend": "False",
+        "as_set_suspend": "False",
       "enter": {
+        "as_value_Heizperiode": "False",
         "as_value_BeschattenAktive": "True",
         "as_value_praesenz": "False",
         "as_value_Brightness_sued_gt43k": "True",
@@ -269,6 +298,7 @@
         "as_min_sun_altitude": "0"
       },
       "enter_praesenz": {
+        "as_value_Heizperiode": "False",
         "as_value_BeschattenAktive": "True",
         "as_value_praesenz": "True",
         "as_value_Brightness_sued_gt35k": "True",
@@ -299,8 +329,9 @@
       "name": "Beschatten West-Seite",
       "as_set_Position": "item: ...Parameter.Beschatten.Position",
       "as_set_Lamellenposition": "eval: int((50-(sh.System.Sonne.Hoehe()))*15/10) if (int(sh.System.Sonne.Hoehe()) < 50) else 0",
-      "as_set_suspend": "False",
+        "as_set_suspend": "False",
       "enter": {
+        "as_value_Heizperiode": "False",
         "as_value_BeschattenAktive": "True",
         "as_value_praesenz": "False",
         "as_value_Brightness_west_gt43k": "True",
@@ -325,6 +356,7 @@
         "as_min_sun_altitude": "0"
       },
       "enter_praesenz": {
+        "as_value_Heizperiode": "False",
         "as_value_BeschattenAktive": "True",
         "as_value_praesenz": "True",
         "as_value_Brightness_west_gt35k": "True",
@@ -350,26 +382,104 @@
       }
     },
     "Beschatten_Manuell": {
-      "$order": 33,
-      "type": "foo",
-      "name": "Beschatten Manuell",
-      "as_set_Position": "item: ...Parameter.Beschatten.Position",
-      "as_set_Lamellenposition": "eval: int((50-(sh.System.Sonne.Hoehe()))*15/10) if (int(sh.System.Sonne.Hoehe()) < 50) else 0",
-      "as_set_suspend": "False",
-      "enter": {
-        "as_value_beschatten": "True",
-        "as_min_sun_altitude": "0",
-        "as_min_Daemmerung": "200",
-        "as_min_time": "item: ...Parameter.Tag.Uhrzeit"
-      }
+        "$order": 33,
+        "type": "foo",
+        "name": "Beschatten Manuell",
+        "as_set_Position": "item: ...Parameter.Beschatten.Position",
+        "as_set_Lamellenposition": "eval: int((50-(sh.System.Sonne.Hoehe()))*15/10) if (int(sh.System.Sonne.Hoehe()) < 50) else 0",
+        "as_set_suspend": "False",
+        "enter": {
+            "as_value_beschatten": "True",
+            "as_min_sun_altitude": "0",
+            "as_min_Daemmerung": "200",
+            "as_min_time": "item: ...Parameter.Tag.Uhrzeit"
+        }
+    },
+    "Heizen_Ost": {
+        "$order": 40,
+        "type": "foo",
+        "name": "Heizen Ost-Seite",
+        "as_set_suspend": "False",
+        "as_set_Position": "item: ...Parameter.Heizen.Position",
+        "as_set_Lamellenposition": "item: ...Parameter.Heizen.Lamellenposition",
+        "enter": {
+            "as_value_Heizperiode": "True",
+            "as_value_HeizenAktive": "True",
+            "as_value_praesenz": "False",
+            "as_agemin_praesenz": "600",
+            "as_agemin_manuell": "3600",
+            "as_max_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur",
+            "as_value_Brightness_ost_gt35k": "True",
+            "as_agemin_Brightness_ost_gt35k": "60"
+        },
+        "enter_hysterese": {
+            "as_value_Heizperiode": "True",
+            "as_value_HeizenAktive": "True",
+            "as_value_laststate": "var:current.state_id",
+            "as_agemin_manuell": "3600",
+            "as_max_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur",
+            "as_value_Brightness_ost_gt20k": "True"
+        }
+    },
+    "Heizen_Sued": {
+        "$order": 40,
+        "type": "foo",
+        "name": "Heizen Sued-Seite",
+        "as_set_suspend": "False",
+        "as_set_Position": "item: ...Parameter.Heizen.Position",
+        "as_set_Lamellenposition": "item: ...Parameter.Heizen.Lamellenposition",
+        "enter": {
+            "as_value_Heizperiode": "True",
+            "as_value_HeizenAktive": "True",
+            "as_value_praesenz": "False",
+            "as_agemin_praesenz": "600",
+            "as_agemin_manuell": "3600",
+            "as_max_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur",
+            "as_value_Brightness_sued_gt35k": "True",
+            "as_agemin_Brightness_sued_gt35k": "60"
+        },
+        "enter_hysterese": {
+            "as_value_Heizperiode": "True",
+            "as_value_HeizenAktive": "True",
+            "as_value_laststate": "var:current.state_id",
+            "as_agemin_manuell": "3600",
+            "as_max_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur",
+            "as_value_Brightness_sued_gt20k": "True"
+        }
+    },
+     "Heizen_West": {
+        "$order": 40,
+        "type": "foo",
+        "name": "Heizen Ost-Seite",
+        "as_set_suspend": "False",
+        "as_set_Position": "item: ...Parameter.Heizen.Position",
+        "as_set_Lamellenposition": "item: ...Parameter.Heizen.Lamellenposition",
+        "enter": {
+            "as_value_Heizperiode": "True",
+            "as_value_HeizenAktive": "True",
+            "as_value_praesenz": "False",
+            "as_agemin_praesenz": "600",
+            "as_agemin_manuell": "3600",
+            "as_max_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur",
+            "as_value_Brightness_west_gt35k": "True",
+            "as_agemin_Brightness_west_gt35k": "60"
+        },
+        "enter_hysterese": {
+            "as_value_Heizperiode": "True",
+            "as_value_HeizenAktive": "True",
+            "as_value_laststate": "var:current.state_id",
+            "as_agemin_manuell": "3600",
+            "as_max_temperature": "item: .....Einzelraumregelung.Beschatten_temperatur",
+            "as_value_Brightness_west_gt20k": "True"
+        }
     },
     "Morgendaemmerung": {
-      "$order": 40,
+      "$order": 50,
       "type": "foo",
       "name": "Morgendämmerung",
       "as_set_suspend": "False",
       "as_set_Position": "item: ...Parameter.Morgendaemmerung.Position",
-      "as_set_Lamellenposition": "item: ...Parameter.Morgendaemmerung.Lamellenposition",
+        "as_set_Lamellenposition": "item: ...Parameter.Morgendaemmerung.Lamellenposition",
       "enter": {
         "as_value_MorgendaemmerungAktive": true,
         "as_min_time": "item: ...Parameter.Morgendaemmerung.Uhrzeit",
@@ -390,7 +500,7 @@
     },
 
     "Tag": {
-      "$order": 50,
+      "$order": 60,
       "type": "foo",
       "name": "Tag",
       "as_set_suspend": "False",
@@ -404,12 +514,12 @@
       }
     },
     "Abenddaemmerung": {
-      "$order": 60,
+      "$order": 70,
       "type": "foo",
       "name": "Abenddämmerung",
       "as_set_suspend": "False",
       "as_set_Position": "item: ...Parameter.Abenddaemmerung.Position",
-      "as_set_Lamellenposition": "item: ...Parameter.Abenddaemmerung.Lamellenposition",
+        "as_set_Lamellenposition": "item: ...Parameter.Abenddaemmerung.Lamellenposition",
       "enter": {
         "as_value_AbenddaemmerungAktive": "True",
         "as_max_sun_altitude": "20",
@@ -420,7 +530,7 @@
       }
     },
     "Nacht": {
-      "$order": 70,
+      "$order": 80,
       "type": "foo",
       "name": "Nacht",
       "as_set_suspend": "False",

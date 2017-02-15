@@ -34,8 +34,8 @@
       "as_plugin": "active",
       //Erste Zustandsermittlung nach 30 Sekunden
       "as_startup_delay": 120, // in Sekunden
-        "eval_trigger": "~~~~.Status.PM_Schalten | ~~~~.Status.PM_Schalten2  | ~~~~.Status.Nachlauf | ~~~~.Status.Nacht | ~~~~.ClickControl.State.Key_S3_um | ~~~~.ClickControl.State.Key_S3L_um | ~~~~.ClickControl.State.Key_S4_um | ~~~~.ClickControl.State.Key_S4L_um",
-        "eval": "not ~()",
+        "eval_trigger": "~~~~.Status.PM_Schalten1 | ~~~~.Status.PM_Schalten2  | ~~~~.Status.Nachlauf | ~~~~.Status.Nacht | ~~~~.ClickControl.State.Key_S3_um | ~~~~.ClickControl.State.Key_S3L_um | ~~~~.ClickControl.State.Key_S4_um | ~~~~.ClickControl.State.Key_S4L_um",
+        //"eval": "not ~()",
       //"as_repeat_actions": "true",
       "as_laststate_item_id": "..state_id",
       "as_laststate_item_name": "..state_name",

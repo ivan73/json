@@ -158,6 +158,11 @@
                 "type": "bool",
                 "cache": true,
                 "visu_acl": "rw"
+            },
+            "Jalousie_AutoEin": {
+                "type": "bool",
+                "cache": true,
+                "visu_acl": "rw"
             }
         },
         "Rules": {
@@ -176,6 +181,7 @@
             "cc_item_Key_S3L_um": "~~.State.Key_S3L_um",
             "cc_item_Key_S4_um": "~~.State.Key_S4_um",
             "cc_item_Key_S4L_um": "~~.State.Key_S4L_um",
+            "cc_item_Key_S1XL_um": "~~.State.Jalousie_AutoEin",
             "Jalousie_auf": {
                 "type": "bool",
                 "cc_set_jalousie_auf_ab": "false",
@@ -256,6 +262,14 @@
                 "enter": {
                     "cc_pressed_time": "1000",
                     "cc_key": "S4"
+                }
+            },
+            "Key_S1XL_um": {
+                "type": "bool",
+                "cc_set_Key_S1XL_um": "toggle",
+                "enter": {
+                    "cc_pressed_time": "3000",
+                    "cc_key": "S1"
                 }
             }
         }

@@ -1,5 +1,5 @@
-  0/0/41 - Wetterstation.Wind_Alarm_65
-  0/0/42 - Wetterstation.Wind_Alarm_80
+  0/0/41 - Wetterstation.WindWarnung
+  0/0/42 - Wetterstation.WindAlarm
  0/0/200 - Watchdog.Trigger
  0/0/201 - Watchdog.Status
    0/2/0 - Wetterstation.Helligkeit.Ost
@@ -14,124 +14,148 @@
  1/0/202 - Klingel.Dg.Klingeltaster
   2/0/11 - Eg.Garage.Status.Nacht
   2/0/12 - Eg.Garage.Status.Schlafen
-  2/0/13 - Eg.Garage.Status.PM_Schalten
+  2/0/13 - Eg.Garage.Status.PM_Schalten1
   2/0/14 - Eg.Garage.Status.PM_Schalten2
   2/0/15 - Eg.Garage.Status.PM_Praesenz
+  2/0/16 - Eg.Garage.Status.PM_Helligkeitswert
   2/0/21 - Eg.Buero.Status.Nacht
   2/0/22 - Eg.Buero.Status.Schlafen
-  2/0/23 - Eg.Buero.Status.PM_Schalten
+  2/0/23 - Eg.Buero.Status.PM_Schalten1
   2/0/24 - Eg.Buero.Status.PM_Schalten2
   2/0/25 - Eg.Buero.Status.PM_Praesenz
+  2/0/26 - Eg.Buero.Status.PM_Helligkeitswert
   2/0/31 - Eg.Bad.Status.Nacht
   2/0/32 - Eg.Bad.Status.Schlafen
-  2/0/33 - Eg.Bad.Status.PM_Schalten
+  2/0/33 - Eg.Bad.Status.PM_Schalten1
   2/0/34 - Eg.Bad.Status.PM_Schalten2
   2/0/35 - Eg.Bad.Status.PM_Praesenz
+  2/0/36 - Eg.Bad.Status.PM_Helligkeitswert
   2/0/41 - Eg.Schlafzimmer.Status.Nacht
   2/0/42 - Eg.Schlafzimmer.Status.Schlafen
-  2/0/43 - Eg.Schlafzimmer.Status.PM_Schalten
+  2/0/43 - Eg.Schlafzimmer.Status.PM_Schalten1
   2/0/44 - Eg.Schlafzimmer.Status.PM_Schalten2
   2/0/45 - Eg.Schlafzimmer.Status.PM_Praesenz
+  2/0/46 - Eg.Schlafzimmer.Status.PM_Helligkeitswert
   2/0/51 - Eg.Wohnzimmer.Status.Nacht
   2/0/52 - Eg.Wohnzimmer.Status.Schlafen
-  2/0/53 - Eg.Wohnzimmer.Status.PM_Schalten
+  2/0/53 - Eg.Wohnzimmer.Status.PM_Schalten1
   2/0/54 - Eg.Wohnzimmer.Status.PM_Schalten2
   2/0/55 - Eg.Wohnzimmer.Status.PM_Praesenz
+  2/0/56 - Eg.Wohnzimmer.Status.PM_Helligkeitswert
   2/0/61 - Eg.Kueche.Status.Nacht
   2/0/62 - Eg.Kueche.Status.Schlafen
-  2/0/63 - Eg.Kueche.Status.PM_Schalten
+  2/0/63 - Eg.Kueche.Status.PM_Schalten1
   2/0/64 - Eg.Kueche.Status.PM_Schalten2
   2/0/65 - Eg.Kueche.Status.PM_Praesenz
+  2/0/66 - Eg.Kueche.Status.PM_Helligkeitswert
   2/1/11 - Og.Bad.Status.Nacht
   2/1/12 - Og.Bad.Status.Schlafen
-  2/1/13 - Og.Bad.Status.PM_Schalten
+  2/1/13 - Og.Bad.Status.PM_Schalten1
   2/1/14 - Og.Bad.Status.PM_Schalten2
   2/1/15 - Og.Bad.Status.PM_Praesenz
+  2/1/16 - Og.Bad.Status.PM_Helligkeitswert
   2/1/21 - Og.Balkonwiesen.Status.Nacht
   2/1/22 - Og.Balkonwiesen.Status.Schlafen
-  2/1/23 - Og.Balkonwiesen.Status.PM_Schalten
+  2/1/23 - Og.Balkonwiesen.Status.PM_Schalten1
   2/1/24 - Og.Balkonwiesen.Status.PM_Schalten2
   2/1/25 - Og.Balkonwiesen.Status.PM_Praesenz
+  2/1/26 - Og.Balkonwiesen.Status.PM_Helligkeitswert
   2/1/41 - Og.Wohnzimmer.Status.Nacht
   2/1/42 - Og.Wohnzimmer.Status.Schlafen
-  2/1/43 - Og.Wohnzimmer.Status.PM_Schalten
+  2/1/43 - Og.Wohnzimmer.Status.PM_Schalten1
   2/1/44 - Og.Wohnzimmer.Status.PM_Schalten2
   2/1/45 - Og.Wohnzimmer.Status.PM_Praesenz
+  2/1/46 - Og.Wohnzimmer.Status.PM_Helligkeitswert
   2/1/51 - Og.Kueche.Status.Nacht
   2/1/52 - Og.Kueche.Status.Schlafen
-  2/1/53 - Og.Kueche.Status.PM_Schalten
+  2/1/53 - Og.Kueche.Status.PM_Schalten1
   2/1/54 - Og.Kueche.Status.PM_Schalten2
   2/1/55 - Og.Kueche.Status.PM_Praesenz
+  2/1/56 - Og.Kueche.Status.PM_Helligkeitswert
   2/1/61 - Og.Balkonstrasse.Status.Nacht
   2/1/62 - Og.Balkonstrasse.Status.Schlafen
-  2/1/63 - Og.Balkonstrasse.Status.PM_Schalten
+  2/1/63 - Og.Balkonstrasse.Status.PM_Schalten1
   2/1/64 - Og.Balkonstrasse.Status.PM_Schalten2
   2/1/65 - Og.Balkonstrasse.Status.PM_Praesenz
+  2/1/66 - Og.Balkonstrasse.Status.PM_Helligkeitswert
   2/1/71 - Og.Schlafzimmer.Status.Nacht
   2/1/72 - Og.Schlafzimmer.Status.Schlafen
-  2/1/73 - Og.Schlafzimmer.Status.PM_Schalten
+  2/1/73 - Og.Schlafzimmer.Status.PM_Schalten1
   2/1/74 - Og.Schlafzimmer.Status.PM_Schalten2
   2/1/75 - Og.Schlafzimmer.Status.PM_Praesenz
+  2/1/76 - Og.Schlafzimmer.Status.PM_Helligkeitswert
   2/2/11 - Dg.Eltern.Status.Nacht
   2/2/12 - Dg.Eltern.Status.Schlafen
-  2/2/13 - Dg.Eltern.Status.PM_Schalten
+  2/2/13 - Dg.Eltern.Status.PM_Schalten1
   2/2/14 - Dg.Eltern.Status.PM_Schalten2
   2/2/15 - Dg.Eltern.Status.PM_Praesenz
+  2/2/16 - Dg.Eltern.Status.PM_Helligkeitswert
   2/2/21 - Dg.Gaeste.Status.Nacht
   2/2/22 - Dg.Gaeste.Status.Schlafen
-  2/2/23 - Dg.Gaeste.Status.PM_Schalten
+  2/2/23 - Dg.Gaeste.Status.PM_Schalten1
   2/2/24 - Dg.Gaeste.Status.PM_Schalten2
   2/2/25 - Dg.Gaeste.Status.PM_Praesenz
+  2/2/26 - Dg.Gaeste.Status.PM_Helligkeitswert
   2/2/31 - Dg.Carla.Status.Nacht
   2/2/32 - Dg.Carla.Status.Schlafen
-  2/2/33 - Dg.Carla.Status.PM_Schalten
+  2/2/33 - Dg.Carla.Status.PM_Schalten1
   2/2/34 - Dg.Carla.Status.PM_Schalten2
   2/2/35 - Dg.Carla.Status.PM_Praesenz
+  2/2/36 - Dg.Carla.Status.PM_Helligkeitswert
   2/2/41 - Dg.Mattia.Status.Nacht
   2/2/42 - Dg.Mattia.Status.Schlafen
-  2/2/43 - Dg.Mattia.Status.PM_Schalten
+  2/2/43 - Dg.Mattia.Status.PM_Schalten1
   2/2/44 - Dg.Mattia.Status.PM_Schalten2
   2/2/45 - Dg.Mattia.Status.PM_Praesenz
+  2/2/46 - Dg.Mattia.Status.PM_Helligkeitswert
   2/2/61 - Dg.Wohnzimmer.Status.Nacht
   2/2/62 - Dg.Wohnzimmer.Status.Schlafen
-  2/2/63 - Dg.Wohnzimmer.Status.PM_Schalten
+  2/2/63 - Dg.Wohnzimmer.Status.PM_Schalten1
   2/2/64 - Dg.Wohnzimmer.Status.PM_Schalten2
   2/2/65 - Dg.Wohnzimmer.Status.PM_Praesenz
+  2/2/66 - Dg.Wohnzimmer.Status.PM_Helligkeitswert
   2/2/71 - Dg.Kueche.Status.Nacht, Dg.Essen.Status.Nacht
   2/2/72 - Dg.Kueche.Status.Schlafen, Dg.Essen.Status.Schlafen
-  2/2/73 - Dg.Kueche.Status.PM_Schalten, Dg.Essen.Status.PM_Schalten
+  2/2/73 - Dg.Kueche.Status.PM_Schalten1, Dg.Essen.Status.PM_Schalten1
   2/2/74 - Dg.Kueche.Status.PM_Schalten2, Dg.Essen.Status.PM_Schalten2
   2/2/75 - Dg.Kueche.Status.PM_Praesenz, Dg.Essen.Status.PM_Praesenz
+  2/2/76 - Dg.Kueche.Status.PM_Helligkeitswert, Dg.Essen.Status.PM_Helligkeitswert
   2/2/91 - Dg.Bad.Status.Nacht
   2/2/92 - Dg.Umkleide.Beleuchtung.Nacht, Dg.Bad.Status.Schlafen
-  2/2/93 - Dg.Bad.Status.PM_Schalten
+  2/2/93 - Dg.Bad.Status.PM_Schalten1
   2/2/94 - Dg.Bad.Status.PM_Schalten2
   2/2/95 - Dg.Bad.Status.PM_Praesenz
+  2/2/96 - Dg.Bad.Status.PM_Helligkeitswert
  2/2/111 - Dg.Flur.Status.Nacht
  2/2/112 - Dg.Flur.Status.Schlafen
- 2/2/113 - Dg.Flur.Status.PM_Schalten
+ 2/2/113 - Dg.Flur.Status.PM_Schalten1
  2/2/114 - Dg.Flur.Status.PM_Schalten2
  2/2/115 - Dg.Flur.Status.PM_Praesenz
+ 2/2/116 - Dg.Flur.Status.PM_Helligkeitswert
  2/2/121 - Dg.Buero.Status.Nacht
  2/2/122 - Dg.Buero.Status.Schlafen
- 2/2/123 - Dg.Buero.Status.PM_Schalten
+ 2/2/123 - Dg.Buero.Status.PM_Schalten1
  2/2/124 - Dg.Buero.Status.PM_Schalten2
  2/2/125 - Dg.Buero.Status.PM_Praesenz
+ 2/2/126 - Dg.Buero.Status.PM_Helligkeitswert
  2/2/131 - Dg.TagesWC.Status.Nacht
  2/2/132 - Dg.TagesWC.Status.Schlafen
- 2/2/133 - Dg.TagesWC.Status.PM_Schalten
+ 2/2/133 - Dg.TagesWC.Status.PM_Schalten1
  2/2/134 - Dg.TagesWC.Status.PM_Schalten2
  2/2/135 - Dg.TagesWC.Status.PM_Praesenz
+ 2/2/136 - Dg.TagesWC.Status.PM_Helligkeitswert
  2/2/141 - Dg.Umkleide.Status.Nacht
  2/2/142 - Dg.Umkleide.Status.Schlafen
- 2/2/143 - Dg.Umkleide.Status.PM_Schalten
+ 2/2/143 - Dg.Umkleide.Status.PM_Schalten1
  2/2/144 - Dg.Umkleide.Status.PM_Schalten2
  2/2/145 - Dg.Umkleide.Status.PM_Praesenz
+ 2/2/146 - Dg.Umkleide.Status.PM_Helligkeitswert
  2/2/201 - Dg.Treppenhaus.Status.Nacht
  2/2/202 - Dg.Treppenhaus.Status.Schlafen
- 2/2/203 - Dg.Treppenhaus.Status.PM_Schalten
+ 2/2/203 - Dg.Treppenhaus.Status.PM_Schalten1
  2/2/204 - Dg.Treppenhaus.Status.PM_Schalten2
  2/2/205 - Dg.Treppenhaus.Status.PM_Praesenz
+ 2/2/206 - Dg.Treppenhaus.Status.PM_Helligkeitswert
   3/0/11 - Eg.Garage.Jalousie.Rechts.Auf_ab
   3/0/12 - Eg.Garage.Jalousie.Rechts.Lamellenverstellung_stop
   3/0/13 - Eg.Garage.Jalousie.Rechts.ReferenzFahren
@@ -141,8 +165,8 @@
   3/0/17 - Eg.Buero.Jalousie.Nord.Auf_ab
   3/0/18 - Eg.Buero.Jalousie.Nord.Lamellenverstellung_stop
   3/0/19 - Eg.Buero.Jalousie.Nord.ReferenzFahren
-  3/0/21 - Eg.Buero.Jalousie.Rechts.Auf_ab
-  3/0/22 - Eg.Buero.Jalousie.Rechts.Lamellenverstellung_stop
+  3/0/21 - Dg.Umkleide.ClickControl.State.Auf_ab_send, Eg.Buero.Jalousie.Rechts.Auf_ab
+  3/0/22 - Dg.Umkleide.ClickControl.State.Lamellenverstellung_stop_send, Eg.Buero.Jalousie.Rechts.Lamellenverstellung_stop
   3/0/23 - Eg.Buero.Jalousie.Rechts.ReferenzFahren
   3/0/24 - Eg.Buero.Jalousie.Mitte.Auf_ab
   3/0/25 - Eg.Buero.Jalousie.Mitte.Lamellenverstellung_stop
@@ -226,8 +250,8 @@
   3/2/66 - Dg.Wohnzimmer.Jalousie.Terrasse.ReferenzFahren
  3/2/68  - Dg.Wohnzimmer.Jalousie.Fenster.ManuellKNX, Dg.Wohnzimmer.Jalousie.Terrasse.ManuellKNX, Dg.Wohnzimmer.ClickControl.State.Auf_ab_send
   3/2/69 - Dg.Wohnzimmer.Jalousie.Fenster.ManuellKNX, Dg.Wohnzimmer.Jalousie.Terrasse.ManuellKNX, Dg.Wohnzimmer.ClickControl.State.Lamellenverstellung_stop_send
-  3/2/71 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Auf_ab
-  3/2/72 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Lamellenverstellung_stop
+  3/2/71 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Auf_ab, Dg.Essen.ClickControl.State.Auf_ab_send
+  3/2/72 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.Lamellenverstellung_stop, Dg.Essen.ClickControl.State.Lamellenverstellung_stop_send
   3/2/73 - Dg.Essen.Jalousie.Terrasse_Schiebetuer.ReferenzFahren
   3/2/74 - Dg.Essen.Jalousie.Terrasse.Auf_ab
   3/2/75 - Dg.Essen.Jalousie.Terrasse.Lamellenverstellung_stop
@@ -244,14 +268,14 @@
   3/2/87 - Dg.Kueche.Jalousie.Speiss.Auf_ab
   3/2/88 - Dg.Kueche.Jalousie.Speiss.Lamellenverstellung_stop
   3/2/89 - Dg.Kueche.Jalousie.Speiss.ReferenzFahren
-  3/2/91 - Dg.Bad.Jalousie.Fenster_klein.Auf_ab, Dg.Bad.ClickControl.State.Auf_ab_send
-  3/2/92 - Dg.Bad.Jalousie.Fenster_klein.Lamellenverstellung_stop, Dg.Bad.ClickControl.State.Lamellenverstellung_stop_send
+  3/2/91 - Dg.Bad.Jalousie.Fenster_klein.Auf_ab
+  3/2/92 - Dg.Bad.Jalousie.Fenster_klein.Lamellenverstellung_stop
   3/2/93 - Dg.Bad.Jalousie.Fenster_klein.ReferenzFahren
   3/2/94 - Dg.Bad.Jalousie.Fenster_gross.Auf_ab
   3/2/95 - Dg.Bad.Jalousie.Fenster_gross.Lamellenverstellung_stop
   3/2/96 - Dg.Bad.Jalousie.Fenster_gross.ReferenzFahren
- 3/2/97  - Dg.Bad.Jalousie.Fenster_klein.ManuellKNX, Dg.Bad.Jalousie.Fenster_gross.ManuellKNX
-  3/2/98 - Dg.Bad.Jalousie.Fenster_klein.ManuellKNX, Dg.Bad.Jalousie.Fenster_gross.ManuellKNX
+ 3/2/97  - Dg.Bad.Jalousie.Fenster_klein.ManuellKNX, Dg.Bad.Jalousie.Fenster_gross.ManuellKNX, Dg.Bad.ClickControl.State.Auf_ab_send
+  3/2/98 - Dg.Bad.Jalousie.Fenster_klein.ManuellKNX, Dg.Bad.Jalousie.Fenster_gross.ManuellKNX, Dg.Bad.ClickControl.State.Lamellenverstellung_stop_send
  3/2/111 - Dg.Flur.Jalousie.Fenster.Auf_ab, Dg.Flur.Jalousie.Fenster.ManuellKNX, Dg.Flur.ClickControl.State.Auf_ab_send
  3/2/112 - Dg.Flur.Jalousie.Fenster.Lamellenverstellung_stop, Dg.Flur.Jalousie.Fenster.ManuellKNX, Dg.Flur.ClickControl.State.Lamellenverstellung_stop_send
  3/2/113 - Dg.Flur.Jalousie.Fenster.ReferenzFahren
@@ -259,8 +283,6 @@
  3/2/122 - Dg.Buero.ClickControl.State.Lamellenverstellung_stop_send
  3/2/131 - Dg.TagesWC.ClickControl.State.Auf_ab_send
  3/2/132 - Dg.TagesWC.ClickControl.State.Lamellenverstellung_stop_send
- 3/2/141 - Dg.Umkleide.ClickControl.State.Auf_ab_send
- 3/2/142 - Dg.Umkleide.ClickControl.State.Lamellenverstellung_stop_send
 3/2/171  - Dg.Kueche.Jalousie.Kochinsel.ManuellKNX, Dg.Essen.Jalousie.Fenster.ManuellKNX
  3/2/172 - Dg.Kueche.Jalousie.Kochinsel.ManuellKNX, Dg.Essen.Jalousie.Fenster.ManuellKNX
 3/2/174  - Dg.Essen.Jalousie.Terrasse.ManuellKNX, Dg.Essen.Jalousie.Terrasse_Schiebetuer.ManuellKNX
@@ -299,6 +321,7 @@
   4/2/91 - Dg.Bad.Einzelraumregelung.Ist_temperatur
   4/2/92 - Dg.Bad.Einzelraumregelung.Soll_temperatur
   4/2/93 - Dg.Bad.Einzelraumregelung.StatusStellwert
+  4/2/95 - Dg.Bad.Luefter.Nachlauf
  4/2/112 - Dg.Flur.Einzelraumregelung.Soll_temperatur
  4/2/113 - Dg.Flur.Einzelraumregelung.StatusStellwert
  4/2/114 - Dg.Flur.Dachfenster.Ab
@@ -308,9 +331,14 @@
  4/2/131 - Dg.TagesWC.Einzelraumregelung.Ist_temperatur
  4/2/132 - Dg.TagesWC.Einzelraumregelung.Soll_temperatur
  4/2/133 - Dg.TagesWC.Einzelraumregelung.StatusStellwert
- 4/2/135 - Dg.TagesWC.Luefter
+ 4/2/135 - Dg.TagesWC.Luefter.Nachlauf
    4/4/0 - Dg.Beleuchtung.Strom
    4/4/1 - Dg.Beleuchtung.Arbeit
+  6/0/21 - Dg.Umkleide.ClickControl.Keys.S1
+  6/0/22 - Dg.Umkleide.ClickControl.Keys.S2
+  6/0/23 - Dg.Umkleide.ClickControl.Keys.S3
+  6/0/24 - Dg.Umkleide.ClickControl.Keys.S4
+  6/0/29 - Dg.Umkleide.ClickControl.Keys.Panik
   6/1/21 - Eg.Buero.ClickControl.Keys.S1
   6/1/22 - Eg.Buero.ClickControl.Keys.S2
   6/1/23 - Eg.Buero.ClickControl.Keys.S3
@@ -341,11 +369,11 @@
   6/2/63 - Dg.Wohnzimmer.ClickControl.Keys.S3
   6/2/64 - Dg.Wohnzimmer.ClickControl.Keys.S4
   6/2/69 - Dg.Wohnzimmer.ClickControl.Keys.Panik
-  6/2/71 - Dg.Kueche.ClickControl.Keys.S1
-  6/2/72 - Dg.Kueche.ClickControl.Keys.S2
-  6/2/73 - Dg.Kueche.ClickControl.Keys.S3
-  6/2/74 - Dg.Kueche.ClickControl.Keys.S4
-  6/2/79 - Dg.Kueche.ClickControl.Keys.Panik
+  6/2/71 - Dg.Kueche.ClickControl.Keys.S1, Dg.Essen.ClickControl.Keys.S1
+  6/2/72 - Dg.Kueche.ClickControl.Keys.S2, Dg.Essen.ClickControl.Keys.S2
+  6/2/73 - Dg.Kueche.ClickControl.Keys.S3, Dg.Essen.ClickControl.Keys.S3
+  6/2/74 - Dg.Kueche.ClickControl.Keys.S4, Dg.Essen.ClickControl.Keys.S4
+  6/2/79 - Dg.Kueche.ClickControl.Keys.Panik, Dg.Essen.ClickControl.Keys.Panik
   6/2/91 - Dg.Bad.ClickControl.Keys.S1
   6/2/92 - Dg.Bad.ClickControl.Keys.S2
   6/2/93 - Dg.Bad.ClickControl.Keys.S3
@@ -366,16 +394,17 @@
  6/2/133 - Dg.TagesWC.ClickControl.Keys.S3
  6/2/134 - Dg.TagesWC.ClickControl.Keys.S4
  6/2/139 - Dg.TagesWC.ClickControl.Keys.Panik
- 6/2/141 - Dg.Umkleide.ClickControl.Keys.S1
- 6/2/142 - Dg.Umkleide.ClickControl.Keys.S2
- 6/2/143 - Dg.Umkleide.ClickControl.Keys.S3
- 6/2/144 - Dg.Umkleide.ClickControl.Keys.S4
- 6/2/149 - Dg.Umkleide.ClickControl.Keys.Panik
  6/2/201 - Dg.Treppenhaus.ClickControl.Keys.S1
  6/2/202 - Dg.Treppenhaus.ClickControl.Keys.S2
  6/2/203 - Dg.Treppenhaus.ClickControl.Keys.S3
  6/2/204 - Dg.Treppenhaus.ClickControl.Keys.S4
  6/2/209 - Dg.Treppenhaus.ClickControl.Keys.Panik
+  7/0/21 - Dg.Umkleide.ClickControl.Leds.Led1
+  7/0/22 - Dg.Umkleide.ClickControl.Leds.Led2
+  7/0/23 - Dg.Umkleide.ClickControl.Leds.Led3
+  7/0/24 - Dg.Umkleide.ClickControl.Leds.Led4
+  7/0/25 - Dg.Umkleide.ClickControl.Leds.LedOrientierungslicht
+  7/0/26 - Dg.Umkleide.ClickControl.Leds.LedOrientierungslicht, Dg.Umkleide.ClickControl.Leds.LedSchlafen
   7/1/21 - Eg.Buero.ClickControl.Leds.Led1
   7/1/22 - Eg.Buero.ClickControl.Leds.Led2
   7/1/23 - Eg.Buero.ClickControl.Leds.Led3
@@ -412,12 +441,12 @@
   7/2/64 - Dg.Wohnzimmer.ClickControl.Leds.Led4
   7/2/65 - Dg.Wohnzimmer.ClickControl.Leds.LedOrientierungslicht
   7/2/66 - Dg.Wohnzimmer.Beleuchtung.Taster_Nacht, Dg.Wohnzimmer.ClickControl.Leds.LedOrientierungslicht, Dg.Wohnzimmer.ClickControl.Leds.LedSchlafen
-  7/2/71 - Dg.Kueche.ClickControl.Leds.Led1
-  7/2/72 - Dg.Kueche.ClickControl.Leds.Led2
-  7/2/73 - Dg.Kueche.ClickControl.Leds.Led3
-  7/2/74 - Dg.Kueche.ClickControl.Leds.Led4
-  7/2/75 - Dg.Kueche.ClickControl.Leds.LedOrientierungslicht
-  7/2/76 - Dg.Kueche.Beleuchtung.Taster_Nacht, Dg.Kueche.ClickControl.Leds.LedOrientierungslicht, Dg.Kueche.ClickControl.Leds.LedSchlafen
+  7/2/71 - Dg.Kueche.ClickControl.Leds.Led1, Dg.Essen.ClickControl.Leds.Led1
+  7/2/72 - Dg.Kueche.ClickControl.Leds.Led2, Dg.Essen.ClickControl.Leds.Led2
+  7/2/73 - Dg.Kueche.ClickControl.Leds.Led3, Dg.Essen.ClickControl.Leds.Led3
+  7/2/74 - Dg.Kueche.ClickControl.Leds.Led4, Dg.Essen.ClickControl.Leds.Led4
+  7/2/75 - Dg.Kueche.ClickControl.Leds.LedOrientierungslicht, Dg.Essen.ClickControl.Leds.LedOrientierungslicht
+  7/2/76 - Dg.Kueche.Beleuchtung.Taster_Nacht, Dg.Kueche.ClickControl.Leds.LedOrientierungslicht, Dg.Kueche.ClickControl.Leds.LedSchlafen, Dg.Essen.ClickControl.Leds.LedOrientierungslicht, Dg.Essen.ClickControl.Leds.LedSchlafen
   7/2/91 - Dg.Bad.ClickControl.Leds.Led1
   7/2/92 - Dg.Bad.ClickControl.Leds.Led2
   7/2/93 - Dg.Bad.ClickControl.Leds.Led3
@@ -442,18 +471,17 @@
  7/2/134 - Dg.TagesWC.ClickControl.Leds.Led4
  7/2/135 - Dg.TagesWC.ClickControl.Leds.LedOrientierungslicht
  7/2/136 - Dg.TagesWC.Beleuchtung.Taster_Nacht, Dg.TagesWC.ClickControl.Leds.LedOrientierungslicht, Dg.TagesWC.ClickControl.Leds.LedSchlafen
- 7/2/141 - Dg.Umkleide.ClickControl.Leds.Led1
- 7/2/142 - Dg.Umkleide.ClickControl.Leds.Led2
- 7/2/143 - Dg.Umkleide.ClickControl.Leds.Led3
- 7/2/144 - Dg.Umkleide.ClickControl.Leds.Led4
- 7/2/145 - Dg.Umkleide.ClickControl.Leds.LedOrientierungslicht
- 7/2/146 - Dg.Umkleide.Beleuchtung.Taster_Nacht, Dg.Umkleide.ClickControl.Leds.LedOrientierungslicht, Dg.Umkleide.ClickControl.Leds.LedSchlafen
+ 7/2/146 - Dg.Umkleide.Beleuchtung.Taster_Nacht
  7/2/201 - Dg.Treppenhaus.ClickControl.Leds.Led1
  7/2/202 - Dg.Treppenhaus.ClickControl.Leds.Led2
  7/2/203 - Dg.Treppenhaus.ClickControl.Leds.Led3
  7/2/204 - Dg.Treppenhaus.ClickControl.Leds.Led4
  7/2/205 - Dg.Treppenhaus.ClickControl.Leds.LedOrientierungslicht
  7/2/206 - Dg.Treppenhaus.Beleuchtung.Taster_Nacht, Dg.Treppenhaus.ClickControl.Leds.LedOrientierungslicht, Dg.Treppenhaus.ClickControl.Leds.LedSchlafen
+  8/0/21 - Dg.Umkleide.ClickControl.Leds.Led1Prio
+  8/0/22 - Dg.Umkleide.ClickControl.Leds.Led2Prio
+  8/0/23 - Dg.Umkleide.ClickControl.Leds.Led3Prio
+  8/0/24 - Dg.Umkleide.ClickControl.Leds.Led4Prio
   8/1/21 - Eg.Buero.ClickControl.Leds.Led1Prio
   8/1/22 - Eg.Buero.ClickControl.Leds.Led2Prio
   8/1/23 - Eg.Buero.ClickControl.Leds.Led3Prio
@@ -478,10 +506,10 @@
   8/2/62 - Dg.Wohnzimmer.ClickControl.Leds.Led2Prio
   8/2/63 - Dg.Wohnzimmer.ClickControl.Leds.Led3Prio
   8/2/64 - Dg.Wohnzimmer.ClickControl.Leds.Led4Prio
-  8/2/71 - Dg.Kueche.ClickControl.Leds.Led1Prio
-  8/2/72 - Dg.Kueche.ClickControl.Leds.Led2Prio
-  8/2/73 - Dg.Kueche.ClickControl.Leds.Led3Prio
-  8/2/74 - Dg.Kueche.ClickControl.Leds.Led4Prio
+  8/2/71 - Dg.Kueche.ClickControl.Leds.Led1Prio, Dg.Essen.ClickControl.Leds.Led1Prio
+  8/2/72 - Dg.Kueche.ClickControl.Leds.Led2Prio, Dg.Essen.ClickControl.Leds.Led2Prio
+  8/2/73 - Dg.Kueche.ClickControl.Leds.Led3Prio, Dg.Essen.ClickControl.Leds.Led3Prio
+  8/2/74 - Dg.Kueche.ClickControl.Leds.Led4Prio, Dg.Essen.ClickControl.Leds.Led4Prio
   8/2/91 - Dg.Bad.ClickControl.Leds.Led1Prio
   8/2/92 - Dg.Bad.ClickControl.Leds.Led2Prio
   8/2/93 - Dg.Bad.ClickControl.Leds.Led3Prio
@@ -498,10 +526,6 @@
  8/2/132 - Dg.TagesWC.ClickControl.Leds.Led2Prio
  8/2/133 - Dg.TagesWC.ClickControl.Leds.Led3Prio
  8/2/134 - Dg.TagesWC.ClickControl.Leds.Led4Prio
- 8/2/141 - Dg.Umkleide.ClickControl.Leds.Led1Prio
- 8/2/142 - Dg.Umkleide.ClickControl.Leds.Led2Prio
- 8/2/143 - Dg.Umkleide.ClickControl.Leds.Led3Prio
- 8/2/144 - Dg.Umkleide.ClickControl.Leds.Led4Prio
  8/2/201 - Dg.Treppenhaus.ClickControl.Leds.Led1Prio
  8/2/202 - Dg.Treppenhaus.ClickControl.Leds.Led2Prio
  8/2/203 - Dg.Treppenhaus.ClickControl.Leds.Led3Prio
@@ -701,3 +725,4 @@
 10/2/111 - Dg.Flur.Jalousie.Fenster.Position
 10/2/112 - Dg.Flur.Jalousie.Fenster.Lamellenposition
 10/2/113 - Dg.Flur.Jalousie.Fenster.Position_gueltig, Dg.Flur.Jalousie.Fenster.knx_read_logic
+11/2/151 - Terrasse.Steckdose

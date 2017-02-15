@@ -105,14 +105,30 @@
                 "enforce_updates": true
             }
         },
-    //    "Minute": {
-    //    "type": "bool",
-    //    "enforce_updates": true,
-    //    "cycle": "20 = 1",
-    //    "eval": "1 if ~ 0"
-    //}
-    },
+        "Jahreszeit": {
+        "Monat": {
+            "type": "num",
+            "eval_trigger": "System.Sonne.Berechnung",
+            "eval": "__import__('datetime').datetime.now().strftime('%m')"
 
+        },
+        "Heizperiode": {
+            "type": "bool",
+            "visu_acl": "rw",
+            "cache": true,
+            "eval_trigger": "~~.Monat",
+            "eval": "0 if ~~.Monat() > 3 and ~~.Monat() < 11 else 1"
+        }
+    }
+
+        //    "Minute": {
+        //    "type": "bool",
+        //    "enforce_updates": true,
+        //    "cycle": "20 = 1",
+        //    "eval": "1 if ~ 0"
+        //}
+    },
+    
     "Wetterstation": {
         "Helligkeit": {
             "Ost": {
@@ -250,7 +266,7 @@
             "eval_trigger": "~~.Wind",
             "eval": "(~~.Wind()*3.6)"
         },
-        "Wind_Alarm_65": {
+        "WindWarnung": {
             "type": "bool",
             "visu": "yes",
             "cache": true,
@@ -259,7 +275,7 @@
             "knx_dpt": "1",
             "knx_listen": "0/0/41"
         },
-        "Wind_Alarm_80": {
+        "WindAlarm": {
             "type": "bool",
             "visu": "yes",
             "cache": true,
@@ -309,6 +325,19 @@
 
         //}
     },
-
-    
+    "Terrasse": {
+        "Steckdose": {
+            "type": "bool",
+            "visu_acl": "rw",
+            "cache": true,
+            "knx_dpt": "1",
+            "knx_send": "11/2/151",
+            "Uzsu": {
+                "type": "dict",
+                "visu_acl": "rw",
+                "cache": true,
+                "uzsu_item": "Terrasse.Steckdose"
+            }
+        }
+    }
 }

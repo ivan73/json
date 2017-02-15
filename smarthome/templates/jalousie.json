@@ -5,6 +5,14 @@
         "visu_acl": "ro",
         "eval": "str(~.autoBlind.Rules)",
         "eval_trigger": "~",
+        "AutoEin": {
+            "type": "bool",
+            "visu": "yes",
+            "visu_acl": "rw",
+            "enforce_updates": true,
+            "eval_trigger": "~~~~.ClickControl.State.Jalousie_AutoEin",
+            "eval": "~~.autoBlind.suspend(0)"
+        },
         "Auf_ab": {
             "$order": 1,
             "type": "bool",
@@ -59,7 +67,7 @@
             "type": "bool",
             "eval_trigger": "~~.Auf_ab | ~~.Lamellenverstellung_stop | ~~.Position | ~~.Lamellenposition",
             "eval": "not ~~.knx_read_logic()",
-            "info": "es wird über eine Logik das Lesen der GA knx_listen in die Wege geleitet",
+            "info": "es wird über eine Logik das Lesen der GA knx_lesen in die Wege geleitet",
             "knx_lesen": "10/-/+2"
         },
         "ReferenzFahren": {

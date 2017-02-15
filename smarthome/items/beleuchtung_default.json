@@ -6,8 +6,9 @@
         "as_item_Daemmerung": "Wetterstation.Daemmerung",
         "as_item_Szene": "....Status.Szene",
         //"as_item_Zahler_szene1": "....ClickControl.State.Zaehler_szene1",
-        "as_item_PM_Schalten": "....Status.PM_Schalten",
+        "as_item_PM_Schalten1": "....Status.PM_Schalten1",
         "as_item_PM_Schalten2": "....Status.PM_Schalten2",
+        "as_item_PM_Schalten": "....Status.PM_Schalten",
         "as_item_PM_Nachlauf": "....Status.Nachlauf",
         "as_item_Nacht": "....Status.Nacht",
         "as_item_Schlafen": "....Status.Schlafen",
@@ -19,6 +20,8 @@
         "as_item_Leds2": "....ClickControl.Leds.Led2",
         "as_item_Leds3": "....ClickControl.Leds.Led3",
         "as_item_Leds4": "....ClickControl.Leds.Led4",
+        "as_item_Leds3Prio": "....ClickControl.Leds.Led3Prio",
+        "as_item_Leds4Prio": "....ClickControl.Leds.Led4Prio",
         "as_item_Taster_Nacht": "....ClickControl.Leds.LedSchlafen",
         "as_item_TasterOrientierungslicht": "....ClickControl.Leds.LedOrientierungslicht",
 
@@ -31,14 +34,23 @@
             "as_set_Key_S3L_um": "0",
             "as_set_Key_S4_um": "0",
             "as_set_Key_S4L_um": "0",
+            "as_set_PM_Schalten": "0",
+            "as_set_Leds3": "0",
+            "as_set_Leds4": "0",
+            //"as_set_PM_Nachlauf": "3",
             "enter": {
                 "as_min_Szene": "1",
-                "as_value_Key_S3_um": "0", //
+                "as_value_Key_S3_um": "0", 
                 "as_agemax_Key_S3_um": "5"
             },
             "enter_stay": {
                 "as_value_laststate": "var:current.state_id",
-                "as_value_PM_Nachlauf": "1"
+                "as_value_PM_Nachlauf": "1",
+                "as_value_Key_S3_um": "0",
+                "as_agemax_Key_S3L_um": "5",
+                "as_agemax_Key_S4_um": "5",
+                "as_agemax_Key_S4L_um": "5"
+
             }
         },
 
@@ -48,6 +60,9 @@
             "name": "Schlafen_Tag",
             "as_set_Szene": "11",
             "as_set_Key_S3_um": "1",
+            "as_set_PM_Schalten": "1",
+            "as_set_Leds3": "0",
+            "as_set_Leds4": "0",
             "enter": {
                 "as_value_Nacht": "False",
                 "as_value_Key_S3L_um": "1"
@@ -61,44 +76,24 @@
             "name": "Schlafen_Nacht",
             "as_set_Szene": "12",
             "as_set_Key_S3_um": "1",
+            "as_set_PM_Schalten": "1",
+            "as_set_Leds3": "0",
+            "as_set_Leds4": "0",
             "enter": {
                 "as_value_Nacht": "True",
                 "as_value_Key_S3L_um": "1"
                 //"as_agemax_Key_S3L_um": "5"
             }
         },
-        //"S3L_Tag_Aus": {
-        //    "$order": 13,
-        //    "type": "foo",
-        //    "name": "Schlafen_TagAus",
-        //    "as_set_Szene": "13",
-        //    "as_value_Key_S3_um": "0",
-        //    "enter": {
-        //        "as_value_Nacht": "False",
-        //        "as_value_Szene": "11",
-        //        "as_value_Key_S3L_um": "0",
-        //        "as_agemax_Key_S3L_um": "5"
-        //    }
-        //},
-        //"S3L_Nacht_Aus": {
-        //  "$order": 14,
-        //  "type": "foo",
-        //  "name": "Schlafen_NachtAus",
-        //  "as_set_Szene": "14",
-        //  "as_value_Key_S3_um": "0",
-        //  "enter": {
-        //    "as_value_Nacht": "False",
-        //    "as_value_Szene": "12",
-        //    "as_value_Key_S3L_um": "0",
-        //    "as_agemax_Key_S3L_um": "5"
-        //  }
-        //},
 
         "S3_S4_Tag": {
             "$order": 21,
             "type": "foo",
             "name": "S3_S4_Tag",
             "as_set_Szene": "21",
+            "as_set_PM_Schalten": "1",
+            "as_set_Leds3": "1",
+            "as_set_Leds4": "1",
             "enter": {
                 "as_value_Nacht": "False",
                 "as_value_Key_S3_um": "1",
@@ -112,6 +107,9 @@
             "type": "foo",
             "name": "S3_S4_Nacht",
             "as_set_Szene": "22",
+            "as_set_PM_Schalten": "1",
+            "as_set_Leds3": "1",
+            "as_set_Leds4": "1",
             "enter": {
                 "as_value_Nacht": "True",
                 "as_value_Key_S3_um": "1",
@@ -125,6 +123,9 @@
             "type": "foo",
             "name": "Ein Manuell Tag",
             "as_set_Szene": "31",
+            "as_set_PM_Schalten": "1",
+            "as_set_Leds3": "1",
+            "as_set_Leds4": "0",
             "enter": {
                 "as_value_Szene": "0",
                 "as_value_Key_S3_um": "1",
@@ -144,6 +145,9 @@
             "type": "foo",
             "name": "Ein Manuell Nacht",
             "as_set_Szene": "32",
+            "as_set_PM_Schalten": "1",
+            "as_set_Leds3": "1",
+            "as_set_Leds4": "0",
             "enter": {
                 "as_value_Szene": "0",
                 "as_value_Key_S3_um": "1",
@@ -153,7 +157,7 @@
             "enter_stay": {
                 "as_value_laststate": "var:current.state_id",
                 "as_value_Nacht": "True",
-                "as_value_PM_Schalten": "1",
+                "as_value_PM_Schalten1": "1",
                 "as_value_Key_S3_um": "1"
             },
             "enter_stay2": {
@@ -169,7 +173,10 @@
             "type": "foo",
             "name": "S4_Tag",
             "as_set_Szene": "41",
+            "as_set_PM_Schalten": "1",
             "as_value_Key_S3_um": "1",
+            "as_set_Leds3": "0",
+            "as_set_Leds4": "1",
             "enter": {
                 "as_value_Nacht": "False",
                 "as_value_Key_S4_um": "1",
@@ -187,7 +194,10 @@
             "type": "foo",
             "name": "S4_Nacht",
             "as_set_Szene": "42",
+            "as_set_PM_Schalten": "1",
             "as_set_Key_S3_um": "1",
+            "as_set_Leds3": "0",
+            "as_set_Leds4": "1",
             "enter": {
                 "as_value_Nacht": "True",
                 "as_value_Key_S4_um": "1",
@@ -206,6 +216,9 @@
             "type": "foo",
             "name": "S4L_Tag",
             "as_set_Szene": "43",
+            "as_set_PM_Schalten": "1",
+            "as_set_Leds3": "0",
+            "as_set_Leds4": "0",
             "enter": {
                 "as_value_Nacht": "False",
                 "as_value_Key_S4L_um": "1",
@@ -223,6 +236,9 @@
         "type": "foo",
         "name": "S4L_Nacht",
         "as_set_Szene": "44",
+        "as_set_PM_Schalten": "1",
+        "as_set_Leds3": "0",
+        "as_set_Leds4": "0",
         "enter": {
                 "as_value_Nacht": "True",
                 "as_value_Key_S4L_um": "1",
@@ -242,15 +258,17 @@
         "name": "Grundbel1_2. Tag",
         "as_set_Szene": "81",
         "as_set_Key_S3_um": "1",
+        "as_set_Leds3": "0",
+        "as_set_Leds4": "0",
         "enter": {
             //"as_value_Szene": "0",
-            "as_value_PM_Schalten": "1",
+            "as_value_PM_Schalten1": "1",
             "as_value_PM_Schalten2": "1",
             "as_value_Nacht": "False"
         }, 
         "enter_stay": {
             "as_value_laststate": "var:current.state_id",
-            "as_value_Nacht": "True",
+            "as_value_Nacht": "False",
             "as_value_PM_Nachlauf": "1",
             "as_value_Key_S3_um": "1"
         }
@@ -262,9 +280,11 @@
         "name": "Grundbel1_2. Nacht",
         "as_set_Szene": "82",
         "as_set_Key_S3_um": "1",
+        "as_set_Leds3": "0",
+        "as_set_Leds4": "0",
         "enter": {
             //"as_value_Szene": "0",
-            "as_value_PM_Schalten": "1",
+            "as_value_PM_Schalten1": "1",
             "as_value_PM_Schalten2": "1",
             "as_value_Nacht": "True"
         }, 
@@ -281,9 +301,12 @@
       "type": "foo",
       "name": "Grundbel. Tag",
       "as_set_Szene": "83",
-      "as_set_Key_S3_um": "1",
+        "as_set_Key_S3_um": "1",
+        "as_set_Leds3": "0",
+        "as_set_Leds4": "0",
         "enter": {
-            "as_value_PM_Schalten": "1",
+            "as_value_PM_Schalten1": "1",
+            "as_agemax_PM_Schalten1": "5",
             "as_value_Nacht": "False"
         },
         "enter_stay": {
@@ -299,8 +322,11 @@
         "name": "Grundbel. Nacht",
         "as_set_Szene": "84",
         "as_set_Key_S3_um": "1",
+        "as_set_Leds3": "0",
+        "as_set_Leds4": "0",
         "enter": {
-            "as_value_PM_Schalten": "1",
+            "as_value_PM_Schalten1": "1",
+            "as_agemax_PM_Schalten1": "5",
             "as_value_Nacht": "True"
         }, 
         "enter_stay": {
@@ -310,33 +336,39 @@
             "as_value_Key_S3_um": "1"
         }
     },
-    
-      "PM2_Tag": {
-      "$order": 85,
-      "type": "foo",
-      "name": "Grundbel2. Tag",
-      "as_set_Szene": "85",
-      "as_set_Key_S3_um": "1",
-        "enter": {
-            "as_value_PM_Schalten2": "1",
-            "as_value_Nacht": "False"
+
+        "PM2_Tag": {
+            "$order": 85,
+            "type": "foo",
+            "name": "Grundbel2. Tag",
+            "as_set_Szene": "85",
+            "as_set_Key_S3_um": "1",
+            "as_set_Leds3": "0",
+            "as_set_Leds4": "0",
+            "enter": {
+                "as_value_PM_Schalten2": "1",
+                "as_agemax_PM_Schalten2": "5",
+                "as_value_Nacht": "False"
+            },
+            "enter_stay": {
+                "as_value_laststate": "var:current.state_id",
+                "as_value_Nacht": "False",
+                "as_value_PM_Nachlauf": "1",
+                "as_value_Key_S3_um": "1"
+            }
         },
-        "enter_stay": {
-            "as_value_laststate": "var:current.state_id",
-            "as_value_Nacht": "False",
-            "as_value_PM_Nachlauf": "1",
-            "as_value_Key_S3_um": "1"
-        }
-    },
     "PM2_Nacht": {
         "$order": 86,
         "type": "foo",
         "name": "Grundbel. Nacht",
         "as_set_Szene": "86",
         "as_set_Key_S3_um": "1",
+        "as_set_Leds3": "0",
+        "as_set_Leds4": "0",
         "enter": {
             "as_value_Szene": "0",
             "as_value_PM_Schalten2": "1",
+            "as_agemax_PM_Schalten2": "5",
             "as_value_Nacht": "True"
         },
         "enter_stay": {
@@ -366,7 +398,9 @@
         "as_set_Key_S3_um": "0",
         "as_set_Key_S3L_um": "0",
         "as_set_Key_S4_um": "0",
-        "as_set_Key_S4L_um": "0"
+        "as_set_Key_S4L_um": "0",
+        "as_set_Leds3": "0",
+        "as_set_Leds4": "0"
     }
   }
 }

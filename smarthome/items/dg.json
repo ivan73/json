@@ -115,6 +115,10 @@
                                 "$order": 30,
                                 "as_use": "Jalousie_default.Beschatten_Ost"
                             },
+                            "Heizen": {
+                                "$order": 40,
+                                "as_use": "Jalousie_default.Heizen_Ost"
+                            },
                             "Morgendaemmerung": {
                                 "enter": {
                                     "as_value_MorgendaemmerungAktive": "True",
@@ -186,12 +190,19 @@
                 "$template": {
                     "source": "status",
                     "knx": "2/2/141"
+                },
+                 "Nacht": {
+                    "eval_trigger": "Dg.Mattia.Status.Schlafen | Dg.Eltern.Status.Schlafen | Dg.Carla.Status.Schlafen",
+                    "eval": "1 if sh.Dg.Mattia.Status.Schlafen() or sh.Dg.Eltern.Status.Schlafen() or sh.Dg.Carla.Status.Schlafen() else 0"
                 }
             },
             "ClickControl": {
                 "$template": {
                     "source": "clickcontrol",
-                    "knx": "6/2/141"
+                    "knx": "6/0/21" //"6/2/141"
+                },
+                "Rules": {
+                    "cc_plugin": "active"
                 }
             }
         },
@@ -365,6 +376,10 @@
                 "$template": {
                     "source": "status",
                     "knx": "2/2/111"
+                },
+                "Nacht": {
+                    "eval_trigger": "Dg.Mattia.Status.Schlafen | Dg.Carla.Status.Schlafen | Dg.Gaeste.Status.Schlafen",
+                    "eval": "1 if sh.Dg.Mattia.Status.Schlafen() or sh.Dg.Carla.Status.Schlafen() or sh.Dg.Gaeste.Status.Schlafen() else 0"
                 }
             },
             "ClickControl": {
@@ -501,6 +516,10 @@
                             "Beschatten": {
                                 "$order": 30,
                                 "as_use": "Jalousie_default.Beschatten_West"
+                            },
+                            "Heizen": {
+                                "$order": 40,
+                                "as_use": "Jalousie_default.Heizen_West"
                             }
                         }
                     }
@@ -578,6 +597,10 @@
                             "Beschatten": {
                                 "$order": 30,
                                 "as_use": "Jalousie_default.Beschatten_West"
+                            },
+                            "Heizen": {
+                                "$order": 40,
+                                "as_use": "Jalousie_default.Heizen_West"
                             }
                         }
                     }
@@ -696,7 +719,11 @@
                             "Beschatten": {
                                 "$order": 30,
                                 "as_use": "Jalousie_default.Beschatten_West"
-                            }
+                            },
+                            "Heizen": {
+                                "$order": 40,
+                                "as_use": "Jalousie_default.Heizen_West"
+                            },
                         }
                     }
                 },
@@ -722,6 +749,10 @@
                             "Beschatten": {
                                 "$order": 30,
                                 "as_use": "Jalousie_default.Beschatten_Sued"
+                            },
+                            "Heizen": {
+                                "$order": 40,
+                                "as_use": "Jalousie_default.Heizen_Sued"
                             }
                         }
                     }
@@ -839,6 +870,10 @@
                                 "enter": {
                                     "as_max_sun_altitude": "38"
                                 }
+                            },
+                            "Heizen": {
+                                "$order": 40,
+                                "as_use": "Jalousie_default.Heizen_Sued"
                             }
                         }
                     }
@@ -856,6 +891,10 @@
                             "Beschatten": {
                                 "$order": 30,
                                 "as_use": "Jalousie_default.Beschatten_Ost"
+                            },
+                            "Heizen": {
+                                "$order": 40,
+                                "as_use": "Jalousie_default.Heizen_Ost"
                             }
                         }
                     }
@@ -873,6 +912,10 @@
                             "Beschatten": {
                                 "$order": 30,
                                 "as_use": "Jalousie_default.Beschatten_Ost"
+                            },
+                            "Heizen": {
+                                "$order": 40,
+                                "as_use": "Jalousie_default.Heizen_Ost"
                             }
                         }
                     }
@@ -993,6 +1036,10 @@
                             "Beschatten": {
                                 "$order": 30,
                                 "as_use": "Jalousie_default.Beschatten_West"
+                            },
+                            "Heizen": {
+                                "$order": 40,
+                                "as_use": "Jalousie_default.Heizen_West"
                             }
                         }
                     }
@@ -1019,6 +1066,10 @@
                             "Beschatten": {
                                 "$order": 30,
                                 "as_use": "Jalousie_default.Beschatten_West"
+                            },
+                            "Heizen": {
+                                "$order": 40,
+                                "as_use": "Jalousie_default.Heizen_West"
                             }
                         }
                     }
@@ -1042,6 +1093,10 @@
                                 "enter": {
                                     "as_max_sun_altitude": "38"
                                 }
+                            },
+                            "Heizen": {
+                                "$order": 40,
+                                "as_use": "Jalousie_default.Heizen_Sued"
                             }
                         }
                     }
@@ -1066,16 +1121,16 @@
                     "source": "status",
                     "knx": "2/2/71"
                 }
-            }
-            //"ClickControl": {
-            //    "$template": {
-            //        "source": "clickcontrol",
-            //        "knx": "6/2/71"
-            //    },
+            },
+            "ClickControl": {
+                "$template": {
+                    "source": "clickcontrol",
+                    "knx": "6/2/71"
+                }
             //    "Rules": {
             //        "cc_plugin": "active"
             //    }
-            //}
+            }
         },
         "Bad": {
             "Beleuchtung": {
@@ -1122,7 +1177,7 @@
                         "eval_trigger": "~~"
                     }
                 },
-                "Spiegel": {
+                "StripeDusche": {
                     "type": "num",
                     "cache": true,
                     "visu_acl": "rw",
@@ -1130,9 +1185,50 @@
                     "DMX": {
                         "type": "num",
                         "cache": true,
-                        "dmx_ch": "21",
+                        "dmx_ch": "53",
                         "eval": "~~()",
                         "eval_trigger": "~~"
+                    }
+                },
+                "StripeDusche_RGB": {
+                    "R": {
+                        "type": "num",
+                        "cache": true,
+                        "visu_acl": "rw",
+                        "crontab": "init",
+                        "DMX": {
+                            "type": "num",
+                            "cache": true,
+                            "dmx_ch": "54",
+                            "eval": "~~()",
+                            "eval_trigger": "~~"
+                        }
+                    },
+                    "G": {
+                        "type": "num",
+                        "cache": true,
+                        "visu_acl": "rw",
+                        "crontab": "init",
+                        "DMX": {
+                            "type": "num",
+                            "cache": true,
+                            "dmx_ch": "55",
+                            "eval": "~~()",
+                            "eval_trigger": "~~"
+                        }
+                    },
+                    "B": {
+                        "type": "num",
+                        "cache": true,
+                        "visu_acl": "rw",
+                        "crontab": "init",
+                        "DMX": {
+                            "type": "num",
+                            "cache": true,
+                            "dmx_ch": "56",
+                            "eval": "~~()",
+                            "eval_trigger": "~~"
+                        }
                     }
                 }
             },
@@ -1153,6 +1249,10 @@
                             "Beschatten": {
                                 "$order": 30,
                                 "as_use": "Jalousie_default.Beschatten_Ost"
+                            },
+                            "Heizen": {
+                                "$order": 40,
+                                "as_use": "Jalousie_default.Heizen_Ost"
                             }
                         }
                     }
@@ -1173,6 +1273,10 @@
                             "Beschatten": {
                                 "$order": 30,
                                 "as_use": "Jalousie_default.Beschatten_Ost"
+                            },
+                            "Heizen": {
+                                "$order": 40,
+                                "as_use": "Jalousie_default.Heizen_Ost"
                             }
                         }
                     }
@@ -1188,6 +1292,15 @@
                 "$template": {
                     "source": "status",
                     "knx": "2/2/91"
+                },
+                "Szene": {
+                    "Szene_Name": {
+                        "$delete": [ "eval_trigger", "eval" ]
+                    }
+                },
+                 "Nacht": {
+                    "eval_trigger": "Dg.Eltern.Status.Schlafen",
+                    "eval": "1 if sh.Dg.Eltern.Status.Schlafen() else 0"
                 }
             },
             "ClickControl": {
@@ -1197,6 +1310,39 @@
                 },
                 "Rules": {
                     "cc_plugin": "active"
+                },
+                                "State": {
+                    "Auf_ab_send": {
+                        "$templated": true,
+                        "knx_send": "3/2/97"
+                    },
+                    "Lamellenverstellung_stop_send": {
+                        "$templated": true,
+                        "knx_send": "3/2/98"
+                    }
+                }
+
+            },
+            "Luefter": {
+                "type": "bool",
+                "visu_acl": "rw",
+                "Nachlauf": {
+                    "type": "num",
+                    "visu_acl": "rw",
+                    "knx_dpt": "1",
+                    "knx_send": "4/2/95",
+                    "autotimer": "60 = 2",
+                    "value": "2",
+                    "eval_trigger": "~~",
+                    "eval": "~~() if int(value) > 1 else 1",
+                    "autotimer_value": {
+                        "type": "num",
+                        "cache": true,
+                        "visu_acl": "rw",
+                        "value": "3",
+                        "enforce_updates": true,
+                        "crontab": "init"
+                    }
                 }
             }
         },
@@ -1270,16 +1416,24 @@
             "Luefter": {
                 "type": "bool",
                 "visu_acl": "rw",
-                "knx_dpt": "1",
-                "knx_send": "4/2/135"
-              //  "Nachlauf10": {
-              //  "name": "Nachlauf",
-              //  "type": "num",
-              //  "value": 2,
-              //  "autotimer": "300 = 2",
-              //  "eval": "~~() if int(value) > 1 else 1",
-              //  "eval_trigger": "~~"
-              //}
+                "Nachlauf": {
+                    "type": "num",
+                    "visu_acl": "rw",
+                    "knx_dpt": "1",
+                    "knx_send": "4/2/135",
+                    "autotimer": "60 = 2",
+                    "value": "2",
+                    "eval_trigger": "~~",
+                    "eval": "~~() if int(value) > 1 else 1",
+                    "autotimer_value": {
+                        "type": "num",
+                        "cache": true,
+                        "visu_acl": "rw",
+                        "value": "3",
+                        "enforce_updates": true,
+                        "crontab": "init"
+                    }
+                }
             }
         },
         "Kriechboden": {
@@ -1379,6 +1533,9 @@
                 "$template": {
                     "source": "clickcontrol",
                     "knx": "6/2/121"
+                },
+                "Rules": {
+                    "cc_plugin": "active"
                 }
             }
         }

@@ -433,26 +433,31 @@
               "$templated": true,
               "as_plugin": "active",
               "name": "Eg Raff. Küche Tür",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Sued"
-              }
-              //"Abenddaemmerung": {
-              //  "as_set_Position": "50",
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Morgendaemmerung": {
-              //  "as_set_Lamellenposition": "50"
-              //},
-              //"Nacht": {
-              //  "as_set_Position": "100",
-              //  "as_set_Lamellenposition": "70"
-              //},
+                "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_Sued"
+                },
+                "Heizen": {
+                    "$order": 40,
+                    "as_use": "Jalousie_default.Heizen_Sued"
+                }
 
-              //"Tag": {
-              //  "as_set_Position": "40",
-              //  "as_set_Lamellenposition": "0"
-              //}
+                //"Abenddaemmerung": {
+                //  "as_set_Position": "50",
+                //  "as_set_Lamellenposition": "50"
+                //},
+                //"Morgendaemmerung": {
+                //  "as_set_Lamellenposition": "50"
+                //},
+                //"Nacht": {
+                //  "as_set_Position": "100",
+                //  "as_set_Lamellenposition": "70"
+                //},
+
+                //"Tag": {
+                //  "as_set_Position": "40",
+                //  "as_set_Lamellenposition": "0"
+                //}
             }
           }
         },
@@ -466,10 +471,15 @@
               "$templated": true,
               "as_plugin": "active",
               "name": "Eg Raff. Küche Esstisch",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Ost"
-              }
+                "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_Ost"
+                },
+                "Heizen": {
+                    "$order": 40,
+                    "as_use": "Jalousie_default.Heizen_Ost"
+                }
+
               //"Morgendaemmerung": {
               //  "as_set_Position": "100",
               //  "as_set_Lamellenposition": "50"
@@ -503,10 +513,14 @@
               "$templated": true,
               "as_plugin": "active",
               "name": "Eg Raff. Küche Kochen",
-              "Beschatten": {
-                "$order": 30,
-                "as_use": "Jalousie_default.Beschatten_Ost"
-              }
+                "Beschatten": {
+                    "$order": 30,
+                    "as_use": "Jalousie_default.Beschatten_Ost"
+                },
+                "Heizen": {
+                    "$order": 40,
+                    "as_use": "Jalousie_default.Heizen_Ost"
+                }
               //"Morgendaemmerung": {
               //  "as_set_Position": "100",
               //  "as_set_Lamellenposition": "50"

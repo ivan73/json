@@ -19,7 +19,9 @@
         "cache": true,
         "sqlite": "yes",
         "knx_dpt": "9",
-        "knx_send": "4/-/+1"
+        "knx_send": "4/-/+1",
+        "crontab": "init+120",
+        "enforce_updates": true
     },
     "StatusStellwert": {
       "$order": 2,
